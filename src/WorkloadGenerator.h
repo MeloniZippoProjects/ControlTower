@@ -17,6 +17,7 @@
 #define __CONTROLTOWER_WORKLOADGENERATOR_H_
 
 #include <omnetpp.h>
+#include "Plane_m.h"
 
 using namespace omnetpp;
 

@@ -24,10 +24,10 @@ using namespace omnetpp;
 /**
  * TODO - Generated class
  */
-class Runaway : public cSimpleModule
+class Runway : public cSimpleModule
 {
   public:
-    std::String planeType; //I use this variable to distinguish the two type of plane
+    std::string planeType; //I use this variable to distinguish the two type of plane
 
   protected:
     virtual void initialize();

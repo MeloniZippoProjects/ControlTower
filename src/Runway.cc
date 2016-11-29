@@ -13,26 +13,27 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include "Runaway.h"
+#include "Runway.h"
 
-Define_Module(Runaway);
+Define_Module(Runway);
 
-void Runaway::initialize()
+void Runway::initialize()
 {
     // TODO - Generated method body
 }
 
-void Runaway::handleMessage(cMessage *msg)
+void Runway::handleMessage(cMessage *msg)
 {
+    std::string gateName = msg->getArrivalGate()->getBaseName();
     //if a landingPlane arrives...
-    if ( msg->getArrivalGate() == landingPlaneIn ){
+    if (  gateName == "landingPlaneIn" ){
         planeType = "landingPlane";
         simtime_t landingTime = 600;
         scheduleAt(simTime() + landingTime, msg);
     }
 
     //if a takeoffPlane arrives...
-    else if ( msg->getArrivalGate() == takeoffPlaneIn ){
+    else if ( gateName == "takeoffPlaneIn" ){
         planeType = "takeoffPlane";
         simtime_t takeoffTime = 600;
         scheduleAt(simTime() + takeoffTime, msg);
