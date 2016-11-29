@@ -24,5 +24,28 @@ void Runaway::initialize()
 
 void Runaway::handleMessage(cMessage *msg)
 {
-    // TODO - Generated method body
+    //if a landingPlane arrives...
+    if ( msg->getArrivalGate() == landingPlaneIn ){
+        planeType = "landingPlane";
+        simtime_t landingTime = 600;
+        scheduleAt(simTime() + landingTime, msg);
+    }
+
+    //if a takeoffPlane arrives...
+    else if ( msg->getArrivalGate() == takeoffPlaneIn ){
+        planeType = "takeoffPlane";
+        simtime_t takeoffTime = 600;
+        scheduleAt(simTime() + takeoffTime, msg);
+    }
+
+    //if a self message arrives...
+    else if (msg->isSelfMessage()){
+        //I use planeType to distinguish the two types of plane
+        if ( planeType == "landingPlane" ){
+            send(msg,"landingPlaneOut");
+        }
+        else if ( planeType == "takeOffPlane" ){
+            send(msg,"takeoffPlaneOut");
+        }
+    }
 }

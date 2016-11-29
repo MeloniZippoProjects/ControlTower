@@ -13,22 +13,18 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef __CONTROLTOWER_RUNAWAY_H_
-#define __CONTROLTOWER_RUNAWAY_H_
+#ifndef __CONTROLTOWER_WORKLOADGENERATOR_H_
+#define __CONTROLTOWER_WORKLOADGENERATOR_H_
 
 #include <omnetpp.h>
-#include <string>
 
 using namespace omnetpp;
 
 /**
  * TODO - Generated class
  */
-class Runaway : public cSimpleModule
+class WorkloadGenerator : public cSimpleModule
 {
-  public:
-    std::String planeType; //I use this variable to distinguish the two type of plane
-
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);

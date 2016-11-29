@@ -13,25 +13,35 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef __CONTROLTOWER_RUNAWAY_H_
-#define __CONTROLTOWER_RUNAWAY_H_
+#include "WorkloadGenerator.h"
 
-#include <omnetpp.h>
-#include <string>
+Define_Module(WorkloadGenerator);
 
-using namespace omnetpp;
-
-/**
- * TODO - Generated class
- */
-class Runaway : public cSimpleModule
+void WorkloadGenerator::initialize()
 {
-  public:
-    std::String planeType; //I use this variable to distinguish the two type of plane
+    //I create a new plane and send it as a self message at the start of the simulation
+    Plane newPlane = new Plane();
+    scheduleAt( 0.0 , newPlane );
+}
 
-  protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage *msg);
-};
+void WorkloadGenerator::handleMessage(cMessage *msg)
+{
+    if (msg->isSelfMessage()){
 
-#endif
+        //I send the plane to the landingQueue
+        send( msg , "out" );
+
+        //I create another plane
+        simtime_t interarrivalTime = 60;
+        Plane newPlane = new Plane();
+        scheduleAt( simTime() + interarrivalTime , newPlane );
+
+    }
+    else{
+
+        //I delete the plane
+        delete msg;
+
+    }
+
+}
