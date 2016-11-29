@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for ControlTower
+# OMNeT++/OMNEST Makefile for PESC_Control_Tower
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep
 #
 
 # Name of target to be created (-o option)
-TARGET = ControlTower$(EXE_SUFFIX)
+TARGET = PESC_Control_Tower$(EXE_SUFFIX)
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LIBS)
@@ -30,21 +30,21 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
 OBJS = \
-    $O/Runaway.o \
     $O/ControlTower.o \
-    $O/PlaneQueue.o \
     $O/ParkingLot.o \
+    $O/PlaneQueue.o \
+    $O/Runaway.o \
     $O/OkToProceed_m.o \
-    $O/UpdateRunwayFreed_m.o \
     $O/Plane_m.o \
-    $O/UpdatePlaneEnqueued_m.o
+    $O/UpdatePlaneEnqueued_m.o \
+    $O/UpdateRunwayFreed_m.o
 
 # Message files
 MSGFILES = \
     OkToProceed.msg \
-    UpdateRunwayFreed.msg \
     Plane.msg \
-    UpdatePlaneEnqueued.msg
+    UpdatePlaneEnqueued.msg \
+    UpdateRunwayFreed.msg
 
 # SM files
 SMFILES =
@@ -126,7 +126,7 @@ smheaders: $(SMFILES:.sm=_sm.h)
 clean:
 	$(qecho) Cleaning...
 	$(Q)-rm -rf $O
-	$(Q)-rm -f ControlTower ControlTower.exe libControlTower.so libControlTower.a libControlTower.dll libControlTower.dylib
+	$(Q)-rm -f PESC_Control_Tower PESC_Control_Tower.exe libPESC_Control_Tower.so libPESC_Control_Tower.a libPESC_Control_Tower.dll libPESC_Control_Tower.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h ./*_sm.cc ./*_sm.h
 
 cleanall: clean
