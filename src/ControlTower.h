@@ -19,8 +19,10 @@
 #include <omnetpp.h>
 #include "UpdatePlaneEnqueued_m.h"
 #include "UpdateRunwayFreed_m.h"
+#include "OkToProceed_m.h"
 
 using namespace omnetpp;
+using namespace std;
 
 /**
  * TODO - Generated class
@@ -32,7 +34,7 @@ class ControlTower : public cSimpleModule
     int landingPlanes;
     int takeoffPlanes;
 
-    //OkToProceed* okToProceed;
+    OkToProceed* okToProceed;
 
   protected:
     virtual void initialize();

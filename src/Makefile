@@ -139,6 +139,7 @@ depend:
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/ControlTower.o: ControlTower.cc \
 	ControlTower.h \
+	OkToProceed_m.h \
 	UpdatePlaneEnqueued_m.h \
 	UpdateRunwayFreed_m.h
 $O/OkToProceed_m.o: OkToProceed_m.cc \
@@ -147,7 +148,10 @@ $O/ParkingLot.o: ParkingLot.cc \
 	ParkingLot.h \
 	Plane_m.h
 $O/PlaneQueue.o: PlaneQueue.cc \
-	PlaneQueue.h
+	OkToProceed_m.h \
+	PlaneQueue.h \
+	Plane_m.h \
+	UpdatePlaneEnqueued_m.h
 $O/Plane_m.o: Plane_m.cc \
 	Plane_m.h
 $O/Runaway.o: Runaway.cc \

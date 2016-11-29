@@ -19,10 +19,28 @@ Define_Module(PlaneQueue);
 
 void PlaneQueue::initialize()
 {
-    // TODO - Generated method body
+    //
 }
 
 void PlaneQueue::handleMessage(cMessage *msg)
 {
-    // TODO - Generated method body
+    string gateName = msg->getArrivalGate()->getBaseName();
+
+    if(gateName == "planeIn")
+    {
+        Plane *plane = check_and_cast<Plane*>(msg);
+        plane->setEnqueueTimestamp(simTime());
+        planes.push(plane);
+
+        UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
+        send(updateStatus, "statusOut");
+    }
+    else if(gateName == "okIn")
+    {
+        //OkToProceed *ok = check_and_cast<OkToProceed*>(msg);
+
+        Plane *plane = planes.front();
+        planes.pop();
+        send(plane, "planeOut");
+    }
 }

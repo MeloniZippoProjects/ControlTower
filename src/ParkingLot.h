@@ -17,8 +17,6 @@
 #define __CONTROLTOWER_PARKINGLOT_H_
 
 #include <omnetpp.h>
-//#include <vector>
-#include <set>
 #include <string>
 
 #include "Plane_m.h"
@@ -34,7 +32,7 @@ class ParkingLot : public cSimpleModule
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 
-    vector<Plane*> planes;
+    int planes;
 };
 
 #endif
