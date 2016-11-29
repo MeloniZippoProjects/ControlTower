@@ -34,8 +34,6 @@ class ControlTower : public cSimpleModule
     int landingPlanes;
     int takeoffPlanes;
 
-    OkToProceed* okToProceed;
-
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);

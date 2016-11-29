@@ -31,10 +31,7 @@ void ParkingLot::handleMessage(cMessage *msg)
         send(plane, "planeOut");
         --planes;
     }
-
-    string gateName = msg->getArrivalGate()->getBaseName();
-
-    if(gateName == "planeIn") //a new plane has arrived
+    else if(std::string(msg->getArrivalGate()->getBaseName()) == "planeIn") //a new plane has arrived
     {
         ++planes;
         simtime_t delay = SimTime(60, SimTimeUnit::SIMTIME_S);

@@ -32,7 +32,7 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
         send( msg , "out" );
 
         //I create another plane
-        simtime_t interarrivalTime = 60;
+        simtime_t interarrivalTime = 200;
         Plane *newPlane = new Plane();
         scheduleAt( simTime() + interarrivalTime , newPlane );
 

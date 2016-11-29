@@ -22,9 +22,6 @@ void ControlTower::initialize()
     runwayFree = true;
     landingPlanes = 0;
     takeoffPlanes = 0;
-
-    okToProceed = new OkToProceed();
-    //prova2
 }
 
 void ControlTower::handleMessage(cMessage *msg)
@@ -43,7 +40,7 @@ void ControlTower::handleLandingQueueUpdate(UpdatePlaneEnqueued* msg)
 {
     if(runwayFree)
     {
-        send(okToProceed, "landingQueueOkOut");
+        send(new OkToProceed(), "landingQueueOkOut");
         runwayFree = false;
     }
     else
@@ -56,7 +53,7 @@ void ControlTower::handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg)
 {
     if(runwayFree)
     {
-        send(okToProceed, "takeoffQueueOkOut");
+        send(new OkToProceed(), "takeoffQueueOkOut");
         runwayFree = false;
     }
     else
@@ -75,11 +72,11 @@ void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* msg)
         }
         else
         {
-            send(okToProceed, "takeoffQueueOkOut");
+            send(new OkToProceed(), "takeoffQueueOkOut");
         }
     }
     else
     {
-        send(okToProceed, "landingQueueOkOut");
+        send(new OkToProceed(), "landingQueueOkOut");
     }
 }
