@@ -24,6 +24,7 @@ void ControlTower::initialize()
     takeoffPlanes = 0;
 
     okToProceed = new OkToProceed();
+    //prova
 }
 
 void ControlTower::handleMessage(cMessage *msg)
