@@ -20,7 +20,9 @@ Define_Module(WorkloadGenerator);
 void WorkloadGenerator::initialize()
 {
     //I create a new plane and send it as a self message at the start of the simulation
-    Plane *newPlane = new Plane();
+    currentId = 0;
+
+    Plane* newPlane = new Plane();
     scheduleAt( 0.0 , newPlane );
 }
 
@@ -43,5 +45,9 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
         delete msg;
 
     }
+}
+
+void WorkloadGenerator::createPlane()
+{
 
 }

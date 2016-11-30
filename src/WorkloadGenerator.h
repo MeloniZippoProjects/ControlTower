@@ -26,6 +26,8 @@ using namespace omnetpp;
  */
 class WorkloadGenerator : public cSimpleModule
 {
+  private:
+    int currentId;
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);

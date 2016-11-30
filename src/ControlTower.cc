@@ -77,11 +77,13 @@ void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* msg)
         else
         {
             send(new OkToProceed(), "takeoffQueueOkOut");
+            takeoffPlanes--;
         }
     }
     else
     {
         send(new OkToProceed(), "landingQueueOkOut");
+        landingPlanes--;
     }
 
     //delete msg;
