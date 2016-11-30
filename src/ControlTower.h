@@ -22,7 +22,6 @@
 #include "OkToProceed_m.h"
 
 using namespace omnetpp;
-using namespace std;
 
 /**
  * TODO - Generated class
