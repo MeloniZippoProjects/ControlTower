@@ -48,12 +48,8 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
 
 Plane* WorkloadGenerator::createPlane()
 {
-<<<<<<< HEAD
-    Plane* newPlane = new Plane("");
-    newPlane->setID(currentID++);
-=======
+
     Plane* newPlane = new Plane("", currentId++);
->>>>>>> branch 'develop' of git@github.com:enricomeloni/PESC_Control_Tower.git
     newPlane->setSchedulingPriority(0);
 
     return newPlane;
