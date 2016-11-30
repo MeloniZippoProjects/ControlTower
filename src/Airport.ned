@@ -26,9 +26,12 @@ network Airport
     submodules:
         landingQueue: PlaneQueue {
             @display("p=94,108");
+            
+            priority = 1;
         }
         takeoffQueue: PlaneQueue {
             @display("p=247,262");
+            priority = 2;
         }
         runway: Runway {
             @display("p=247,108");

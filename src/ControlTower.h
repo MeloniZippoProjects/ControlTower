@@ -22,7 +22,6 @@
 #include "OkToProceed_m.h"
 
 using namespace omnetpp;
-using namespace std;
 
 /**
  * TODO - Generated class
@@ -33,8 +32,6 @@ class ControlTower : public cSimpleModule
     bool runwayFree;
     int landingPlanes;
     int takeoffPlanes;
-
-    OkToProceed* okToProceed;
 
   protected:
     virtual void initialize();

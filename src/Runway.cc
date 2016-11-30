@@ -14,6 +14,7 @@
 // 
 
 #include "Runway.h"
+#include "UpdateRunwayFreed_m.h"
 
 Define_Module(Runway);
 
@@ -24,29 +25,36 @@ void Runway::initialize()
 
 void Runway::handleMessage(cMessage *msg)
 {
-    std::string gateName = msg->getArrivalGate()->getBaseName();
-    //if a landingPlane arrives...
-    if (  gateName == "landingPlaneIn" ){
-        planeType = "landingPlane";
-        simtime_t landingTime = 600;
-        scheduleAt(simTime() + landingTime, msg);
-    }
-
-    //if a takeoffPlane arrives...
-    else if ( gateName == "takeoffPlaneIn" ){
-        planeType = "takeoffPlane";
-        simtime_t takeoffTime = 600;
-        scheduleAt(simTime() + takeoffTime, msg);
-    }
-
     //if a self message arrives...
-    else if (msg->isSelfMessage()){
+    if (msg->isSelfMessage()){
         //I use planeType to distinguish the two types of plane
         if ( planeType == "landingPlane" ){
             send(msg,"landingPlaneOut");
         }
-        else if ( planeType == "takeOffPlane" ){
+        else if ( planeType == "takeoffPlane" ){
             send(msg,"takeoffPlaneOut");
+        }
+
+        //I send a status message to the control tower
+        send (new UpdateRunwayFreed, "statusOut");
+
+    }
+    else
+    {
+        std::string gateName = msg->getArrivalGate()->getBaseName();
+        //if a landingPlane arrives...
+        if (  gateName == "landingPlaneIn" ){
+
+            planeType = "landingPlane";
+            simtime_t landingTime = 72;
+            scheduleAt(simTime() + landingTime, msg);
+        }
+
+        //if a takeoffPlane arrives...
+        else if ( gateName == "takeoffPlaneIn" ){
+            planeType = "takeoffPlane";
+            simtime_t takeoffTime = 72;
+            scheduleAt(simTime() + takeoffTime, msg);
         }
     }
 }

@@ -20,7 +20,9 @@ Define_Module(WorkloadGenerator);
 void WorkloadGenerator::initialize()
 {
     //I create a new plane and send it as a self message at the start of the simulation
-    Plane *newPlane = new Plane();
+    currentId = 0;
+
+    Plane* newPlane = createPlane();
     scheduleAt( 0.0 , newPlane );
 }
 
@@ -32,8 +34,8 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
         send( msg , "out" );
 
         //I create another plane
-        simtime_t interarrivalTime = 60;
-        Plane *newPlane = new Plane();
+        simtime_t interarrivalTime = 200;
+        Plane *newPlane = createPlane();
         scheduleAt( simTime() + interarrivalTime , newPlane );
 
     }
@@ -41,7 +43,14 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
 
         //I delete the plane
         delete msg;
-
     }
+}
 
+Plane* WorkloadGenerator::createPlane()
+{
+
+    Plane* newPlane = new Plane("", currentId++);
+    newPlane->setSchedulingPriority(0);
+
+    return newPlane;
 }

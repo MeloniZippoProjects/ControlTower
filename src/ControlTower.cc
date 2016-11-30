@@ -22,13 +22,11 @@ void ControlTower::initialize()
     runwayFree = true;
     landingPlanes = 0;
     takeoffPlanes = 0;
-
-    okToProceed = new OkToProceed();
 }
 
 void ControlTower::handleMessage(cMessage *msg)
 {
-    string gateName = msg->getArrivalGate()->getBaseName();
+    std::string gateName = msg->getArrivalGate()->getBaseName();
 
     if(gateName == "landingQueueStatusIn")
         handleLandingQueueUpdate(check_and_cast<UpdatePlaneEnqueued*>(msg));
@@ -42,26 +40,30 @@ void ControlTower::handleLandingQueueUpdate(UpdatePlaneEnqueued* msg)
 {
     if(runwayFree)
     {
-        send(okToProceed, "landingQueueOkOut");
+        send(new OkToProceed(), "landingQueueOkOut");
         runwayFree = false;
     }
     else
     {
         landingPlanes++;
     }
+
+    //delete msg;
 }
 
 void ControlTower::handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg)
 {
     if(runwayFree)
     {
-        send(okToProceed, "takeoffQueueOkOut");
+        send(new OkToProceed(), "takeoffQueueOkOut");
         runwayFree = false;
     }
     else
     {
         takeoffPlanes++;
     }
+
+    //delete msg;
 }
 
 void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* msg)
@@ -74,11 +76,15 @@ void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* msg)
         }
         else
         {
-            send(okToProceed, "takeoffQueueOkOut");
+            send(new OkToProceed(), "takeoffQueueOkOut");
+            takeoffPlanes--;
         }
     }
     else
     {
-        send(okToProceed, "landingQueueOkOut");
+        send(new OkToProceed(), "landingQueueOkOut");
+        landingPlanes--;
     }
+
+    //delete msg;
 }
