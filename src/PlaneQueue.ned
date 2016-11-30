@@ -20,10 +20,12 @@ package controltower;
 //
 simple PlaneQueue
 {
+    parameters:
+        int priority;
     gates:
     	input planeIn;
     	output planeOut;
     	
     	output statusOut;
-    	input okIn;
+    	input okIn; 
 }

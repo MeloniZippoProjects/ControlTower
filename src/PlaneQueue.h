@@ -33,6 +33,7 @@ class PlaneQueue : public cSimpleModule
     virtual void handleMessage(cMessage *msg);
 
     queue<Plane*> planes;
+    int priority;
 };
 
 #endif

@@ -19,7 +19,7 @@ Define_Module(PlaneQueue);
 
 void PlaneQueue::initialize()
 {
-    //
+    priority = par("priority");
 }
 
 void PlaneQueue::handleMessage(cMessage *msg)
@@ -33,6 +33,7 @@ void PlaneQueue::handleMessage(cMessage *msg)
         planes.push(plane);
 
         UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
+        updateStatus->setSchedulingPriority(priority);
         send(updateStatus, "statusOut");
     }
     else if(gateName == "okIn")
