@@ -31,7 +31,7 @@ void Runway::handleMessage(cMessage *msg)
         if ( planeType == "landingPlane" ){
             send(msg,"landingPlaneOut");
         }
-        else if ( planeType == "takeOffPlane" ){
+        else if ( planeType == "takeoffPlane" ){
             send(msg,"takeoffPlaneOut");
         }
 
