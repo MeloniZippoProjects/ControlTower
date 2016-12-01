@@ -38,10 +38,9 @@ void PlaneQueue::handleMessage(cMessage *msg)
     }
     else if(gateName == "okIn")
     {
-        //OkToProceed *ok = check_and_cast<OkToProceed*>(msg);
-
         Plane *plane = planes.front();
         planes.pop();
         send(plane, "planeOut");
+        delete msg;
     }
 }
