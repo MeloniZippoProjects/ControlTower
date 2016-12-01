@@ -23,7 +23,7 @@ void WorkloadGenerator::initialize()
     currentId = 0;
 
     Plane* newPlane = createPlane();
-    scheduleAt( 0.0 , newPlane );
+    scheduleAt( par("interArrivalTime") , newPlane );
 }
 
 void WorkloadGenerator::handleMessage(cMessage *msg)
@@ -38,7 +38,7 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
         {//I create another plane
             simtime_t interarrivalTime = 200;
             Plane *newPlane = createPlane();
-            scheduleAt( simTime() + interarrivalTime , newPlane );
+            scheduleAt( simTime() + par("interArrivalTime") , newPlane );
         }
 
     }
