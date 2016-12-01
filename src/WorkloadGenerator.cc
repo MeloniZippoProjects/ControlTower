@@ -48,7 +48,6 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
 
 Plane* WorkloadGenerator::createPlane()
 {
-
     Plane* newPlane = new Plane("", currentId++);
     newPlane->setSchedulingPriority(0);
 
