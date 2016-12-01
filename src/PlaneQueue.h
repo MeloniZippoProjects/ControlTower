@@ -31,6 +31,7 @@ class PlaneQueue : public cSimpleModule
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    ~PlaneQueue();
 
     queue<Plane*> planes;
     int updatesPriority;

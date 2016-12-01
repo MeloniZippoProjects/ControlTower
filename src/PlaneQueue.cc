@@ -54,7 +54,7 @@ void PlaneQueue::handleMessage(cMessage *msg)
     }
 }
 
-void PlaneQueue::finish()
+PlaneQueue::~PlaneQueue()
 {
     while(planes.size() != 0)
     {
