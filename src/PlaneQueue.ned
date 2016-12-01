@@ -24,8 +24,8 @@ simple PlaneQueue
         int updatesPriority;
         
         @signal[queueTimeSignal](type=double);
-        @signal[queueLengthSignal](type = int);
-        @statistic[queueTime](source=queueTimeSignal; record=max,mean,min,vector);
+        @signal[queueLengthSignal](type=unsigned long);
+        @statistic[queueTime](source=queueTimeSignal; record=stats,vector);
         @statistic[queueLengthSignal](source=queueLengthSignal; record=timeavg,stats,vector);
     gates:
     	input planeIn;
