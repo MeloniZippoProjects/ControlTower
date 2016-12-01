@@ -22,6 +22,8 @@ simple ParkingLot
 {
     parameters:
         volatile double parkingDelay @unit(h);
+        @signal[parkingOccupancy](type=long);
+        @statistics[occupancyStats](record=timeavg,stats,vector);
     gates:
         input planeIn;
         output planeOut;
