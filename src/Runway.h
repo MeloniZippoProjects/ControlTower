@@ -27,7 +27,8 @@ using namespace omnetpp;
 class Runway : public cSimpleModule
 {
   private:
-    enum status{ runway_free, plane_landing, plane_takeoff };
+    enum RunwayStatus{ runway_free, plane_landing, plane_takeoff };
+    RunwayStatus runwayStatus;
 
   protected:
     virtual void initialize();

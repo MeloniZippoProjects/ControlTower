@@ -20,31 +20,31 @@ Define_Module(Runway);
 
 void Runway::initialize()
 {
-    status = status::runway_free;
+    runwayStatus = RunwayStatus::runway_free;
 }
 
 void Runway::handleMessage(cMessage *msg)
 {
     if (msg->isSelfMessage()){
         //I use status to distinguish the two types of plane
-        switch (status) {
-            case status::plane_landing :
+        switch (runwayStatus) {
+            case RunwayStatus::plane_landing :
                 send(msg,"landingPlaneOut");
                 break;
-            case status::plane_takeoff:
+            case RunwayStatus::plane_takeoff:
                 send(msg,"takeoffPlaneOut");
                 break;
             default:
                 throw;
         }
 
-        status = status::runway_free;
+        runwayStatus = RunwayStatus::runway_free;
         //I send a status message to the control tower
         send (new UpdateRunwayFreed(), "statusOut");
     }
     else
     {
-        if(status != status::runway_free)
+        if(runwayStatus != RunwayStatus::runway_free)
         {
             throw;
         }
@@ -53,13 +53,13 @@ void Runway::handleMessage(cMessage *msg)
             std::string gateName = msg->getArrivalGate()->getBaseName();
             //if a landingPlane arrives...
             if (  gateName == "landingPlaneIn" ){
-                status = status::plane_landing;
+                runwayStatus = RunwayStatus::plane_landing;
                 scheduleAt(simTime() + par("landingTime"), msg);
             }
 
             //if a takeoffPlane arrives...
             else if ( gateName == "takeoffPlaneIn" ){
-                status = status::plane_takeoff;
+                runwayStatus = RunwayStatus::plane_takeoff;
                 scheduleAt(simTime() + par("takeoffTime"), msg);
             }
         }
