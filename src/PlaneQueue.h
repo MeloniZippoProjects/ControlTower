@@ -24,7 +24,6 @@
 #include "OkToProceed_m.h"
 
 using namespace omnetpp;
-using namespace std;
 
 class PlaneQueue : public cSimpleModule
 {
@@ -33,7 +32,7 @@ class PlaneQueue : public cSimpleModule
     virtual void handleMessage(cMessage *msg);
     ~PlaneQueue();
 
-    queue<Plane*> planes;
+    std::queue<Plane*> planes;
     int updatesPriority;
     simsignal_t queueTimeSignal;
     simsignal_t queueLengthSignal;

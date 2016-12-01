@@ -26,7 +26,7 @@ void PlaneQueue::initialize()
 
 void PlaneQueue::handleMessage(cMessage *msg)
 {
-    string gateName = msg->getArrivalGate()->getBaseName();
+    std::string gateName = msg->getArrivalGate()->getBaseName();
 
     if(gateName == "planeIn")
     {
