@@ -39,3 +39,9 @@ void ParkingLot::handleMessage(cMessage *msg)
 
     emit(parkingOccupancy, planes);
 }
+
+/*void ParkingLot::finish()
+{
+
+}
+*/

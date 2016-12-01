@@ -53,3 +53,12 @@ void PlaneQueue::handleMessage(cMessage *msg)
         delete msg;
     }
 }
+
+void PlaneQueue::finish()
+{
+    while(planes.size() != 0)
+    {
+        delete planes.front();
+        planes.pop();
+    }
+}
