@@ -20,6 +20,8 @@ package controltower;
 //
 simple ParkingLot
 {
+    parameters:
+        volatile double parkingDelay @unit(h);
     gates:
         input planeIn;
         output planeOut;
