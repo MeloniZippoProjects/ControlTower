@@ -33,14 +33,16 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
         //I send the plane to the landingQueue
         send( msg , "out" );
 
-        //I create another plane
-        simtime_t interarrivalTime = 200;
-        Plane *newPlane = createPlane();
-        scheduleAt( simTime() + interarrivalTime , newPlane );
+
+        if(simTime() < 300.0)
+        {//I create another plane
+            simtime_t interarrivalTime = 200;
+            Plane *newPlane = createPlane();
+            scheduleAt( simTime() + interarrivalTime , newPlane );
+        }
 
     }
     else{
-
         //I delete the plane
         delete msg;
     }

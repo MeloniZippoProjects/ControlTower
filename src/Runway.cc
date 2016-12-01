@@ -36,7 +36,7 @@ void Runway::handleMessage(cMessage *msg)
         }
 
         //I send a status message to the control tower
-        send (new UpdateRunwayFreed, "statusOut");
+        send (new UpdateRunwayFreed(), "statusOut");
 
     }
     else
