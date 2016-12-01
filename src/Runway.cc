@@ -35,7 +35,7 @@ void Runway::handleMessage(cMessage *msg)
                 send(msg,"takeoffPlaneOut");
                 break;
             default:
-                throw;
+                throw "Runway inconsistency: plane scheduled for exit while free";
         }
 
         runwayStatus = RunwayStatus::runway_free;
@@ -46,7 +46,7 @@ void Runway::handleMessage(cMessage *msg)
     {
         if(runwayStatus != RunwayStatus::runway_free)
         {
-            throw;
+            throw "Runway inconcistency: plane arrived while occupied";
         }
         else
         {

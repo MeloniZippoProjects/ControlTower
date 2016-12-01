@@ -21,7 +21,7 @@ package controltower;
 simple WorkloadGenerator
 {
     parameters:
-    	volatile double interArrivalTime @unit(min);
+    	volatile double interArrivalTime @unit(s);
     
     gates:
         input in;

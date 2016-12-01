@@ -33,6 +33,7 @@ class ParkingLot : public cSimpleModule
     virtual void handleMessage(cMessage *msg);
 
     int planes;
+    simsignal_t parkingOccupancy;
 };
 
 #endif

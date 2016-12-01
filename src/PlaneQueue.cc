@@ -19,8 +19,9 @@ Define_Module(PlaneQueue);
 
 void PlaneQueue::initialize()
 {
-    priority = par("priority");
-    qSig = registerSignal("qsig");
+    updatesPriority = par("updatesPriority");
+    queueTimeSignal = registerSignal("queueTimeSignal");
+    queueLengthSignal = registerSignal("queueLengthSignal");
 }
 
 void PlaneQueue::handleMessage(cMessage *msg)
@@ -29,12 +30,14 @@ void PlaneQueue::handleMessage(cMessage *msg)
 
     if(gateName == "planeIn")
     {
-        Plane *plane = check_and_cast<Plane*>(msg);
+        Plane* plane = check_and_cast<Plane*>(msg);
         plane->setEnqueueTimestamp(simTime());
         planes.push(plane);
 
+        emit(queueLengthSignal, planes.size());
+
         UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
-        updateStatus->setSchedulingPriority(priority);
+        updateStatus->setSchedulingPriority(updatesPriority);
         send(updateStatus, "statusOut");
     }
     else if(gateName == "okIn")
@@ -43,10 +46,10 @@ void PlaneQueue::handleMessage(cMessage *msg)
         planes.pop();
         send(plane, "planeOut");
 
-        simtime_t now = simTime();
+        emit(queueLengthSignal, planes.size());
 
-        simtime_t qTime = now - plane->getEnqueueTimestamp();
-        emit(qSig, qTime.dbl());
+        simtime_t qTime = simTime() - plane->getEnqueueTimestamp();
+        emit(queueTimeSignal, qTime.dbl());
         delete msg;
     }
 }

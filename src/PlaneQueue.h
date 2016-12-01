@@ -33,8 +33,9 @@ class PlaneQueue : public cSimpleModule
     virtual void handleMessage(cMessage *msg);
 
     queue<Plane*> planes;
-    int priority;
-    simsignal_t qSig;
+    int updatesPriority;
+    simsignal_t queueTimeSignal;
+    simsignal_t queueLengthSignal;
 };
 
 #endif

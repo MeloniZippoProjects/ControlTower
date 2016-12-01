@@ -19,7 +19,7 @@ Define_Module(ParkingLot);
 
 void ParkingLot::initialize()
 {
-
+    parkingOccupancy = registerSignal("parkingOccupancy");
 }
 
 void ParkingLot::handleMessage(cMessage *msg)
@@ -36,4 +36,6 @@ void ParkingLot::handleMessage(cMessage *msg)
         ++planes;
         scheduleAt(simTime() + par("parkingDelay") , msg);
     }
+
+    emit(parkingOccupancy, planes);
 }

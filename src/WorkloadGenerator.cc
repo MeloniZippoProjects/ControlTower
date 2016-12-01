@@ -34,11 +34,10 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
         send( msg , "out" );
 
 
-        if(simTime() < 300.0)
-        {//I create another plane
-            Plane *newPlane = createPlane();
-            scheduleAt( simTime() + par("interArrivalTime") , newPlane );
-        }
+        //I create another plane
+        Plane *newPlane = createPlane();
+        scheduleAt( simTime() + par("interArrivalTime") , newPlane );
+
 
     }
     else{
