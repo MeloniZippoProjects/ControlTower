@@ -21,9 +21,12 @@ package controltower;
 simple PlaneQueue
 {
     parameters:
-        int priority;
-        @signal[qsig](type=double);
-        @statistic[queueTime](source=qsig; record=max,mean,min,vector);
+        int updatesPriority;
+        
+        @signal[queueTimeSignal](type=double);
+        @signal[queueLengthSignal](type = int);
+        @statistic[queueTime](source=queueTimeSignal; record=max,mean,min,vector);
+        @statistic[queueLengthSignal](source=queueLengthSignal; record=timeavg,stats,vector);
     gates:
     	input planeIn;
     	output planeOut;
