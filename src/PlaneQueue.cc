@@ -20,6 +20,7 @@ Define_Module(PlaneQueue);
 void PlaneQueue::initialize()
 {
     priority = par("priority");
+    qSig = registerSignal("qsig");
 }
 
 void PlaneQueue::handleMessage(cMessage *msg)
@@ -41,6 +42,11 @@ void PlaneQueue::handleMessage(cMessage *msg)
         Plane *plane = planes.front();
         planes.pop();
         send(plane, "planeOut");
+
+        simtime_t now = simTime();
+
+        simtime_t qTime = now - plane->getEnqueueTimestamp();
+        emit(qSig, qTime.dbl());
         delete msg;
     }
 }

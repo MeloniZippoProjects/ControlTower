@@ -36,7 +36,6 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
 
         if(simTime() < 300.0)
         {//I create another plane
-            simtime_t interarrivalTime = 200;
             Plane *newPlane = createPlane();
             scheduleAt( simTime() + par("interArrivalTime") , newPlane );
         }

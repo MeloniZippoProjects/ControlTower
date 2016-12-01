@@ -22,6 +22,8 @@ simple PlaneQueue
 {
     parameters:
         int priority;
+        @signal[qsig](type=double);
+        @statistic[queueTime](source=qsig; record=max,mean,min,vector);
     gates:
     	input planeIn;
     	output planeOut;

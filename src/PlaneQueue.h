@@ -34,6 +34,7 @@ class PlaneQueue : public cSimpleModule
 
     queue<Plane*> planes;
     int priority;
+    simsignal_t qSig;
 };
 
 #endif
