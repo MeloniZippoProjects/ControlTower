@@ -40,7 +40,9 @@ void Runway::handleMessage(cMessage *msg)
 
         runwayStatus = RunwayStatus::runway_free;
         //I send a status message to the control tower
-        send (new UpdateRunwayFreed(), "statusOut");
+        UpdateRunwayFreed* update = new UpdateRunwayFreed();
+        update->setSchedulingPriority(3);
+        send (update, "statusOut");
     }
     else
     {
