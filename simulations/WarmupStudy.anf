@@ -16,15 +16,10 @@
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
-      <items xsi:type="scave:Apply" operation="timewinavg">
-        <params name="windowSize" value="3600"/>
+      <items xsi:type="scave:Apply" operation="movingavg">
+        <params name="alpha" value="0.1"/>
       </items>
-      <items xsi:type="scave:Group" name="takeoff.throughput">
-        <items xsi:type="scave:Apply" operation="movingavg">
-          <params name="alpha" value="0.1"/>
-        </items>
-        <items xsi:type="scave:LineChart" name="takeoff.throughput" lineNameFormat=""/>
-      </items>
+      <items xsi:type="scave:LineChart" name="takeoff.throughput" lineNameFormat=""/>
     </datasets>
     <datasets name="landing.throughput">
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
@@ -37,15 +32,10 @@
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
-      <items xsi:type="scave:Apply" operation="timewinavg">
-        <params name="windowSize" value="3600"/>
+      <items xsi:type="scave:Apply" operation="movingavg">
+        <params name="alpha" value="0.1"/>
       </items>
-      <items xsi:type="scave:Group" name="landing.throughput">
-        <items xsi:type="scave:Apply" operation="movingavg">
-          <params name="alpha" value="0.1"/>
-        </items>
-        <items xsi:type="scave:LineChart" name="landing.throughput" lineNameFormat=""/>
-      </items>
+      <items xsi:type="scave:LineChart" name="landing.throughput" lineNameFormat=""/>
     </datasets>
     <datasets name="landing.queueTime">
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
@@ -58,18 +48,13 @@
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
-      <items xsi:type="scave:Apply" operation="timewinavg">
-        <params name="windowSize" value="2400"/>
+      <items xsi:type="scave:Apply" operation="movingavg">
+        <params name="alpha" value="0.1"/>
       </items>
-      <items xsi:type="scave:Group" name="landing.queueTime">
-        <items xsi:type="scave:Apply" operation="movingavg">
-          <params name="alpha" value="0.1"/>
-        </items>
-        <items xsi:type="scave:LineChart" name="landing.queueTime"/>
-      </items>
+      <items xsi:type="scave:LineChart" name="landing.queueTime"/>
     </datasets>
   </datasets>
   <chartSheets>
-    <chartSheets name="default"/>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.11 //@datasets/@datasets.1/@items.11 //@datasets/@datasets.2/@items.11"/>
   </chartSheets>
 </scave:Analysis>
