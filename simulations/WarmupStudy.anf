@@ -17,8 +17,8 @@
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
-      <items xsi:type="scave:Apply" operation="slidingwinavg">
-        <params name="windowSize" value="1800"/>
+      <items xsi:type="scave:Apply" operation="timeavg">
+        <params name="interpolation-mode" value="sample-hold"/>
       </items>
       <items xsi:type="scave:LineChart" name="queueThroughput:vector SimNetwork.a.takeoffQueue"/>
     </datasets>
