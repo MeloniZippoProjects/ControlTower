@@ -5,15 +5,15 @@
     <inputs name="/PESC_Control_Tower/simulations/results/QTValidation-*.sca"/>
   </inputs>
   <datasets>
-    <datasets name="queueThroughput:vector SimNetwork.a.takeoffQueue">
-      <items xsi:type="scave:Apply" operation="slidingwinavg">
-        <params name="windowSize" value="1800"/>
+    <datasets name="prova">
+      <items xsi:type="scave:Add" filterPattern="name(queueThroughput:vector) and module(SimNetwork.a.takeoffQueue) and run(QTValidation-0-20161211-17:09:33-13584) " type="VECTOR"/>
+      <items xsi:type="scave:Compute" operation="movingavg">
+        <params name="alpha" value="0.02"/>
       </items>
-      <items xsi:type="scave:LineChart" name="queueThroughput:vector SimNetwork.a.takeoffQueue"/>
-      <items xsi:type="scave:Add" filterPattern="name(queueThroughput:vector) and module(SimNetwork.a.takeoffQueue) " type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="prova2" lineNameFormat=""/>
     </datasets>
   </datasets>
   <chartSheets>
-    <chartSheets name="default"/>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.2"/>
   </chartSheets>
 </scave:Analysis>
