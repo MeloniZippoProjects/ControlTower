@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/PESC_Control_Tower/simulations/results/QTValidation-*.vec"/>
+    <inputs name="/PESC_Control_Tower/simulations/results/QTValidation-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="prova">
+      <items xsi:type="scave:Add" filterPattern="name(queueThroughput:vector) and module(SimNetwork.a.takeoffQueue) and run(QTValidation-0-20161211-17:09:33-13584) " type="VECTOR"/>
+      <items xsi:type="scave:Compute" operation="movingavg">
+        <params name="alpha" value="0.02"/>
+      </items>
+      <items xsi:type="scave:LineChart" name="prova2" lineNameFormat=""/>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.2"/>
+  </chartSheets>
+</scave:Analysis>
