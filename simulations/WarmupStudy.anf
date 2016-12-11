@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
   <inputs>
@@ -6,7 +5,7 @@
     <inputs name="/PESC_Control_Tower/simulations/results/QTValidation-*.sca"/>
   </inputs>
   <datasets>
-    <datasets name="queueThroughput:vector SimNetwork.a.takeoffQueue">
+    <datasets name="takeoff.throughput">
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
@@ -17,35 +16,60 @@
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
       <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
-      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
-      <items xsi:type="scave:Apply" operation="timeavg">
-        <params name="interpolation-mode" value="sample-hold"/>
+      <items xsi:type="scave:Apply" operation="timewinavg">
+        <params name="windowSize" value="3600"/>
       </items>
-      <items xsi:type="scave:LineChart" name="queueThroughput:vector SimNetwork.a.takeoffQueue"/>
+      <items xsi:type="scave:Group" name="takeoff.throughput">
+        <items xsi:type="scave:Apply" operation="movingavg">
+          <params name="alpha" value="0.1"/>
+        </items>
+        <items xsi:type="scave:LineChart" name="takeoff.throughput" lineNameFormat=""/>
+      </items>
+    </datasets>
+    <datasets name="landing.throughput">
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueThroughput:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Apply" operation="timewinavg">
+        <params name="windowSize" value="3600"/>
+      </items>
+      <items xsi:type="scave:Group" name="landing.throughput">
+        <items xsi:type="scave:Apply" operation="movingavg">
+          <params name="alpha" value="0.1"/>
+        </items>
+        <items xsi:type="scave:LineChart" name="landing.throughput" lineNameFormat=""/>
+      </items>
+    </datasets>
+    <datasets name="landing.queueTime">
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueTime:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Apply" operation="timewinavg">
+        <params name="windowSize" value="2400"/>
+      </items>
+      <items xsi:type="scave:Group" name="landing.queueTime">
+        <items xsi:type="scave:Apply" operation="movingavg">
+          <params name="alpha" value="0.1"/>
+        </items>
+        <items xsi:type="scave:LineChart" name="landing.queueTime"/>
+      </items>
     </datasets>
   </datasets>
   <chartSheets>
     <chartSheets name="default"/>
   </chartSheets>
 </scave:Analysis>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
-  <inputs>
-    <inputs name="/PESC_Control_Tower/simulations/results/QTValidation-*.vec"/>
-    <inputs name="/PESC_Control_Tower/simulations/results/QTValidation-*.sca"/>
-  </inputs>
-  <datasets>
-    <datasets name="queueThroughput:vector SimNetwork.a.takeoffQueue">
-      <items xsi:type="scave:Apply" operation="slidingwinavg">
-        <params name="windowSize" value="1800"/>
-      </items>
-      <items xsi:type="scave:LineChart" name="queueThroughput:vector SimNetwork.a.takeoffQueue"/>
-      <items xsi:type="scave:Add" filterPattern="name(queueThroughput:vector) and module(SimNetwork.a.takeoffQueue) " type="VECTOR"/>
-    </datasets>
-  </datasets>
-  <chartSheets>
-    <chartSheets name="default"/>
-  </chartSheets>
-</scave:Analysis>
->>>>>>> branch 'develop' of git@github.com:enricomeloni/PESC_Control_Tower.git
