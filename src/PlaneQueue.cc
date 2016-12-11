@@ -20,6 +20,7 @@ Define_Module(PlaneQueue);
 void PlaneQueue::initialize()
 {
     updatesPriority = par("updatesPriority");
+    queueDepartureSignal = registerSignal("queueDepartureSignal");
     queueTimeSignal = registerSignal("queueTimeSignal");
     queueLengthSignal = registerSignal("queueLengthSignal");
 }
@@ -46,6 +47,7 @@ void PlaneQueue::handleMessage(cMessage *msg)
         planes.pop();
         send(plane, "planeOut");
 
+        emit(queueDepartureSignal, 1U);
         emit(queueLengthSignal, planes.size());
 
         simtime_t qTime = simTime() - plane->getEnqueueTimestamp();
