@@ -34,6 +34,8 @@ class PlaneQueue : public cSimpleModule
 
     std::queue<Plane*> planes;
     int updatesPriority;
+
+    simsignal_t queueDepartureSignal;
     simsignal_t queueTimeSignal;
     simsignal_t queueLengthSignal;
 };
