@@ -26,8 +26,9 @@ using namespace omnetpp;
  */
 class Runway : public cSimpleModule
 {
-  public:
-    std::string planeType; //I use this variable to distinguish the two type of plane
+  private:
+    enum RunwayStatus{ runway_free, plane_landing, plane_takeoff };
+    RunwayStatus runwayStatus;
 
   protected:
     virtual void initialize();

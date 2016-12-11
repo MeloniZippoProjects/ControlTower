@@ -20,11 +20,12 @@ package controltower;
 //
 simple ControlTower
 {
+    @display("i=block/routing");
     gates:
         input landingQueueStatusIn;
         input takeoffQueueStatusIn;
         input runwayStatusIn;
-        
+
         output landingQueueOkOut;
         output takeoffQueueOkOut;
 }

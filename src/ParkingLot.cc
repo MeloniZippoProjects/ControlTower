@@ -19,7 +19,7 @@ Define_Module(ParkingLot);
 
 void ParkingLot::initialize()
 {
-
+    parkingOccupancy = registerSignal("parkingOccupancy");
 }
 
 void ParkingLot::handleMessage(cMessage *msg)
@@ -34,7 +34,8 @@ void ParkingLot::handleMessage(cMessage *msg)
     else if(std::string(msg->getArrivalGate()->getBaseName()) == "planeIn") //a new plane has arrived
     {
         ++planes;
-        simtime_t delay = SimTime(60, SimTimeUnit::SIMTIME_S);
-        scheduleAt(simTime() + delay, msg);
+        scheduleAt(simTime() + par("parkingDelay") , msg);
     }
+
+    emit(parkingOccupancy, planes);
 }

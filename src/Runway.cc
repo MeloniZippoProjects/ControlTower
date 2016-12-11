@@ -20,41 +20,50 @@ Define_Module(Runway);
 
 void Runway::initialize()
 {
-    // TODO - Generated method body
+    runwayStatus = RunwayStatus::runway_free;
 }
 
 void Runway::handleMessage(cMessage *msg)
 {
-    //if a self message arrives...
     if (msg->isSelfMessage()){
-        //I use planeType to distinguish the two types of plane
-        if ( planeType == "landingPlane" ){
-            send(msg,"landingPlaneOut");
-        }
-        else if ( planeType == "takeoffPlane" ){
-            send(msg,"takeoffPlaneOut");
+        //I use status to distinguish the two types of plane
+        switch (runwayStatus) {
+            case RunwayStatus::plane_landing :
+                send(msg,"landingPlaneOut");
+                break;
+            case RunwayStatus::plane_takeoff:
+                send(msg,"takeoffPlaneOut");
+                break;
+            default:
+                throw "Runway inconsistency: plane scheduled for exit while free";
         }
 
+        runwayStatus = RunwayStatus::runway_free;
         //I send a status message to the control tower
-        send (new UpdateRunwayFreed, "statusOut");
-
+        UpdateRunwayFreed* update = new UpdateRunwayFreed();
+        update->setSchedulingPriority(3);
+        send (update, "statusOut");
     }
     else
     {
-        std::string gateName = msg->getArrivalGate()->getBaseName();
-        //if a landingPlane arrives...
-        if (  gateName == "landingPlaneIn" ){
-
-            planeType = "landingPlane";
-            simtime_t landingTime = 72;
-            scheduleAt(simTime() + landingTime, msg);
+        if(runwayStatus != RunwayStatus::runway_free)
+        {
+            throw "Runway inconcistency: plane arrived while occupied";
         }
+        else
+        {
+            std::string gateName = msg->getArrivalGate()->getBaseName();
+            //if a landingPlane arrives...
+            if (  gateName == "landingPlaneIn" ){
+                runwayStatus = RunwayStatus::plane_landing;
+                scheduleAt(simTime() + par("landingTime"), msg);
+            }
 
-        //if a takeoffPlane arrives...
-        else if ( gateName == "takeoffPlaneIn" ){
-            planeType = "takeoffPlane";
-            simtime_t takeoffTime = 72;
-            scheduleAt(simTime() + takeoffTime, msg);
+            //if a takeoffPlane arrives...
+            else if ( gateName == "takeoffPlaneIn" ){
+                runwayStatus = RunwayStatus::plane_takeoff;
+                scheduleAt(simTime() + par("takeoffTime"), msg);
+            }
         }
     }
 }

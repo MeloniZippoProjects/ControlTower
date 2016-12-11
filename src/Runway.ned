@@ -20,6 +20,10 @@ package controltower;
 //
 simple Runway
 {
+    parameters:
+        volatile double landingTime @unit(s);
+        volatile double takeoffTime @unit(s);
+    
     gates:
         input landingPlaneIn;
         output landingPlaneOut;

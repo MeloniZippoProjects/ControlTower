@@ -20,6 +20,9 @@ package controltower;
 //
 simple WorkloadGenerator
 {
+    parameters:
+    	volatile double interArrivalTime @unit(s);
+    
     gates:
         input in;
         output out;

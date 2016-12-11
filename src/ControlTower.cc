@@ -48,7 +48,7 @@ void ControlTower::handleLandingQueueUpdate(UpdatePlaneEnqueued* msg)
         landingPlanes++;
     }
 
-    //delete msg;
+    delete msg;
 }
 
 void ControlTower::handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg)
@@ -63,7 +63,7 @@ void ControlTower::handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg)
         takeoffPlanes++;
     }
 
-    //delete msg;
+    delete msg;
 }
 
 void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* msg)
@@ -86,5 +86,5 @@ void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* msg)
         landingPlanes--;
     }
 
-    //delete msg;
+    delete msg;
 }

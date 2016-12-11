@@ -19,29 +19,46 @@ Define_Module(PlaneQueue);
 
 void PlaneQueue::initialize()
 {
-    priority = par("priority");
+    updatesPriority = par("updatesPriority");
+    queueTimeSignal = registerSignal("queueTimeSignal");
+    queueLengthSignal = registerSignal("queueLengthSignal");
 }
 
 void PlaneQueue::handleMessage(cMessage *msg)
 {
-    string gateName = msg->getArrivalGate()->getBaseName();
+    std::string gateName = msg->getArrivalGate()->getBaseName();
 
     if(gateName == "planeIn")
     {
-        Plane *plane = check_and_cast<Plane*>(msg);
+        Plane* plane = check_and_cast<Plane*>(msg);
         plane->setEnqueueTimestamp(simTime());
         planes.push(plane);
 
+        emit(queueLengthSignal, planes.size());
+
         UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
-        updateStatus->setSchedulingPriority(priority);
+        updateStatus->setSchedulingPriority(updatesPriority);
         send(updateStatus, "statusOut");
     }
     else if(gateName == "okIn")
     {
-        //OkToProceed *ok = check_and_cast<OkToProceed*>(msg);
-
         Plane *plane = planes.front();
         planes.pop();
         send(plane, "planeOut");
+
+        emit(queueLengthSignal, planes.size());
+
+        simtime_t qTime = simTime() - plane->getEnqueueTimestamp();
+        emit(queueTimeSignal, qTime.dbl());
+        delete msg;
+    }
+}
+
+PlaneQueue::~PlaneQueue()
+{
+    while(planes.size() != 0)
+    {
+        delete planes.front();
+        planes.pop();
     }
 }
