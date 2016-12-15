@@ -22,11 +22,16 @@ simple PlaneQueue
 {
     parameters:
         int updatesPriority;
+        double throughputCheckInterval @unit(s);
 
-        @signal[queueTimeSignal](type=double);
-        @signal[queueLengthSignal](type=unsigned long);
+		@signal[queueThroughputSignal](type = unsigned long);
+        @signal[queueTimeSignal](type = double);
+        @signal[queueLengthSignal](type = unsigned long);
+        
+        @statistic[queueThroughput](source=queueThroughputSignal; record=vector);
         @statistic[queueTime](source=queueTimeSignal; record=stats,vector);
         @statistic[queueLengthSignal](source=queueLengthSignal; record=timeavg,stats,vector);
+        
         @display("i=block/queue");
     gates:
         input planeIn;

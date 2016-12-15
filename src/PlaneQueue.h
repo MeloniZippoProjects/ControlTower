@@ -34,8 +34,13 @@ class PlaneQueue : public cSimpleModule
 
     std::queue<Plane*> planes;
     int updatesPriority;
+
+    simsignal_t queueThroughputSignal;
     simsignal_t queueTimeSignal;
     simsignal_t queueLengthSignal;
+
+    unsigned long airplanesSent;
+    cMessage* throughputCompute;
 };
 
 #endif
