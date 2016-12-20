@@ -28,6 +28,7 @@ void Runway::initialize()
 
     thTimeout = new ThroughputTimeout();
     thTimeout->setContextPointer(this);
+    thTimeout->setSchedulingPriority(5);
 
     scheduleAt(simTime() + par("throughputCheckInterval"), thTimeout);
     landedThroughputCounter = 0U;
