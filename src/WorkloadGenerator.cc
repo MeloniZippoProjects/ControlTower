@@ -19,37 +19,31 @@ Define_Module(WorkloadGenerator);
 
 void WorkloadGenerator::initialize()
 {
-    //I create a new plane and send it as a self message at the start of the simulation
     currentId = 0;
 
-    Plane* newPlane = createPlane();
-    scheduleAt( par("interArrivalTime") , newPlane );
+    //The first plane is created and scheduled at the start of the simulation
+    generateAndSchedulePlane();
 }
 
 void WorkloadGenerator::handleMessage(cMessage *msg)
 {
     if (msg->isSelfMessage()){
-
-        //I send the plane to the landingQueue
+        //The scheduled plane is sent to the landing queue
         send( msg , "out" );
 
-
-        //I create another plane
-        Plane *newPlane = createPlane();
-        scheduleAt( simTime() + par("interArrivalTime") , newPlane );
-
-
+        //Rescheduling
+        generateAndSchedulePlane();
     }
     else{
-        //I delete the plane
+        //Planes that completed the path through the airport are deleted
         delete msg;
     }
 }
 
-Plane* WorkloadGenerator::createPlane()
+void WorkloadGenerator::generateAndSchedulePlane()
 {
     Plane* newPlane = new Plane("", currentId++);
     newPlane->setSchedulingPriority(0);
-
-    return newPlane;
+    newPlane->setContextPointer(nullptr);
+    scheduleAt( simTime() + par("interArrivalTime") , newPlane );
 }
