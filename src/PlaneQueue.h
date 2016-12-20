@@ -32,6 +32,9 @@ class PlaneQueue : public cSimpleModule
     virtual void handleMessage(cMessage *msg);
     ~PlaneQueue();
 
+    void handlePlane(Plane* plane);
+    void handleOk(OkToProceed* ok);
+
     std::queue<Plane*> planes;
     int updatesPriority;
 
