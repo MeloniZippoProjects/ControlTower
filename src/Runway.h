@@ -19,6 +19,8 @@
 #include <omnetpp.h>
 #include <string>
 
+#include "Plane_m.h"
+
 using namespace omnetpp;
 
 /**
@@ -26,13 +28,27 @@ using namespace omnetpp;
  */
 class Runway : public cSimpleModule
 {
-  private:
-    enum RunwayStatus{ runway_free, plane_landing, plane_takeoff };
-    RunwayStatus runwayStatus;
-
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+
+    class ThroughputTimeout : public cMessage{};
+
+    void handleThroughputTimeout(ThroughputTimeout* timeout);
+    void handleIncomingPlane(Plane* plane);
+    void handleOutgoingPlane(Plane* plane);
+
+    enum RunwayStatus{ runway_free, plane_landing, plane_takeoff };
+
+    RunwayStatus runwayStatus;
+
+    unsigned long landedThroughputCounter;
+    simsignal_t landedThroughputSignal;
+
+    unsigned long tookoffThroughputCounter;
+    simsignal_t tookoffThroughputSignal;
+
+    ThroughputTimeout* thTimeout;
 };
 
 #endif

@@ -20,53 +20,36 @@ Define_Module(PlaneQueue);
 void PlaneQueue::initialize()
 {
     updatesPriority = par("updatesPriority");
-    queueThroughputSignal = registerSignal("queueThroughputSignal");
     queueTimeSignal = registerSignal("queueTimeSignal");
     queueLengthSignal = registerSignal("queueLengthSignal");
-
-    //throughput calculation init
-    throughputCompute = new cMessage("throughput");
-    airplanesSent = 0U;
-    scheduleAt(simTime() + par("throughputCheckInterval"), throughputCompute);
 }
 
 void PlaneQueue::handleMessage(cMessage *msg)
 {
-    //throughput computation
-    if(msg->isSelfMessage())
+    std::string gateName = msg->getArrivalGate()->getBaseName();
+
+    if(gateName == "planeIn")
     {
-        emit(queueThroughputSignal, airplanesSent);
-        airplanesSent = 0;
-        scheduleAt(simTime() + par("throughputCheckInterval"), throughputCompute);
+        Plane* plane = check_and_cast<Plane*>(msg);
+        plane->setEnqueueTimestamp(simTime());
+        planes.push(plane);
+
+        emit(queueLengthSignal, planes.size());
+
+        UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
+        updateStatus->setSchedulingPriority(updatesPriority);
+        send(updateStatus, "statusOut");
     }
-    else
+    else if(gateName == "okIn")
     {
-        std::string gateName = msg->getArrivalGate()->getBaseName();
+        Plane *plane = planes.front();
+        planes.pop();
+        send(plane, "planeOut");
+        emit(queueLengthSignal, planes.size());
 
-        if(gateName == "planeIn")
-        {
-            Plane* plane = check_and_cast<Plane*>(msg);
-            plane->setEnqueueTimestamp(simTime());
-            planes.push(plane);
-
-            emit(queueLengthSignal, planes.size());
-
-            UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
-            updateStatus->setSchedulingPriority(updatesPriority);
-            send(updateStatus, "statusOut");
-        }
-        else if(gateName == "okIn")
-        {
-            Plane *plane = planes.front();
-            planes.pop();
-            send(plane, "planeOut");
-            ++airplanesSent;
-            emit(queueLengthSignal, planes.size());
-
-            simtime_t qTime = simTime() - plane->getEnqueueTimestamp();
-            emit(queueTimeSignal, qTime.dbl());
-            delete msg;
-        }
+        simtime_t qTime = simTime() - plane->getEnqueueTimestamp();
+        emit(queueTimeSignal, qTime.dbl());
+        delete msg;
     }
 }
 

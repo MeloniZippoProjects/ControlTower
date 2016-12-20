@@ -21,49 +21,97 @@ Define_Module(Runway);
 void Runway::initialize()
 {
     runwayStatus = RunwayStatus::runway_free;
+
+    //Throughput computation process initialization
+    landedThroughputSignal = registerSignal("landedThroughputSignal");
+    tookoffThroughputSignal = registerSignal("tookoffThroughputSignal");
+
+    thTimeout = new ThroughputTimeout();
+    thTimeout->setContextPointer(this);
+
+    scheduleAt(simTime() + par("throughputCheckInterval"), thTimeout);
+    landedThroughputCounter = 0U;
+    tookoffThroughputCounter = 0U;
 }
 
 void Runway::handleMessage(cMessage *msg)
 {
     if (msg->isSelfMessage()){
-        //I use status to distinguish the two types of plane
-        switch (runwayStatus) {
-            case RunwayStatus::plane_landing :
-                send(msg,"landingPlaneOut");
-                break;
-            case RunwayStatus::plane_takeoff:
-                send(msg,"takeoffPlaneOut");
-                break;
-            default:
-                throw "Runway inconsistency: plane scheduled for exit while free";
-        }
-
-        runwayStatus = RunwayStatus::runway_free;
-        //I send a status message to the control tower
-        UpdateRunwayFreed* update = new UpdateRunwayFreed();
-        update->setSchedulingPriority(3);
-        send (update, "statusOut");
-    }
-    else
-    {
-        if(runwayStatus != RunwayStatus::runway_free)
+        if(msg->getContextPointer() == this)
         {
-            throw "Runway inconcistency: plane arrived while occupied";
+            //The scheduled event is a throughput timeout
+            ThroughputTimeout* timeout = check_and_cast<ThroughputTimeout*>(msg);
+            handleThroughputTimeout(timeout);
         }
         else
         {
-            std::string gateName = msg->getArrivalGate()->getBaseName();
-            //if a landingPlane arrives...
-            if (  gateName == "landingPlaneIn" ){
-                runwayStatus = RunwayStatus::plane_landing;
-                scheduleAt(simTime() + par("landingTime"), msg);
-            }
-
-            //if a takeoffPlane arrives...
-            else if ( gateName == "takeoffPlaneIn" ){
-                runwayStatus = RunwayStatus::plane_takeoff;
-                scheduleAt(simTime() + par("takeoffTime"), msg);
-            }
+            //The scheduled event is a plane to forward
+            Plane* plane = check_and_cast<Plane*>(msg);
+            handleOutgoingPlane(plane);
         }
     }
+    else
+    {
+        //Incoming messages are always planes to serve
+        Plane* plane = check_and_cast<Plane*>(msg);
+        handleIncomingPlane(plane);
+    }
 }
+
+
+void Runway::handleThroughputTimeout(ThroughputTimeout* timeout)
+{
+    emit(landedThroughputSignal, landedThroughputCounter);
+    landedThroughputCounter = 0U;
+
+    emit(tookoffThroughputSignal, tookoffThroughputCounter);
+    tookoffThroughputCounter = 0U;
+
+    scheduleAt(simTime() + par("throughputCheckInterval"), timeout);
+}
+
+void Runway::handleIncomingPlane(Plane* plane)
+{
+    if(runwayStatus != RunwayStatus::runway_free)
+    {
+        //Consistency check
+        throw "Runway inconsistency: plane arrived while occupied";
+    }
+    else
+    {
+       std::string gateName = plane->getArrivalGate()->getBaseName();
+       if (  gateName == "landingPlaneIn" ){
+           runwayStatus = RunwayStatus::plane_landing;
+           scheduleAt(simTime() + par("landingTime"), plane);
+       }
+       else if ( gateName == "takeoffPlaneIn" ){
+           runwayStatus = RunwayStatus::plane_takeoff;
+           scheduleAt(simTime() + par("takeoffTime"), plane);
+       }
+    }
+}
+
+void Runway::handleOutgoingPlane(Plane* plane)
+{
+    //Status is used to know the type of plane currently served
+    switch (runwayStatus) {
+        case RunwayStatus::plane_landing :
+            send(plane,"landingPlaneOut");
+            landedThroughputCounter++;
+            break;
+        case RunwayStatus::plane_takeoff:
+            send(plane,"takeoffPlaneOut");
+            tookoffThroughputCounter++;
+            break;
+        default:
+            throw "Runway inconsistency: plane scheduled for exit while free";
+    }
+
+    runwayStatus = RunwayStatus::runway_free;
+
+    //A status update is sent to the ControlTower
+    UpdateRunwayFreed* update = new UpdateRunwayFreed();
+    update->setSchedulingPriority(3);
+    send (update, "statusOut");
+}
+
