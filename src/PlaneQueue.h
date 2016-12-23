@@ -32,15 +32,14 @@ class PlaneQueue : public cSimpleModule
     virtual void handleMessage(cMessage *msg);
     ~PlaneQueue();
 
+    void handlePlane(Plane* plane);
+    void handleOk(OkToProceed* ok);
+
     std::queue<Plane*> planes;
     int updatesPriority;
 
-    simsignal_t queueThroughputSignal;
     simsignal_t queueTimeSignal;
     simsignal_t queueLengthSignal;
-
-    unsigned long airplanesSent;
-    cMessage* throughputCompute;
 };
 
 #endif

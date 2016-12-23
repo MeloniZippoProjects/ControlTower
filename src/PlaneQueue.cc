@@ -20,54 +20,54 @@ Define_Module(PlaneQueue);
 void PlaneQueue::initialize()
 {
     updatesPriority = par("updatesPriority");
-    queueThroughputSignal = registerSignal("queueThroughputSignal");
     queueTimeSignal = registerSignal("queueTimeSignal");
     queueLengthSignal = registerSignal("queueLengthSignal");
-
-    //throughput calculation init
-    throughputCompute = new cMessage("throughput");
-    airplanesSent = 0U;
-    scheduleAt(simTime() + par("throughputCheckInterval"), throughputCompute);
 }
 
 void PlaneQueue::handleMessage(cMessage *msg)
 {
-    //throughput computation
-    if(msg->isSelfMessage())
+    std::string gateName = msg->getArrivalGate()->getBaseName();
+    if(gateName == "planeIn")
     {
-        emit(queueThroughputSignal, airplanesSent);
-        airplanesSent = 0;
-        scheduleAt(simTime() + par("throughputCheckInterval"), throughputCompute);
+        Plane* plane = check_and_cast<Plane*>(msg);
+        handlePlane(plane);
     }
-    else
+    else if(gateName == "okIn")
     {
-        std::string gateName = msg->getArrivalGate()->getBaseName();
-
-        if(gateName == "planeIn")
-        {
-            Plane* plane = check_and_cast<Plane*>(msg);
-            plane->setEnqueueTimestamp(simTime());
-            planes.push(plane);
-
-            emit(queueLengthSignal, planes.size());
-
-            UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
-            updateStatus->setSchedulingPriority(updatesPriority);
-            send(updateStatus, "statusOut");
-        }
-        else if(gateName == "okIn")
-        {
-            Plane *plane = planes.front();
-            planes.pop();
-            send(plane, "planeOut");
-            ++airplanesSent;
-            emit(queueLengthSignal, planes.size());
-
-            simtime_t qTime = simTime() - plane->getEnqueueTimestamp();
-            emit(queueTimeSignal, qTime.dbl());
-            delete msg;
-        }
+        OkToProceed* ok = check_and_cast<OkToProceed*>(msg);
+        handleOk(ok);
     }
+}
+
+void PlaneQueue::handlePlane(Plane* plane)
+{
+    //The incoming plane is added to the queue
+    plane->setEnqueueTimestamp(simTime());
+    planes.push(plane);
+
+    //The current queue length is emitted
+    emit(queueLengthSignal, planes.size());
+
+    //An update is sent to the ControlTower
+    UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
+    updateStatus->setSchedulingPriority(updatesPriority);
+    send(updateStatus, "statusOut");
+}
+
+void PlaneQueue::handleOk(OkToProceed* ok)
+{
+    //The first plane in the queue is extracted and sent out
+    Plane *plane = planes.front();
+    planes.pop();
+    send(plane, "planeOut");
+
+    //Current length and plane waiting time are emitted
+    emit(queueLengthSignal, planes.size());
+    simtime_t qTime = simTime() - plane->getEnqueueTimestamp();
+    emit(queueTimeSignal, qTime.dbl());
+
+    //Ok messages are single-use
+    delete ok;
 }
 
 PlaneQueue::~PlaneQueue()

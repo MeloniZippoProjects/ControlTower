@@ -17,6 +17,7 @@
 #define __CONTROLTOWER_CONTROLTOWER_H_
 
 #include <omnetpp.h>
+#include <string.h>
 #include "UpdatePlaneEnqueued_m.h"
 #include "UpdateRunwayFreed_m.h"
 #include "OkToProceed_m.h"
@@ -36,6 +37,8 @@ class ControlTower : public cSimpleModule
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+
+    void sendOk(std::string gate);
     void handleLandingQueueUpdate(UpdatePlaneEnqueued* msg);
     void handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg);
     void handleRunwayUpdate(UpdateRunwayFreed* msg);

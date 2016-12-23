@@ -24,6 +24,14 @@ simple Runway
         volatile double landingTime @unit(s);
         volatile double takeoffTime @unit(s);
     
+        double throughputCheckInterval @unit(s);
+      
+		@signal[landedThroughputSignal](type = unsigned long);
+		@signal[tookoffThroughputSignal](type = unsigned long);
+    	
+        @statistic[landedThroughput](source=landedThroughputSignal; record=vector);
+        @statistic[tookoffThroughput](source=tookoffThroughputSignal; record=vector);
+   	    
     gates:
         input landingPlaneIn;
         output landingPlaneOut;
