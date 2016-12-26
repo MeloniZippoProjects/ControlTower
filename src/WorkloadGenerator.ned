@@ -22,6 +22,9 @@ simple WorkloadGenerator
 {
     parameters:
     	volatile double interArrivalTime @unit(s);
+    	
+    	@signal[responseTimeSignal](type = double);
+    	@statistic[responseTime](source=responseTimeSignal; record=stats,vector);
     
     gates:
         input in;

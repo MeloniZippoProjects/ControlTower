@@ -16,6 +16,7 @@
 #ifndef __CONTROLTOWER_WORKLOADGENERATOR_H_
 #define __CONTROLTOWER_WORKLOADGENERATOR_H_
 
+#include <vector>
 #include <omnetpp.h>
 #include "Plane_m.h"
 
@@ -33,6 +34,9 @@ class WorkloadGenerator : public cSimpleModule
     void generateAndSchedulePlane();
 
     int currentId;
+
+    std::vector<simtime_t> planesArrivalTime;
+    simsignal_t responseTimeSignal;
 };
 
 #endif
