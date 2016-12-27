@@ -38,7 +38,7 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
     else{
         //emit the signal with the response time of the plane
         Plane* plane = check_and_cast<Plane*>(msg);
-        simtime_t responseTime = simTime() - planesArrivalTime[plane->getID()];
+        simtime_t responseTime = simTime() - plane->getArrivalTimestamp();
         emit(responseTimeSignal, responseTime.dbl());
 
         //Planes that completed the path through the airport are deleted
@@ -52,8 +52,7 @@ void WorkloadGenerator::generateAndSchedulePlane()
     newPlane->setSchedulingPriority(0);
     newPlane->setContextPointer(nullptr);
 
-    //store the arrival time of the plane in the planesArrivalTime collection. Plane's ID is used as index.
-    planesArrivalTime.push_back(simTime());
+    newPlane->setArrivalTimestamp(simTime());
 
     scheduleAt( simTime() + par("interArrivalTime") , newPlane );
 }
