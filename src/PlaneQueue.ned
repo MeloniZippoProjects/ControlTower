@@ -27,7 +27,7 @@ simple PlaneQueue
         @signal[queueLengthSignal](type = unsigned long);
         
         @statistic[queueTime](source=queueTimeSignal; record=stats,vector);
-        @statistic[queueLengthSignal](source=queueLengthSignal; record=timeavg,stats,vector);
+        @statistic[queueLength](source=queueLengthSignal; record=timeavg,stats,vector);
         
         @display("i=block/queue");
     gates:

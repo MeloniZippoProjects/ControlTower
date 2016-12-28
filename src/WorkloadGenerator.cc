@@ -30,7 +30,8 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
 {
     if (msg->isSelfMessage()){
         //The scheduled plane is sent to the landing queue
-        send( msg , "out" );
+        Plane* plane = check_and_cast<Plane*>(msg);
+        send( plane , "out" );
 
         //Rescheduling
         generateAndSchedulePlane();
@@ -51,7 +52,6 @@ void WorkloadGenerator::generateAndSchedulePlane()
     Plane* newPlane = new Plane("", currentId++);
     newPlane->setSchedulingPriority(0);
     newPlane->setContextPointer(nullptr);
-
     newPlane->setArrivalTimestamp(simTime());
 
     scheduleAt( simTime() + par("interArrivalTime") , newPlane );

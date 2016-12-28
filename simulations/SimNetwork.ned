@@ -25,8 +25,7 @@ network SimNetwork
         wg: WorkloadGenerator {
             @display("p=36,69");
         }
-        a: Airport {
-
+        a: Airport{
             @display("p=178,69");
         }
     connections:
