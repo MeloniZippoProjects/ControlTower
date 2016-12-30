@@ -30,6 +30,7 @@ class PlaneQueue : public cSimpleModule
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    virtual void refreshDisplay() const;
     ~PlaneQueue();
 
     void handlePlane(Plane* plane);

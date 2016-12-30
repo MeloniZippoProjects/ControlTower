@@ -39,6 +39,14 @@ void PlaneQueue::handleMessage(cMessage *msg)
     }
 }
 
+void PlaneQueue::refreshDisplay() const
+{
+    char buf[32];
+    sprintf(buf, "Queue Size: %d", planes.size());
+    getDisplayString().setTagArg("t", 0, buf);
+}
+
+
 void PlaneQueue::handlePlane(Plane* plane)
 {
     //The incoming plane is added to the queue
