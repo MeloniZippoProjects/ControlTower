@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/PESC_Control_Tower/simulations/results/ParkingSizeMeasurement-*.sca"/>
+    <inputs name="/PESC_Control_Tower/simulations/results/ParkingSizeMeasurement-*.vec"/>
+  </inputs>
+  <datasets>
+    <datasets name="ParkingSize">
+      <items xsi:type="scave:Add" filterPattern="name(parkingOccupancy:vector) " type="VECTOR"/>
+      <items xsi:type="scave:ComputeScalar" scalarName="ParkingSize" valueExpr="mean('parkingOccupancy:vector')" moduleExpr="" groupByExpr="" averageReplications="true" computeStddev="true" computeConfidenceInterval="true" confidenceLevel="0.95" computeMinMax="true"/>
+    </datasets>
+  </datasets>
+  <chartSheets/>
+</scave:Analysis>
