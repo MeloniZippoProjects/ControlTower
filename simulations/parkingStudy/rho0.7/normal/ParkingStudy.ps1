@@ -9,7 +9,7 @@ $runSimulation =
     
     for ($i = 0; $i -lt 70; $i++)
     {
-        ../../../../src/PESC_Control_Tower -r $i -u Cmdenv -c QueueMeasurement -n ../../..:../../../../src --debug-on-errors=false queueStudy.ini
+        ../../../../../src/PESC_Control_Tower -r $i -u Cmdenv -c QueueMeasurement -n ../../../..:../../../../../src --debug-on-errors=false queueStudy.ini
     }
 }
 
