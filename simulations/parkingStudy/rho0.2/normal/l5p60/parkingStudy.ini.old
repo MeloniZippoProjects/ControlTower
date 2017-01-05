@@ -1,0 +1,20 @@
+include ./../../../general.ini
+
+[Config WarmupMeasurement]
+repeat = 30
+sim-time-limit = 5d
+SimNetwork.a.runway.throughputCheckInterval = 50min
+SimNetwork.wg.interArrivalTime = exponential(50min)
+SimNetwork.a.runway.landingTime = truncnormal(5min, 0.5min)
+SimNetwork.a.runway.takeoffTime = truncnormal(5min, 0.5min)
+SimNetwork.a.parkingLot.parkingDelay = 60min
+
+[Config QueueMeasurement]
+repeat = 70
+sim-time-limit = 13d
+warmup-period = 2.3d
+SimNetwork.a.runway.throughputCheckInterval = 50min
+SimNetwork.wg.interArrivalTime = exponential(50min)
+SimNetwork.a.runway.landingTime = truncnormal(5min, 0.5min)
+SimNetwork.a.runway.takeoffTime = truncnormal(5min, 0.5min)
+SimNetwork.a.parkingLot.parkingDelay = 60min
