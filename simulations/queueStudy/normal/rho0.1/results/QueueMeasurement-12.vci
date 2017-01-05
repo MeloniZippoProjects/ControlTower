@@ -1,0 +1,47 @@
+file 46564 1483627187                                           
+version 2
+run QueueMeasurement-12-20170105-15:39:47-5527
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:47
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=12
+attr measurement ""
+attr network SimNetwork
+attr processid 5527
+attr repetition 12
+attr replication #12
+attr resultdir results
+attr runnumber 12
+attr seedset 12
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1449 6254 388 2873 131169.923251158486 1024323.727455855835 147 2743.729565173 42930.044125757 1387743.5296301 17528893175.52
+1	7703 4353 377 2862 127515.170412443734 1020937.5277491704 147 0 338.87186063433 1663.4877655073 337068.44790676
+2	12056 8428 375 2862 127515.170412443734 1020937.5277491704 294 0 1 147 147
+3	20484 4409 385 2870 130827.464418081229 1024004.16843560746 147 0 275.30347519775 2188.4703143058 429857.04511719
+4	24893 8433 383 2870 130827.464418081229 1024004.16843560746 294 0 1 147 147
+5	33326 2404 373 2876 126000 1032000 152 0 4 147 253
+6	35730 2404 373 2876 126000 1032000 152 0 4 147 251
+7	38134 8430 380 2867 127822.411401390992 1024004.16843560746 294 0 4 241 363

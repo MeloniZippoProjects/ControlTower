@@ -1,0 +1,47 @@
+file 43390 1483627193                                           
+version 2
+run QueueMeasurement-40-20170105-15:39:53-5584
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:53
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=40
+attr measurement ""
+attr network SimNetwork
+attr processid 5584
+attr repetition 40
+attr replication #40
+attr resultdir results
+attr runnumber 40
+attr seedset 40
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1449 5791 446 2747 121561.884946309156 1034406.423108704086 136 3087.7906303225 34705.320781254 1376060.9340914 20702912411.616
+1	7240 4094 448 2727 121561.884946309156 1030814.509222541129 134 0 309.91210704373 3180.9444037256 695364.60640386
+2	11334 7687 443 2727 121477.3493424004 1030814.509222541129 268 0 2 136 138
+3	19021 4023 440 2744 121266.472154928358 1034119.029912425168 136 0 277.45954665975 1433.6141738236 278078.35606608
+4	23044 7796 438 2744 121266.472154928358 1034119.029912425168 272 0 1 136 136
+5	30840 2409 474 2732 126000 1032000 152 0 5 134 246
+6	33249 2409 474 2732 126000 1032000 152 0 4 134 270
+7	35658 7732 437 2741 121266.472154928358 1034119.029912425168 270 0 3 249 399

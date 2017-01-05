@@ -1,0 +1,47 @@
+file 99411 1483627086                                           
+version 2
+run QueueMeasurement-51-20170105-15:38:06-4908
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:06
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=51
+attr measurement ""
+attr network SimNetwork
+attr processid 4908
+attr repetition 51
+attr replication #51
+attr resultdir results
+attr runnumber 51
+attr seedset 51
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1447 13475 784 6112 124814.910416381616 1036216.050672156418 315 3068.2659303423 18086.95051626 1982776.4361114 14946432847.55
+1	14922 10080 764 6092 121004.382516431626 1034571.012028078344 316 0 530.97863040609 13584.11956552 3797343.0221883
+2	25002 18272 762 6092 121004.382516431626 1034571.012028078344 632 0 2 332 348
+3	43274 9993 781 6109 124559.473699280275 1035907.05851005885 315 0 1291.4245570617 15469.24081915 6348570.2060535
+4	53267 18184 776 6109 124264.979844695292 1035907.05851005885 630 0 2 325 335
+5	71451 4872 769 6097 123000 1035000 305 0 5 316 644
+6	76323 4872 769 6097 123000 1035000 305 0 5 315 631
+7	81195 18216 767 6106 121330.730113426397 1035907.05851005885 631 0 6 888 1952

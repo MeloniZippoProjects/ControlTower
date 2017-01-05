@@ -1,0 +1,47 @@
+file 158114 1483627092                                          
+version 2
+run QueueMeasurement-24-20170105-15:38:12-4952
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:12
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=24
+attr measurement ""
+attr network SimNetwork
+attr processid 4952
+attr repetition 24
+attr replication #24
+attr resultdir results
+attr runnumber 24
+attr seedset 24
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 33.33min
+param SimNetwork.wg.interArrivalTime exponential(33.33min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1424 21238 1002 9358 113031.569706186016 1033586.943011359884 496 402.80227383299 21113.840145676 2817336.1679229 21373836194.631
+1	22662 16519 991 9360 112613.217287378424 1033586.943011359884 494 0 1754.468834159 64285.328606928 51385916.364881
+2	39181 28555 991 9360 112613.217287378424 1033586.943011359884 987 0 3 541 593
+3	67736 16813 999 9352 112715.686164910294 1032895.843009704606 496 0 3007.4337904575 88238.337329559 100118462.00082
+4	84549 28642 994 9352 112694.184234736824 1032895.843009704606 991 0 4 583 719
+5	113191 8150 1009 9366 113988.6 1035896.4 462 0 6 495 1037
+6	121341 8150 1009 9366 113988.6 1035896.4 462 0 4 496 996
+7	129491 28623 989 9364 112613.217287378424 1034161.085106639049 990 0 6 1961 5535

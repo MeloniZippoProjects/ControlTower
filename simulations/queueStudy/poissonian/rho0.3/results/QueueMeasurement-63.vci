@@ -1,0 +1,47 @@
+file 151749 1483627105                                          
+version 2
+run QueueMeasurement-63-20170105-15:38:25-5032
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:25
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=63
+attr measurement ""
+attr network SimNetwork
+attr processid 5032
+attr repetition 63
+attr replication #63
+attr resultdir results
+attr runnumber 63
+attr seedset 63
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 33.33min
+param SimNetwork.wg.interArrivalTime exponential(33.33min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1424 20216 807 8812 113563.468944269058 1034005.545398618543 472 480.7024584988 25802.763215306 2645215.2081761 20357765002.122
+1	21640 15685 796 8818 112633.496771701688 1036440.08106883577 474 0 1967.6815605874 53633.989112726 39744107.00867
+2	37325 27391 794 8818 112633.496771701688 1036440.08106883577 948 0 3 504 542
+3	64716 16094 804 8808 113386.000490276103 1033706.297495631703 472 0 3035.5554138715 95514.260621055 112424861.25672
+4	80810 27305 802 8808 113386.000490276103 1033706.297495631703 944 0 4 568 704
+5	108115 8140 809 8814 113988.6 1035896.4 462 0 4 473 871
+6	116255 8140 809 8814 113988.6 1035896.4 462 0 5 472 998
+7	124395 27354 799 8821 112747.094451140817 1036605.376277246776 946 0 6 1751 4557

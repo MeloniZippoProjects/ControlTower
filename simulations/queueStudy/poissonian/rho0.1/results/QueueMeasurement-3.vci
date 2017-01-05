@@ -1,0 +1,47 @@
+file 47099 1483627179                                           
+version 2
+run QueueMeasurement-3-20170105-15:39:39-5475
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:39
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network SimNetwork
+attr processid 5475
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1414 6316 468 2970 128256.843549132275 1027843.932699630318 148 556.90656749522 40698.487825039 1452974.5530155 22461832300.568
+1	7730 4490 457 2976 126538.089839334061 1036057.997605378486 149 0 487.73246131209 3097.1641042163 904539.59171638
+2	12220 8565 455 2976 126538.089839334061 1036057.997605378486 298 0 2 153 157
+3	20785 4482 465 2967 127887.864895095267 1027831.180788575995 148 0 1810.7051018229 8717.9454578965 9379855.6656419
+4	25267 8499 463 2967 127887.864895095267 1027831.180788575995 296 0 3 154 164
+5	33766 2401 453 2972 126000 1032000 152 0 6 148 302
+6	36167 2401 453 2972 126000 1032000 152 0 5 148 308
+7	38568 8531 460 2979 126672.99780975605 1036096.577842561953 297 0 5 305 549

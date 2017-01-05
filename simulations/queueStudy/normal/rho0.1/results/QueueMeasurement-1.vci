@@ -1,0 +1,47 @@
+file 46760 1483627185                                           
+version 2
+run QueueMeasurement-1-20170105-15:39:45-5507
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:45
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=1
+attr measurement ""
+attr network SimNetwork
+attr processid 5507
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1443 6249 379 2858 125880.269895528761 1028398.510534852065 147 2910.8122128756 38804.190510854 1399951.2231671 19467971327.682
+1	7692 4446 360 2864 122135.890555807804 1033905.992437577042 148 0 238.61033756356 1289.7340220237 162175.88720776
+2	12138 8478 358 2864 122135.890555807804 1033905.992437577042 296 0 1 148 148
+3	20616 4454 376 2855 125546.418654898311 1028096.671031468702 147 0 411.17738017537 2478.1334713655 518883.37585543
+4	25070 8433 374 2855 125546.418654898311 1028096.671031468702 294 0 1 147 147
+5	33503 2399 381 2860 126000 1032000 152 0 4 147 295
+6	35902 2399 381 2860 126000 1032000 152 0 5 148 290
+7	38301 8459 363 2867 122454.808397983005 1034157.275229731328 295 0 4 266 448

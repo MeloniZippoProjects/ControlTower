@@ -1,0 +1,47 @@
+file 140510 1483627094                                          
+version 2
+run QueueMeasurement-10-20170105-15:38:14-4965
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:14
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=10
+attr measurement ""
+attr network SimNetwork
+attr processid 4965
+attr repetition 10
+attr replication #10
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1455 18756 698 8121 86537.322539903392 949694.223805430932 439 2804.2398122988 13569.104792618 2375034.2331099 14315184943.608
+1	20211 14206 703 8101 86769.727393076062 946205.273408574757 436 0 476.39075975086 20045.175087821 4406097.4187474
+2	34417 25113 701 8101 86769.727393076062 946205.273408574757 872 0 2 442 448
+3	59530 14372 719 8118 87502.553625875847 949376.572454122622 438 0 1260.4785501661 30682.316978558 12702773.923071
+4	73902 25250 714 8118 87495.548917549727 949376.572454122622 876 0 2 464 490
+5	99152 8084 729 8123 87999.12 949990.5 432 0 5 436 826
+6	107236 8084 729 8123 87999.12 949990.5 432 0 4 439 799
+7	115320 25190 706 8115 87057.844957244255 949376.572454122622 874 0 6 1595 4137

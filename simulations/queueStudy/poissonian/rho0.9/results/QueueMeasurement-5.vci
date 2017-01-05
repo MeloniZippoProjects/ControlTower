@@ -1,0 +1,47 @@
+file 437936 1483627133                                          
+version 2
+run QueueMeasurement-5-20170105-15:38:53-5201
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:53
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=5
+attr measurement ""
+attr network SimNetwork
+attr processid 5201
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 11.111min
+param SimNetwork.wg.interArrivalTime exponential(11.111min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1420 55709 1548 23137 61322.261003461032 950097.736257168881 1286 759.31669584386 34746.805471305 13101088.914938 201103594425.4
+1	57129 51970 1550 23139 61322.261003461032 950097.736257168881 1258 0 5048.6469503104 628371.44522488 841502846.30026
+2	109099 74067 1550 23139 61322.261003461032 950097.736257168881 2515 0 12 3189 9649
+3	183166 53303 1567 23144 61900.807032093244 950358.366633501147 1286 0 25886.118303812 7425307.3363953 99718627225.743
+4	236469 75720 1562 23144 61655.462690384367 950358.366633501147 2544 0 39 24346 543320
+5	312189 25802 1552 23119 61332.72 949990.5 1334 0 7 1258 2606
+6	337991 25802 1552 23119 61332.72 949990.5 1334 0 8 1283 2919
+7	363793 74143 1557 23142 61511.55335112549 950358.366633501147 2516 0 11 10636 55490

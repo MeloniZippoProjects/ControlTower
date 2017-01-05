@@ -1,0 +1,47 @@
+file 357225 1483627064                                          
+version 2
+run QueueMeasurement-47-20170105-15:37:44-4754
+attr configname QueueMeasurement
+attr datetime 20170105-15:37:44
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=47
+attr measurement ""
+attr network SimNetwork
+attr processid 4754
+attr repetition 47
+attr replication #47
+attr resultdir results
+attr runnumber 47
+attr seedset 47
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.256min
+param SimNetwork.wg.interArrivalTime exponential(14.256min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1455 45821 962 18946 50896.722306280928 947138.640489742093 1060 2804.8424095547 9089.6426865806 5139325.6384079 25969140497.624
+1	47276 41350 977 18963 52551.805595811458 950341.372434084966 1060 0 1021.7826141427 168735.41796944 60925771.785458
+2	88626 62190 975 18963 52551.805595811458 950341.372434084966 2120 0 4 1454 2004
+3	150816 41601 959 18942 50587.521806079301 946840.881979855597 1060 0 3810.7947997419 577016.072394 862386742.51733
+4	192417 62246 957 18966 50587.521806079301 950386.082621873962 2121 0 8 2451 6293
+5	254663 20176 955 18959 50466.24 950304.96 1053 0 3 1059 1955
+6	274839 20176 955 18959 50466.24 950304.96 1053 0 3 1061 1899
+7	295015 62210 956 18965 50587.521806079301 950386.082621873962 2120 0 9 7760 35024

@@ -1,0 +1,47 @@
+file 344245 1483627038                                          
+version 2
+run QueueMeasurement-2-20170105-15:37:18-4631
+attr configname QueueMeasurement
+attr datetime 20170105-15:37:18
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=2
+attr measurement ""
+attr network SimNetwork
+attr processid 4631
+attr repetition 2
+attr replication #2
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1420 44334 1757 19038 79728.157536207356 949884.996372519604 1024 294.46777672816 22776.334166505 5820957.9518271 44988215444.976
+1	45754 39792 1759 19040 79728.157536207356 949884.996372519604 1015 0 3211.1823393453 337037.56509396 330733755.15702
+2	85546 59637 1753 19040 79524.359280392222 949884.996372519604 2029 0 7 1798 3358
+3	145183 40350 1772 19031 80148.26125638 949485.070186694674 1023 0 10740.175582899 1431942.1584053 6147627374.1751
+4	185533 59978 1767 19031 80132.353963804197 949485.070186694674 2037 0 18 4896 32746
+5	245511 19541 1755 19036 79715.88 949733.28 1016 0 7 1014 2126
+6	265052 19541 1755 19036 79715.88 949733.28 1016 0 7 1024 2340
+7	284593 59652 1762 19043 79985.407755367521 949953.729359655527 2029 0 11 7070 32042

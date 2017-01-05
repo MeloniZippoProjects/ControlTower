@@ -1,0 +1,47 @@
+file 95043 1483627073                                           
+version 2
+run QueueMeasurement-3-20170105-15:37:52-4811
+attr configname QueueMeasurement
+attr datetime 20170105-15:37:52
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network SimNetwork
+attr processid 4811
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1441 12802 792 5847 124141.243904840415 1032620.499505315492 299 2973.7343891119 22332.512753222 1916558.6141125 15091801829.6
+1	14243 9594 772 5869 121235.088150185611 1035677.245208538456 301 0 434.95845187824 10377.922537227 2168013.5157719
+2	23837 17387 770 5869 121235.088150185611 1035677.245208538456 602 0 2 305 309
+3	41224 9460 789 5844 123809.018923836417 1032362.421312350537 299 0 829.21100360405 15540.011660008 6004518.3862251
+4	50684 17273 787 5844 123809.018923836417 1032362.421312350537 598 0 3 315 335
+5	67957 4880 785 5865 123000 1035000 305 0 5 301 597
+6	72837 4880 785 5865 123000 1035000 305 0 5 299 599
+7	77717 17326 775 5872 121596.250966643091 1035960.346676483102 600 0 6 836 1880

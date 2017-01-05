@@ -1,0 +1,47 @@
+file 228046 1483627216                                          
+version 2
+run QueueMeasurement-44-20170105-15:40:16-5742
+attr configname QueueMeasurement
+attr datetime 20170105-15:40:16
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=44
+attr measurement ""
+attr network SimNetwork
+attr processid 5742
+attr repetition 44
+attr replication #44
+attr resultdir results
+attr runnumber 44
+attr seedset 44
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1447 30213 765 12740 61387.895959352441 947177.548762364811 704 2963.2155630658 11809.406464178 3428331.0384805 17711444089.192
+1	31660 25040 767 12695 61387.895959352441 944493.996578179016 702 0 1446.3268339969 70100.703524058 24387778.248511
+2	56700 40757 767 12695 61387.895959352441 944493.996578179016 1403 0 5 847 1057
+3	97457 24916 775 12737 61674.829767796055 946908.103122292033 703 0 2300.199355226 139515.72225232 118529687.24019
+4	122373 40861 770 12737 61435.98660280941 946908.103122292033 1406 0 4 917 1307
+5	163234 11994 763 12744 61200 950400 742 0 4 702 1278
+6	175228 11994 763 12744 61200 950400 742 0 4 705 1285
+7	187222 40824 769 12734 61435.98660280941 946908.103122292033 1405 0 8 3704 13138

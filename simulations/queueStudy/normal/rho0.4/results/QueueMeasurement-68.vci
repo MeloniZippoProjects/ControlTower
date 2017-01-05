@@ -1,0 +1,47 @@
+file 194498 1483627184                                          
+version 2
+run QueueMeasurement-68-20170105-15:39:44-5501
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:44
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=68
+attr measurement ""
+attr network SimNetwork
+attr processid 5501
+attr repetition 68
+attr replication #68
+attr resultdir results
+attr runnumber 68
+attr seedset 68
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1447 26163 951 11265 73259.57691456467 949946.359702444535 610 2863.1022930219 15790.335875982 2996316.5197711 15768309116.437
+1	27610 21055 965 11272 73518.948568478344 950193.842955658257 608 0 536.43534671661 42014.027767514 10077846.511046
+2	48665 35248 959 11272 73341.433163774295 950193.842955658257 1216 0 2 652 696
+3	83913 21054 948 11253 72972.196425922579 949600.186825076266 610 0 1291.1400051696 66218.385048028 32817000.485618
+4	104967 35380 946 11256 72972.196425922579 949682.917089826447 1221 0 3 679 767
+5	140347 9420 941 11249 72000 949500 586 0 5 612 1212
+6	149767 9420 941 11249 72000 949500 586 0 5 609 1199
+7	159187 35311 943 11270 72181.420801274647 950193.842955658257 1219 0 7 2869 9225

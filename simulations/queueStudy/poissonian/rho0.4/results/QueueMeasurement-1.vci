@@ -1,0 +1,47 @@
+file 178558 1483627158                                          
+version 2
+run QueueMeasurement-1-20170105-15:39:18-5336
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:18
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=1
+attr measurement ""
+attr network SimNetwork
+attr processid 5336
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1412 23902 781 10271 81117.94720412973 949278.802360129585 559 369.85441793023 17930.833014216 2878927.5691584 19762982290.812
+1	25314 18829 761 10246 79788.362157165836 947927.792398661539 558 0 1280.3812144017 64503.314170829 37205951.04929
+2	44143 32209 759 10246 79788.362157165836 947927.792398661539 1116 0 4 654 782
+3	76352 19063 777 10277 80986.251325741668 950334.601122737082 560 0 1674.7379835702 87203.753086009 63222581.638042
+4	95415 32317 775 10277 80986.251325741668 950334.601122737082 1120 0 4 668 812
+5	127732 9285 757 10273 79500 949500 581 0 5 559 1085
+6	137017 9285 757 10273 79500 949500 581 0 5 559 1121
+7	146302 32256 764 10274 79824.926347810805 950334.601122737082 1118 0 8 2455 7539

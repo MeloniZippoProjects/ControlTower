@@ -1,0 +1,47 @@
+file 382068 1483627021                                          
+version 2
+run QueueMeasurement-12-20170105-15:37:01-4542
+attr configname QueueMeasurement
+attr datetime 20170105-15:37:01
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=12
+attr measurement ""
+attr network SimNetwork
+attr processid 4542
+attr repetition 12
+attr replication #12
+attr resultdir results
+attr runnumber 12
+attr seedset 12
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1451 49156 1181 20529 50765.237392490123 949942.273966532196 1136 2739.6521951349 13931.956881518 6606354.7697366 42882090550.392
+1	50607 45708 1183 20493 50765.237392490123 948193.088915185674 1134 0 1034.4753900238 232415.33800895 89856029.460731
+2	96315 66622 1178 20493 50732.423573334648 948193.088915185674 2268 0 4 1782 2690
+3	162937 45937 1175 20526 50477.87975732644 949677.408850433251 1136 0 9736.8660747803 1721308.97857 6865885969.9243
+4	208874 66947 1173 20526 50477.87975732644 949677.408850433251 2272 0 17 6548 47312
+5	275821 19758 1185 20531 51000 950250 1200 0 3 1135 2019
+6	295579 19758 1185 20531 51000 950250 1200 0 3 1136 1964
+7	315337 66731 1170 20509 50448.408055058517 948913.439023559709 2271 0 10 9067 44783

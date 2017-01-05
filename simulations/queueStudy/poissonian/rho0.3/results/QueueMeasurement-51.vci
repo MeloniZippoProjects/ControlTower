@@ -1,0 +1,47 @@
+file 154450 1483627102                                          
+version 2
+run QueueMeasurement-51-20170105-15:38:22-5006
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:22
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=51
+attr measurement ""
+attr network SimNetwork
+attr processid 5006
+attr repetition 51
+attr replication #51
+attr resultdir results
+attr runnumber 51
+attr seedset 51
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 33.33min
+param SimNetwork.wg.interArrivalTime exponential(33.33min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1424 20668 992 9164 114126.192714308244 1033992.362124055055 483 264.38637849611 20233.101386376 2698498.5779583 20215768142.17
+1	22092 16099 980 9178 113507.784995268374 1036743.223501552101 485 0 2676.1630771097 54583.460376969 42326613.827636
+2	38191 28052 978 9178 113507.784995268374 1036743.223501552101 970 0 4 539 617
+3	66243 16014 989 9161 114047.509056304135 1033966.46001484344 483 0 1939.6723070825 76618.95156175 73123635.986157
+4	82257 27928 984 9161 113993.484975846026 1033966.46001484344 966 0 3 549 635
+5	110185 8149 982 9171 113988.6 1035896.4 462 0 5 483 983
+6	118334 8149 982 9171 113988.6 1035896.4 462 0 6 483 999
+7	126483 27967 983 9173 113993.484975846026 1035975.353314880656 967 0 7 1915 5391

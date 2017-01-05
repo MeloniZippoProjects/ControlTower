@@ -1,0 +1,47 @@
+file 177030 1483627169                                          
+version 2
+run QueueMeasurement-41-20170105-15:39:29-5412
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:29
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=41
+attr measurement ""
+attr network SimNetwork
+attr processid 5412
+attr repetition 41
+attr replication #41
+attr resultdir results
+attr runnumber 41
+attr seedset 41
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1418 23625 1109 10504 81485.708187109708 950057.635688385672 552 286.00113428372 19603.320132895 2845286.4391789 19354489204.479
+1	25043 18748 1089 10471 79885.212009411405 948764.759128183758 553 0 2281.9817822805 76721.193400337 57855834.538156
+2	43791 31987 1087 10471 79885.212009411405 948764.759128183758 1106 0 4 671 861
+3	75778 18766 1106 10501 81450.497045441109 949862.652813604053 552 0 3627.1874034838 117763.987172 142811687.13747
+4	94544 31922 1100 10501 80862.142022517468 949862.652813604053 1104 0 7 744 1204
+5	126466 9310 1085 10489 79500 949500 581 0 6 553 1079
+6	135776 9310 1085 10489 79500 949500 581 0 6 551 1125
+7	145086 31944 1095 10498 80584.836239949024 949862.652813604053 1105 0 8 2420 7448
