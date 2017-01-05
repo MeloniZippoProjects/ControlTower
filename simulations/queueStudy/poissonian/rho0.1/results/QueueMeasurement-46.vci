@@ -1,0 +1,47 @@
+file 55144 1483627191                                           
+version 2
+run QueueMeasurement-46-20170105-15:39:51-5559
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:51
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=46
+attr measurement ""
+attr network SimNetwork
+attr processid 5559
+attr repetition 46
+attr replication #46
+attr resultdir results
+attr runnumber 46
+attr seedset 46
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1420 7535 435 3386 121466.681351356365 1030249.625455802248 177 311.81551800813 43233.211617098 1451488.2685832 18329605056.633
+1	8955 5406 416 3392 121154.865833348236 1036212.590264794691 177 0 1593.4332226604 8817.9885083865 6798193.1122838
+2	14361 10170 414 3392 121154.865833348236 1036212.590264794691 354 0 2 179 181
+3	24531 5476 432 3383 121432.681959652475 1029832.930101279741 177 0 1144.390398984 7805.0722670412 4377661.1771844
+4	30007 10175 430 3383 121432.681959652475 1029832.930101279741 354 0 1 177 177
+5	40182 2411 453 3388 126000 1032000 152 0 6 176 376
+6	42593 2411 453 3388 126000 1032000 152 0 4 177 399
+7	45004 10140 419 3380 121160.373074026122 1029832.930101279741 353 0 3 342 564

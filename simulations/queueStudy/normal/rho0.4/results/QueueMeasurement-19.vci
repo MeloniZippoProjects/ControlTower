@@ -1,0 +1,47 @@
+file 182969 1483627168                                          
+version 2
+run QueueMeasurement-19-20170105-15:39:28-5399
+attr configname QueueMeasurement
+attr datetime 20170105-15:39:28
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=19
+attr measurement ""
+attr network SimNetwork
+attr processid 5399
+attr repetition 19
+attr replication #19
+attr resultdir results
+attr runnumber 19
+attr seedset 19
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1447 24448 736 10464 73525.568045951069 950008.979569245496 572 2977.4394067623 14614.283736028 2870807.753602 15632646797.647
+1	25895 19771 724 10455 72894.786794150157 949423.931744855624 573 0 746.59287930713 42622.013503568 11203466.818925
+2	45666 33082 722 10455 72894.786794150157 949423.931744855624 1146 0 3 621 673
+3	78748 19404 732 10461 73255.596871913727 949724.923986328994 572 0 1419.1554536627 65948.262595705 37660888.479115
+4	98152 33026 730 10461 73255.596871913727 949724.923986328994 1144 0 3 630 696
+5	131178 9371 720 10457 72000 949500 586 0 5 574 1080
+6	140549 9371 720 10457 72000 949500 586 0 5 571 1057
+7	149920 33049 727 10459 73183.077744680337 949724.923986328994 1145 0 6 2517 7601

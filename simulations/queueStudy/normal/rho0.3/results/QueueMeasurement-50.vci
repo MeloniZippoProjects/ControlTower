@@ -1,0 +1,47 @@
+file 130929 1483627107                                          
+version 2
+run QueueMeasurement-50-20170105-15:38:27-5043
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:27
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=50
+attr measurement ""
+attr network SimNetwork
+attr processid 5043
+attr repetition 50
+attr replication #50
+attr resultdir results
+attr runnumber 50
+attr seedset 50
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1455 17206 682 7545 86849.562789896155 949249.820975214355 403 3271.8813947406 19404.866378636 2253734.5662714 14157384995.053
+1	18661 13305 688 7524 88503.510147303887 945888.63559565707 402 0 472.37896703256 21194.467920101 5087496.2325734
+2	31966 23181 686 7524 88503.510147303887 945888.63559565707 804 0 2 418 434
+3	55147 13169 679 7542 86555.391776014523 948912.245845562972 403 0 964.94862810662 28800.246161671 12460077.768706
+4	68316 23254 677 7542 86555.391776014523 948912.245845562972 806 0 2 427 451
+5	91570 8070 684 7547 87999.12 949990.5 432 0 5 402 744
+6	99640 8070 684 7547 87999.12 949990.5 432 0 5 403 761
+7	107710 23219 676 7539 86555.391776014523 948912.245845562972 805 0 7 1434 3966

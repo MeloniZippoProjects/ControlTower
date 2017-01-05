@@ -1,0 +1,47 @@
+file 131395 1483627103                                          
+version 2
+run QueueMeasurement-35-20170105-15:38:23-5014
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:23
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=35
+attr measurement ""
+attr network SimNetwork
+attr processid 5014
+attr repetition 35
+attr replication #35
+attr resultdir results
+attr runnumber 35
+attr seedset 35
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1455 17261 854 7722 88016.691925233208 950250.317561515253 404 2286.0029714426 25093.664710263 2252167.9407186 14739106534.613
+1	18716 13206 831 7713 86430.936217247711 949641.815855467147 404 0 611.37166441412 17463.358094587 4232899.7794427
+2	31922 23309 829 7713 86430.936217247711 949641.815855467147 808 0 2 416 428
+3	55231 13322 847 7718 87757.241700515762 949943.498728077075 404 0 1214.1484689588 25941.859880605 8943877.2831706
+4	68553 23331 845 7718 87757.241700515762 949943.498728077075 808 0 2 424 444
+5	91884 8087 852 7720 87999.12 949990.5 432 0 4 404 772
+6	99971 8087 852 7720 87999.12 949990.5 432 0 4 403 717
+7	108058 23337 834 7716 86803.278528222197 949943.498728077075 808 0 6 1414 3580

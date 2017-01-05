@@ -1,0 +1,47 @@
+file 150119 1483627093                                          
+version 2
+run QueueMeasurement-26-20170105-15:38:13-4956
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:13
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=26
+attr measurement ""
+attr network SimNetwork
+attr processid 4956
+attr repetition 26
+attr replication #26
+attr resultdir results
+attr runnumber 26
+attr seedset 26
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 33.33min
+param SimNetwork.wg.interArrivalTime exponential(33.33min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1424 20069 800 8739 114483.878673969272 1031994.445235593471 469 674.33822139191 21776.911421866 2659826.1541061 20456239592.038
+1	21493 15504 788 8745 113337.60599058803 1035710.7762414741 469 0 1671.5809215261 46084.013706707 29063013.994366
+2	36997 27116 786 8745 113337.60599058803 1035710.7762414741 938 0 3 517 577
+3	64113 15531 797 8735 114299.762983514897 1031882.311205887218 469 0 2386.7472702484 76341.771639206 76407719.222921
+4	79644 27099 795 8735 114299.762983514897 1031882.311205887218 938 0 3 543 645
+5	106743 8139 790 8747 113988.6 1035896.4 462 0 6 468 996
+6	114882 8139 790 8747 113988.6 1035896.4 462 0 6 469 973
+7	123021 27098 792 8749 114263.249415006375 1036403.447822648382 938 0 6 1807 4929

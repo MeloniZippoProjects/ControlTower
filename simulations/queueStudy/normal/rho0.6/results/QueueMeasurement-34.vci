@@ -1,0 +1,47 @@
+file 292705 1483627123                                          
+version 2
+run QueueMeasurement-34-20170105-15:38:43-5146
+attr configname QueueMeasurement
+attr datetime 20170105-15:38:43
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=34
+attr measurement ""
+attr network SimNetwork
+attr processid 5146
+attr repetition 34
+attr replication #34
+attr resultdir results
+attr runnumber 34
+attr seedset 34
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 16.667min
+param SimNetwork.wg.interArrivalTime exponential(16.667min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1455 37774 659 15523 52948.449025150268 948880.197106100973 877 2976.0765235272 10956.769084017 4156703.0341754 20655431244.898
+1	39229 32956 614 15485 50676.255351764397 945759.454105004472 875 0 1133.4309263154 115246.92224208 38376162.807404
+2	72185 51073 609 15485 50472.389132664276 945759.454105004472 1750 0 4 1119 1447
+3	123258 32786 656 15520 52692.085092371963 948577.300421124515 877 0 3042.1006983855 249050.76287231 211108570.49721
+4	156044 51187 651 15520 52470.472891994681 948577.300421124515 1754 0 4 1325 2009
+5	207231 17157 619 15526 51001.02 950019 900 0 4 876 1624
+6	224388 17157 619 15526 51001.02 950019 900 0 4 877 1573
+7	241545 51160 612 15517 50676.255351764397 948577.300421124515 1753 0 9 5496 21964

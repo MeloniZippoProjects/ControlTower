@@ -1,0 +1,47 @@
+file 393580 1483627007                                          
+version 2
+run QueueMeasurement-3-20170105-15:36:47-4495
+attr configname QueueMeasurement
+attr datetime 20170105-15:36:47
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network SimNetwork
+attr processid 4495
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1416 51015 1516 21455 62423.771407901354 949861.366162627437 1178 347.85860527959 30121.090110675 7029217.7172693 55862049806.864
+1	52431 46904 1518 21457 62423.771407901354 949861.366162627437 1170 0 2526.216356395 377012.08438034 279002281.87527
+2	99335 68843 1509 21457 61757.300623211792 949861.366162627437 2340 0 6 2150 3862
+3	168178 47911 1505 21462 61377.458714536367 950052.928119375849 1179 0 9107.9382914284 1972125.5930667 7744112418.32
+4	216089 69313 1505 21462 61377.458714536367 950052.928119375849 2353 0 20 6850 44784
+5	285402 19602 1507 21464 61500 950250 1186 0 5 1171 2383
+6	305004 19603 1507 21464 61500 950250 1186 0 10 1179 2789
+7	324607 68973 1503 21460 61377.458714536367 950052.928119375849 2345 0 10 9051 42717

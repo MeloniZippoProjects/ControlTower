@@ -1,0 +1,47 @@
+file 95935 1483627077                                           
+version 2
+run QueueMeasurement-40-20170105-15:37:57-4842
+attr configname QueueMeasurement
+attr datetime 20170105-15:37:57
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=40
+attr measurement ""
+attr network SimNetwork
+attr processid 4842
+attr repetition 40
+attr replication #40
+attr resultdir results
+attr runnumber 40
+attr seedset 40
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1418 13041 367 5538 72963.344478418987 947863.7672935849 306 654.63366131275 26078.08466234 1912020.505626 17246596900.804
+1	14459 9842 372 5544 73133.023206627938 950079.390061196693 306 0 1723.5282872329 22951.371307806 14741309.734411
+2	24301 17611 370 5544 73133.023206627938 950079.390061196693 612 0 3 322 342
+3	41912 9594 364 5535 72761.761501921419 947268.970671115071 306 0 1196.3154913575 22822.534501192 16192452.283961
+4	51506 17577 362 5535 72761.761501921419 947268.970671115071 612 0 3 326 354
+5	69083 4635 360 5540 72000 948000 293 0 5 308 626
+6	73718 4635 360 5540 72000 948000 293 0 5 308 636
+7	78353 17582 361 5547 72761.761501921419 950130.693253941546 612 0 4 866 1862
