@@ -4,10 +4,10 @@
 
 #Variabili di configurazione:
 
-$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parkingStudy\rho0.7\"
+$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parkingStudy\"
 $iniFilename = "parkingStudy.ini";
-$oldLinePattern = "SimNetwork.a.runway.throughputCheckInterval = 100min"; #le parentesi richiedono l'escape cioè \( e \)
-$newLine = "SimNetwork.a.runway.throughputCheckInterval = 28.571min";
+$oldLinePattern = "general.ini"; #le parentesi richiedono l'escape cioè \( e \)
+$newLine = "include ./../../../../general.ini";
 
 #Inizio script
 
