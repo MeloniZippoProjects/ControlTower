@@ -20,6 +20,7 @@ Define_Module(ParkingLot);
 void ParkingLot::initialize()
 {
     parkingOccupancy = registerSignal("parkingOccupancy");
+    planes = 0;
 }
 
 void ParkingLot::handleMessage(cMessage *msg)
