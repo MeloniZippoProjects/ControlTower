@@ -4,9 +4,9 @@
 
 #Variabili di configurazione:
 
-$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\queueStudy\poissonian"
-$oldLinePattern = "interArrivalTime";
-$newLine = "SimNetwork.wg.interArrivalTime = exponential(100min)";
+$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\queueStudy\normal"
+$oldLinePattern = "parkingDelay";
+$newLine = "SimNetwork.a.parkingLot.parkingDelay = truncnormal(45min, 5 min)";
 
 #Inizio script
 
