@@ -1,0 +1,47 @@
+file 379411 1483664646                                          
+version 2
+run ParkingMeasurement-33-20170106-02:04:06-11357
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:06
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=33
+attr measurement ""
+attr network SimNetwork
+attr processid 11357
+attr repetition 33
+attr replication #33
+attr resultdir results
+attr runnumber 33
+attr seedset 33
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1436 48402 2169 21107 102394.868916370197 1036639.711065780191 1115 421.67440079903 28210.163973715 6560192.2339493 61432794521.073
+1	49838 44373 2171 21092 102394.868916370197 1035675.032158698935 1117 0 3617.180348677 438487.52969523 500500452.30994
+2	94211 65973 2165 21112 101427.10687643416 1036795.129066674992 2235 0 8 2170 4962
+3	160184 44891 2161 21109 101112.317864514225 1036639.711065780191 1116 0 25202.33050365 2548014.4853518 23850402533.826
+4	205075 66115 2159 21109 101112.317864514225 1036639.711065780191 2232 0 39 8304 116752
+5	271190 21146 2157 21097 100287.72 1036306.44 1093 0 5 1118 2292
+6	292336 21146 2157 21097 100287.72 1036306.44 1093 0 8 1114 2616
+7	313482 65929 2155 21103 100267.768170722634 1036568.225440971738 2234 0 8 5671 19121

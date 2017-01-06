@@ -1,0 +1,47 @@
+file 357842 1483664655                                          
+version 2
+run ParkingMeasurement-64-20170106-02:04:15-11571
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:15
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=64
+attr measurement ""
+attr network SimNetwork
+attr processid 11571
+attr repetition 64
+attr replication #64
+attr resultdir results
+attr runnumber 64
+attr seedset 64
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1436 45854 2080 19911 102565.675369349 1035704.989984029317 1058 439.93715368825 19291.708763458 5457192.0196817 37660876620.619
+1	47290 40709 2028 19932 100334.287757153732 1036203.889016669202 1048 0 2840.7284933757 294468.67208468 235895202.01208
+2	87999 61722 2023 19932 100301.513309046721 1036203.889016669202 2095 0 6 1733 2983
+3	149721 41730 2070 19908 101943.13291662927 1035651.079712225331 1058 0 11778.218689382 1590033.4121442 7361741517.9346
+4	191451 62291 2031 19908 100384.115224805159 1035651.079712225331 2108 0 17 5540 40846
+5	253742 21110 2021 19937 100287.72 1036306.44 1093 0 6 1050 2198
+6	274852 21110 2021 19937 100287.72 1036306.44 1093 0 7 1058 2366
+7	295962 61880 2026 19935 100334.287757153732 1036262.139488914804 2099 0 8 5578 19754

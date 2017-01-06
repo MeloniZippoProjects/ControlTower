@@ -1,0 +1,47 @@
+file 93874 1483664635                                           
+version 2
+run ParkingMeasurement-12-20170106-02:03:55-11107
+attr configname ParkingMeasurement
+attr datetime 20170106-02:03:55
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=12
+attr measurement ""
+attr network SimNetwork
+attr processid 11107
+attr repetition 12
+attr replication #12
+attr resultdir results
+attr runnumber 12
+attr seedset 12
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1456 12703 752 5798 101519.324991534322 1030756.475305491264 297 2053.1912132212 22178.679132105 1657251.0347219 11867918168.889
+1	14159 9230 759 5778 106390.787019830045 1028317.217729674604 296 0 338.59007881894 6675.7618956818 1349370.396386
+2	23389 17073 757 5778 106390.787019830045 1028317.217729674604 592 0 1 296 296
+3	40462 9163 749 5795 101146.27501682389 1030396.139347379902 297 0 592.14186839158 8363.4356368349 2662653.6549354
+4	49625 17149 747 5795 101146.27501682389 1030396.139347379902 594 0 2 301 305
+5	66774 4989 754 5801 102000 1035000 312 0 5 297 563
+6	71763 4989 754 5801 102000 1035000 312 0 4 297 525
+7	76752 17122 746 5792 101146.27501682389 1030396.139347379902 593 0 4 598 1064

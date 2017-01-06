@@ -1,0 +1,47 @@
+file 101107 1483664633                                          
+version 2
+run ParkingMeasurement-17-20170106-02:03:52-11077
+attr configname ParkingMeasurement
+attr datetime 20170106-02:03:52
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=17
+attr measurement ""
+attr network SimNetwork
+attr processid 11077
+attr repetition 17
+attr replication #17
+attr resultdir results
+attr runnumber 17
+attr seedset 17
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1428 13691 609 6040 103018.39169628811 1036123.067421848863 320 1059.0851668692 19535.638867821 1821947.4056155 14460108694.391
+1	15119 10099 597 6021 100501.164897343159 1035227.456437783873 322 0 1204.9460367451 22002.788850764 14637569.276715
+2	25218 18579 595 6021 100501.164897343159 1035227.456437783873 644 0 3 344 374
+3	43797 10259 606 6045 102906.846488745805 1036389.158397696275 321 0 1451.8191238768 21678.242278303 12334922.770476
+4	54056 18536 604 6045 102906.846488745805 1036389.158397696275 642 0 3 337 357
+5	72592 4980 602 6006 102000 1035000 312 0 5 319 615
+6	77572 4980 602 6006 102000 1035000 312 0 5 318 660
+7	82552 18555 600 6042 100582.07083911554 1036389.158397696275 643 0 5 804 1702

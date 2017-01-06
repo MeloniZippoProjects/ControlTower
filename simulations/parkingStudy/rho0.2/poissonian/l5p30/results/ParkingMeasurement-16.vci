@@ -1,0 +1,47 @@
+file 102627 1483664632                                          
+version 2
+run ParkingMeasurement-16-20170106-02:03:52-11074
+attr configname ParkingMeasurement
+attr datetime 20170106-02:03:52
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=16
+attr measurement ""
+attr network SimNetwork
+attr processid 11074
+attr repetition 16
+attr replication #16
+attr resultdir results
+attr runnumber 16
+attr seedset 16
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1428 13987 512 6048 100903.064840226202 1036016.739971989847 327 617.17102231046 19378.251229806 1784638.232275 13132093375.834
+1	15415 10274 519 6036 106289.923531860285 1034793.599093455134 327 0 1054.2494012903 22156.173667548 13105913.944347
+2	25689 18861 517 6036 106289.923531860285 1034793.599093455134 654 0 3 349 379
+3	44550 10427 509 6045 100734.084137438419 1035647.870777698448 327 0 1467.1569501505 24601.246075199 15737390.380285
+4	54977 18850 507 6045 100734.084137438419 1035647.870777698448 654 0 2 339 351
+5	73827 4970 514 6038 102000 1035000 312 0 5 326 658
+6	78797 4970 514 6038 102000 1035000 312 0 5 326 676
+7	83767 18860 506 6042 100734.084137438419 1035647.870777698448 654 0 5 761 1467

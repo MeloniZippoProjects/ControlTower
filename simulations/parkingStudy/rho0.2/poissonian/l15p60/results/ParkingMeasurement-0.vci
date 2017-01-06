@@ -1,0 +1,47 @@
+file 54759 1483664645                                           
+version 2
+run ParkingMeasurement-0-20170106-02:04:05-11342
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:05
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network SimNetwork
+attr processid 11342
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1425 7361 585 3465 208468.015090635505 1117927.907842450808 172 1172.5799558127 32217.783735378 1840400.8955433 26912263488.939
+1	8786 5549 566 3470 205932.450065268927 1121773.660388660127 173 0 2929.1980773799 32535.293495169 47157103.256496
+2	14335 9992 564 3470 205932.450065268927 1121773.660388660127 346 0 2 183 193
+3	24327 5623 582 3462 207395.93857893219 1117923.189105318324 172 0 3869.7358924948 46642.718329631 94007879.399247
+4	29950 9931 580 3462 207395.93857893219 1117923.189105318324 344 0 3 188 212
+5	39881 2461 562 3472 204000 1122000 154 0 4 172 358
+6	42342 2461 562 3472 204000 1122000 154 0 5 172 378
+7	44803 9956 572 3474 206024.380458641368 1122277.667924657828 345 0 4 377 701

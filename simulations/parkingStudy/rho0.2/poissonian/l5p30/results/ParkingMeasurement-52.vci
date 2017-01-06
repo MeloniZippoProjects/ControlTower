@@ -1,0 +1,47 @@
+file 92218 1483664641                                           
+version 2
+run ParkingMeasurement-52-20170106-02:04:01-11246
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:01
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=52
+attr measurement ""
+attr network SimNetwork
+attr processid 11246
+attr repetition 52
+attr replication #52
+attr resultdir results
+attr runnumber 52
+attr seedset 52
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1428 12433 578 5528 107111.501194681921 1035412.173694341203 291 949.85794108975 21232.898133421 1666194.4392761 12983259985.317
+1	13861 9007 566 5516 104676.208606208658 1032253.65389706292 291 0 1522.1482752876 15056.290532565 10095021.265729
+2	22868 16800 564 5516 104676.208606208658 1032253.65389706292 582 0 2 293 295
+3	39668 9005 575 5525 107043.888434295689 1035310.46557262268 291 0 1626.9081348638 16056.064222565 10607870.109215
+4	48673 16795 573 5525 107043.888434295689 1035310.46557262268 582 0 2 295 299
+5	65468 4978 562 5521 102000 1035000 312 0 4 292 526
+6	70446 4978 562 5521 102000 1035000 312 0 4 292 534
+7	75424 16794 569 5522 104694.410191335063 1035310.46557262268 582 0 4 575 995

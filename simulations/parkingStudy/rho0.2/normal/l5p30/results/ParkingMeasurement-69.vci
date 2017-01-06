@@ -1,0 +1,47 @@
+file 107614 1483664648                                          
+version 2
+run ParkingMeasurement-69-20170106-02:04:08-11407
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:08
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=69
+attr measurement ""
+attr network SimNetwork
+attr processid 11407
+attr repetition 69
+attr replication #69
+attr resultdir results
+attr runnumber 69
+attr seedset 69
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1456 14724 640 6440 101563.032246332457 1036125.12407497048 344 2301.0859323447 19461.879779495 1786184.8503984 11496610013.362
+1	16180 10959 647 6445 105887.854184563709 1036464.703881360315 344 0 524.2241193741 12929.6991804 3185744.263935
+2	27139 19838 645 6445 105887.854184563709 1036464.703881360315 688 0 2 356 368
+3	46977 10932 637 6437 101300.232061124863 1035826.232345455582 344 0 856.52468464522 14621.436571915 4750543.8884128
+4	57909 19893 635 6437 101300.232061124863 1035826.232345455582 688 0 2 356 368
+5	77802 4984 642 6433 102000 1035000 312 0 5 344 716
+6	82786 4984 642 6433 102000 1035000 312 0 6 344 720
+7	87770 19844 634 6434 101300.232061124863 1035826.232345455582 687 0 5 807 1567

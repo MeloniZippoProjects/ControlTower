@@ -1,0 +1,47 @@
+file 96788 1483664690                                           
+version 2
+run ParkingMeasurement-58-20170106-02:04:50-12463
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:50
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=58
+attr measurement ""
+attr network SimNetwork
+attr processid 12463
+attr repetition 58
+attr replication #58
+attr resultdir results
+attr runnumber 58
+attr seedset 58
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1428 13138 762 5954 153816.751984188786 1034920.13363832391 307 682.02117888461 29716.524479824 2251481.9256359 23705446502.897
+1	14566 9852 750 5956 152722.549413299722 1034920.13363832391 308 0 1664.3113519329 21653.855407251 15762910.307375
+2	24418 17782 748 5956 152722.549413299722 1034920.13363832391 616 0 3 320 336
+3	42200 9733 759 5948 153772.075625192049 1034580.18930238634 307 0 2113.7871851498 30231.345319772 26730685.182477
+4	51933 17689 757 5948 153772.075625192049 1034580.18930238634 614 0 3 331 363
+5	69622 4718 755 5958 153000 1035000 295 0 5 307 609
+6	74340 4718 755 5958 153000 1035000 295 0 6 307 623
+7	79058 17730 753 5960 152894.996395846053 1035941.930291206584 615 0 7 1083 2915

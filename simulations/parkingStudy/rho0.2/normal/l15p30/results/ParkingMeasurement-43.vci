@@ -1,0 +1,47 @@
+file 55159 1483664672                                           
+version 2
+run ParkingMeasurement-43-20170106-02:04:32-12025
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:32
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=43
+attr measurement ""
+attr network SimNetwork
+attr processid 12025
+attr repetition 43
+attr replication #43
+attr resultdir results
+attr runnumber 43
+attr seedset 43
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1459 7468 560 3496 200814.131222762381 1113671.626217280494 175 3562.6826563481 30898.465718231 1494414.3453106 16869962597.992
+1	8927 5601 565 3485 203838.950705533907 1110845.465053651331 174 0 1351.8852527492 18875.42908574 12407675.196629
+2	14528 10035 563 3485 203838.950705533907 1110845.465053651331 348 0 2 178 182
+3	24563 5537 557 3493 200545.570794487815 1113398.002911102465 175 0 2465.0828695832 23341.050057772 26676074.791411
+4	30100 10087 555 3493 200545.570794487815 1113398.002911102465 350 0 2 185 195
+5	40187 2459 567 3499 204000 1122000 154 0 4 175 341
+6	42646 2459 567 3499 204000 1122000 154 0 5 175 377
+7	45105 10054 554 3490 200545.570794487815 1113398.002911102465 349 0 3 276 390

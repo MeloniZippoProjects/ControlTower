@@ -4,10 +4,10 @@
 
 #Variabili di configurazione:
 
-$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parkingStudy\"
+$rootDir = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/simulations/parkingStudy/"
 $iniFilename = "parkingStudy.ini";
-$oldLinePattern = "general.ini"; #le parentesi richiedono l'escape cioè \( e \)
-$newLine = "include ./../../../../general.ini";
+$oldLinePattern = "\[Config QueueMeasurement\]"; #le parentesi richiedono l'escape cioè \( e \)
+$newLine = "[Config ParkingMeasurement]";
 
 #Inizio script
 

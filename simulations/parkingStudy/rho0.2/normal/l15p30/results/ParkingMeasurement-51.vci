@@ -1,0 +1,47 @@
+file 49099 1483664673                                           
+version 2
+run ParkingMeasurement-51-20170106-02:04:33-12073
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:33
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=51
+attr measurement ""
+attr network SimNetwork
+attr processid 12073
+attr repetition 51
+attr replication #51
+attr resultdir results
+attr runnumber 51
+attr seedset 51
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1459 6549 529 3113 205614.142663304107 1120411.703650417314 153 3445.0233883456 38952.689147317 1422337.2989915 18670519879.888
+1	8008 4878 517 3102 202462.73262520085 1117422.853668738487 153 0 1331.8975174298 17800.362832653 13366052.878172
+2	12886 8817 515 3102 202462.73262520085 1117422.853668738487 306 0 2 159 165
+3	21703 4833 526 3110 205336.418325400776 1120116.785023578283 153 0 1883.2245896083 18650.685243376 19084722.535186
+4	26536 8841 524 3110 205336.418325400776 1120116.785023578283 306 0 1 153 153
+5	35377 2445 522 3115 204000 1122000 154 0 4 153 315
+6	37822 2445 522 3115 204000 1122000 154 0 4 153 307
+7	40267 8832 520 3107 203379.243463629598 1120116.785023578283 306 0 3 249 357

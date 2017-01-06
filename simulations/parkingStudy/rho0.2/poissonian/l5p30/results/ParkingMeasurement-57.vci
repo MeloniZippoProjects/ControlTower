@@ -1,0 +1,47 @@
+file 95860 1483664642                                           
+version 2
+run ParkingMeasurement-57-20170106-02:04:02-11273
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:02
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=57
+attr measurement ""
+attr network SimNetwork
+attr processid 11273
+attr repetition 57
+attr replication #57
+attr resultdir results
+attr runnumber 57
+attr seedset 57
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1428 12850 561 5691 104532.106698430115 1036109.169829209232 301 640.05197772366 19026.369636683 1656087.3661004 12429296550.684
+1	14278 9440 549 5676 100300.044368366566 1034863.50961341094 303 0 1008.1869544745 15264.469643104 7725374.8677566
+2	23718 17494 547 5676 100300.044368366566 1034863.50961341094 606 0 2 307 311
+3	41212 9841 558 5693 102731.321882132428 1036109.169829209232 302 0 2013.6896960014 33782.388913687 29241539.456464
+4	51053 17425 556 5693 102731.321882132428 1036109.169829209232 604 0 4 338 402
+5	68478 4965 554 5681 102000 1035000 312 0 4 302 572
+6	73443 4965 554 5681 102000 1035000 312 0 5 301 623
+7	78408 17452 552 5687 101134.448963553072 1035731.949962431377 605 0 5 663 1243

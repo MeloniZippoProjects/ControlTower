@@ -1,0 +1,47 @@
+file 53579 1483664650                                           
+version 2
+run ParkingMeasurement-22-20170106-02:04:10-11460
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:10
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=22
+attr measurement ""
+attr network SimNetwork
+attr processid 11460
+attr repetition 22
+attr replication #22
+attr resultdir results
+attr runnumber 22
+attr seedset 22
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1431 7212 672 3497 203981.96382587571 1117604.080603152656 169 2124.797488508 56958.782794717 1909500.6364657 30235077820.692
+1	8643 5425 653 3485 201123.065304017606 1115250.803333070245 168 0 4544.9619956634 46874.084287226 91589806.365877
+2	14068 9682 651 3485 201123.065304017606 1115250.803333070245 336 0 4 204 272
+3	23750 5408 669 3494 203791.527278250179 1117427.700361545214 169 0 10153.840509507 60127.064157587 271083609.58796
+4	29158 9761 667 3494 203791.527278250179 1117427.700361545214 338 0 4 201 261
+5	38919 2467 674 3499 204000 1122000 154 0 6 169 357
+6	41386 2467 674 3499 204000 1122000 154 0 5 170 370
+7	43853 9726 656 3491 201270.453322543182 1117427.700361545214 337 0 5 398 768

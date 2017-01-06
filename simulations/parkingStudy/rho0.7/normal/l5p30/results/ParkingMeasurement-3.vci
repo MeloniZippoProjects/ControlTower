@@ -1,0 +1,47 @@
+file 380379 1483664641                                          
+version 2
+run ParkingMeasurement-3-20170106-02:04:01-11235
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:01
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network SimNetwork
+attr processid 11235
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1458 48703 2029 21061 101181.930689867789 1036273.573792487117 1122 2381.6777390523 9075.3452243944 4552593.7742796 19789416707.067
+1	50161 44589 2017 21063 100585.701462749519 1036273.573792487117 1123 0 1317.4928663358 190054.29511139 71530516.193921
+2	94750 66335 2015 21075 100585.701462749519 1036712.550878541695 2247 0 5 1570 2272
+3	161085 44413 2025 21069 100881.792521672469 1036548.760917489661 1123 0 5649.6624042878 737823.27184936 1341477102.1111
+4	205498 66303 2020 21072 100608.400987723463 1036555.941991649907 2247 0 10 3072 10100
+5	271801 21139 2013 21065 100287.72 1036306.44 1093 0 4 1124 2072
+6	292940 21139 2013 21065 100287.72 1036306.44 1093 0 4 1123 2007
+7	314079 66300 2019 21071 100608.400987723463 1036555.941991649907 2247 0 7 5879 19715

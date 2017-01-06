@@ -1,0 +1,47 @@
+file 50790 1483664671                                           
+version 2
+run ParkingMeasurement-40-20170106-02:04:31-12010
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:31
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=40
+attr measurement ""
+attr network SimNetwork
+attr processid 12010
+attr repetition 40
+attr replication #40
+attr resultdir results
+attr runnumber 40
+attr seedset 40
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1459 6814 752 3417 200696.471738074019 1120716.205428265768 159 3609.1973277224 34025.125636476 1461021.3725397 19207227227.547
+1	8273 5153 765 3422 201302.035328072505 1121856.334059294993 157 0 2473.5772693918 29529.111225815 33811138.440939
+2	13426 9087 760 3422 201201.882521805868 1121856.334059294993 314 0 3 177 205
+3	22513 5090 757 3414 201011.321293271249 1120445.656903708484 158 0 3397.12357645 33568.902976589 54568197.781238
+4	27603 9133 755 3414 201011.321293271249 1120445.656903708484 316 0 3 186 230
+5	36736 2476 792 3424 204000 1122000 154 0 5 159 349
+6	39212 2476 792 3424 204000 1122000 154 0 7 160 388
+7	41688 9102 754 3426 201011.321293271249 1122653.442243022165 315 0 3 274 418

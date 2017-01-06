@@ -1,0 +1,47 @@
+file 49710 1483664651                                           
+version 2
+run ParkingMeasurement-16-20170106-02:04:11-11499
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:11
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=16
+attr measurement ""
+attr network SimNetwork
+attr processid 11499
+attr repetition 16
+attr replication #16
+attr resultdir results
+attr runnumber 16
+attr seedset 16
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1459 6673 641 3273 204805.351951956418 1118620.349969838548 156 5183.5904924992 39398.520468367 1706287.328899 24074306470.679
+1	8132 4832 646 3261 207258.536367652267 1113741.958957515294 155 0 836.94166276879 8578.2878874638 4268907.483532
+2	12964 8947 644 3261 207258.536367652267 1113741.958957515294 310 0 1 155 155
+3	21911 4847 638 3270 204526.100467570042 1118251.754674840853 156 0 1666.8434519899 11419.005087729 8354957.5147301
+4	26758 9004 636 3270 204526.100467570042 1118251.754674840853 312 0 1 156 156
+5	35762 2468 634 3275 204000 1122000 154 0 5 156 294
+6	38230 2468 634 3275 204000 1122000 154 0 4 156 314
+7	40698 9012 632 3267 200844.164475772288 1118251.754674840853 312 0 5 342 648

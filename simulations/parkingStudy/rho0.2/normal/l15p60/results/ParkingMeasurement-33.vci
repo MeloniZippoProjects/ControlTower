@@ -1,0 +1,47 @@
+file 45326 1483664655                                           
+version 2
+run ParkingMeasurement-33-20170106-02:04:15-11581
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:15
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=33
+attr measurement ""
+attr network SimNetwork
+attr processid 11581
+attr repetition 33
+attr replication #33
+attr resultdir results
+attr runnumber 33
+attr seedset 33
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1459 5934 505 2868 209758.935352530554 1119300.850085153361 139 5085.3417287536 35193.60233846 1613008.6691644 24239428876.979
+1	7393 4398 486 2870 204880.830184552124 1119300.850085153361 141 0 836.34119885999 8229.3007236407 4145594.173968
+2	11791 8130 484 2870 204880.830184552124 1119300.850085153361 282 0 1 141 141
+3	19921 4319 502 2879 209453.282129324871 1122930.561138779533 140 0 2639.7672361968 13775.806233014 15737090.442931
+4	24240 8080 500 2879 209453.282129324871 1122930.561138779533 280 0 1 140 140
+5	32320 2450 482 2875 204000 1122000 154 0 3 141 249
+6	34770 2450 482 2875 204000 1122000 154 0 5 139 249
+7	37220 8106 489 2876 205901.651665769808 1122930.561138779533 281 0 3 265 425

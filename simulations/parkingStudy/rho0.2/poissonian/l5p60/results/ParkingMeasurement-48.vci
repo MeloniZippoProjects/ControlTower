@@ -1,0 +1,47 @@
+file 91773 1483664687                                           
+version 2
+run ParkingMeasurement-48-20170106-02:04:47-12404
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:47
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=48
+attr measurement ""
+attr network SimNetwork
+attr processid 12404
+attr repetition 48
+attr replication #48
+attr resultdir results
+attr runnumber 48
+attr seedset 48
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1428 12460 1049 5957 150739.25893978846 1027364.953534164034 291 1089.706374458 25028.719413461 2109766.250689 20635831282.801
+1	13888 9096 1063 5946 153263.507408401833 1027135.038219658945 287 0 1502.3249884543 20404.163686272 14174775.607055
+2	22984 16611 1061 5946 153263.507408401833 1027135.038219658945 574 0 2 305 323
+3	39595 9176 1046 5954 150693.05941472432 1027296.903259422136 291 0 2156.8197649687 23946.210965087 25253745.037273
+4	48771 16831 1044 5954 150693.05941472432 1027296.903259422136 582 0 3 301 315
+5	65602 4732 1056 5961 153000 1035000 295 0 4 287 541
+6	70334 4732 1056 5961 153000 1035000 295 0 4 291 593
+7	75066 16707 1043 5951 150693.05941472432 1027296.903259422136 578 0 5 929 2265

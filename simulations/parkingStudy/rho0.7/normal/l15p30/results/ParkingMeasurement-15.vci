@@ -1,0 +1,47 @@
+file 182077 1483664682                                          
+version 2
+run ParkingMeasurement-15-20170106-02:04:42-12271
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:42
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=15
+attr measurement ""
+attr network SimNetwork
+attr processid 12271
+attr repetition 15
+attr replication #15
+attr resultdir results
+attr runnumber 15
+attr seedset 15
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 23314 2103 11174 209958.899742214055 1122847.288603492189 542 3610.9956677895 20573.89653915 4495339.4396493 45654902458.145
+1	24779 20991 2002 11162 201086.66778559494 1121511.386562099634 539 0 3374.6517587116 302195.62847762 451728542.02287
+2	45770 31358 2002 11162 201086.66778559494 1121511.386562099634 1076 0 4 872 1414
+3	77128 21274 2097 11170 209711.813338479775 1122515.319664150599 542 0 15317.368984146 1638291.7317757 12452498804.034
+4	98402 31645 1997 11170 201040.478798287063 1122515.319664150599 1083 0 16 3141 22065
+5	130047 10256 1995 11172 200568.42 1122840.3 539 0 2 542 870
+6	140303 10256 1995 11172 200568.42 1122840.3 539 0 6 541 1471
+7	150559 31518 1996 11168 201040.478798287063 1122515.319664150599 1081 0 3 1505 2861

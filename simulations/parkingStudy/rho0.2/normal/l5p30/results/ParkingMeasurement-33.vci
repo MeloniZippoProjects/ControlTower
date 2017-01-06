@@ -1,0 +1,47 @@
+file 88616 1483664639                                           
+version 2
+run ParkingMeasurement-33-20170106-02:03:59-11201
+attr configname ParkingMeasurement
+attr datetime 20170106-02:03:59
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=33
+attr measurement ""
+attr network SimNetwork
+attr processid 11201
+attr repetition 33
+attr replication #33
+attr resultdir results
+attr runnumber 33
+attr seedset 33
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1456 11865 505 5238 103677.261383991401 1029840.341129822897 278 2438.7794773655 17594.687800594 1622061.6290168 12047899137.154
+1	13321 8721 485 5226 101255.519101935625 1027361.325310508786 278 0 329.8235012664 7998.7020391174 1716168.6624477
+2	22042 16030 483 5226 101255.519101935625 1027361.325310508786 556 0 1 278 278
+3	38072 8566 502 5235 103371.608160785718 1029541.012026945066 278 0 639.79611384804 5556.7156888023 1354906.3787316
+4	46638 16018 500 5235 103371.608160785718 1029541.012026945066 556 0 1 278 278
+5	62656 4970 490 5241 102000 1035000 312 0 4 278 492
+6	67626 4970 490 5241 102000 1035000 312 0 4 278 478
+7	72596 16020 488 5232 101595.792929008186 1029541.012026945066 556 0 4 528 862

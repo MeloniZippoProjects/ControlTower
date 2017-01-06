@@ -1,0 +1,47 @@
+file 172034 1483664678                                          
+version 2
+run ParkingMeasurement-1-20170106-02:04:38-12181
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:38
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=1
+attr measurement ""
+attr network SimNetwork
+attr processid 12181
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1459 21788 1852 10549 202179.507820134633 1122899.611977358326 507 3433.5330316633 20804.210627787 3703986.0841278 32827866389.444
+1	23247 19463 1858 10537 202977.468298391941 1121738.894641053979 512 0 4502.8721993283 262585.66130585 401095185.65551
+2	42710 29788 1856 10537 202977.468298391941 1121738.894641053979 1024 0 6 820 1416
+3	72498 19596 1849 10551 201909.95645844764 1122899.611977358326 508 0 15241.858427852 1005785.0550686 6727213641.4209
+4	92094 29696 1847 10551 201909.95645844764 1122899.611977358326 1020 0 16 2102 13002
+5	121790 10215 1842 10547 200568.42 1122840.3 539 0 3 514 814
+6	132005 10215 1842 10547 200568.42 1122840.3 539 0 6 506 1258
+7	142220 29814 1844 10544 201146.792603505666 1122661.625587112315 1025 0 3 1426 2728

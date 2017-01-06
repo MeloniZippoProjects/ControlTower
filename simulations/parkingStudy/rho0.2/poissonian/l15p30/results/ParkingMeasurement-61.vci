@@ -1,0 +1,47 @@
+file 45567 1483664673                                           
+version 2
+run ParkingMeasurement-61-20170106-02:04:33-12070
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:33
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=61
+attr measurement ""
+attr network SimNetwork
+attr processid 12070
+attr repetition 61
+attr replication #61
+attr resultdir results
+attr runnumber 61
+attr seedset 61
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1431 6000 376 2771 150941.769917164001 1035804.662294897714 141 1769.5233239918 36661.781371399 1440674.0787928 21118722863.781
+1	7431 4637 382 2751 157577.862342986143 1030798.85375908292 141 0 4931.3711036167 57307.880094766 141013179.07788
+2	12068 8078 380 2751 157577.862342986143 1030798.85375908292 282 0 5 191 313
+3	20146 4570 373 2768 150877.412949165533 1035371.033918785786 141 0 7448.551173941 70016.394594075 290441246.84356
+4	24716 8089 371 2768 150877.412949165533 1035371.033918785786 282 0 5 181 269
+5	32805 2326 378 2756 156000 1032000 147 0 5 141 291
+6	35131 2326 378 2756 156000 1032000 147 0 6 139 331
+7	37457 8110 368 2765 150394.366964119678 1035371.033918785786 283 0 4 238 362

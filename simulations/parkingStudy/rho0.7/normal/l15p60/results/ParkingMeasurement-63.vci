@@ -1,0 +1,47 @@
+file 173551 1483664676                                          
+version 2
+run ParkingMeasurement-63-20170106-02:04:36-12128
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:36
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=63
+attr measurement ""
+attr network SimNetwork
+attr processid 12128
+attr repetition 63
+attr replication #63
+attr resultdir results
+attr runnumber 63
+attr seedset 63
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 22184 1988 10765 202205.888255653605 1121992.170046323062 516 5193.1117833863 20715.465438345 4350009.1399394 40717308729.306
+1	23649 19546 1977 10779 200943.707335751899 1122998.414043543919 518 0 7038.8339684908 227847.64676584 458757344.1168
+2	43195 30170 1975 10779 200943.707335751899 1122998.414043543919 1036 0 9 786 1658
+3	73365 19580 1985 10762 201953.998166449842 1121697.161405751535 516 0 14269.138601479 718832.93648608 3789467323.587
+4	92945 30054 1980 10782 201655.249196620279 1123145.754429533725 1033 0 15 1557 8021
+5	122999 10239 1973 10775 200568.42 1122840.3 539 0 3 517 805
+6	133238 10239 1973 10775 200568.42 1122840.3 539 0 6 518 1116
+7	143477 30074 1979 10781 201655.249196620279 1123145.754429533725 1034 0 6 2481 7501

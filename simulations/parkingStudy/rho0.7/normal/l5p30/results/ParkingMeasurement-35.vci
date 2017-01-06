@@ -1,0 +1,47 @@
+file 357383 1483664650                                          
+version 2
+run ParkingMeasurement-35-20170106-02:04:10-11469
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:10
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=35
+attr measurement ""
+attr network SimNetwork
+attr processid 11469
+attr repetition 35
+attr replication #35
+attr resultdir results
+attr runnumber 35
+attr seedset 35
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1464 45787 1964 19918 101098.755304702715 1035020.330666244495 1056 2374.6198526533 9924.1275416869 4050723.9749037 16367971880.038
+1	47251 40372 1953 19943 100519.268639670347 1036283.909304634886 1057 0 1092.0018518328 135163.40132163 42620757.690841
+2	87623 62365 1951 19952 100519.268639670347 1036565.387015081333 2115 0 4 1298 1614
+3	149988 40539 1961 19949 100829.775534212655 1036530.017766724933 1057 0 4462.9300674882 439512.30415614 579351444.66103
+4	190527 62316 1956 19949 100762.192375434794 1036530.017766724933 2114 0 7 2107 4853
+5	252843 21104 1949 19945 100287.72 1036306.44 1093 0 3 1058 1804
+6	273947 21104 1949 19945 100287.72 1036306.44 1093 0 3 1056 1766
+7	295051 62332 1955 19947 100762.192375434794 1036530.017766724933 2114 0 8 5105 15989

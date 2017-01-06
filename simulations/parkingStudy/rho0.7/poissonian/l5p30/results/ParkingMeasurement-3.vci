@@ -1,0 +1,47 @@
+file 370938 1483664638                                          
+version 2
+run ParkingMeasurement-3-20170106-02:03:58-11163
+attr configname ParkingMeasurement
+attr datetime 20170106-02:03:58
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network SimNetwork
+attr processid 11163
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1430 47661 2182 20760 100462.745793555222 1036394.474164228595 1098 433.81497078635 17071.13532707 5151009.6157988 30858987970.98
+1	49091 42884 2184 20730 100462.745793555222 1035655.041762947095 1091 0 1931.3528921071 334823.05737047 256831072.80369
+2	91975 64332 2184 20730 100462.745793555222 1035655.041762947095 2181 0 4 1780 2858
+3	156307 43335 2189 20756 100800.846164203529 1036196.929858083287 1097 0 7627.4509504746 1354202.6161227 4777536664.1815
+4	199642 64628 2189 20756 100800.846164203529 1036196.929858083287 2189 0 13 4410 22522
+5	264270 21138 2180 20758 100287.72 1036306.44 1093 0 5 1092 2212
+6	285408 21138 2180 20758 100287.72 1036306.44 1093 0 6 1098 2326
+7	306546 64392 2187 20740 100800.846164203529 1035969.143266208491 2183 0 9 5287 17247

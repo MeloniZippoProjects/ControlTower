@@ -1,0 +1,47 @@
+file 53380 1483664674                                           
+version 2
+run ParkingMeasurement-64-20170106-02:04:34-12087
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:34
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=64
+attr measurement ""
+attr network SimNetwork
+attr processid 12087
+attr repetition 64
+attr replication #64
+attr resultdir results
+attr runnumber 64
+attr seedset 64
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1431 7242 392 3243 154132.368728098692 1032613.869244758051 170 1339.1856501057 45230.594748907 1507902.1194204 18701984400.795
+1	8673 5364 397 3231 154214.368726587303 1030243.097363947838 169 0 6122.0185856783 53793.67732957 162682978.4312
+2	14037 9706 395 3231 154214.368726587303 1030243.097363947838 338 0 3 187 209
+3	23743 5497 389 3240 152770.271615137676 1032583.835017988156 170 0 10083.001416202 64154.483873128 282146446.64248
+4	29240 9759 387 3240 152770.271615137676 1032583.835017988156 340 0 3 194 226
+5	38999 2328 399 3236 156000 1032000 147 0 4 169 345
+6	41327 2328 399 3236 156000 1032000 147 0 4 169 343
+7	43655 9725 386 3237 152770.271615137676 1032583.835017988156 339 0 3 243 329

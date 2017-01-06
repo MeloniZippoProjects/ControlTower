@@ -1,0 +1,47 @@
+file 96049 1483664638                                           
+version 2
+run ParkingMeasurement-39-20170106-02:03:58-11174
+attr configname ParkingMeasurement
+attr datetime 20170106-02:03:58
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=39
+attr measurement ""
+attr network SimNetwork
+attr processid 11174
+attr repetition 39
+attr replication #39
+attr resultdir results
+attr runnumber 39
+attr seedset 39
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1428 12997 676 5816 102030.861492668717 1035383.358386139024 304 762.29974236292 28894.730330077 1683469.4792574 12952133887.853
+1	14425 9612 661 5803 100477.089976781363 1031072.687773433531 302 0 1571.0488433354 22768.86197588 14516369.999305
+2	24037 17432 659 5803 100477.089976781363 1031072.687773433531 604 0 2 310 318
+3	41469 9516 669 5813 101649.901128431147 1035265.029201491509 304 0 2068.1556400901 27152.281557961 24731785.97634
+4	50985 17564 667 5813 101649.901128431147 1035265.029201491509 608 0 3 316 332
+5	68549 4988 674 5809 102000 1035000 312 0 4 304 594
+6	73537 4988 674 5809 102000 1035000 312 0 4 303 567
+7	78525 17524 656 5810 100310.004400594877 1035265.029201491509 607 0 4 607 1039

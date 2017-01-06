@@ -1,0 +1,47 @@
+file 45643 1483664661                                           
+version 2
+run ParkingMeasurement-59-20170106-02:04:21-11730
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:21
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=59
+attr measurement ""
+attr network SimNetwork
+attr processid 11730
+attr repetition 59
+attr replication #59
+attr resultdir results
+attr runnumber 59
+attr seedset 59
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1459 6070 576 2985 202562.591925494314 1121149.42456229711 142 5089.767968191 32717.126341017 1621481.4930386 23137313967.816
+1	7529 4295 581 2966 202881.506636319244 1116855.316201697122 141 0 826.34518995705 4863.8574078429 2217118.4700388
+2	11824 8147 579 2966 202881.506636319244 1116855.316201697122 282 0 1 141 141
+3	19971 4371 573 2982 202254.241134782601 1120804.495783819143 142 0 777.65579441007 7438.541756574 4254406.8735931
+4	24342 8212 571 2982 202254.241134782601 1120804.495783819143 284 0 1 142 142
+5	32554 2455 586 2987 204000 1122000 154 0 3 142 248
+6	35009 2455 586 2987 204000 1122000 154 0 3 142 254
+7	37464 8179 570 2979 202254.241134782601 1120804.495783819143 283 0 4 277 473

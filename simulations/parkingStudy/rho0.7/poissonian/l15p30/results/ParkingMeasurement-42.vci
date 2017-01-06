@@ -1,0 +1,47 @@
+file 163224 1483664683                                          
+version 2
+run ParkingMeasurement-42-20170106-02:04:43-12312
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:43
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=42
+attr measurement ""
+attr network SimNetwork
+attr processid 12312
+attr repetition 42
+attr replication #42
+attr resultdir results
+attr runnumber 42
+attr seedset 42
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1437 20418 1447 9719 152208.931786910755 1036622.251625277343 477 642.2965923065 33509.258617471 4300692.8841925 57087163186.438
+1	21855 18645 1435 9671 150354.940133541691 1033382.423373652072 490 0 7454.9047639483 508435.98737553 1736013295.8382
+2	40500 28346 1433 9671 150354.940133541691 1033382.423373652072 980 0 6 942 1982
+3	68846 18570 1444 9721 151869.376262524919 1036622.251625277343 478 0 26072.763688463 1555250.1398595 17240505642.534
+4	87416 28057 1442 9721 151869.376262524919 1036622.251625277343 967 0 20 2704 22156
+5	115473 9719 1437 9702 150854.88 1035413.04 517 0 5 490 940
+6	125192 9719 1437 9702 150854.88 1035413.04 517 0 9 475 1477
+7	134911 28313 1439 9678 151159.340702066081 1033997.561704711542 979 0 6 1416 3286

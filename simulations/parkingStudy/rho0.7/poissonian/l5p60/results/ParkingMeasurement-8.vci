@@ -1,0 +1,47 @@
+file 373305 1483664693                                          
+version 2
+run ParkingMeasurement-8-20170106-02:04:53-12525
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:53
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=8
+attr measurement ""
+attr network SimNetwork
+attr processid 12525
+attr repetition 8
+attr replication #8
+attr resultdir results
+attr runnumber 8
+attr seedset 8
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1430 47522 3005 21623 152591.941222463575 1035151.682508161093 1094 413.93639416999 37377.466313349 7538101.5777697 71465176313.169
+1	48952 44196 2981 21659 151891.896649140561 1036457.977350755458 1109 0 3192.0112199328 351004.46844674 299454209.99406
+2	93148 65587 2979 21667 151891.896649140561 1036691.079963983684 2219 0 7 1928 3446
+3	158735 43866 2989 21664 152203.663567790688 1036614.354845514075 1095 0 8418.3289412717 1541328.7471367 5685079776.8547
+4	202601 65094 2987 21664 152203.663567790688 1036614.354845514075 2199 0 16 5334 31544
+5	267695 20055 2973 21655 150860.16 1036306.44 1034 0 6 1108 2320
+6	287750 20055 2973 21655 150860.16 1036306.44 1034 0 6 1096 2478
+7	307805 65500 2975 21662 151350.409951513214 1036614.354845514075 2214 0 12 11455 69335

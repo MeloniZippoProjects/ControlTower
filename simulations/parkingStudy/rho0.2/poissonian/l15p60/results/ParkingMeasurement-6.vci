@@ -1,0 +1,47 @@
+file 49596 1483664646                                           
+version 2
+run ParkingMeasurement-6-20170106-02:04:06-11372
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:06
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network SimNetwork
+attr processid 11372
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1425 6635 561 3176 204568.751615524653 1115419.365763298727 155 2081.3992493711 41877.29396569 1685766.5906116 24472695004.363
+1	8060 4940 549 3157 202789.269214427571 1113804.825080943735 155 0 4295.4575164436 36513.199903807 86852059.541706
+2	13000 8941 547 3157 202789.269214427571 1113804.825080943735 310 0 4 177 219
+3	21941 4847 558 3173 204413.418370352867 1115328.839454683575 155 0 7410.3329286569 32780.554002713 140640683.41216
+4	26788 8941 556 3173 204413.418370352867 1115328.839454683575 310 0 2 171 187
+5	35729 2461 554 3179 204000 1122000 154 0 4 155 303
+6	38190 2461 554 3179 204000 1122000 154 0 5 155 331
+7	40651 8945 552 3170 203371.093464314093 1115328.839454683575 310 0 5 339 671

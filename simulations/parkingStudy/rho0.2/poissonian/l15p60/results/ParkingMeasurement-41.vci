@@ -1,0 +1,47 @@
+file 48926 1483664654                                           
+version 2
+run ParkingMeasurement-41-20170106-02:04:14-11558
+attr configname ParkingMeasurement
+attr datetime 20170106-02:04:14
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=41
+attr measurement ""
+attr network SimNetwork
+attr processid 11558
+attr repetition 41
+attr replication #41
+attr resultdir results
+attr runnumber 41
+attr seedset 41
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1431 6526 929 3497 204722.663966952488 1116429.130149986578 152 1059.2616672964 31209.865288948 1675087.9364892 24617139776.253
+1	7957 4733 934 3503 206933.014198500254 1123066.472336162961 152 0 2211.8069048636 18298.690103644 24348322.972485
+2	12690 8825 932 3503 206933.014198500254 1123066.472336162961 304 0 2 154 156
+3	21515 4841 926 3493 204636.579271102992 1115614.824957723734 152 0 3576.4636424735 36671.608508869 79500042.899023
+4	26356 8818 924 3493 204636.579271102992 1115614.824957723734 304 0 2 164 176
+5	35174 2479 922 3499 204000 1122000 154 0 4 152 268
+6	37653 2479 922 3499 204000 1122000 154 0 4 153 277
+7	40132 8794 923 3490 204636.579271102992 1115614.824957723734 303 0 4 285 479
