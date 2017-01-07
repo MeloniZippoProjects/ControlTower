@@ -1,9 +1,12 @@
 # Configuration variables
 
-$iniName = "queueStudy.ini"
-$configuration = "QueueMeasurement"
+$iniName = "parkingStudy.ini"
+$configuration = "ParkingMeasurement"
 $repetitions = 150
-$awkScriptPath = "simulations/parse.awk" 
+
+$awkScriptPath = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/simulations/parse.awk" 
+$relativeBinLocation = "../../../../../src/PESC_Control_Tower"
+$relativePathToSrc = "../../../..:../../../../../src"
 
 # Script body
 
@@ -16,9 +19,9 @@ $runSimulation =
 
     cd $ini.DirectoryName
     
-    for ($i = 0; $i -lt 70; $i++)
+    for ($i = 0; $i -lt $repetitions; $i++)
     {
-        ../../../../src/PESC_Control_Tower -r $i -u Cmdenv -c $configuration -n ../../..:../../../../src --debug-on-errors=false $iniName
+        Invoke-Expression ($relativeBinLocation + " -r " + $i + " -u Cmdenv -c " + $configuration + " -n " + $relativePathToSrc + " --debug-on-errors=false " + $iniName)
     }
 
     cd results
