@@ -27,7 +27,7 @@ $runSimulation =
 	Write-Host "inizio parsing con gawk"
 	
     cd results
-    	gawk -f $awkScriptPath -v out=$configuration ( "./" + $configuration + "-*.vec" )
+    	gawk -f $awkScriptPath -v out=$configuration ( Get-ChildItem -Filter ($configuration + "-*.vec") | % name )
     cd ..
 	
 	Write-Host "fine parsing con gawk"
