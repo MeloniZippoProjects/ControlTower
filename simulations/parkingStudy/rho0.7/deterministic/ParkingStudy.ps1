@@ -2,11 +2,11 @@
 
 $iniName = "parkingStudy.ini"
 $configuration = "ParkingMeasurement"
-$repetitions = 1
+$repetitions = 150
 
-$awkScriptPath = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\simulations\parse.awk" 
-$relativeBinLocation = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\src\PESC_Control_Tower"
-$relativePathToSrc = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\src"
+$awkScriptPath = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/simulations/parse.awk" 
+$relativeBinLocation = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/src/PESC_Control_Tower"
+$relativePathToSrc = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/src"
 
 # Script body
 
