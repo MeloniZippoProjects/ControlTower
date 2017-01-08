@@ -13,7 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package controltower.simulations;
+package controltower;
 
 import controltower.Airport;
 import controltower.WorkloadGenerator;
