@@ -1,5 +1,17 @@
+# Configuration variables
+
+$iniName = "parkingStudy.ini"
+$configuration = "ParkingMeasurement"
+$repetitions = 1
+
+$awkScriptPath = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\simulations\parse.awk" 
+$relativeBinLocation = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\src\PESC_Control_Tower"
+$relativePathToSrc = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\src"
+
+# Script body
+
 $root = pwd
-$inis = Get-ChildItem -Recurse -Filter "parkingStudy.ini"
+$inis = Get-ChildItem -Recurse -Filter $iniName
 
 $runSimulation =
 {
@@ -7,10 +19,18 @@ $runSimulation =
 
     cd $ini.DirectoryName
     
-    for ($i = 0; $i -lt 70; $i++)
+    for ($i = 0; $i -lt $repetitions; $i++)
     {
-        ../../../../../src/PESC_Control_Tower -r $i -u Cmdenv -c ParkingMeasurement -n ../../../..:../../../../../src --debug-on-errors=false parkingStudy.ini
+        Invoke-Expression ($relativeBinLocation + " -r " + $i + " -u Cmdenv -c " + $configuration + " -n " + $relativePathToSrc + " --debug-on-errors=false " + $iniName)
     }
+
+	Write-Host "inizio parsing con gawk"
+	
+    cd results
+    	gawk -f $awkScriptPath -v out=$configuration ( "./" + $configuration + "-*.vec" )
+    cd ..
+	
+	Write-Host "fine parsing con gawk"
 }
 
 foreach( $ini in $inis )
@@ -19,8 +39,3 @@ foreach( $ini in $inis )
 }
 
 cd $root
-
-#Get-Job | Wait-Job
-
-#$ cd /home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/simulations/queueStudy/deterministic/rho0.1
-#$ ../../../../src/PESC_Control_Tower -r 69 -u Cmdenv -c QueueMeasurement -n ../../..:../../../../src --debug-on-errors=false queueStudy.ini
