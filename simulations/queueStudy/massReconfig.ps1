@@ -4,9 +4,9 @@
 
 #Variabili di configurazione:
 
-$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\queueStudy\normal"
-$oldLinePattern = "parkingDelay";
-$newLine = "SimNetwork.a.parkingLot.parkingDelay = truncnormal(45min, 5 min)";
+$rootDir = "/home/davide/Performance_Project/PESC_Control_Tower/simulations/queueStudy"
+$oldLinePattern = "repeat = 150";
+$newLine = "#repeat = 150";
 
 #Inizio script
 
