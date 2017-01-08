@@ -1,0 +1,47 @@
+file 177232 1483892964                                          
+version 2
+run ParkingMeasurement-133-20170108-17:29:24-5009
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:24
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=133
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5009
+attr repetition 133
+attr replication #133
+attr resultdir results
+attr runnumber 133
+attr seedset 133
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1454 22606 1770 10648 159315.988967423873 1032076.469826453757 527 772.47306165363 32024.070482588 4524807.6551273 51081510725.05
+1	24060 20539 1720 10707 151434.479623503549 1036728.929427243271 531 0 5803.6793491392 464125.19991823 1051773932.194
+2	44599 30946 1705 10707 150470.570234006735 1036728.929427243271 1066 0 6 1115 2405
+3	75545 20547 1767 10632 159136.128117953618 1031324.409075466283 527 0 18205.394589692 1603920.3248982 13135493828.758
+4	96092 30795 1712 10699 151144.162799215524 1036453.108898305041 1058 0 18 3077 24953
+5	126887 9756 1710 10681 150854.88 1035413.04 517 0 5 530 1042
+6	136643 9757 1710 10681 150854.88 1035413.04 517 0 12 528 1712
+7	146400 30832 1711 10705 151144.162799215524 1036728.929427243271 1062 0 7 1631 3807

@@ -1,0 +1,47 @@
+file 45340 1483893087                                           
+version 2
+run ParkingMeasurement-72-20170108-17:31:27-5775
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:27
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=72
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5775
+attr repetition 72
+attr replication #72
+attr resultdir results
+attr runnumber 72
+attr seedset 72
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1442 6031 608 2997 200552.478013660057 1093833.228342780246 141 1988.3658580616 28372.800829506 1670737.0692087 26062251647.876
+1	7473 4373 613 2969 203134.326200221995 1088302.315619389217 140 0 5109.5953388164 22261.554946141 68460442.387044
+2	11846 8083 611 2969 203134.326200221995 1088302.315619389217 280 0 2 146 152
+3	19929 4360 622 2994 204388.023127424934 1093003.176899493115 140 0 9167.1078914882 33684.544000395 152831516.03419
+4	24289 8063 620 2994 204388.023127424934 1093003.176899493115 280 0 3 154 176
+5	32352 2458 618 3003 204000 1122000 154 0 5 140 270
+6	34810 2458 618 3003 204000 1122000 154 0 5 141 311
+7	37268 8072 616 2991 203487.499776968763 1093003.176899493115 280 0 4 294 524

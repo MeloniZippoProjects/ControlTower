@@ -1,0 +1,47 @@
+file 44594 1483893143                                           
+version 2
+run ParkingMeasurement-130-20170108-17:32:23-6192
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:23
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=130
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6192
+attr repetition 130
+attr replication #130
+attr resultdir results
+attr runnumber 130
+attr seedset 130
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1448 5919 321 2666 157756.737465586097 1030333.769400236354 139 1370.4198223234 30204.012933709 1356093.7786811 18330582749.379
+1	7367 4411 302 2647 156059.418089882793 1028725.275130569471 139 0 6540.5444793886 37329.876917363 114412562.02797
+2	11778 7968 300 2647 156059.418089882793 1028725.275130569471 278 0 3 147 159
+3	19746 4294 318 2663 157665.921800681566 1030192.926766480201 139 0 4466.6008035986 23266.116283245 45239415.699515
+4	24040 7958 316 2663 157665.921800681566 1030192.926766480201 278 0 2 143 147
+5	31998 2320 298 2668 156000 1032000 147 0 5 139 277
+6	34318 2320 298 2668 156000 1032000 147 0 5 139 259
+7	36638 7956 305 2660 156164.630331376881 1030192.926766480201 278 0 4 217 319

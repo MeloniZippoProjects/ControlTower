@@ -1,0 +1,47 @@
+file 49458 1483893078                                           
+version 2
+run ParkingMeasurement-37-20170108-17:31:18-5704
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:18
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=37
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5704
+attr repetition 37
+attr replication #37
+attr resultdir results
+attr runnumber 37
+attr seedset 37
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1442 6614 553 3162 204383.789185197446 1122603.412750352016 155 1456.5057742748 36247.44736497 1614703.4900035 22383706001.749
+1	8056 4840 541 3150 202082.294293823008 1121972.726498699487 154 0 3306.2584479781 22714.978364331 36601487.550926
+2	12896 8880 539 3150 202082.294293823008 1121972.726498699487 308 0 2 160 166
+3	21776 4877 550 3159 204075.451458832372 1122524.004320098844 155 0 2656.9925155282 23089.956649315 29707035.156158
+4	26653 8956 544 3159 203472.365453133937 1122524.004320098844 310 0 2 163 171
+5	35609 2464 546 3155 204000 1122000 154 0 4 154 304
+6	38073 2464 546 3155 204000 1122000 154 0 4 155 311
+7	40537 8921 543 3156 203472.365453133937 1122524.004320098844 309 0 4 312 542

@@ -1,0 +1,47 @@
+file 52471 1483893077                                           
+version 2
+run ParkingMeasurement-34-20170108-17:31:17-5698
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:17
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=34
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5698
+attr repetition 34
+attr replication #34
+attr resultdir results
+attr runnumber 34
+attr seedset 34
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1442 6973 605 3353 214675.744262428283 1121249.834274384025 163 1714.5245134151 46508.702633626 1858271.7458464 29722567379.973
+1	8415 5445 582 3342 208874.172327123886 1119597.350460175237 165 0 4010.6779169374 56735.984429511 133430162.12722
+2	13860 9525 580 3342 208874.172327123886 1119597.350460175237 330 0 3 185 213
+3	23385 5281 599 3350 214341.254757937329 1121215.907680198633 163 0 3610.6880711677 45364.651939318 94980200.679738
+4	28666 9419 597 3350 214341.254757937329 1121215.907680198633 326 0 3 183 211
+5	38085 2455 578 3355 204000 1122000 154 0 4 165 369
+6	40540 2455 578 3355 204000 1122000 154 0 5 163 405
+7	42995 9476 586 3347 210520.139104082672 1121215.907680198633 328 0 5 420 868

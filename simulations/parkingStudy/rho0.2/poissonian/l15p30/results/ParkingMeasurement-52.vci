@@ -1,0 +1,47 @@
+file 42306 1483893122                                           
+version 2
+run ParkingMeasurement-52-20170108-17:32:02-6039
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:02
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=52
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6039
+attr repetition 52
+attr replication #52
+attr resultdir results
+attr runnumber 52
+attr seedset 52
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1442 5571 376 2603 154533.961345062368 1032737.138329930233 131 1329.1783384913 32587.126473616 1301521.0921137 18520045204.01
+1	7013 4051 365 2608 150485.705874975908 1035574.185785640945 132 0 3232.7341713609 13337.744575166 26416377.539037
+2	11064 7574 363 2608 150485.705874975908 1035574.185785640945 264 0 2 134 136
+3	18638 3979 373 2600 154411.654024821081 1032664.996091598705 131 0 3959.3351302617 18912.094528741 49321519.386055
+4	22617 7512 371 2600 154411.654024821081 1032664.996091598705 262 0 2 135 139
+5	30129 2321 378 2593 156000 1032000 147 0 4 130 230
+6	32450 2321 378 2593 156000 1032000 147 0 4 130 266
+7	34771 7535 368 2611 152247.360355086324 1036685.202947666364 263 0 3 190 252

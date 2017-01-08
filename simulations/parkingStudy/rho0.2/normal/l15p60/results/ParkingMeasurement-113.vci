@@ -1,0 +1,47 @@
+file 48844 1483893103                                           
+version 2
+run ParkingMeasurement-113-20170108-17:31:43-5905
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:43
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=113
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5905
+attr repetition 113
+attr replication #113
+attr resultdir results
+attr runnumber 113
+attr seedset 113
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 6471 672 3224 202638.022037483354 1112734.708968179685 151 5014.7003976893 37024.926231651 1684414.3912565 24134712190.354
+1	7947 4832 679 3238 214410.789810711539 1120314.068542452432 152 0 995.59928557903 14350.611554347 9082855.4997674
+2	12779 8802 677 3238 214410.789810711539 1120314.068542452432 304 0 2 154 156
+3	21581 4806 669 3221 202312.757308160982 1112456.461917664042 151 0 2647.8981012405 19428.037010636 23493979.895683
+4	26387 8750 667 3221 202312.757308160982 1112456.461917664042 302 0 3 157 167
+5	35137 2467 674 3243 204000 1122000 154 0 4 153 311
+6	37604 2467 674 3243 204000 1122000 154 0 4 151 297
+7	40071 8773 666 3241 202312.757308160982 1121264.163846160459 303 0 4 329 603

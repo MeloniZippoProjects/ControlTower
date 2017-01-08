@@ -1,0 +1,47 @@
+file 44791 1483893077                                           
+version 2
+run ParkingMeasurement-5-20170108-17:31:17-5691
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:17
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=5
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5691
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1464 5890 634 2978 214853.030397998106 1122621.19912674594 138 5132.7308169247 35923.29722897 1609736.6198716 24176128118.238
+1	7354 4302 615 2966 210240.326404459343 1121335.316000277797 139 0 1445.0982158033 11901.463330144 9275237.178348
+2	11656 8019 613 2966 210240.326404459343 1121335.316000277797 278 0 2 145 151
+3	19675 4221 631 2975 214538.909316795495 1122346.131200985447 138 0 1185.5803122104 7558.0208021961 5556860.2077566
+4	23896 7972 629 2975 214538.909316795495 1122346.131200985447 276 0 2 140 142
+5	31868 2462 610 2971 204000 1122000 154 0 4 138 268
+6	34330 2462 610 2971 204000 1122000 154 0 4 137 247
+7	36792 7999 618 2973 211175.838067270493 1122346.131200985447 277 0 4 287 507

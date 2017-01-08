@@ -1,0 +1,47 @@
+file 92253 1483893167                                           
+version 2
+run ParkingMeasurement-57-20170108-17:32:47-6352
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:47
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=57
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6352
+attr repetition 57
+attr replication #57
+attr resultdir results
+attr runnumber 57
+attr seedset 57
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1439 12438 777 5711 150858.594675394418 1032007.134674517697 291 741.63216928403 22450.405988592 2081989.4023611 19855053650.139
+1	13877 9073 791 5733 154638.609689942795 1036398.060509974282 293 0 857.68442225754 11004.793145478 5486602.3705203
+2	22950 16927 789 5733 154638.609689942795 1036398.060509974282 586 0 2 297 301
+3	39877 9302 774 5707 150787.350400100639 1031989.743696108241 291 0 1442.8068592855 24987.537323841 17425567.709192
+4	49179 16803 772 5707 150787.350400100639 1031989.743696108241 582 0 2 313 335
+5	65982 4712 787 5718 153000 1035000 295 0 5 290 580
+6	70694 4712 787 5718 153000 1035000 295 0 7 291 605
+7	75406 16847 771 5728 150787.350400100639 1036185.297749486841 583 0 6 952 2404

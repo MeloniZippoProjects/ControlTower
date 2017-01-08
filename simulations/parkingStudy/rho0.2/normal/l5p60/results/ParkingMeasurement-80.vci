@@ -1,0 +1,47 @@
+file 92855 1483893181                                           
+version 2
+run ParkingMeasurement-80-20170108-17:33:01-6447
+attr configname ParkingMeasurement
+attr datetime 20170108-17:33:01
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6447
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 12523 755 5720 124148.800021118762 1036565.437700721708 293 3963.9630797164 22564.878226068 2169329.4008982 18927754700.383
+1	13990 9301 732 5709 122404.082020018205 1035043.900744121738 293 0 427.9059477046 10167.352211341 2285345.4345391
+2	23291 16933 730 5709 122404.082020018205 1035043.900744121738 586 0 2 295 297
+3	40224 9053 749 5717 123798.885261966965 1036279.952892061726 293 0 506.27638689695 7833.1200507181 2015608.3165304
+4	49277 16909 747 5717 123798.885261966965 1036279.952892061726 586 0 2 295 297
+5	66186 4874 737 5702 123000 1035000 305 0 5 293 563
+6	71060 4874 737 5702 123000 1035000 305 0 4 291 563
+7	75934 16921 735 5714 122728.165358502926 1036279.952892061726 586 0 6 945 2261

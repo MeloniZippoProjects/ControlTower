@@ -1,0 +1,47 @@
+file 98216 1483893177                                           
+version 2
+run ParkingMeasurement-91-20170108-17:32:57-6422
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:57
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=91
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6422
+attr repetition 91
+attr replication #91
+attr resultdir results
+attr runnumber 91
+attr seedset 91
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1439 13310 777 6048 150830.489065296331 1036505.252644444409 311 609.56456608413 35854.553294463 2345133.597441 25928787068.395
+1	14749 10044 782 6029 151152.326934352419 1035160.766724650401 312 0 1220.4201737686 24155.682346443 14602805.716395
+2	24793 18030 780 6029 151152.326934352419 1035160.766724650401 624 0 3 338 372
+3	42823 9883 774 6053 150692.581979411073 1036699.565516050015 312 0 1015.5380947071 19247.527997243 9662885.4140367
+4	52706 18043 772 6053 150692.581979411073 1036699.565516050015 624 0 3 334 360
+5	70749 4714 795 6025 153000 1035000 295 0 6 312 640
+6	75463 4714 795 6025 153000 1035000 295 0 6 310 680
+7	80177 18039 771 6050 150692.581979411073 1036699.565516050015 624 0 6 1174 3160

@@ -1,0 +1,47 @@
+file 104690 1483893166                                          
+version 2
+run ParkingMeasurement-31-20170108-17:32:46-6349
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:46
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=31
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6349
+attr repetition 31
+attr replication #31
+attr resultdir results
+attr runnumber 31
+attr seedset 31
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 14196 828 6422 127294.106348718415 1030156.127372503183 332 3982.6537669475 21289.528168176 2332162.7335566 18530257457.086
+1	15663 10694 813 6453 123805.407293012594 1036312.197643588996 336 0 453.02120332031 11694.668189932 2511446.1973
+2	26357 19416 811 6453 123805.407293012594 1036312.197643588996 672 0 2 338 340
+3	45773 10586 822 6461 126983.759467246558 1036797.403698157736 333 0 1001.5587315026 15290.857479622 5163303.7951538
+4	56359 19240 820 6461 126983.759467246558 1036797.403698157736 666 0 2 339 345
+5	75599 4880 809 6441 123000 1035000 305 0 4 334 662
+6	80479 4880 809 6441 123000 1035000 305 0 5 332 666
+7	85359 19331 816 6458 124116.991560515797 1036797.403698157736 669 0 5 1185 3011

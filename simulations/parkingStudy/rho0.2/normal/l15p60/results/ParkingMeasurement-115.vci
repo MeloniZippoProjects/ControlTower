@@ -1,0 +1,47 @@
+file 45344 1483893104                                           
+version 2
+run ParkingMeasurement-115-20170108-17:31:43-5909
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:43
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=115
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5909
+attr repetition 115
+attr replication #115
+attr resultdir results
+attr runnumber 115
+attr seedset 115
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 6041 707 3066 203421.727491077078 1122536.019703180255 141 5425.8836243227 39216.903648659 1616428.3490765 24067655837.815
+1	7517 4323 677 3030 200595.601712429212 1117823.573567438787 139 0 929.47350873986 7938.9195665731 4499175.4599068
+2	11840 8042 675 3030 200595.601712429212 1117823.573567438787 278 0 2 141 143
+3	19882 4320 704 3063 203127.041310914314 1122197.845600059318 141 0 1928.2696877527 8376.9635515071 7473307.6035477
+4	24202 8138 680 3063 201198.77162316162 1122197.845600059318 282 0 2 143 145
+5	32340 2459 714 3059 204000 1122000 154 0 4 140 262
+6	34799 2459 714 3059 204000 1122000 154 0 4 142 266
+7	37258 8086 679 3060 201198.77162316162 1122197.845600059318 280 0 3 286 472

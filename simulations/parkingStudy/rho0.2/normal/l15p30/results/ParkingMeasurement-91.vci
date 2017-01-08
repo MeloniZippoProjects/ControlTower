@@ -1,0 +1,47 @@
+file 50279 1483893140                                           
+version 2
+run ParkingMeasurement-91-20170108-17:32:20-6169
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:20
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=91
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6169
+attr repetition 91
+attr replication #91
+attr resultdir results
+attr runnumber 91
+attr seedset 91
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1470 6667 498 3129 210600.196579876183 1119886.6632312853 156 3622.7358367327 45328.142714739 1437022.9156783 19595996485.439
+1	8137 5047 486 3151 207794.623670413693 1122904.849326403541 159 0 1030.0855055157 11381.925676173 7151353.8365259
+2	13184 9208 484 3151 207794.623670413693 1122904.849326403541 318 0 2 165 171
+3	22392 4915 495 3126 210356.635969851123 1119562.558800127113 156 0 2183.7533405319 18287.359145361 19642917.963883
+4	27307 8999 493 3126 210356.635969851123 1119562.558800127113 312 0 2 158 160
+5	36306 2456 482 3139 204000 1122000 154 0 4 157 315
+6	38762 2456 482 3139 204000 1122000 154 0 6 156 340
+7	41218 9061 489 3149 208686.052697708981 1122904.849326403541 314 0 3 251 357

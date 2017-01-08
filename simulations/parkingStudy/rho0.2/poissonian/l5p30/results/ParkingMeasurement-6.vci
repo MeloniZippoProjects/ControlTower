@@ -1,0 +1,47 @@
+file 104245 1483893032                                          
+version 2
+run ParkingMeasurement-6-20170108-17:30:32-5344
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:32
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5344
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1433 14172 536 6135 101943.590758518579 1034567.744443249524 332 981.84011211352 20527.059753528 1772178.3201516 12945696153.313
+1	15605 10568 525 6116 101102.162954889442 1032014.630846868416 331 0 1769.6794629929 26567.086139246 20735399.717916
+2	26173 19086 523 6116 101102.162954889442 1032014.630846868416 662 0 3 355 391
+3	45259 10746 533 6132 101747.583354988945 1034274.820969099153 332 0 2632.076366656 36701.379083478 35112846.462196
+4	56005 19152 528 6132 101548.391185962104 1034274.820969099153 664 0 3 370 412
+5	75157 4983 538 6137 102000 1035000 312 0 5 331 715
+6	80140 4983 538 6137 102000 1035000 312 0 5 332 716
+7	85123 19122 527 6129 101548.391185962104 1034274.820969099153 663 0 6 799 1691

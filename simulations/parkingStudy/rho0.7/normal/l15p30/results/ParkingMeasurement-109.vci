@@ -1,0 +1,47 @@
+file 171184 1483892935                                          
+version 2
+run ParkingMeasurement-109-20170108-17:28:55-4865
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:55
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=109
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4865
+attr repetition 109
+attr replication #109
+attr resultdir results
+attr runnumber 109
+attr seedset 109
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 21837 1875 10533 200486.488239562395 1121958.387381313309 508 3299.6754345982 16547.020422064 3630926.2109287 29622761554.778
+1	23319 19419 1881 10538 200622.193642877808 1122392.977036806926 509 0 3444.6707858182 230648.12747372 294095864.4396
+2	42738 29582 1879 10538 200622.193642877808 1122392.977036806926 1018 0 4 749 1101
+3	72320 19479 1890 10530 203137.528283966223 1121608.5477186795 507 0 10504.771077391 948371.65606601 4622135136.0409
+4	91799 29462 1888 10530 203137.528283966223 1121608.5477186795 1014 0 11 1987 9055
+5	121261 10220 1877 10540 200568.42 1122840.3 539 0 3 508 790
+6	131481 10220 1877 10540 200568.42 1122840.3 539 0 6 513 1363
+7	141701 29483 1884 10527 201577.271675826973 1121608.5477186795 1015 0 3 1332 2444

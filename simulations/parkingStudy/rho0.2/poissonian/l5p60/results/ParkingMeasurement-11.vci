@@ -1,0 +1,47 @@
+file 85508 1483893154                                           
+version 2
+run ParkingMeasurement-11-20170108-17:32:34-6266
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:34
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=11
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6266
+attr repetition 11
+attr replication #11
+attr resultdir results
+attr runnumber 11
+attr seedset 11
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1439 11504 708 5269 151985.86697386573 1028373.380823437539 269 962.72793927214 24307.561089102 2023644.4888221 20989040311.745
+1	12943 8344 710 5276 151985.86697386573 1034380.720668942315 267 0 903.24100823316 9750.5093571008 3968202.9758095
+2	21287 15416 705 5276 151931.002607349327 1034380.720668942315 534 0 2 271 275
+3	36703 8393 702 5266 151823.139353868893 1027751.558272048713 269 0 1501.476478711 18077.405112092 12568465.610103
+4	45096 15506 700 5266 151823.139353868893 1027751.558272048713 538 0 2 279 289
+5	60602 4713 723 5278 153000 1035000 295 0 4 267 477
+6	65315 4713 723 5278 153000 1035000 295 0 4 269 513
+7	70028 15480 697 5280 150657.546950501024 1035228.763514896543 537 0 5 841 1969

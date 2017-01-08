@@ -1,0 +1,47 @@
+file 181323 1483892942                                          
+version 2
+run ParkingMeasurement-128-20170108-17:29:02-4903
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:02
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=128
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4903
+attr repetition 128
+attr replication #128
+attr resultdir results
+attr runnumber 128
+attr seedset 128
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 23185 1988 11133 200813.044022560864 1122291.865472468487 539 3413.7801047064 19969.364819457 4198706.0593353 40769409884.488
+1	24667 20822 1994 11112 202870.815153370255 1119263.557006256366 538 0 5142.8447736641 298356.78894277 515182059.1111
+2	45489 31339 1992 11112 202870.815153370255 1119263.557006256366 1076 0 6 910 1722
+3	76828 21100 1984 11130 200538.192387401116 1121995.964935094982 539 0 14230.933101867 1357786.3236785 10094901318.789
+4	97928 31497 1982 11130 200538.192387401116 1121995.964935094982 1078 0 16 2613 18383
+5	129425 10260 1986 11135 200568.42 1122840.3 539 0 3 538 846
+6	139685 10260 1986 11135 200568.42 1122840.3 539 0 6 543 1435
+7	149945 31378 1981 11127 200538.192387401116 1121995.964935094982 1077 0 3 1486 2806

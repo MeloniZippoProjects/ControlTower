@@ -1,0 +1,47 @@
+file 88478 1483893161                                           
+version 2
+run ParkingMeasurement-12-20170108-17:32:41-6312
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:41
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=12
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6312
+attr repetition 12
+attr replication #12
+attr resultdir results
+attr runnumber 12
+attr seedset 12
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1467 11862 807 5544 121276.882534232102 1036627.676562427917 277 3216.0258003574 23808.649689985 2080720.4142367 18625114866.209
+1	13329 8626 812 5524 121651.153132230463 1033391.097615090401 278 0 430.67324684498 7247.1000280421 1723312.8645249
+2	21955 16062 810 5524 121651.153132230463 1033391.097615090401 556 0 2 284 290
+3	38017 8656 804 5541 120976.102099150643 1036294.096058381621 277 0 605.35859598594 7436.3442699117 1841013.6642805
+4	46673 16009 802 5541 120976.102099150643 1036294.096058381621 554 0 2 279 281
+5	62682 4881 841 5529 123000 1035000 305 0 5 278 534
+6	67563 4881 841 5529 123000 1035000 305 0 4 275 515
+7	72444 16034 801 5535 120976.102099150643 1036169.708694637122 555 0 6 909 2257

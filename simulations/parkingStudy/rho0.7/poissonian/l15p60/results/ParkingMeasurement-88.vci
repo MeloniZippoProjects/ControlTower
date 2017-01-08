@@ -1,0 +1,47 @@
+file 172243 1483892899                                          
+version 2
+run ParkingMeasurement-88-20170108-17:28:19-4621
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:19
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=88
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4621
+attr repetition 88
+attr replication #88
+attr resultdir results
+attr runnumber 88
+attr seedset 88
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1448 21865 2349 10980 203417.360481099136 1119776.817419856799 508 544.99782301318 36065.791341334 5255829.8361262 74393475550.976
+1	23313 19544 2322 11020 201615.354294276038 1122995.043810762197 513 0 9134.0940417062 525081.60027971 1846120705.7362
+2	42857 29853 2314 11023 200755.312087650819 1123118.024734136598 1025 0 9 1053 2621
+3	72710 19394 2346 10977 203122.815968867566 1119743.266350293129 508 0 23751.293365178 1393320.4922086 12828711027.752
+4	92104 29788 2344 11014 203122.815968867566 1122736.533581203078 1019 0 19 2526 18822
+5	121892 10246 2312 11016 200568.42 1122840.3 539 0 5 512 942
+6	132138 10246 2312 11016 200568.42 1122840.3 539 0 9 508 1494
+7	142384 29859 2320 11018 201615.354294276038 1122995.043810762197 1024 0 8 2432 7716

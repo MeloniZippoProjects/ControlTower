@@ -1,0 +1,47 @@
+file 168067 1483892963                                          
+version 2
+run ParkingMeasurement-130-20170108-17:29:23-5004
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:23
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=130
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5004
+attr repetition 130
+attr replication #130
+attr resultdir results
+attr runnumber 130
+attr seedset 130
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1454 21460 1511 10033 151474.171528720432 1033300.805747675638 501 870.96241782601 36290.741360979 4527299.5158017 60497779046.642
+1	22914 19083 1516 10056 152266.393248683859 1035696.548732765767 504 0 8339.5826051652 469648.19406887 1474176401.9753
+2	41997 29189 1514 10059 152266.393248683859 1035701.823245751909 1009 0 6 999 2165
+3	71186 19231 1508 10030 151239.489636452314 1032918.623932416126 501 0 30292.069228926 1633976.8090474 19692104787.493
+4	90417 29100 1506 10062 151239.489636452314 1035938.816755369542 1003 0 23 2748 23206
+5	119517 9722 1504 10044 150854.88 1035413.04 517 0 5 502 996
+6	129239 9722 1504 10044 150854.88 1035413.04 517 0 9 501 1533
+7	138961 29106 1502 10061 150515.569118446345 1035938.816755369542 1006 0 6 1639 4091

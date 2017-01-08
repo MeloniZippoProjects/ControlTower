@@ -1,0 +1,47 @@
+file 100412 1483893052                                          
+version 2
+run ParkingMeasurement-108-20170108-17:30:51-5544
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:51
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=108
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5544
+attr repetition 108
+attr replication #108
+attr resultdir results
+attr runnumber 108
+attr seedset 108
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1445 13637 627 6022 100396.792239441339 1029470.476672267028 319 772.94334747373 13789.951711569 1692986.7178051 11923226352.154
+1	15082 10101 629 6037 100396.792239441339 1036752.418396537944 320 0 1520.3514838401 20951.049877626 12517848.922854
+2	25183 18454 624 6037 100280.401995562141 1036752.418396537944 640 0 2 328 336
+3	43637 10009 621 6019 100249.633359255431 1029251.822449553109 319 0 1480.7568384435 19065.211708194 11036102.677181
+4	53646 18402 619 6019 100249.633359255431 1029251.822449553109 638 0 3 337 359
+5	72048 4986 634 6033 102000 1035000 312 0 4 320 606
+6	77034 4986 634 6033 102000 1035000 312 0 5 319 641
+7	82020 18392 618 6031 100249.633359255431 1034838.135350697493 638 0 4 677 1239

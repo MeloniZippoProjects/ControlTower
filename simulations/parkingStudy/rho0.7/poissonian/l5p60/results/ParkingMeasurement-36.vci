@@ -1,0 +1,47 @@
+file 347461 1483892993                                          
+version 2
+run ParkingMeasurement-36-20170108-17:29:53-5147
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:53
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=36
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5147
+attr repetition 36
+attr replication #36
+attr resultdir results
+attr runnumber 36
+attr seedset 36
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1447 44422 3018 20339 151140.304483454327 1032646.918386738236 1023 511.85408769762 26366.227927706 6552606.4131305 56210780412.397
+1	45869 40214 3009 20365 150844.044221468122 1036570.795376560016 1019 0 2061.3486519142 287693.90687728 229063684.70469
+2	86083 60142 3004 20365 150641.900736967493 1036570.795376560016 2038 0 5 1633 2607
+3	146225 40439 3015 20336 150995.136612659638 1032575.955510283125 1023 0 6939.024584167 1032165.4401074 2664830588.6727
+4	186664 60395 3001 20336 150636.702781317596 1032575.955510283125 2045 0 14 3790 17242
+5	247059 20064 3011 20361 150860.16 1036306.44 1034 0 5 1021 2057
+6	267123 20064 3011 20361 150860.16 1036306.44 1034 0 7 1024 2246
+7	287187 60274 3000 20368 150636.702781317596 1036697.606304316794 2042 0 11 9449 51625

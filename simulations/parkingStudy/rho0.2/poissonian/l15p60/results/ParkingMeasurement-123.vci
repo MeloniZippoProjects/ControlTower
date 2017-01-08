@@ -1,0 +1,47 @@
+file 54372 1483893099                                           
+version 2
+run ParkingMeasurement-123-20170108-17:31:39-5877
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:39
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=123
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5877
+attr repetition 123
+attr replication #123
+attr resultdir results
+attr runnumber 123
+attr seedset 123
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1448 7322 536 3409 201838.827373338292 1119595.286649954262 171 1528.7056283324 45862.27407075 1902702.3206514 29903205621.198
+1	8770 5552 549 3398 203290.892058830844 1117446.746800653122 170 0 7564.4705327967 57983.044894941 202674713.07038
+2	14322 9831 544 3398 203169.132676655855 1117446.746800653122 340 0 4 204 270
+3	24153 5551 533 3406 201612.28101337401 1119400.354956431207 171 0 9938.9977362516 81791.922590314 465902915.0215
+4	29704 9883 531 3406 201612.28101337401 1119400.354956431207 342 0 7 241 527
+5	39587 2464 554 3411 204000 1122000 154 0 6 170 358
+6	42051 2464 554 3411 204000 1122000 154 0 7 171 405
+7	44515 9857 530 3403 201612.28101337401 1119400.354956431207 341 0 5 403 759

@@ -1,0 +1,47 @@
+file 174586 1483892890                                          
+version 2
+run ParkingMeasurement-109-20170108-17:28:10-4492
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:10
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=109
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4492
+attr repetition 109
+attr replication #109
+attr resultdir results
+attr runnumber 109
+attr seedset 109
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 22295 1862 10583 210424.205834019445 1120787.32848782186 519 5112.7576194775 21038.221942055 4479942.865779 42814307021.041
+1	23777 19963 1761 10603 202034.663978646568 1123108.42305115781 520 0 3687.4201947481 237064.0129277 310235016.34265
+2	43740 30227 1759 10603 202034.663978646568 1123108.42305115781 1040 0 4 762 1132
+3	73967 19791 1856 10577 210121.265888850966 1120482.42419032027 519 0 13450.838765008 823375.47665306 4235404661.4266
+4	93758 30188 1765 10577 202339.760606474619 1120482.42419032027 1038 0 13 1675 7731
+5	123946 10220 1754 10599 200568.42 1122840.3 539 0 3 522 820
+6	134166 10220 1754 10599 200568.42 1122840.3 539 0 6 520 1270
+7	144386 30200 1756 10597 201186.845687131141 1122404.666836613738 1039 0 5 2528 7752

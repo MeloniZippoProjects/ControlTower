@@ -1,0 +1,47 @@
+file 162299 1483892926                                          
+version 2
+run ParkingMeasurement-80-20170108-17:28:46-4805
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:46
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4805
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 20544 2180 10333 202053.214539831607 1121393.978964143015 478 3395.328164657 21433.86323249 3359905.9072354 27607297128.554
+1	22020 18152 2172 10338 200887.869791198048 1122444.685369562438 477 0 4942.8438158169 238462.17294709 392810029.74776
+2	40172 27741 2164 10338 200586.68538583327 1122444.685369562438 954 0 6 745 1321
+3	67913 18415 2177 10329 201762.686981226562 1121084.46914762422 478 0 12044.353993477 764197.63803575 3550861796.9704
+4	86328 27807 2167 10329 200756.227840729099 1121084.46914762422 956 0 13 1598 7122
+5	114135 10203 2162 10340 200568.42 1122840.3 539 0 3 478 752
+6	124338 10203 2162 10340 200568.42 1122840.3 539 0 6 479 1185
+7	134541 27758 2166 10326 200756.227840729099 1121084.46914762422 955 0 3 1273 2369

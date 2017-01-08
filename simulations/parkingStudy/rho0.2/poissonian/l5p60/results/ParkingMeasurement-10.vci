@@ -1,0 +1,47 @@
+file 103163 1483893154                                          
+version 2
+run ParkingMeasurement-10-20170108-17:32:34-6264
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:34
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=10
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6264
+attr repetition 10
+attr replication #10
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1439 14132 1100 6640 150367.103512346932 1036382.102841079805 330 920.50267476134 25235.884570592 2340795.1467501 22586491050.334
+1	15571 10501 1102 6612 150367.103512346932 1033758.566185268544 327 0 2108.3094629084 26423.793864381 19034608.622155
+2	26072 18893 1102 6612 150367.103512346932 1033758.566185268544 653 0 2 342 358
+3	44965 10727 1118 6637 152552.207777360444 1036294.013458694845 329 0 4424.5139641987 41344.096538762 52031071.126232
+4	55692 19039 1116 6637 152552.207777360444 1036294.013458694845 658 0 4 377 453
+5	74731 4732 1131 6633 153000 1035000 295 0 5 327 693
+6	79463 4732 1131 6633 153000 1035000 295 0 5 329 731
+7	84195 18968 1105 6634 150680.24907438801 1036294.013458694845 656 0 6 1220 3272

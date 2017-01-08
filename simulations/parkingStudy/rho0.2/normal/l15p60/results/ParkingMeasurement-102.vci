@@ -1,0 +1,47 @@
+file 45295 1483893100                                           
+version 2
+run ParkingMeasurement-102-20170108-17:31:40-5884
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:40
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=102
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5884
+attr repetition 102
+attr replication #102
+attr resultdir results
+attr runnumber 102
+attr seedset 102
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 5988 555 2921 221859.316356236317 1116106.933984806823 140 5056.5070331145 30031.914402018 1611870.9019457 22765448299.015
+1	7464 4341 536 2926 216663.004628467889 1119757.063074215403 141 0 1042.1272717821 8067.7913124005 5130120.6940551
+2	11805 8123 534 2926 216663.004628467889 1119757.063074215403 282 0 1 141 141
+3	19928 4275 552 2917 221574.810836713332 1115793.20355215593 140 0 944.72888017425 8220.0656586258 5343129.3249875
+4	24203 8076 547 2917 221069.179323453864 1115793.20355215593 280 0 1 140 140
+5	32279 2457 530 2931 204000 1122000 154 0 4 141 229
+6	34736 2457 530 2931 204000 1122000 154 0 3 141 235
+7	37193 8102 539 2929 217699.439904560817 1120687.82063345473 281 0 3 255 397

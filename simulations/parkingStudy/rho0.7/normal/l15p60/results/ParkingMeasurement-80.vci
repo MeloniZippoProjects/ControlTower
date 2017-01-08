@@ -1,0 +1,47 @@
+file 168450 1483892887                                          
+version 2
+run ParkingMeasurement-80-20170108-17:28:07-4405
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:07
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4405
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 21187 2309 10775 202422.82471365412 1118879.07555082682 493 4818.4072336577 23990.05004357 4129613.4224695 37565539070.733
+1	22663 19176 2316 10823 206982.330168518105 1122463.484666362557 503 0 2754.3416835805 208374.45689171 238185821.7278
+2	41839 29336 2314 10823 206982.330168518105 1122463.484666362557 1007 0 4 704 980
+3	71175 18774 2305 10766 202135.253890208665 1118557.743277262024 493 0 10695.355307221 643478.9058305 2587577289.2263
+4	89949 28871 2303 10807 202135.253890208665 1121250.430108768996 992 0 11 1324 4700
+5	118820 10242 2301 10825 200568.42 1122840.3 539 0 3 503 779
+6	129062 10242 2301 10825 200568.42 1122840.3 539 0 6 494 1082
+7	139304 29146 2302 10821 202135.253890208665 1122463.484666362557 1001 0 5 2388 7148

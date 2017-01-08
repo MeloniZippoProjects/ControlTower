@@ -1,0 +1,47 @@
+file 48198 1483893095                                           
+version 2
+run ParkingMeasurement-81-20170108-17:31:35-5841
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:35
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=81
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5841
+attr repetition 81
+attr replication #81
+attr resultdir results
+attr runnumber 81
+attr seedset 81
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1470 6418 546 3081 212905.418926094342 1121030.084597985064 150 5498.2115671555 39199.610887743 1673982.8716126 24284719603.256
+1	7888 4766 534 3062 208198.015801488305 1116445.425124637084 150 0 1357.3307973598 13495.447942032 9436090.588731
+2	12654 8673 532 3062 208198.015801488305 1116445.425124637084 300 0 2 154 158
+3	21327 4650 543 3078 212588.200891649071 1120729.550326139156 150 0 2275.06353592 14405.059879538 13107168.541019
+4	25977 8661 541 3078 212588.200891649071 1120729.550326139156 300 0 2 152 154
+5	34638 2449 530 3083 204000 1122000 154 0 4 150 288
+6	37087 2449 530 3083 204000 1122000 154 0 4 151 291
+7	39536 8662 537 3075 209130.341879558834 1120729.550326139156 300 0 3 316 538

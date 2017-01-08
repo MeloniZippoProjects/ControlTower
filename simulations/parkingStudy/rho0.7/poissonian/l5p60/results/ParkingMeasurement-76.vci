@@ -1,0 +1,47 @@
+file 383424 1483893009                                          
+version 2
+run ParkingMeasurement-76-20170108-17:30:09-5230
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:09
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=76
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5230
+attr repetition 76
+attr replication #76
+attr resultdir results
+attr runnumber 76
+attr seedset 76
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1447 49259 2975 22152 150769.942131083023 1036744.647924682415 1134 633.4040238727 27096.471029471 7281740.549037 64232730942.125
+1	50706 45552 2967 22154 150532.121497978825 1036744.647924682415 1135 0 2951.6044177035 364596.90590746 300200971.18208
+2	96258 67141 2962 22154 150344.385973725448 1036744.647924682415 2271 0 7 2026 3800
+3	163399 45538 2972 22130 150767.321809344198 1035692.317900835346 1134 0 6675.8322530258 1314372.6817535 3658073937.2741
+4	208937 67144 2972 22142 150767.321809344198 1036220.464966686097 2270 0 12 4561 19727
+5	276081 20059 2979 22144 150860.16 1036306.44 1034 0 6 1135 2495
+6	296140 20059 2979 22144 150860.16 1036306.44 1034 0 7 1134 2542
+7	316199 67225 2965 22141 150532.121497978825 1036220.464966686097 2271 0 11 11332 66364

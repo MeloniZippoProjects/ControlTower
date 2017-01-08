@@ -1,0 +1,47 @@
+file 50551 1483893110                                           
+version 2
+run ParkingMeasurement-142-20170108-17:31:50-5954
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:50
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=142
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5954
+attr repetition 142
+attr replication #142
+attr resultdir results
+attr runnumber 142
+attr seedset 142
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 6795 616 3287 201167.79580834224 1106741.727340896993 159 4671.0116642093 34299.569750085 1689310.1482843 22848952300.424
+1	8271 4907 621 3294 201449.827844860271 1121467.676507045765 158 0 1898.3294538718 9304.7332292471 7127770.3706703
+2	13178 9114 619 3294 201449.827844860271 1121467.676507045765 316 0 2 160 162
+3	22292 4982 613 3284 200848.754356323756 1106427.84513474675 159 0 1438.512703082 12066.51081367 7875427.0705404
+4	27274 9186 611 3284 200848.754356323756 1106427.84513474675 318 0 1 159 159
+5	36460 2465 631 3296 204000 1122000 154 0 4 158 310
+6	38925 2465 631 3296 204000 1122000 154 0 4 160 314
+7	41390 9161 610 3298 200848.754356323756 1122519.8456733652 317 0 4 345 623

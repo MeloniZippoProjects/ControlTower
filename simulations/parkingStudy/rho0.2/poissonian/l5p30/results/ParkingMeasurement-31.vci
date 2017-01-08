@@ -1,0 +1,47 @@
+file 104868 1483893036                                          
+version 2
+run ParkingMeasurement-31-20170108-17:30:36-5389
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:36
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=31
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5389
+attr repetition 31
+attr replication #31
+attr resultdir results
+attr runnumber 31
+attr seedset 31
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1439 14292 691 6311 109809.716106216145 1033501.686068367026 334 861.09130191398 18685.858636696 1812533.1956897 13015451296.456
+1	15731 10629 663 6299 107711.124933919849 1031563.90448569169 334 0 1838.2370766257 30985.060184606 25681437.034962
+2	26360 19266 661 6299 107711.124933919849 1031563.90448569169 668 0 3 366 410
+3	45626 10747 688 6308 109636.285363894052 1033413.443807851909 334 0 2736.3634832152 36348.396758642 34486248.945362
+4	56373 19262 683 6308 109490.054984376265 1033413.443807851909 668 0 3 362 394
+5	75635 4984 658 6313 102000 1035000 312 0 5 334 700
+6	80619 4984 658 6313 102000 1035000 312 0 5 335 715
+7	85603 19265 667 6305 108165.713215559262 1033413.443807851909 668 0 5 780 1526

@@ -1,0 +1,47 @@
+file 346891 1483893025                                          
+version 2
+run ParkingMeasurement-127-20170108-17:30:25-5314
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:25
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=127
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5314
+attr repetition 127
+attr replication #127
+attr resultdir results
+attr runnumber 127
+attr seedset 127
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1453 44500 2916 20230 151079.96160346351 1035206.14960065427 1025 582.21067248226 36543.221485349 6535639.3658947 59356651385.154
+1	45953 39953 2877 20252 150457.057814474655 1036213.044026945598 1021 0 2771.2102000623 310263.73217496 274311281.8989
+2	85906 60209 2877 20252 150457.057814474655 1036213.044026945598 2039 0 6 1743 3103
+3	146115 39816 2904 20261 150984.220936084139 1036587.465737495716 1026 0 8519.0176286002 1055690.3232079 3607995246.812
+4	185931 60527 2893 20261 150824.245704052452 1036587.465737495716 2048 0 16 3448 16156
+5	246458 20029 2895 20257 150860.16 1036306.44 1034 0 6 1022 2140
+6	266487 20029 2895 20257 150860.16 1036306.44 1034 0 6 1025 2231
+7	286516 60375 2875 20258 150457.057814474655 1036587.465737495716 2044 0 12 9364 50934

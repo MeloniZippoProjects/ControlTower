@@ -1,0 +1,47 @@
+file 95328 1483893053                                           
+version 2
+run ParkingMeasurement-87-20170108-17:30:52-5553
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:52
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=87
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5553
+attr repetition 87
+attr replication #87
+attr resultdir results
+attr runnumber 87
+attr seedset 87
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1467 12901 608 5736 100828.312452857319 1036179.028137918177 302 2443.5812871603 19193.852242524 1683726.1586515 12053970077.178
+1	14368 9412 613 5724 101652.438756771998 1033875.917483514277 301 0 464.1305289975 8881.1003683838 2093688.4360185
+2	23780 17349 611 5724 101652.438756771998 1033875.917483514277 602 0 2 309 317
+3	41129 9417 605 5733 100519.450541775293 1035851.076403284081 302 0 799.798992022 9703.8315559537 2970272.9701306
+4	50546 17420 603 5733 100519.450541775293 1035851.076403284081 604 0 2 310 318
+5	67966 4983 618 5729 102000 1035000 312 0 4 301 563
+6	72949 4983 618 5729 102000 1035000 312 0 5 301 583
+7	77932 17396 602 5730 100519.450541775293 1035851.076403284081 603 0 4 623 1069

@@ -1,0 +1,47 @@
+file 349282 1483892855                                          
+version 2
+run ParkingMeasurement-32-20170108-17:27:35-3570
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:35
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=32
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3570
+attr repetition 32
+attr replication #32
+attr resultdir results
+attr runnumber 32
+attr seedset 32
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1447 44475 2021 19513 100522.475880016973 1036335.65556824802 1026 412.48286074208 20023.025539631 4574146.5723219 25918216873.951
+1	45922 39498 2006 19515 100237.778057482825 1036335.65556824802 1027 0 3430.8326890474 309788.63398487 297638662.31258
+2	85420 60523 2006 19526 100237.778057482825 1036727.195876223955 2054 0 8 1691 2967
+3	145943 40064 2015 19523 100295.178192036624 1036666.53867418511 1027 0 6189.7117083516 900879.11875387 2306083896.6339
+4	186007 60517 2009 19523 100247.730748667608 1036666.53867418511 2054 0 10 3189 11443
+5	246524 21096 2011 19511 100287.72 1036306.44 1093 0 8 1027 2131
+6	267620 21096 2011 19511 100287.72 1036306.44 1093 0 6 1026 2292
+7	288716 60566 2004 19521 100237.778057482825 1036666.53867418511 2055 0 8 5152 17704

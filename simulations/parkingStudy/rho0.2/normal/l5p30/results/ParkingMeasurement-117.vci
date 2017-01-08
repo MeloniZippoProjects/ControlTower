@@ -1,0 +1,47 @@
+file 108000 1483893062                                          
+version 2
+run ParkingMeasurement-117-20170108-17:31:02-5613
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:02
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=117
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5613
+attr repetition 117
+attr replication #117
+attr resultdir results
+attr runnumber 117
+attr seedset 117
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1473 14781 624 6454 100520.030815519507 1031539.966938609219 346 2409.4722569122 16976.712137798 1791990.8270011 11527967598.215
+1	16254 11213 633 6435 112873.101679369373 1029187.656729436022 345 0 468.24166073199 16195.020158836 3781976.4856432
+2	27467 19901 631 6435 112873.101679369373 1029187.656729436022 690 0 2 355 365
+3	47368 10839 658 6451 114973.699794612658 1031233.236063686635 345 0 917.20940644823 13768.201732163 4398118.4363866
+4	58207 19910 656 6451 114973.699794612658 1031233.236063686635 690 0 2 351 357
+5	78117 4983 626 6457 102000 1035000 312 0 5 345 699
+6	83100 4983 626 6457 102000 1035000 312 0 4 346 712
+7	88083 19917 642 6448 113138.514815235988 1031233.236063686635 690 0 5 783 1469

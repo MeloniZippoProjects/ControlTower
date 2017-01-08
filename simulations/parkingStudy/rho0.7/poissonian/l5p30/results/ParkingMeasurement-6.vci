@@ -1,0 +1,47 @@
+file 366222 1483892850                                          
+version 2
+run ParkingMeasurement-6-20170108-17:27:30-3416
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:30
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3416
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1441 46806 2095 20399 100437.571446527681 1036244.510790329767 1079 595.7439761222 18770.907749863 5433542.6955158 35141870440.231
+1	48247 42086 2084 20388 100313.835378551495 1035831.085803942598 1075 0 4808.8737875203 370989.51704671 421029817.2441
+2	90333 63375 2084 20388 100313.835378551495 1035831.085803942598 2149 0 7 1918 3638
+3	153708 43087 2089 20396 100386.296152047266 1036237.190782006451 1079 0 9855.5375866331 1479486.1196819 5182725597.8229
+4	196795 63642 2089 20396 100386.296152047266 1036237.190782006451 2157 0 16 5150 28982
+5	260437 21145 2080 20401 100287.72 1036306.44 1093 0 5 1076 2178
+6	281582 21145 2080 20401 100287.72 1036306.44 1093 0 7 1081 2491
+7	302727 63495 2082 20393 100313.835378551495 1036237.190782006451 2154 0 8 5523 18461

@@ -1,0 +1,47 @@
+file 352134 1483892864                                          
+version 2
+run ParkingMeasurement-74-20170108-17:27:43-3806
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:43
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=74
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3806
+attr repetition 74
+attr replication #74
+attr resultdir results
+attr runnumber 74
+attr seedset 74
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1447 44830 1712 19341 100886.474544162929 1036479.761849415176 1034 408.5993980659 22314.165662997 5147401.2139807 38161491199.785
+1	46277 40167 1714 19348 100886.474544162929 1036518.294887084068 1035 0 3164.6767730942 309981.3467191 290525331.60551
+2	86444 61048 1702 19348 100238.102861285591 1036518.294887084068 2072 0 8 1796 3512
+3	147492 40494 1754 19318 103630.949958865989 1035327.487398582064 1033 0 18224.604176253 1511347.0768264 9758662030.7151
+4	187986 61001 1718 19322 101258.368960319779 1035644.452805510615 2068 0 27 4944 42294
+5	248987 21109 1704 19336 100287.72 1036306.44 1093 0 6 1034 2112
+6	270096 21109 1704 19336 100287.72 1036306.44 1093 0 6 1034 2208
+7	291205 60929 1717 19346 101258.368960319779 1036518.294887084068 2069 0 8 5005 16623

@@ -1,0 +1,47 @@
+file 362377 1483892869                                          
+version 2
+run ParkingMeasurement-102-20170108-17:27:49-3958
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:49
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=102
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3958
+attr repetition 102
+attr replication #102
+attr resultdir results
+attr runnumber 102
+attr seedset 102
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1453 46402 2036 20141 103411.999620665293 1036265.49372969147 1070 382.95935579734 19741.512496659 5201657.2689956 34331741960.312
+1	47855 41483 1971 20143 100486.639292073181 1036265.49372969147 1068 0 2669.7523886524 326388.28254716 316674832.27141
+2	89338 62861 1971 20143 100486.639292073181 1036265.49372969147 2132 0 10 1878 4062
+3	152199 41807 2033 20149 103278.218423052655 1036418.777907397448 1071 0 10794.663826571 1305140.6721806 5525500142.7937
+4	194006 63164 1984 20149 100814.202907480679 1036418.777907397448 2139 0 17 4519 28825
+5	257170 21108 1967 20145 100287.72 1036306.44 1093 0 5 1069 2083
+6	278278 21108 1967 20145 100287.72 1036306.44 1093 0 7 1070 2266
+7	299386 62991 1969 20147 100486.639292073181 1036418.777907397448 2137 0 9 5632 19880

@@ -1,0 +1,47 @@
+file 196049 1483892880                                          
+version 2
+run ParkingMeasurement-19-20170108-17:28:00-4249
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:00
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=19
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4249
+attr repetition 19
+attr replication #19
+attr resultdir results
+attr runnumber 19
+attr seedset 19
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 25234 2012 11885 202222.876060677581 1122789.596401133771 585 5022.1296845647 21738.056152037 5327391.0029826 53692522010.285
+1	26710 23064 2001 11860 200995.143190419697 1121124.243165644025 584 0 3402.1002873028 321478.31147309 432990233.90784
+2	49774 34144 1995 11860 200488.765740708222 1121124.243165644025 1168 0 5 930 1496
+3	83918 23138 2009 11882 201907.351367053369 1122527.750531640622 585 0 15348.154936396 1291327.1349661 7337210585.1817
+4	107056 34226 2004 11882 201119.264057546241 1122527.750531640622 1170 0 16 2669 15125
+5	141282 10284 1997 11887 200568.42 1122840.3 539 0 3 586 960
+6	151566 10284 1997 11887 200568.42 1122840.3 539 0 6 586 1602
+7	161850 34199 1999 11876 200995.143190419697 1122248.905750184013 1170 0 5 3125 10089

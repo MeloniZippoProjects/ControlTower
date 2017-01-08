@@ -1,0 +1,47 @@
+file 91444 1483893176                                           
+version 2
+run ParkingMeasurement-86-20170108-17:32:55-6412
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:55
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=86
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6412
+attr repetition 86
+attr replication #86
+attr resultdir results
+attr runnumber 86
+attr seedset 86
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1439 12354 602 5495 154112.945064634443 1034263.039774457852 289 554.835936046 33787.584281646 2015764.1501911 20318482041.855
+1	13793 9078 590 5451 151347.840091791259 1031817.155804770727 288 0 1514.0532113575 20263.908521036 13491899.524482
+2	22871 16629 588 5451 151347.840091791259 1031817.155804770727 576 0 2 298 308
+3	39500 9197 599 5492 154062.017988748727 1034177.743783419435 289 0 1990.6596995934 25242.65464729 19649373.384646
+4	48697 16680 597 5492 154062.017988748727 1034177.743783419435 578 0 2 291 293
+5	65377 4702 595 5497 153000 1035000 295 0 5 288 576
+6	70079 4702 595 5497 153000 1035000 295 0 5 289 567
+7	74781 16663 593 5489 151533.822882228442 1034177.743783419435 577 0 5 876 2056

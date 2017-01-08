@@ -1,0 +1,47 @@
+file 50453 1483893097                                           
+version 2
+run ParkingMeasurement-112-20170108-17:31:37-5855
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:37
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=112
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5855
+attr repetition 112
+attr replication #112
+attr resultdir results
+attr runnumber 112
+attr seedset 112
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1448 6735 512 3175 202639.144952432996 1107328.926425745452 158 1451.9684274002 50333.10077069 1664553.6243073 28142231095.053
+1	8183 5022 518 3181 206973.766254451157 1115334.407607755029 158 0 6323.8353565038 40357.135355125 126058339.33146
+2	13205 9105 516 3181 206973.766254451157 1115334.407607755029 316 0 3 174 194
+3	22310 5033 509 3172 202321.450141996017 1106558.916766212252 158 0 3190.7937396932 32014.811986404 62034118.307876
+4	27343 9096 507 3172 202321.450141996017 1106558.916766212252 316 0 3 178 206
+5	36439 2458 514 3187 204000 1122000 154 0 6 158 368
+6	38897 2458 514 3187 204000 1122000 154 0 6 158 362
+7	41355 9098 506 3185 202321.450141996017 1116944.291601087543 316 0 4 340 618

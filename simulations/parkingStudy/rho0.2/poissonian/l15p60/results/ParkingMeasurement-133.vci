@@ -1,0 +1,47 @@
+file 54381 1483893102                                           
+version 2
+run ParkingMeasurement-133-20170108-17:31:42-5898
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:42
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=133
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5898
+attr repetition 133
+attr replication #133
+attr resultdir results
+attr runnumber 133
+attr seedset 133
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1448 7335 728 3593 202970.544046989733 1121449.285156991839 171 1207.8343409336 40055.488807986 1823839.1549591 25991033363.067
+1	8783 5399 709 3581 201762.709706056091 1115743.888530853748 171 0 2155.8740981263 22699.999381264 28416460.193778
+2	14182 9919 707 3581 201762.709706056091 1115743.888530853748 342 0 3 177 187
+3	24101 5501 725 3590 202697.299389826923 1121405.093411891928 171 0 4660.5906850414 41244.472503088 84682229.468172
+4	29602 9918 723 3590 202697.299389826923 1121405.093411891928 342 0 3 193 223
+5	39520 2470 730 3595 204000 1122000 154 0 4 172 348
+6	41990 2470 730 3595 204000 1122000 154 0 6 172 368
+7	44460 9921 715 3587 201849.373774499552 1121405.093411891928 342 0 5 389 743

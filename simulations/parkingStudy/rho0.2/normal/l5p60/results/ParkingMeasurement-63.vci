@@ -1,0 +1,47 @@
+file 95510 1483893176                                           
+version 2
+run ParkingMeasurement-63-20170108-17:32:56-6413
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:56
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=63
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6413
+attr repetition 63
+attr replication #63
+attr resultdir results
+attr runnumber 63
+attr seedset 63
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 12908 641 5751 126888.703885206534 1034637.20228838139 302 3678.0720260982 30841.957581653 2197894.8996477 19143016057.962
+1	14375 9533 621 5765 123131.240732593113 1035588.605124918749 304 0 421.99905451627 9072.9649846874 2122454.4414842
+2	23908 17550 619 5765 123131.240732593113 1035588.605124918749 608 0 2 314 324
+3	41458 9452 638 5748 126582.277032418566 1034293.582045525691 302 0 780.19396002832 11307.938338253 3725797.9827972
+4	50910 17409 636 5748 126582.277032418566 1034293.582045525691 604 0 2 310 318
+5	68319 4860 617 5753 123000 1035000 305 0 5 302 608
+6	73179 4860 617 5753 123000 1035000 305 0 5 302 582
+7	78039 17471 624 5768 123373.806172397845 1035902.643298785231 606 0 6 1017 2571

@@ -1,0 +1,47 @@
+file 94621 1483893049                                           
+version 2
+run ParkingMeasurement-73-20170108-17:30:49-5525
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:49
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=73
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5525
+attr repetition 73
+attr replication #73
+attr resultdir results
+attr runnumber 73
+attr seedset 73
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1467 12745 705 5767 102273.736427208872 1034766.473850653441 298 2294.8357380055 22886.112711539 1674590.2201254 12517189926.726
+1	14212 9475 710 5748 102993.58755867532 1032260.769684757102 297 0 476.70686616161 9588.8119813591 2080879.7657921
+2	23687 17175 708 5748 102993.58755867532 1032260.769684757102 594 0 2 303 309
+3	40862 9383 701 5764 101955.461547746591 1034431.35198237374 298 0 770.12826197929 10429.993442779 3226951.0662465
+4	50245 17217 699 5764 101955.461547746591 1034431.35198237374 596 0 2 304 310
+5	67462 4987 703 5769 102000 1035000 312 0 5 298 582
+6	72449 4987 703 5769 102000 1035000 312 0 4 298 602
+7	77436 17185 698 5761 101955.461547746591 1034431.35198237374 595 0 5 673 1317

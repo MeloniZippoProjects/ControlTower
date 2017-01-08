@@ -1,0 +1,47 @@
+file 179571 1483892961                                          
+version 2
+run ParkingMeasurement-124-20170108-17:29:21-4994
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:21
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=124
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4994
+attr repetition 124
+attr replication #124
+attr resultdir results
+attr runnumber 124
+attr seedset 124
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1454 23226 1487 10579 153540.009150601965 1036298.911874408952 541 669.94540946421 43803.053624281 4735344.8265513 64298740746.419
+1	24680 20625 1447 10566 150514.17024729771 1035905.23461849628 538 0 11016.846894047 549451.30104698 2228176147.2124
+2	45305 31127 1447 10566 150514.17024729771 1035905.23461849628 1074 0 9 1213 3597
+3	76432 21012 1481 10576 152974.20181781536 1036087.178686333143 541 0 35001.615316713 1604778.6653691 17549501034.784
+4	97444 31383 1442 10576 150393.248396319528 1036087.178686333143 1080 0 25 2866 22592
+5	128827 9747 1455 10556 150854.88 1035413.04 517 0 6 539 1109
+6	138574 9747 1455 10556 150854.88 1035413.04 517 0 7 538 1568
+7	148321 31250 1441 10569 150393.248396319528 1035966.274513706581 1078 0 9 1837 4991

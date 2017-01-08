@@ -1,0 +1,47 @@
+file 366370 1483892988                                          
+version 2
+run ParkingMeasurement-24-20170108-17:29:48-5119
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:48
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=24
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5119
+attr repetition 24
+attr replication #24
+attr resultdir results
+attr runnumber 24
+attr seedset 24
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1447 47134 2868 21152 154569.991483828396 1036612.623993115561 1085 782.53775891154 27980.452402912 7474003.030734 70802943391.241
+1	48581 42577 2804 21129 151165.363013002924 1035361.818787190578 1080 0 3028.8109571696 360050.86213312 326734817.66003
+2	91158 63863 2802 21129 151165.363013002924 1035361.818787190578 2160 0 5 1928 3528
+3	155021 43107 2864 21149 153836.196140935061 1036549.865489167687 1085 0 10578.086219999 1519840.701957 6019017771.7354
+4	198128 64193 2816 21149 151763.555029116883 1036549.865489167687 2170 0 19 5183 32157
+5	262321 20018 2800 21145 150860.16 1036306.44 1034 0 5 1080 2238
+6	282339 20018 2800 21145 150860.16 1036306.44 1034 0 7 1087 2457
+7	302357 64013 2810 21146 151454.019056222326 1036549.865489167687 2165 0 13 10667 61807

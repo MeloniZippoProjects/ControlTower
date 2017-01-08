@@ -1,0 +1,47 @@
+file 165053 1483892967                                          
+version 2
+run ParkingMeasurement-143-20170108-17:29:27-5027
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:27
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=143
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5027
+attr repetition 143
+attr replication #143
+attr resultdir results
+attr runnumber 143
+attr seedset 143
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1454 21119 1483 9824 151104.437168391462 1031170.446948356774 493 1095.9782611783 26381.858556074 3385483.8936825 28654819349.902
+1	22573 18478 1510 9847 154285.058265011946 1033721.513415114784 491 0 5612.4162327779 361812.89641932 908271388.84176
+2	41051 28514 1508 9869 154285.058265011946 1036320.210584057299 986 0 7 939 1985
+3	69565 19009 1473 9821 150617.306970802094 1031023.597842955241 493 0 9207.3292145275 730474.11893692 2835551392.165
+4	88574 28551 1468 9859 150340.098437217572 1035127.404562800608 987 0 10 1646 6498
+5	117125 9719 1478 9864 150854.88 1035413.04 517 0 5 494 974
+6	126844 9719 1478 9864 150854.88 1035413.04 517 0 7 493 1345
+7	136563 28490 1467 9858 150340.098437217572 1035127.404562800608 985 0 8 1486 3668

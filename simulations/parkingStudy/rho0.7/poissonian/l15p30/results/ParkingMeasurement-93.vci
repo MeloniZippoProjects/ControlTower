@@ -1,0 +1,47 @@
+file 169534 1483892952                                          
+version 2
+run ParkingMeasurement-93-20170108-17:29:12-4957
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:12
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=93
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4957
+attr repetition 93
+attr replication #93
+attr resultdir results
+attr runnumber 93
+attr seedset 93
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1448 21724 1521 10120 150575.848546091591 1030735.322352818008 507 922.50751172397 29641.300813246 4282180.9746685 53635837637.13
+1	23172 19406 1523 10144 150575.848546091591 1036586.399801103884 508 0 7123.825749264 445460.82641136 1477569395.73
+2	42578 29410 1523 10144 150575.848546091591 1036586.399801103884 1015 0 9 1023 2575
+3	71988 19379 1532 10117 151838.132095285122 1030675.223023230637 506 0 22057.833273082 1465535.7006128 15447568009.676
+4	91367 29381 1530 10117 151838.132095285122 1030675.223023230637 1012 0 24 2856 27654
+5	120748 9728 1525 10137 150854.88 1035413.04 517 0 6 508 1000
+6	130476 9730 1525 10137 150854.88 1035413.04 517 0 10 509 1517
+7	140206 29328 1527 10139 151149.225398446565 1035468.171823408764 1013 0 6 1498 3310

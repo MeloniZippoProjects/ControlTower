@@ -1,0 +1,47 @@
+file 352830 1483893031                                          
+version 2
+run ParkingMeasurement-141-20170108-17:30:31-5328
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:31
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=141
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5328
+attr repetition 141
+attr replication #141
+attr resultdir results
+attr runnumber 141
+attr seedset 141
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1453 45142 3012 20647 150557.384962569981 1036000.244063917538 1040 745.85435850055 27318.189311499 6871782.9962055 62791357480.726
+1	46595 40881 3014 20661 150557.384962569981 1036556.281928675888 1039 0 2223.31732821 311653.14819525 239219617.41115
+2	87476 61323 3014 20661 150557.384962569981 1036556.281928675888 2077 0 6 1782 3230
+3	148799 41076 3023 20669 151180.66700012692 1036788.021056345806 1040 0 12151.774870069 1369445.705407 5713678312.1213
+4	189875 61504 3018 20669 150913.081691962462 1036788.021056345806 2079 0 19 4779 31203
+5	251379 20018 3016 20657 150860.16 1036306.44 1034 0 6 1038 2146
+6	271397 20018 3016 20657 150860.16 1036306.44 1034 0 5 1040 2220
+7	291415 61415 3017 20666 150913.081691962462 1036788.021056345806 2078 0 13 9679 54043

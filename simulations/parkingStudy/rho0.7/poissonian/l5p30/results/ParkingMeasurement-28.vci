@@ -1,0 +1,47 @@
+file 360969 1483892855                                          
+version 2
+run ParkingMeasurement-28-20170108-17:27:35-3546
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:35
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=28
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3546
+attr repetition 28
+attr replication #28
+attr resultdir results
+attr runnumber 28
+attr seedset 28
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1447 46141 2008 20080 103733.23878275561 1036434.612096750108 1063 477.6030685946 16426.027246432 4679811.674931 26146782813.563
+1	47588 41298 1978 20066 101329.813770481717 1033980.341830834256 1064 0 1867.0519366773 280312.15526532 191570517.53081
+2	88886 62742 1976 20066 101329.813770481717 1033980.341830834256 2128 0 5 1656 2624
+3	151628 41703 2004 20076 103555.908330047356 1036002.796773035494 1063 0 6211.9916224196 915154.63472851 2133490288.5235
+4	193331 62697 1994 20076 102868.529416865132 1036002.796773035494 2126 0 11 3349 12075
+5	256028 21117 1973 20078 100287.72 1036306.44 1093 0 5 1064 2118
+6	277145 21117 1973 20078 100287.72 1036306.44 1093 0 6 1063 2387
+7	298262 62707 1985 20073 102464.854334136342 1036002.796773035494 2127 0 9 5310 18572

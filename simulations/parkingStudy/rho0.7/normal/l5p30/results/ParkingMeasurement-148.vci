@@ -1,0 +1,47 @@
+file 376642 1483892870                                          
+version 2
+run ParkingMeasurement-148-20170108-17:27:50-3993
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:50
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=148
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3993
+attr repetition 148
+attr replication #148
+attr resultdir results
+attr runnumber 148
+attr seedset 148
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1481 48306 1837 20720 101323.231758134258 1036703.090900622342 1114 2290.8636924569 12212.332488196 4615687.7861798 20498165517.149
+1	49787 43916 1825 20700 100465.739601254679 1035663.318625852042 1112 0 1287.0608713153 184121.29270697 65691199.092581
+2	93703 65613 1823 20700 100465.739601254679 1035663.318625852042 2224 0 5 1506 2060
+3	159316 43651 1833 20717 101042.809910086119 1036449.574936136935 1114 0 4562.7868408072 812676.59814532 1604929263.1191
+4	202967 65697 1831 20717 101042.809910086119 1036449.574936136935 2228 0 9 3472 12630
+5	268664 21146 1818 20710 100287.72 1036306.44 1093 0 3 1114 2012
+6	289810 21146 1818 20710 100287.72 1036306.44 1093 0 3 1112 1978
+7	310956 65686 1820 20714 100427.330795754499 1036449.574936136935 2227 0 7 5880 19854

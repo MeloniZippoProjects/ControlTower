@@ -1,0 +1,47 @@
+file 97791 1483893046                                           
+version 2
+run ParkingMeasurement-89-20170108-17:30:46-5506
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:46
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=89
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5506
+attr repetition 89
+attr replication #89
+attr resultdir results
+attr runnumber 89
+attr seedset 89
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1439 13161 625 5839 104207.463607129603 1034622.790671998574 308 650.3100630637 17440.747946169 1750148.6657199 13848988187.756
+1	14600 10026 597 5845 101333.130324116986 1035227.38129319747 310 0 1432.1801662955 26314.599065357 16185446.056201
+2	24626 17889 595 5845 101333.130324116986 1035227.38129319747 620 0 3 332 362
+3	42515 9719 622 5836 104043.23619826173 1034507.847866232185 308 0 2125.0976563214 24180.069540815 21892884.990063
+4	52234 17766 620 5836 104043.23619826173 1034507.847866232185 616 0 2 324 340
+5	70000 4982 602 5841 102000 1035000 312 0 4 309 607
+6	74982 4982 602 5841 102000 1035000 312 0 4 309 621
+7	79964 17827 600 5848 101700.949198142261 1036343.851997371191 618 0 4 681 1221

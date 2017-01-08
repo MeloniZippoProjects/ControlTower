@@ -1,0 +1,47 @@
+file 43883 1483893115                                           
+version 2
+run ParkingMeasurement-23-20170108-17:31:55-5981
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:55
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=23
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5981
+attr repetition 23
+attr replication #23
+attr resultdir results
+attr runnumber 23
+attr seedset 23
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1442 5781 377 2677 159711.929708560246 997031.864186050783 136 1451.1828083749 42685.948413724 1298378.482828 19007747466.989
+1	7223 4287 366 2665 158631.717586554502 995350.894513913086 136 0 1858.6986330572 17224.053367803 18884497.870646
+2	11510 7792 364 2665 158631.717586554502 995350.894513913086 272 0 2 140 144
+3	19302 4372 374 2674 159653.034984962089 996996.911630903869 136 0 6483.8372536084 35694.461047966 95663172.027872
+4	23674 7780 372 2674 159653.034984962089 996996.911630903869 272 0 3 146 160
+5	31454 2324 362 2684 156000 1032000 147 0 6 136 296
+6	33778 2324 362 2684 156000 1032000 147 0 5 136 300
+7	36102 7781 369 2671 159365.921548167516 996996.911630903869 272 0 3 238 368

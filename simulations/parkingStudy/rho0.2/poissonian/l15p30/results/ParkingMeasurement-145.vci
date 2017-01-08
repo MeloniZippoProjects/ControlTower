@@ -1,0 +1,47 @@
+file 51905 1483893147                                           
+version 2
+run ParkingMeasurement-145-20170108-17:32:27-6222
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:27
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=145
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6222
+attr repetition 145
+attr replication #145
+attr resultdir results
+attr runnumber 145
+attr seedset 145
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1448 7033 504 3274 150989.050519293372 1031109.945932675885 165 705.36716293991 31334.415759147 1387284.2128524 15972431924.07
+1	8481 5220 511 3263 163345.609616788209 1029627.103334312152 164 0 4721.7099110102 21577.17495776 52138532.847992
+2	13701 9416 509 3263 163345.609616788209 1029627.103334312152 328 0 2 166 168
+3	23117 5207 501 3271 150876.872740324843 1031033.834228601154 165 0 3218.64129226 31449.639166267 60812153.603741
+4	28324 9475 499 3271 150876.872740324843 1031033.834228601154 330 0 5 193 273
+5	37799 2331 506 3276 156000 1032000 147 0 5 164 322
+6	40130 2331 506 3276 156000 1032000 147 0 7 166 356
+7	42461 9444 498 3268 150876.872740324843 1031033.834228601154 329 0 4 258 380

@@ -1,0 +1,47 @@
+file 172997 1483892930                                          
+version 2
+run ParkingMeasurement-25-20170108-17:28:50-4830
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:50
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=25
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4830
+attr repetition 25
+attr replication #25
+attr resultdir results
+attr runnumber 25
+attr seedset 25
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1448 22074 1514 10265 151639.229149956759 1033183.750729943799 515 977.855548666 40781.024986825 5272301.5586516 84399300323.9
+1	23522 20016 1499 10254 150495.016369752148 1032606.235339306165 517 0 9398.4005320219 559738.55174715 1868657635.5868
+2	43538 29946 1497 10254 150495.016369752148 1032606.235339306165 1034 0 7 1165 2857
+3	73484 20164 1508 10262 151472.057032503316 1033056.544077199201 515 0 29774.938757761 2262922.6871113 32250486853.913
+4	93648 29976 1506 10262 151472.057032503316 1033056.544077199201 1030 0 25 3737 41595
+5	123624 9732 1501 10268 150854.88 1035413.04 517 0 5 518 1002
+6	133356 9732 1501 10268 150854.88 1035413.04 517 0 8 517 1583
+7	143088 29909 1503 10260 150951.984524556401 1033056.544077199201 1032 0 6 1578 3696

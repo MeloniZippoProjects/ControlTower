@@ -1,0 +1,47 @@
+file 95765 1483893159                                           
+version 2
+run ParkingMeasurement-31-20170108-17:32:39-6300
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:39
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=31
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6300
+attr repetition 31
+attr replication #31
+attr resultdir results
+attr runnumber 31
+attr seedset 31
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1439 12970 1122 6228 159000.316757074609 1023820.147099635638 303 799.32807716814 34185.501417438 2222562.5918935 22450567054.283
+1	14409 9631 1095 6245 154051.999678340169 1035178.576440870156 305 0 1275.9590080001 24285.251057871 16309642.645786
+2	24040 17626 1093 6245 154051.999678340169 1035178.576440870156 610 0 3 331 361
+3	41666 9476 1112 6253 158434.437981744223 1036581.023347159404 304 0 1786.0699982394 18662.979092015 12457063.039226
+4	51142 17569 1107 6253 158207.980658848382 1036581.023347159404 608 0 2 308 312
+5	68711 4732 1091 6241 153000 1035000 295 0 6 304 632
+6	73443 4732 1091 6241 153000 1035000 295 0 4 303 587
+7	78175 17590 1098 6250 154102.84459658889 1036581.023347159404 609 0 6 1053 2697

@@ -1,0 +1,47 @@
+file 54806 1483893092                                           
+version 2
+run ParkingMeasurement-66-20170108-17:31:32-5812
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:32
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=66
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5812
+attr repetition 66
+attr replication #66
+attr resultdir results
+attr runnumber 66
+attr seedset 66
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1470 7419 794 3689 213111.231442894681 1121290.727370572864 173 4845.5461077525 31124.94295499 1779781.107561 22326246245.885
+1	8889 5425 774 3678 208449.737034003138 1116512.211634233794 173 0 1758.1808675802 14111.651509831 11511163.02509
+2	14314 10020 772 3678 208449.737034003138 1116512.211634233794 346 0 2 179 185
+3	24334 5496 791 3686 212813.497662268214 1121002.843837085411 173 0 1805.898253763 17004.169914871 14650498.038349
+4	29830 10012 789 3686 212813.497662268214 1121002.843837085411 346 0 2 179 185
+5	39842 2471 770 3691 204000 1122000 154 0 4 173 357
+6	42313 2471 770 3691 204000 1122000 154 0 5 173 343
+7	44784 10022 780 3683 209438.112039210405 1121002.843837085411 346 0 4 401 757

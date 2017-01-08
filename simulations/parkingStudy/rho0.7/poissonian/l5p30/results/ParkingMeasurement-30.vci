@@ -1,0 +1,47 @@
+file 360690 1483892855                                          
+version 2
+run ParkingMeasurement-30-20170108-17:27:35-3558
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:35
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=30
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3558
+attr repetition 30
+attr replication #30
+attr resultdir results
+attr runnumber 30
+attr seedset 30
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1447 46089 2132 20206 100546.310716277433 1035331.246923802012 1063 255.76469592004 15255.273628943 4888953.4497531 29190427689.652
+1	47536 41375 2124 20212 100367.923462982409 1035669.173649442477 1063 0 2253.050367775 302130.4169207 240826157.73556
+2	88911 62766 2124 20222 100367.923462982409 1036445.608581066053 2128 0 6 1722 2832
+3	151677 41428 2129 20203 100506.617207796704 1035215.033624920448 1063 0 8160.1346049776 1033277.9613852 3336725246.7749
+4	193105 62695 2129 20203 100506.617207796704 1035215.033624920448 2125 0 12 3608 15862
+5	255800 21118 2120 20220 100287.72 1036306.44 1093 0 6 1063 2165
+6	276918 21118 2120 20220 100287.72 1036306.44 1093 0 6 1064 2296
+7	298036 62654 2122 20200 100367.923462982409 1035215.033624920448 2125 0 10 5611 20151

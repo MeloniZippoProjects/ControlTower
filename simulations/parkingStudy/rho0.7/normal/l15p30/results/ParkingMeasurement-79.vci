@@ -1,0 +1,47 @@
+file 176446 1483892926                                          
+version 2
+run ParkingMeasurement-79-20170108-17:28:45-4803
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:45
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=79
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4803
+attr repetition 79
+attr replication #79
+attr resultdir results
+attr runnumber 79
+attr seedset 79
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 22659 2154 10839 217510.196355323019 1119923.475841074704 527 3608.5059261099 27248.692373717 3879743.8315117 38241796374.815
+1	24135 20128 1944 10869 200554.244081443763 1122685.712681296015 525 0 4470.8717004443 266470.67122475 421725273.2361
+2	44263 30415 1944 10869 200554.244081443763 1122685.712681296015 1045 0 6 820 1374
+3	74678 20060 2148 10833 217230.343639377963 1119626.423153520677 527 0 22025.92169673 1107183.8426257 10540140016.245
+4	94738 30674 1951 10872 200610.98724804921 1122805.980063091334 1052 0 23 2262 19878
+5	125412 10239 1949 10874 200568.42 1122840.3 539 0 3 526 812
+6	135651 10239 1949 10874 200568.42 1122840.3 539 0 6 527 1315
+7	145890 30556 1942 10871 200554.244081443763 1122805.980063091334 1050 0 3 1407 2621

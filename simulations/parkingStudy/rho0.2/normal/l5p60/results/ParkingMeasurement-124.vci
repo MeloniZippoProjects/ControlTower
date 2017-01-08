@@ -1,0 +1,47 @@
+file 95382 1483893193                                           
+version 2
+run ParkingMeasurement-124-20170108-17:33:13-6536
+attr configname ParkingMeasurement
+attr datetime 20170108-17:33:13
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=124
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6536
+attr repetition 124
+attr replication #124
+attr resultdir results
+attr runnumber 124
+attr seedset 124
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1473 12892 671 5808 121018.320562739551 1036176.936891623705 302 3868.9244875158 19330.649898332 2220987.7648053 18474176530.065
+1	14365 9677 685 5797 123527.568444514004 1035610.732279422329 303 0 446.0009477681 10641.68390724 2417968.965444
+2	24042 17474 683 5797 123527.568444514004 1035610.732279422329 606 0 2 311 319
+3	41516 9344 676 5805 121368.49728340767 1035859.652116672027 301 0 1114.7878413881 12652.504113557 6293432.1576045
+4	50860 17360 674 5805 121368.49728340767 1035859.652116672027 602 0 2 307 313
+5	68220 4870 681 5782 123000 1035000 305 0 3 300 546
+6	73090 4870 681 5782 123000 1035000 305 0 4 301 549
+7	77960 17422 673 5803 121368.49728340767 1035859.652116672027 604 0 5 958 2230

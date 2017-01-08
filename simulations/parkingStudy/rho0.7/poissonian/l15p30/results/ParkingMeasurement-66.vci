@@ -1,0 +1,47 @@
+file 189634 1483892943                                          
+version 2
+run ParkingMeasurement-66-20170108-17:29:03-4912
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:03
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=66
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4912
+attr repetition 66
+attr replication #66
+attr resultdir results
+attr runnumber 66
+attr seedset 66
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1448 24371 1546 11034 156816.047985207251 1035097.543229592081 568 1378.688945101 42047.3873572 6523866.8513853 108276387027.39
+1	25819 22504 1477 10990 150382.328336214695 1032557.64638937073 565 0 8762.0396584937 832937.70807344 3089749066.235
+2	48323 32640 1477 10990 150382.328336214695 1032557.64638937073 1125 0 8 1596 4870
+3	80963 23177 1543 11031 156552.385945884146 1034910.227387604251 568 0 34968.982154583 3055260.5357166 39377909422.398
+4	104140 33087 1480 11031 150435.7098665523 1034910.227387604251 1134 0 33 5657 73099
+5	137227 9775 1482 11036 150854.88 1035413.04 517 0 7 566 1156
+6	147002 9776 1482 11036 150854.88 1035413.04 517 0 10 568 2120
+7	156778 32856 1475 11028 150382.328336214695 1034910.227387604251 1132 0 7 1868 4618

@@ -1,0 +1,47 @@
+file 93767 1483893065                                           
+version 2
+run ParkingMeasurement-130-20170108-17:31:05-5634
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:05
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=130
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5634
+attr repetition 130
+attr replication #130
+attr resultdir results
+attr runnumber 130
+attr seedset 130
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 12646 498 5536 106551.506929730442 1036071.655651621555 296 2368.6180383594 21403.636477515 1658318.3989239 11942931198.597
+1	14119 9260 486 5525 104147.826182092173 1035078.790455878073 297 0 501.74695680793 7241.2385263575 1692387.3484457
+2	23379 17116 484 5525 104147.826182092173 1035078.790455878073 594 0 2 303 309
+3	40495 9194 495 5533 106233.162279929573 1035741.349632570559 296 0 496.02799709645 8799.5010279075 2236838.0030825
+4	49689 17058 493 5533 106233.162279929573 1035741.349632570559 592 0 2 298 300
+5	66747 4973 482 5521 102000 1035000 312 0 4 296 548
+6	71720 4973 482 5521 102000 1035000 312 0 4 296 570
+7	76693 17074 489 5530 104441.811531754164 1035741.349632570559 593 0 4 625 1093

@@ -1,0 +1,47 @@
+file 376610 1483893022                                          
+version 2
+run ParkingMeasurement-118-20170108-17:30:22-5302
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:22
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=118
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5302
+attr repetition 118
+attr replication #118
+attr resultdir results
+attr runnumber 118
+attr seedset 118
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1453 48195 3021 21766 152183.186310902512 1036159.478640169774 1109 511.3330281021 31869.8946409 8613252.7489527 90925870603.347
+1	49648 44627 2982 21758 150476.866075249439 1035898.466310634055 1109 0 2962.3205505341 406120.93712875 366635879.40772
+2	94275 65600 2977 21772 150399.865268564591 1036606.500474040518 2219 0 7 2178 4482
+3	159875 44830 3011 21768 151508.043568485783 1036159.478640169774 1110 0 12202.669290506 2645200.6064763 15697163879.258
+4	204705 66064 2985 21768 150556.02222663122 1036159.478640169774 2223 0 22 8927 84039
+5	270769 20028 2987 21770 150860.16 1036306.44 1034 0 6 1110 2474
+6	290797 20028 2987 21770 150860.16 1036306.44 1034 0 8 1109 2649
+7	310825 65785 2980 21761 150476.866075249439 1036063.650637946669 2223 0 14 11300 67760
