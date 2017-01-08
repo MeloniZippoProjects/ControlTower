@@ -2,7 +2,7 @@
 
 $iniName = "parkingStudy.ini"
 $configuration = "ParkingMeasurement"
-$repetitions = 150
+$repetitions = 1
 
 $awkScriptPath = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/simulations/parse.awk" 
 $relativeBinLocation = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/src/PESC_Control_Tower"
