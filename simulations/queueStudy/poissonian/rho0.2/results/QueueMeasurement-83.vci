@@ -1,0 +1,47 @@
+file 99800 1483967810                                           
+version 2
+run QueueMeasurement-83-20170109-14:16:50-6209
+attr configname QueueMeasurement
+attr datetime 20170109-14:16:50
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=83
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6209
+attr repetition 83
+attr replication #83
+attr resultdir results
+attr runnumber 83
+attr seedset 83
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 13630 351 5747 74594.81217076859 950071.170677619224 320 581.66985895223 19212.202858516 1931749.913579 15749980634.269
+1	15061 10020 332 5736 72930.547869263725 949078.895687429219 321 0 2063.7827597252 20881.83672063 17848969.355818
+2	25081 18460 330 5736 72930.547869263725 949078.895687429219 642 0 3 337 357
+3	43541 10154 348 5744 74436.66410002991 950027.945649017114 320 0 1641.6462351662 25664.48664614 18638497.323409
+4	53695 18392 346 5744 74436.66410002991 950027.945649017114 640 0 3 342 368
+5	72087 4645 328 5724 72000 948000 293 0 4 319 631
+6	76732 4645 328 5724 72000 948000 293 0 4 319 647
+7	81377 18423 335 5741 73302.356788039814 950027.945649017114 641 0 5 865 1777

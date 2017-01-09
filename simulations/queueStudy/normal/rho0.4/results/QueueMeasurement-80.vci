@@ -1,0 +1,47 @@
+file 181163 1483966771                                          
+version 2
+run QueueMeasurement-80-20170109-13:59:30-4999
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:30
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4999
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1460 24236 765 10383 72807.42394484748 949343.895826189702 567 2897.8328466067 14461.896498199 2853093.2789526 15793868342.541
+1	25696 19353 748 10389 72059.321262850937 949761.939689719823 566 0 536.31382884713 39511.46652419 10099216.885989
+2	45049 32691 746 10389 72059.321262850937 949761.939689719823 1132 0 2 612 658
+3	77740 19249 756 10380 72457.509185695683 948996.621633906945 567 0 1736.2253278653 65488.382453906 37740185.966064
+4	96989 32716 754 10380 72457.509185695683 948996.621633906945 1134 0 4 649 767
+5	129705 9366 741 10385 72000 949500 586 0 5 566 1086
+6	139071 9366 741 10385 72000 949500 586 0 4 568 1096
+7	148437 32726 743 10392 72004.088156326931 950099.128256779598 1134 0 8 2571 8155

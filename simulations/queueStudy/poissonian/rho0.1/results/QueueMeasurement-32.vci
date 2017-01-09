@@ -1,0 +1,47 @@
+file 50650 1483968319                                           
+version 2
+run QueueMeasurement-32-20170109-14:25:19-6919
+attr configname QueueMeasurement
+attr datetime 20170109-14:25:19
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=32
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6919
+attr repetition 32
+attr replication #32
+attr resultdir results
+attr runnumber 32
+attr seedset 32
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1433 6885 387 3114 124480.516119588101 1027793.900558503045 162 1217.3982352433 30354.05761473 1433293.0508478 18792547065.326
+1	8318 4851 376 3094 122124.96703798516 1023935.565354258588 162 0 598.5969954681 2086.4604480488 651857.27377919
+2	13169 9290 374 3094 122124.96703798516 1023935.565354258588 324 0 1 162 162
+3	22459 4786 384 3111 124328.23066233595 1027302.682071307552 162 0 2370.7017144319 5783.922747233 8012156.9367873
+4	27245 9293 382 3111 124328.23066233595 1027302.682071307552 324 0 1 162 162
+5	36538 2408 397 3116 126000 1032000 152 0 5 162 328
+6	38946 2408 397 3116 126000 1032000 152 0 5 162 326
+7	41354 9296 379 3108 122333.59291727084 1027302.682071307552 324 0 3 304 490

@@ -1,0 +1,47 @@
+file 103906 1483966491                                          
+version 2
+run QueueMeasurement-113-20170109-13:54:51-3843
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:51
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=113
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3843
+attr repetition 113
+attr replication #113
+attr resultdir results
+attr runnumber 113
+attr seedset 113
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 14235 711 6312 121735.550729538407 1035144.058038027075 333 3056.682461866 22815.681136847 2050103.3197815 15572077375.542
+1	15701 10635 734 6291 128624.325559906235 1030853.416993215125 330 0 464.11395980078 13498.776344255 2974334.2241706
+2	26336 19048 732 6291 128624.325559906235 1030853.416993215125 660 0 2 332 334
+3	45384 10438 708 6308 121407.583636349115 1034826.531846090792 333 0 931.15695570849 11935.28883535 4086269.4727284
+4	55822 19211 706 6308 121407.583636349115 1034826.531846090792 666 0 2 337 341
+5	75033 4872 721 6310 123000 1035000 305 0 5 330 720
+6	79905 4872 721 6310 123000 1035000 305 0 5 332 708
+7	84777 19129 705 6305 121407.583636349115 1034826.531846090792 663 0 6 1009 2343

@@ -1,0 +1,47 @@
+file 105842 1483966482                                          
+version 2
+run QueueMeasurement-86-20170109-13:54:42-3790
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:42
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=86
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3790
+attr repetition 86
+attr replication #86
+attr resultdir results
+attr runnumber 86
+attr seedset 86
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1460 14539 650 6359 121191.118920826592 1032258.425291922665 340 2705.940370064 24299.486053187 2059599.83484 15024490993.313
+1	15999 10769 660 6323 122248.330054321297 1029300.767836092077 337 0 437.56324997926 12851.696467653 3138644.4508814
+2	26768 19453 658 6323 122248.330054321297 1029300.767836092077 674 0 2 347 357
+3	46221 10822 652 6356 121191.118920826592 1032002.039281693908 339 0 1114.9681667762 14759.460440577 5701406.1977726
+4	57043 19558 652 6356 121191.118920826592 1032002.039281693908 677 0 2 342 346
+5	76601 4870 665 6361 123000 1035000 305 0 5 338 724
+6	81471 4870 665 6361 123000 1035000 305 0 4 342 714
+7	86341 19501 663 6353 122605.384776116273 1032002.039281693908 675 0 5 997 2237

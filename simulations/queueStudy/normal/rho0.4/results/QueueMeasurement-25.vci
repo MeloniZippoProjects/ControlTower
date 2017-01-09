@@ -1,0 +1,47 @@
+file 189644 1483966750                                          
+version 2
+run QueueMeasurement-25-20170109-13:59:10-4888
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:10
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=25
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4888
+attr repetition 25
+attr replication #25
+attr resultdir results
+attr runnumber 25
+attr seedset 25
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1460 25432 865 10944 75130.629807435241 949997.57213169148 594 2955.0958766723 13372.316425859 2929067.6179315 15523642729.369
+1	26892 20245 828 10927 72502.936077417985 949076.650310719784 598 0 606.28618926346 37450.345701096 9057850.1709153
+2	47137 34599 826 10927 72502.936077417985 949076.650310719784 1196 0 2 630 662
+3	81736 20201 861 10949 74804.949082075274 950348.3280074068 595 0 1456.3351366347 60041.569602859 31834883.755755
+4	101937 34411 856 10949 74558.067377619499 950348.3280074068 1190 0 3 667 755
+5	136348 9398 824 10934 72000 949500 586 0 5 599 1137
+6	145746 9398 824 10934 72000 949500 586 0 5 595 1129
+7	155144 34500 831 10946 72779.596483052555 950348.3280074068 1193 0 8 2702 8484

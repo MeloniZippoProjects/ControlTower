@@ -1,0 +1,47 @@
+file 356270 1483966355                                          
+version 2
+run QueueMeasurement-7-20170109-13:52:34-3330
+attr configname QueueMeasurement
+attr datetime 20170109-13:52:34
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=7
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3330
+attr repetition 7
+attr replication #7
+attr resultdir results
+attr runnumber 7
+attr seedset 7
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.256min
+param SimNetwork.wg.interArrivalTime exponential(14.256min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1462 45746 997 18952 50550.659280962133 950220.813847462541 1058 2935.9302430148 11013.744323319 5303161.2710655 28258059664.585
+1	47208 41018 1018 18954 51135.854829620427 950220.813847462541 1057 0 964.22101520253 155723.35894027 51750684.298966
+2	88226 62000 1010 18954 50950.725087607188 950220.813847462541 2114 0 4 1377 1789
+3	150226 41635 999 18946 50550.659280962133 949908.328002392808 1057 0 6238.2235745128 753501.22244094 1787081859.925
+4	191861 62029 994 18946 50474.760364326019 949908.328002392808 2114 0 12 3105 12865
+5	253890 20208 992 18956 50466.24 950304.96 1053 0 3 1056 1886
+6	274098 20208 992 18956 50466.24 950304.96 1053 0 4 1058 1868
+7	294306 61964 993 18944 50474.760364326019 949908.328002392808 2113 0 10 7672 33844

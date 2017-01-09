@@ -1,0 +1,47 @@
+file 229772 1483968374                                          
+version 2
+run QueueMeasurement-4-20170109-14:26:14-7042
+attr configname QueueMeasurement
+attr datetime 20170109-14:26:14
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=4
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7042
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1425 30244 803 12830 63465.986902932235 949918.620972514744 704 369.52171736212 18486.590525044 3713755.1323224 26287831358.671
+1	31669 25475 784 12835 62486.891977885323 950292.57743890418 711 0 3485.1007845923 145738.4616317 135914957.40226
+2	57144 41334 782 12835 62486.891977885323 950292.57743890418 1422 0 4 925 1227
+3	98478 25281 800 12827 63403.131208609658 949846.466599222164 704 0 5780.0631476324 306348.41840105 570247813.54199
+4	123759 40932 790 12827 63149.865990760332 949846.466599222164 1408 0 8 1208 2432
+5	164691 11988 779 12837 61200 950400 742 0 6 711 1405
+6	176679 11988 779 12837 61200 950400 742 0 5 707 1459
+7	188667 41105 789 12825 63149.865990760332 949846.466599222164 1414 0 11 3873 14783

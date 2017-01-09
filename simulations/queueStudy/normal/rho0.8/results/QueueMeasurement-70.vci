@@ -1,0 +1,47 @@
+file 378094 1483966284                                          
+version 2
+run QueueMeasurement-70-20170109-13:51:24-3149
+attr configname QueueMeasurement
+attr datetime 20170109-13:51:24
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=70
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3149
+attr repetition 70
+attr replication #70
+attr resultdir results
+attr runnumber 70
+attr seedset 70
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1464 48812 1200 20409 50603.678468265367 950019.04340411254 1128 2852.4916660922 12453.652032312 5974422.8633882 34687312607.53
+1	50276 44672 1213 20398 50919.221005784869 949541.332624285487 1125 0 1115.8946911053 205130.69371683 78706938.006603
+2	94948 66098 1208 20398 50899.728382558665 949541.332624285487 2250 0 4 1655 2401
+3	161046 45054 1202 20406 50603.678468265367 949765.944828143461 1127 0 8440.5636545582 1152102.0310272 3923616119.4268
+4	206100 66309 1194 20406 50463.260739878047 949765.944828143461 2254 0 15 4529 27063
+5	272409 19757 1215 20411 51000 950250 1200 0 3 1125 1957
+6	292166 19757 1215 20411 51000 950250 1200 0 3 1129 1931
+7	311923 66171 1193 20404 50463.260739878047 949765.944828143461 2252 0 11 8728 41234

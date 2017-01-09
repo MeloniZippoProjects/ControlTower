@@ -1,0 +1,47 @@
+file 408589 1483967583                                          
+version 2
+run QueueMeasurement-123-20170109-14:13:03-5946
+attr configname QueueMeasurement
+attr datetime 20170109-14:13:03
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=123
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5946
+attr repetition 123
+attr replication #123
+attr resultdir results
+attr runnumber 123
+attr seedset 123
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1441 53009 1681 22240 61561.609954484657 949050.285868206101 1223 469.31950590287 27939.787485835 9833204.5158119 104539544599.84
+1	54450 49734 1660 22262 61223.032685342424 949917.055746032812 1210 0 2568.6958231223 538384.33736433 543403507.06577
+2	104184 71263 1660 22266 61223.032685342424 950369.975464824995 2420 0 7 2712 6154
+3	175447 50430 1665 22237 61243.765191863266 948756.195708800634 1223 0 17586.719626694 4232805.8731985 30096022776.733
+4	225877 72178 1665 22237 61243.765191863266 948756.195708800634 2433 0 30 13962 166300
+5	298055 19626 1676 22264 61500 950250 1186 0 5 1210 2562
+6	317681 19626 1676 22264 61500 950250 1186 0 7 1223 2897
+7	337307 71282 1658 22260 61223.032685342424 949917.055746032812 2420 0 11 10464 55602

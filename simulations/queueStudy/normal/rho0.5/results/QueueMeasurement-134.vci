@@ -1,0 +1,47 @@
+file 235647 1483966904                                          
+version 2
+run QueueMeasurement-134-20170109-14:01:43-5727
+attr configname QueueMeasurement
+attr datetime 20170109-14:01:43
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=134
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5727
+attr repetition 134
+attr replication #134
+attr resultdir results
+attr runnumber 134
+attr seedset 134
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 31237 642 12997 61672.270244893443 948959.926929248415 728 2905.4429561447 13058.075521565 3467611.2657427 17517224327.41
+1	32703 26135 664 12967 62887.858324067938 945530.776255451148 725 0 771.30759617399 66692.087099719 17577300.253037
+2	58838 42131 659 12967 62687.59950648152 945530.776255451148 1450 0 3 807 901
+3	100969 26126 639 12994 61360.061915109327 948656.491404570325 728 0 1689.2984439962 117420.05021023 67839800.498331
+4	127095 42310 637 12994 61360.061915109327 948656.491404570325 1456 0 3 874 1040
+5	169405 12013 635 13000 61200 950400 742 0 4 725 1319
+6	181418 12013 635 13000 61200 950400 742 0 4 729 1285
+7	193431 42216 636 12991 61360.061915109327 948656.491404570325 1453 0 8 3808 12946

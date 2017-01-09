@@ -1,0 +1,47 @@
+file 399937 1483966308                                          
+version 2
+run QueueMeasurement-117-20170109-13:51:48-3244
+attr configname QueueMeasurement
+attr datetime 20170109-13:51:48
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=117
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3244
+attr repetition 117
+attr replication #117
+attr resultdir results
+attr runnumber 117
+attr seedset 117
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1470 51583 1059 21319 51037.959011029688 949915.04467050066 1192 2822.2063266028 18198.322343268 7405115.5537883 55313178218.622
+1	53053 48274 1050 21321 50470.288114450007 949915.04467050066 1193 0 1170.7376016437 252989.64651246 103311240.19159
+2	101327 70135 1045 21330 50434.921063734146 950340.422141358074 2387 0 4 1890 2910
+3	171462 48449 1055 21326 50756.735361563294 950166.724372546414 1193 0 13864.977329961 2325907.5683153 13677024988.626
+4	219911 70321 1055 21326 50756.735361563294 950166.724372546414 2385 0 30 8626 93944
+5	290232 19779 1057 21328 51000 950250 1200 0 3 1194 2094
+6	310011 19779 1057 21328 51000 950250 1200 0 3 1192 2086
+7	329790 70147 1048 21324 50470.288114450007 950166.724372546414 2386 0 11 9831 49657

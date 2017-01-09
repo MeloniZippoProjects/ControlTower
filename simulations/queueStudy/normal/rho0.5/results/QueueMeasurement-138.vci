@@ -1,0 +1,47 @@
+file 244445 1483966906                                          
+version 2
+run QueueMeasurement-138-20170109-14:01:45-5731
+attr configname QueueMeasurement
+attr datetime 20170109-14:01:45
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=138
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5731
+attr repetition 138
+attr replication #138
+attr resultdir results
+attr runnumber 138
+attr seedset 138
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 32545 770 13622 61276.937133303685 950370.603452655725 757 2925.7244559063 9696.3180340429 3599705.2606717 17989211405.833
+1	34011 27213 775 13614 61785.615423603115 949779.694906476402 758 0 794.45969372029 71441.875347664 19912633.689697
+2	61224 44130 773 13614 61785.615423603115 949779.694906476402 1516 0 3 848 950
+3	105354 26933 792 13619 62721.598162149525 950094.958022070514 756 0 1946.3657931075 128799.78388545 91340266.640201
+4	132287 44023 790 13619 62721.598162149525 950094.958022070514 1512 0 4 956 1256
+5	176310 12029 768 13624 61200 950400 742 0 4 759 1407
+6	188339 12029 768 13624 61200 950400 742 0 4 759 1379
+7	200368 44077 781 13617 62049.666764294258 950094.958022070514 1514 0 8 4113 14385

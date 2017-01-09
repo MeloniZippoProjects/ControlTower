@@ -1,0 +1,47 @@
+file 400532 1483966286                                          
+version 2
+run QueueMeasurement-73-20170109-13:51:25-3155
+attr configname QueueMeasurement
+attr datetime 20170109-13:51:25
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=73
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3155
+attr repetition 73
+attr replication #73
+attr resultdir results
+attr runnumber 73
+attr seedset 73
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1464 51927 1269 21548 50981.374408728834 949503.888520249284 1200 2974.2419565034 14186.987391644 6798709.3340902 43163104921.795
+1	53391 48140 1285 21558 51594.394214145365 949921.602328160496 1191 0 1532.9218891315 254087.61953649 113028917.18957
+2	101531 70040 1280 21558 51585.161444851652 949921.602328160496 2382 0 5 1923 3159
+3	171571 48811 1266 21541 50647.813753055056 949170.430512616491 1200 0 9304.6585927958 1674891.634281 6517036913.7077
+4	220382 70420 1266 21541 50647.813753055056 949170.430512616491 2390 0 19 6137 41491
+5	290802 19831 1273 21563 51000 950250 1200 0 3 1193 2121
+6	310633 19831 1273 21563 51000 950250 1200 0 3 1200 2100
+7	330464 70068 1264 21561 50647.813753055056 950195.729205085799 2382 0 10 9577 46939

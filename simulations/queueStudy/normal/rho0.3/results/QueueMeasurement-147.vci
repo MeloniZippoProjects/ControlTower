@@ -1,0 +1,47 @@
+file 153513 1483966568                                          
+version 2
+run QueueMeasurement-147-20170109-13:56:08-4217
+attr configname QueueMeasurement
+attr datetime 20170109-13:56:08
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=147
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4217
+attr repetition 147
+attr replication #147
+attr resultdir results
+attr runnumber 147
+attr seedset 147
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1474 20657 677 8809 86420.303641842314 949682.630683751014 483 3103.1372644408 19629.456303059 2521957.4642119 14721988994.483
+1	22131 15987 679 8781 86420.303641842314 946541.986206263262 481 0 813.44941875899 30430.917954035 8874351.6735423
+2	38118 27722 679 8781 86420.303641842314 946541.986206263262 961 0 3 520 572
+3	65840 15946 687 8806 86689.702587608231 949366.359627275456 482 0 1627.522152837 35163.08370174 18462205.557393
+4	81786 27804 682 8806 86584.535287559031 949366.359627275456 964 0 2 500 518
+5	109590 8078 692 8811 87999.12 949990.5 432 0 5 481 965
+6	117668 8078 692 8811 87999.12 949990.5 432 0 6 483 981
+7	125746 27767 681 8803 86584.535287559031 949366.359627275456 963 0 7 1921 5469

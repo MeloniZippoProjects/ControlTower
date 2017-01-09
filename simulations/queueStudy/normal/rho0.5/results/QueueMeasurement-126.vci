@@ -1,0 +1,47 @@
+file 235255 1483966899                                          
+version 2
+run QueueMeasurement-126-20170109-14:01:39-5719
+attr configname QueueMeasurement
+attr datetime 20170109-14:01:39
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=126
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5719
+attr repetition 126
+attr replication #126
+attr resultdir results
+attr runnumber 126
+attr seedset 126
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 31130 914 13213 61254.275725439652 948435.216703431052 724 2590.8105500181 17283.072810674 3515564.4811648 18304605361.315
+1	32596 26227 920 13235 62614.375222106895 949787.483236359094 725 0 945.38057253352 77680.138231451 24807840.319043
+2	58823 42210 918 13235 62614.375222106895 949787.483236359094 1450 0 4 867 1037
+3	101033 25924 928 13210 63146.771086869059 948158.233882024824 723 0 3246.0664078206 162459.7280102 177199695.02096
+4	126957 42067 926 13210 63146.771086869059 948158.233882024824 1446 0 7 1045 1843
+5	169024 12048 912 13240 61200 950400 742 0 4 727 1371
+6	181072 12048 912 13240 61200 950400 742 0 4 726 1362
+7	193120 42135 923 13238 62858.571279575517 950067.695597482268 1448 0 8 3874 13720

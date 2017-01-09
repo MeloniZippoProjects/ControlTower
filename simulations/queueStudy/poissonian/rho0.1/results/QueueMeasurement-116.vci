@@ -1,0 +1,47 @@
+file 46807 1483968353                                           
+version 2
+run QueueMeasurement-116-20170109-14:25:53-7003
+attr configname QueueMeasurement
+attr datetime 20170109-14:25:53
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=116
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7003
+attr repetition 116
+attr replication #116
+attr resultdir results
+attr runnumber 116
+attr seedset 116
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1439 6286 395 2886 122784.454982214308 1005943.436908354871 148 1284.1955968128 43492.485649827 1393642.543746 20352607048.145
+1	7725 4424 376 2875 121628.956924814959 1005760.227184014389 148 0 954.64007214661 4447.9348565816 2837835.3159618
+2	12149 8490 374 2875 121628.956924814959 1005760.227184014389 296 0 1 148 148
+3	20639 4385 392 2883 122675.90612418161 1005813.644085518595 148 0 1611.0257983297 4629.0156925373 3862790.7839535
+4	25024 8491 387 2883 122384.58865037205 1005813.644085518595 296 0 1 148 148
+5	33515 2403 405 2892 126000 1032000 152 0 4 148 282
+6	35918 2403 405 2892 126000 1032000 152 0 4 148 294
+7	38321 8486 379 2880 121684.094546272058 1005813.644085518595 296 0 4 272 444

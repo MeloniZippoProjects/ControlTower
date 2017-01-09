@@ -1,0 +1,47 @@
+file 151787 1483967846                                          
+version 2
+run QueueMeasurement-4-20170109-14:17:26-6286
+attr configname QueueMeasurement
+attr datetime 20170109-14:17:26
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=4
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6286
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 33.33min
+param SimNetwork.wg.interArrivalTime exponential(33.33min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1431 20275 848 8876 114133.556986666537 1034811.451785226785 474 393.93334552496 21315.265469893 2691907.4673553 20393279222.778
+1	21706 15803 853 8864 115915.736848722535 1033087.906734985999 473 0 2207.5306933252 62958.134951796 49708561.534476
+2	37509 27355 851 8864 115915.736848722535 1033087.906734985999 946 0 3 537 613
+3	64864 15861 845 8873 113994.419132023185 1034647.745657859074 474 0 2811.1956378391 78874.283180698 90915891.810212
+4	80725 27404 843 8873 113994.419132023185 1034647.745657859074 948 0 4 548 678
+5	108129 8141 841 8878 113988.6 1035896.4 462 0 5 473 971
+6	116270 8141 841 8878 113988.6 1035896.4 462 0 5 475 941
+7	124411 27376 842 8870 113994.419132023185 1034647.745657859074 947 0 8 1854 5422

@@ -1,0 +1,47 @@
+file 293389 1483966630                                          
+version 2
+run QueueMeasurement-113-20170109-13:57:10-4453
+attr configname QueueMeasurement
+attr datetime 20170109-13:57:10
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=113
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4453
+attr repetition 113
+attr replication #113
+attr resultdir results
+attr runnumber 113
+attr seedset 113
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 16.667min
+param SimNetwork.wg.interArrivalTime exponential(16.667min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1474 37652 854 15773 52200.809425167816 949579.638324678116 874 2931.7575572601 9850.0732231051 4208028.1894748 21220010933.837
+1	39126 32852 830 15786 50757.41665704583 949939.355319992296 883 0 934.70015805221 111476.03369312 37814313.874754
+2	71978 51623 828 15786 50757.41665704583 949939.355319992296 1766 0 4 1093 1383
+3	123601 32767 847 15795 51866.944752854861 950251.170663087786 875 0 3110.8258228686 327446.72817168 427571918.80561
+4	156368 51233 845 15795 51866.944752854861 950251.170663087786 1753 0 7 1699 4061
+5	207601 17153 832 15791 51001.02 950019 900 0 4 882 1606
+6	224754 17153 832 15791 51001.02 950019 900 0 4 874 1592
+7	241907 51482 834 15793 51053.323975446177 950251.170663087786 1761 0 9 5590 22820

@@ -1,0 +1,47 @@
+file 244408 1483968375                                          
+version 2
+run QueueMeasurement-5-20170109-14:26:14-7043
+attr configname QueueMeasurement
+attr datetime 20170109-14:26:14
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=5
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7043
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1425 32364 819 13571 63120.978259339019 946742.174601263924 753 608.82891090122 22182.168744928 4067952.468989 30036348694.69
+1	33789 27486 842 13595 64835.237918202989 950378.833963144864 753 0 2589.8135386547 168084.21212476 141614326.15897
+2	61275 43845 840 13595 64835.237918202989 950378.833963144864 1506 0 5 1015 1413
+3	105120 27520 816 13568 63114.797613167483 946117.286401470299 753 0 7183.6323441732 442177.1986278 1166882197.8487
+4	132640 43850 814 13568 63114.797613167483 946117.286401470299 1506 0 12 1711 5901
+5	176490 12054 811 13597 61200 950400 742 0 6 753 1511
+6	188544 12054 811 13597 61200 950400 742 0 8 754 1686
+7	200598 43810 813 13590 63114.797613167483 949532.702442834556 1505 0 9 4184 15260

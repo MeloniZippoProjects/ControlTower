@@ -1,0 +1,47 @@
+file 92602 1483967808                                           
+version 2
+run QueueMeasurement-80-20170109-14:16:48-6206
+attr configname QueueMeasurement
+attr datetime 20170109-14:16:48
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6206
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 12576 319 5303 74178.318104496476 937983.760616919221 295 463.75697494971 18580.827158938 1921488.217803 16322788412.672
+1	14007 9197 308 5312 73880.112506126339 949607.488572846916 295 0 1472.5964721099 17678.2364405 12741082.164965
+2	23204 16946 306 5312 73880.112506126339 949607.488572846916 590 0 2 305 315
+3	40150 9302 316 5300 74120.976519160417 937498.543225220968 295 0 3485.4104159093 44177.752591579 73661577.242504
+4	49452 16938 311 5300 74060.980372252793 937498.543225220968 590 0 5 355 499
+5	66390 4636 304 5308 72000 948000 293 0 4 295 559
+6	71026 4636 304 5308 72000 948000 293 0 5 296 582
+7	75662 16940 310 5315 74060.980372252793 949643.477328994895 590 0 6 837 1955

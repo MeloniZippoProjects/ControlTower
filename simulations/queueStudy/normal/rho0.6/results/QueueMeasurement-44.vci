@@ -1,0 +1,47 @@
+file 291005 1483966599                                          
+version 2
+run QueueMeasurement-44-20170109-13:56:39-4314
+attr configname QueueMeasurement
+attr datetime 20170109-13:56:39
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=44
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4314
+attr repetition 44
+attr replication #44
+attr resultdir results
+attr runnumber 44
+attr seedset 44
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 16.667min
+param SimNetwork.wg.interArrivalTime exponential(16.667min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1468 37627 836 15661 50547.484419153061 950169.124099887548 873 2984.3876248591 10420.083405595 4134207.7357069 20440376410.217
+1	39095 32476 838 15635 50547.484419153061 948986.272001255888 869 0 877.20239671766 104292.45842012 31974486.793175
+2	71571 50720 838 15635 50547.484419153061 948986.272001255888 1737 0 4 1050 1276
+3	122291 32636 846 15657 50814.100307588962 949864.89358958385 872 0 2202.5804269481 255230.61890473 232540159.86838
+4	154927 50921 841 15657 50652.782136106347 949864.89358958385 1744 0 6 1344 2172
+5	205848 17157 848 15659 51001.02 950019 900 0 4 870 1568
+6	223005 17157 848 15659 51001.02 950019 900 0 4 872 1546
+7	240162 50843 840 15654 50652.782136106347 949864.89358958385 1741 0 9 5255 20135

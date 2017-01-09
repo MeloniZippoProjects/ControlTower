@@ -1,0 +1,47 @@
+file 276204 1483966615                                          
+version 2
+run QueueMeasurement-80-20170109-13:56:55-4386
+attr configname QueueMeasurement
+attr datetime 20170109-13:56:55
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4386
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 16.667min
+param SimNetwork.wg.interArrivalTime exponential(16.667min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 35428 706 14795 51807.220004428852 950019.548513430204 823 2904.2492668169 11444.842347673 3911917.8584335 19565710614.099
+1	36896 30195 694 14797 50679.286155143543 950019.548513430204 828 0 916.31609150351 88556.152716396 26550013.627397
+2	67091 48288 692 14797 50679.286155143543 950019.548513430204 1656 0 3 974 1136
+3	115379 30318 703 14805 51469.641170717924 950380.907559687948 824 0 2635.2288208728 204237.52611966 168411330.60316
+4	145697 48096 701 14805 51469.641170717924 950380.907559687948 1649 0 5 1181 1805
+5	193793 17092 696 14793 51001.02 950019 900 0 4 828 1450
+6	210885 17092 696 14793 51001.02 950019 900 0 4 822 1430
+7	227977 48227 698 14803 51015.630908762061 950380.907559687948 1653 0 8 4929 18839

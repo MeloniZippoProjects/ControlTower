@@ -1,0 +1,47 @@
+file 99368 1483966503                                           
+version 2
+run QueueMeasurement-144-20170109-13:55:02-3907
+attr configname QueueMeasurement
+attr datetime 20170109-13:55:02
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=144
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3907
+attr repetition 144
+attr replication #144
+attr resultdir results
+attr runnumber 144
+attr seedset 144
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 13518 760 6112 123683.869996176873 1035379.210584363342 316 3142.4296565234 26006.750618962 1982266.8043067 15061126526.221
+1	14984 10008 769 6100 136099.398609469787 1034135.164263682998 316 0 368.64235017157 11295.266321689 2520120.8817043
+2	24992 18243 767 6100 136099.398609469787 1034135.164263682998 632 0 2 318 320
+3	43235 9885 757 6109 123400.939983624036 1035070.654153769685 316 0 572.09052773038 10205.808365832 2764539.2441184
+4	53120 18247 755 6109 123400.939983624036 1035070.654153769685 632 0 2 320 324
+5	71367 4878 753 6105 123000 1035000 305 0 4 317 635
+6	76245 4878 753 6105 123000 1035000 305 0 5 315 631
+7	81123 18245 754 6106 123400.939983624036 1035070.654153769685 632 0 5 872 1824

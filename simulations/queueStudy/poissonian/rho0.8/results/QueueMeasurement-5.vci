@@ -1,0 +1,47 @@
+file 395321 1483967511                                          
+version 2
+run QueueMeasurement-5-20170109-14:11:50-5828
+attr configname QueueMeasurement
+attr datetime 20170109-14:11:50
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=5
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5828
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1429 49959 1418 20994 61387.643200409336 934072.309580852048 1154 448.63590206454 29482.710528573 9381657.2249489 108526558599.05
+1	51388 48555 1438 21398 61810.651947642229 949823.387679939609 1187 0 6091.3051857888 648722.53594248 1101208510.4756
+2	99943 69937 1424 21405 61637.161144774211 950386.386034420518 2376 0 14 3118 11352
+3	169880 47326 1420 20958 61387.643200409336 931754.185047064348 1153 0 19162.919953031 4203985.7217075 39972454615.847
+4	217206 69189 1420 21408 61387.643200409336 950391.66944716966 2333 0 35 13815 212883
+5	286395 19634 1422 21403 61500 950250 1186 0 6 1186 2538
+6	306029 19634 1422 21403 61500 950250 1186 0 9 1155 2791
+7	325663 69658 1426 21407 61640.687523594399 950391.66944716966 2366 0 12 9669 48735

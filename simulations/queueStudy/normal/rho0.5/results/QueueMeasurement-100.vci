@@ -1,0 +1,47 @@
+file 247406 1483966885                                          
+version 2
+run QueueMeasurement-100-20170109-14:01:25-5693
+attr configname QueueMeasurement
+attr datetime 20170109-14:01:25
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=100
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5693
+attr repetition 100
+attr replication #100
+attr resultdir results
+attr runnumber 100
+attr seedset 100
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 32886 880 13820 61328.002724822339 950270.988679409979 764 2790.5997075033 14074.44618889 3639774.0708183 18361626328.108
+1	34352 27958 882 13822 61328.002724822339 950270.988679409979 763 0 828.06420291749 85251.285643313 26539858.733528
+2	62310 44448 882 13822 61328.002724822339 950270.988679409979 1525 0 3 916 1118
+3	106758 27578 898 13811 61892.946437805992 949939.718566119006 763 0 1698.5505511398 137660.2000503 87580655.103321
+4	134336 44488 893 13817 61720.802763319628 950258.820656018336 1526 0 4 957 1219
+5	178824 12063 878 13824 61200 950400 742 0 4 763 1451
+6	190887 12063 878 13824 61200 950400 742 0 4 765 1443
+7	202950 44456 888 13816 61621.096953161571 950258.820656018336 1525 0 8 4307 15959

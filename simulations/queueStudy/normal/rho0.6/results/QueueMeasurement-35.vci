@@ -1,0 +1,47 @@
+file 289341 1483966595                                          
+version 2
+run QueueMeasurement-35-20170109-13:56:34-4296
+attr configname QueueMeasurement
+attr datetime 20170109-13:56:34
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=35
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4296
+attr repetition 35
+attr replication #35
+attr resultdir results
+attr runnumber 35
+attr seedset 35
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 16.667min
+param SimNetwork.wg.interArrivalTime exponential(16.667min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1468 37390 877 15645 51662.912892770389 950337.520359333038 867 3048.4745070708 12029.265838127 4056861.8423987 19864989519.641
+1	38858 32231 887 15632 51982.83097988358 948458.762618033923 868 0 928.7089207152 96231.639636846 29485206.059297
+2	71089 50712 882 15632 51754.271330242243 948458.762618033923 1736 0 4 1034 1256
+3	121801 31850 871 15642 51357.914910734868 950026.789001258275 867 0 2309.3575637657 205856.4878132 159111762.78103
+4	153651 50657 869 15642 51357.914910734868 950026.789001258275 1734 0 4 1209 1679
+5	204308 17177 867 15638 51001.02 950019 900 0 4 868 1572
+6	221485 17177 867 15638 51001.02 950019 900 0 4 866 1496
+7	238662 50679 868 15639 51357.914910734868 950026.789001258275 1735 0 8 5232 19788

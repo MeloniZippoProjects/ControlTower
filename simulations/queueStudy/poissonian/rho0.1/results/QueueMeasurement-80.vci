@@ -1,0 +1,47 @@
+file 46793 1483968339                                           
+version 2
+run QueueMeasurement-80-20170109-14:25:38-6967
+attr configname QueueMeasurement
+attr datetime 20170109-14:25:38
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6967
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1433 6250 275 2771 123028.786665038087 1032754.781521991964 147 1246.622476325 27479.155016831 1416459.8814004 18718662966.758
+1	7683 4477 264 2776 122046.216472368035 1034251.66192387529 149 0 792.78282291128 3728.7005007228 1651572.9521408
+2	12160 8535 262 2776 122046.216472368035 1034251.66192387529 298 0 1 149 149
+3	20695 4407 272 2768 122737.368754492555 1032221.794877791704 147 0 1762.0344198133 5758.6347662485 5509178.7755408
+4	25102 8423 270 2768 122737.368754492555 1032221.794877791704 294 0 1 147 147
+5	33525 2397 285 2764 126000 1032000 152 0 4 147 277
+6	35922 2397 285 2764 126000 1032000 152 0 5 146 274
+7	38319 8474 267 2779 122648.58508038578 1034710.468885446559 296 0 4 282 468

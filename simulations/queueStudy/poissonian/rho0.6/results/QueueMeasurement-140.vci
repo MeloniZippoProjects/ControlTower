@@ -1,0 +1,47 @@
+file 295845 1483968011                                          
+version 2
+run QueueMeasurement-140-20170109-14:20:11-6573
+attr configname QueueMeasurement
+attr datetime 20170109-14:20:11
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=140
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6573
+attr repetition 140
+attr replication #140
+attr resultdir results
+attr runnumber 140
+attr seedset 140
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 16.667min
+param SimNetwork.wg.interArrivalTime exponential(16.667min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1445 38118 1264 16259 73450.948345056819 948704.143556286676 883 379.2185566132 26383.857274824 4651276.3936078 32923649719.36
+1	39563 33517 1252 16282 72305.072454910472 950107.673626294427 887 0 3317.6414317157 230639.82924277 233736583.42121
+2	73080 51956 1250 16285 72305.072454910472 950109.119543836084 1775 0 5 1320 2104
+3	125036 33614 1261 16256 73321.62932073381 948146.438719428778 883 0 7057.6844645561 617534.46376344 1444671683.9523
+4	158650 51710 1255 16256 72983.816882780569 948146.438719428778 1766 0 11 2289 7803
+5	210360 16841 1248 16278 72001.44 950019 879 0 5 886 1826
+6	227201 16841 1248 16278 72001.44 950019 879 0 6 883 1899
+7	244042 51803 1254 16276 72983.816882780569 949993.480474944026 1769 0 9 5584 22064

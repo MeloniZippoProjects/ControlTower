@@ -1,0 +1,47 @@
+file 228707 1483966906                                          
+version 2
+run QueueMeasurement-139-20170109-14:01:46-5732
+attr configname QueueMeasurement
+attr datetime 20170109-14:01:46
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=139
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5732
+attr repetition 139
+attr replication #139
+attr resultdir results
+attr runnumber 139
+attr seedset 139
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 30233 773 12749 61231.052701967484 948601.158906991923 704 2674.210741812 13285.891173064 3406673.5995867 17627608107.591
+1	31699 25409 792 12755 63028.68444932524 949709.207260162091 703 0 817.93803668906 67540.459953674 18679009.157429
+2	57108 40859 790 12755 63028.68444932524 949709.207260162091 1406 0 3 797 911
+3	97967 25083 775 12746 61231.052701967484 948315.064753070936 703 0 2244.2199384703 132802.27687639 97360055.254826
+4	123050 40839 775 12746 61231.052701967484 948315.064753070936 1405 0 5 930 1278
+5	163889 11990 771 12760 61200 950400 742 0 4 703 1357
+6	175879 11990 771 12760 61200 950400 742 0 4 707 1347
+7	187869 40838 777 12758 61423.55696497387 950046.621091213366 1405 0 9 3698 12890

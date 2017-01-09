@@ -1,0 +1,47 @@
+file 358341 1483966427                                          
+version 2
+run QueueMeasurement-143-20170109-13:53:46-3598
+attr configname QueueMeasurement
+attr datetime 20170109-13:53:46
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=143
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3598
+attr repetition 143
+attr replication #143
+attr resultdir results
+attr runnumber 143
+attr seedset 143
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.256min
+param SimNetwork.wg.interArrivalTime exponential(14.256min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1474 46027 1073 19129 51849.587154996158 950305.836657157149 1065 2752.4277560907 9309.3075682214 5145788.135852 25873034519.917
+1	47501 41562 1055 19105 50637.320710890819 949122.283300328793 1063 0 1070.97933557 175263.7458546 63156819.484916
+2	89063 62351 1053 19105 50637.320710890819 949122.283300328793 2126 0 4 1465 2031
+3	151414 41507 1064 19131 51555.022095454034 950305.836657157149 1066 0 3548.8264280937 569467.0863034 808942152.33242
+4	192921 62568 1062 19131 51555.022095454034 950305.836657157149 2132 0 8 2494 6326
+5	255489 20184 1051 19127 50466.24 950304.96 1053 0 3 1063 1925
+6	275673 20184 1051 19127 50466.24 950304.96 1053 0 3 1067 1889
+7	295857 62484 1058 19124 50929.073986080169 950064.18466727169 2129 0 9 7745 34153

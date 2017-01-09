@@ -1,0 +1,47 @@
+file 90904 1483966459                                           
+version 2
+run QueueMeasurement-26-20170109-13:54:19-3667
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:19
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=26
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3667
+attr repetition 26
+attr replication #26
+attr resultdir results
+attr runnumber 26
+attr seedset 26
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1460 12223 602 5462 121481.374623259741 1031365.970266587493 286 3108.2077897048 23359.695074037 1878249.6587821 15320839424.248
+1	13683 9097 604 5469 121481.374623259741 1035786.494195853988 286 0 488.34535624262 9038.7301811102 2107120.4235069
+2	22780 16512 599 5469 121394.727977031485 1035786.494195853988 572 0 2 296 306
+3	39292 8920 596 5459 121151.088490474951 1031110.096839746579 286 0 717.73397043257 11755.898830398 3940629.5242303
+4	48212 16484 594 5459 121151.088490474951 1031110.096839746579 572 0 2 298 310
+5	64696 4865 609 5465 123000 1035000 305 0 8 285 597
+6	69561 4865 609 5465 123000 1035000 305 0 7 286 574
+7	74426 16478 593 5472 121151.088490474951 1036120.810072966169 572 0 7 818 1922

@@ -1,0 +1,47 @@
+file 145558 1483966529                                          
+version 2
+run QueueMeasurement-53-20170109-13:55:29-4029
+attr configname QueueMeasurement
+attr datetime 20170109-13:55:29
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=53
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4029
+attr repetition 53
+attr replication #53
+attr resultdir results
+attr runnumber 53
+attr seedset 53
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 19360 771 8429 88348.888621264782 950151.940097096036 453 2942.511191236 14741.312274878 2419196.5898506 14493081498.308
+1	20828 15193 759 8431 87707.101223965885 950151.940097096036 453 0 684.90347322253 26994.485715954 7013724.0167352
+2	36021 26143 757 8431 87707.101223965885 950151.940097096036 906 0 3 489 537
+3	62164 14985 768 8422 88032.726382472852 949898.791104295385 453 0 1132.4052117647 36194.550029774 16584386.443586
+4	77149 26137 762 8422 87924.615644560554 949898.791104295385 906 0 4 499 565
+5	103286 8086 764 8424 87999.12 949990.5 432 0 7 452 926
+6	111372 8086 764 8424 87999.12 949990.5 432 0 4 453 917
+7	119458 26100 761 8419 87924.615644560554 949898.791104295385 905 0 7 1798 5272

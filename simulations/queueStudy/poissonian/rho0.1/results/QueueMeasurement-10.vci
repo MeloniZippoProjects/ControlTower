@@ -1,0 +1,47 @@
+file 57959 1483968310                                           
+version 2
+run QueueMeasurement-10-20170109-14:25:10-6897
+attr configname QueueMeasurement
+attr datetime 20170109-14:25:10
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=10
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6897
+attr repetition 10
+attr replication #10
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1433 8008 395 3531 123831.395176901565 1035260.451630640882 188 1264.6747194042 27863.83059486 1448386.40518 15704041847.148
+1	9441 5619 384 3512 121953.88398071871 1032540.154979819623 187 0 568.76873858352 5504.3221589053 2096655.8794435
+2	15060 10736 382 3512 121953.88398071871 1032540.154979819623 374 0 2 191 195
+3	25796 5778 392 3528 122608.664141609095 1035242.241777038804 188 0 1329.1534052618 10637.902295909 8258672.4760216
+4	31574 10796 390 3528 122608.664141609095 1035242.241777038804 376 0 1 188 188
+5	42370 2414 413 3508 126000 1032000 152 0 5 187 413
+6	44784 2414 413 3508 126000 1032000 152 0 4 186 402
+7	47198 10761 387 3525 122571.522722572127 1035242.241777038804 375 0 3 349 559

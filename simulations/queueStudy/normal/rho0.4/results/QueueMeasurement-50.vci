@@ -1,0 +1,47 @@
+file 167873 1483966760                                          
+version 2
+run QueueMeasurement-50-20170109-13:59:20-4938
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:20
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=50
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4938
+attr repetition 50
+attr replication #50
+attr resultdir results
+attr runnumber 50
+attr seedset 50
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1460 22259 775 9680 73300.017048355876 949572.588862715492 521 2982.2777983164 15182.645529197 2697278.6021216 15432722792.737
+1	23719 17610 789 9685 74434.59744507157 949686.654114938917 521 0 628.0031551038 34231.380063047 8927382.0418738
+2	41329 30030 787 9685 74434.59744507157 949686.654114938917 1042 0 2 555 589
+3	71359 17729 772 9676 73003.93763067653 949252.912889237552 521 0 1295.2800525394 53566.478066143 26394497.662172
+4	89088 30058 770 9676 73003.93763067653 949252.912889237552 1042 0 3 567 617
+5	119146 9341 768 9678 72000 949500 586 0 5 521 969
+6	128487 9341 768 9678 72000 949500 586 0 4 520 982
+7	137828 30045 769 9688 73003.93763067653 949971.048923944413 1042 0 7 2219 6685

@@ -1,0 +1,47 @@
+file 96137 1483966493                                           
+version 2
+run QueueMeasurement-119-20170109-13:54:53-3856
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:53
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=119
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3856
+attr repetition 119
+attr replication #119
+attr resultdir results
+attr runnumber 119
+attr seedset 119
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1466 13043 768 5921 123306.932975238258 1016282.122028883503 305 3045.406930971 16673.680999683 1918012.4070305 14047879969.856
+1	14509 9543 756 5933 121671.39991052318 1036586.57201098535 305 0 448.54991198071 8769.6823802575 1942422.7491445
+2	24052 17582 754 5933 121671.39991052318 1036586.57201098535 610 0 2 309 313
+3	41634 9575 765 5918 123008.969204481503 1015975.390504197034 305 0 554.60981542235 10098.763765551 2800614.2798847
+4	51209 17598 763 5918 123008.969204481503 1015975.390504197034 610 0 2 311 317
+5	68807 4880 761 5929 123000 1035000 305 0 4 304 564
+6	73687 4880 761 5929 123000 1035000 305 0 4 305 567
+7	78567 17570 759 5915 121934.749714679354 1015975.390504197034 609 0 5 802 1660

@@ -1,0 +1,47 @@
+file 377467 1483966379                                          
+version 2
+run QueueMeasurement-53-20170109-13:52:59-3416
+attr configname QueueMeasurement
+attr datetime 20170109-13:52:59
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=53
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3416
+attr repetition 53
+attr replication #53
+attr resultdir results
+attr runnumber 53
+attr seedset 53
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.256min
+param SimNetwork.wg.interArrivalTime exponential(14.256min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1468 48413 854 19846 51532.409022860024 950244.770827317104 1120 3015.4205446876 9757.0481862931 5763674.1778853 31332027723.979
+1	49881 44900 856 19826 51532.409022860024 949270.114849588158 1123 0 1019.45991343 213274.68321593 79375873.402697
+2	94781 65962 851 19855 51375.119379828369 950383.392589944469 2248 0 4 1658 2368
+3	160743 44659 847 19848 51255.738136076234 950244.770827317104 1121 0 5770.6638205216 962277.12032141 2132957805.9959
+4	205402 65846 845 19848 51255.738136076234 950244.770827317104 2244 0 12 3852 16306
+5	271248 20175 843 19850 50466.24 950304.96 1053 0 4 1124 2104
+6	291423 20175 843 19850 50466.24 950304.96 1053 0 4 1121 2047
+7	311598 65869 844 19842 51255.738136076234 950239.215920826642 2246 0 10 8683 41243

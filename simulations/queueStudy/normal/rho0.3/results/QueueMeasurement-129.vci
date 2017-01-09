@@ -1,0 +1,47 @@
+file 134184 1483966561                                          
+version 2
+run QueueMeasurement-129-20170109-13:56:01-4181
+attr configname QueueMeasurement
+attr datetime 20170109-13:56:01
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=129
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4181
+attr repetition 129
+attr replication #129
+attr resultdir results
+attr runnumber 129
+attr seedset 129
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1474 17703 698 7737 87332.827967691007 948013.830454840678 414 3104.8580852074 18541.931377757 2282948.5929642 14473126748.997
+1	19177 13557 706 7708 93018.784475016499 944510.009118579719 413 0 551.29727515922 18825.536279413 4384585.1071856
+2	32734 23828 704 7708 93018.784475016499 944510.009118579719 826 0 2 425 437
+3	56562 13730 695 7733 87129.849688372481 947707.024368139575 414 0 1355.765799331 31452.454904014 12993555.970074
+4	70292 23892 693 7733 87129.849688372481 947707.024368139575 828 0 3 450 494
+5	94184 8071 700 7739 87999.12 949990.5 432 0 5 413 815
+6	102255 8071 700 7739 87999.12 949990.5 432 0 5 414 830
+7	110326 23858 692 7730 87129.849688372481 947707.024368139575 827 0 7 1513 4209

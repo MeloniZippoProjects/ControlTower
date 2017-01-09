@@ -1,0 +1,47 @@
+file 98345 1483966503                                           
+version 2
+run QueueMeasurement-146-20170109-13:55:03-3911
+attr configname QueueMeasurement
+attr datetime 20170109-13:55:03
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=146
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3911
+attr repetition 146
+attr replication #146
+attr resultdir results
+attr runnumber 146
+attr seedset 146
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 13387 695 5992 121510.978049516593 1036616.367025978301 313 3276.3285386259 17480.819556682 1979002.834162 14729671372.752
+1	14853 9705 702 5964 128016.720732774717 1033196.27802693877 312 0 543.63835714704 10171.234925703 2751361.8959795
+2	24558 18000 700 5964 128016.720732774717 1033196.27802693877 624 0 2 320 328
+3	42558 9944 692 5989 121225.398685192442 1036319.977695475273 313 0 1491.2744665916 12983.498320006 5062633.9224126
+4	52502 18071 690 5989 121225.398685192442 1036319.977695475273 626 0 2 319 325
+5	70573 4869 697 5977 123000 1035000 305 0 4 312 610
+6	75442 4869 697 5977 123000 1035000 305 0 5 312 600
+7	80311 18034 689 5986 121225.398685192442 1036319.977695475273 625 0 5 850 1836

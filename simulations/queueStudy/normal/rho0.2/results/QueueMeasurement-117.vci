@@ -1,0 +1,47 @@
+file 105129 1483966493                                          
+version 2
+run QueueMeasurement-117-20170109-13:54:52-3852
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:52
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=117
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3852
+attr repetition 117
+attr replication #117
+attr resultdir results
+attr runnumber 117
+attr seedset 117
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1466 14317 600 6256 125876.868336816601 1036576.291986945278 335 2845.1991485262 17880.151835039 2043923.306278 14824559538.825
+1	15783 10778 588 6237 122450.597702601657 1035584.475423283879 336 0 372.67938442825 12783.522084144 2834756.0923189
+2	26561 19416 586 6237 122450.597702601657 1035584.475423283879 672 0 2 342 348
+3	45977 10712 597 6253 125574.149374755164 1036189.588970350437 335 0 718.69328744771 13291.847001949 3842757.9590107
+4	56689 19344 595 6253 125574.149374755164 1036189.588970350437 670 0 2 343 351
+5	76033 4865 593 6233 123000 1035000 305 0 5 335 665
+6	80898 4865 593 6233 123000 1035000 305 0 5 333 653
+7	85763 19366 591 6247 122710.031416659677 1036019.041389897451 671 0 5 966 2096

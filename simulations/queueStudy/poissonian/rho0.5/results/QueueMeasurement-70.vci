@@ -1,0 +1,47 @@
+file 228297 1483968410                                          
+version 2
+run QueueMeasurement-70-20170109-14:26:49-7108
+attr configname QueueMeasurement
+attr datetime 20170109-14:26:49
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=70
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7108
+attr repetition 70
+attr replication #70
+attr resultdir results
+attr runnumber 70
+attr seedset 70
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 30246 754 12681 63870.596429583312 949768.519826367399 704 683.40986073022 21703.658893527 3733393.5107573 26929330253.701
+1	31677 25098 706 12683 61831.978005010639 949768.519826367399 702 0 1864.4212465918 130818.55526823 92197710.155427
+2	56775 40795 698 12683 61512.746156786551 949768.519826367399 1404 0 5 922 1246
+3	97570 25034 744 12675 63452.177243545998 949252.059865529756 704 0 4665.0865071412 233180.41262821 381500308.13305
+4	122604 40885 729 12675 63140.738537805409 949252.059865529756 1408 0 10 1164 2664
+5	163489 11972 696 12688 61200 950400 742 0 5 704 1404
+6	175461 11972 696 12688 61200 950400 742 0 6 705 1465
+7	187433 40864 704 12686 61831.978005010639 949875.561571974704 1407 0 8 3946 14488

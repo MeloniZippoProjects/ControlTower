@@ -1,0 +1,47 @@
+file 240332 1483968437                                          
+version 2
+run QueueMeasurement-125-20170109-14:27:17-7164
+attr configname QueueMeasurement
+attr datetime 20170109-14:27:17
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=125
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7164
+attr repetition 125
+attr replication #125
+attr resultdir results
+attr runnumber 125
+attr seedset 125
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1437 31819 649 13222 62744.652235442609 950383.445586245827 741 683.95156663905 23740.670053837 3947077.5703721 28214999002.48
+1	33256 26722 631 13189 61315.0492303811 948936.467920083451 741 0 2253.3080650127 152242.60142755 111861359.5854
+2	59978 43060 629 13189 61315.0492303811 948936.467920083451 1482 0 4 987 1357
+3	103038 27201 639 13219 62220.159412525468 950257.103163803689 741 0 4809.514026542 334878.22242613 602353893.29257
+4	130239 43053 637 13219 62220.159412525468 950257.103163803689 1482 0 6 1345 2721
+5	173292 11992 627 13224 61200 950400 742 0 5 741 1483
+6	185284 11992 627 13224 61200 950400 742 0 6 742 1564
+7	197276 43056 634 13216 61595.075964521412 950257.103163803689 1482 0 9 4233 15733

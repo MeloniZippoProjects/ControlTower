@@ -1,0 +1,47 @@
+file 92028 1483966499                                           
+version 2
+run QueueMeasurement-135-20170109-13:54:59-3888
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:59
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=135
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3888
+attr repetition 135
+attr replication #135
+attr resultdir results
+attr runnumber 135
+attr seedset 135
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 12388 663 5589 122191.375507097001 1026503.831783221155 290 2973.9651914384 22095.764081109 1886750.0134616 14874302712.956
+1	13854 9148 670 5596 126304.735491680886 1033620.516673627177 290 0 645.97290635914 9647.8281219993 2342205.0407728
+2	23002 16740 668 5596 126304.735491680886 1033620.516673627177 580 0 2 294 298
+3	39742 9005 660 5605 121870.197753897133 1036506.909003767922 291 0 628.10442394337 7879.9892890415 2279042.6853391
+4	48747 16791 658 5605 121870.197753897133 1036506.909003767922 582 0 1 291 291
+5	65538 4863 665 5601 123000 1035000 305 0 4 290 548
+6	70401 4863 665 5601 123000 1035000 305 0 5 290 536
+7	75264 16764 657 5602 121870.197753897133 1036506.909003767922 581 0 5 762 1550

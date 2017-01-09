@@ -1,0 +1,47 @@
+file 87941 1483967831                                           
+version 2
+run QueueMeasurement-135-20170109-14:17:11-6265
+attr configname QueueMeasurement
+attr datetime 20170109-14:17:11
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=135
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6265
+attr repetition 135
+attr replication #135
+attr resultdir results
+attr runnumber 135
+attr seedset 135
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1437 11819 483 5187 76585.27565596551 949300.46574853323 277 754.61241212187 30717.351023463 1863162.4354494 17162092983.666
+1	13256 8778 460 5176 72485.325488602988 949143.303627519769 278 0 1680.9011074433 20668.371879651 14067713.903163
+2	22034 15971 458 5176 72485.325488602988 949143.303627519769 556 0 3 290 306
+3	38005 8736 477 5184 76087.923150625546 949185.617352797429 277 0 2621.1680586641 22514.514624613 20727084.668244
+4	46741 15948 475 5184 76087.923150625546 949185.617352797429 554 0 2 287 297
+5	62689 4640 456 5172 72000 948000 293 0 6 278 518
+6	67329 4640 456 5172 72000 948000 293 0 5 277 527
+7	71969 15972 463 5181 73053.917705015828 949185.617352797429 555 0 7 774 1762

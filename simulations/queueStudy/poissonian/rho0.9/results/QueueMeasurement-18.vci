@@ -1,0 +1,47 @@
+file 469044 1483968061                                          
+version 2
+run QueueMeasurement-18-20170109-14:21:01-6602
+attr configname QueueMeasurement
+attr datetime 20170109-14:21:01
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=18
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6602
+attr repetition 18
+attr replication #18
+attr resultdir results
+attr runnumber 18
+attr seedset 18
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 11.111min
+param SimNetwork.wg.interArrivalTime exponential(11.111min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1439 59382 1498 24590 62958.894216728698 949317.856939424182 1369 549.62198525334 32330.785431869 14118787.307058 202400967922.96
+1	60821 57108 1500 24614 62958.894216728698 950314.573076367675 1360 0 3047.0205193246 623537.72458424 601903574.82972
+2	117929 80199 1481 24617 61688.023690916035 950357.00541496702 2721 0 9 3241 7821
+3	198128 57399 1571 24587 65349.676425882445 949258.584721441997 1368 0 22259.578410589 8210974.3275328 95371381231.795
+4	255527 81685 1474 24605 61277.056315190829 949803.36614126202 2731 0 45 28238 575258
+5	337212 25790 1476 24607 61332.72 949990.5 1334 0 5 1360 2818
+6	363002 25790 1476 24607 61332.72 949990.5 1334 0 7 1369 3139
+7	388792 80252 1473 24612 61277.056315190829 950314.573076367675 2722 0 12 12177 67045

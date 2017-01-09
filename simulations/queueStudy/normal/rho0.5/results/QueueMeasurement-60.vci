@@ -1,0 +1,47 @@
+file 226566 1483966869                                          
+version 2
+run QueueMeasurement-60-20170109-14:01:09-5600
+attr configname QueueMeasurement
+attr datetime 20170109-14:01:09
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=60
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5600
+attr repetition 60
+attr replication #60
+attr resultdir results
+attr runnumber 60
+attr seedset 60
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1460 30024 806 12694 62462.180133604265 949750.679696479747 699 3035.218126259 10947.825616957 3359593.3068584 17130681527.921
+1	31484 24670 791 12672 61328.315098686097 946365.164424712843 697 0 742.51170935925 61479.106500998 18695444.829115
+2	56154 40521 789 12672 61328.315098686097 946365.164424712843 1394 0 3 793 909
+3	96675 24694 799 12691 62218.243327329776 949425.535265695142 699 0 2210.0947123539 112331.97318969 79025088.944144
+4	121369 40611 797 12691 62218.243327329776 949425.535265695142 1398 0 4 877 1127
+5	161980 12022 787 12696 61200 950400 742 0 4 697 1243
+6	174002 12022 787 12696 61200 950400 742 0 4 701 1239
+7	186024 40542 794 12688 61572.889937479646 949425.535265695142 1396 0 8 3540 11890

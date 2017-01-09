@@ -1,0 +1,47 @@
+file 185438 1483966780                                          
+version 2
+run QueueMeasurement-107-20170109-13:59:40-5053
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:40
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=107
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5053
+attr repetition 107
+attr replication #107
+attr resultdir results
+attr runnumber 107
+attr seedset 107
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1466 24841 576 10423 73843.380460365684 948625.822861373514 581 2839.8293791311 11957.984099952 2894798.7873346 15527099075.694
+1	26307 19811 556 10445 72056.770969777066 949613.150414199865 583 0 718.57573379194 40720.182964502 11239205.122884
+2	46118 33653 554 10445 72056.770969777066 949613.150414199865 1166 0 3 633 687
+3	79771 19874 573 10420 73525.5144002 948292.974488857201 581 0 1489.75495417 61500.295473387 30355982.818276
+4	99645 33512 571 10420 73525.5144002 948292.974488857201 1162 0 3 647 721
+5	133157 9355 552 10441 72000 949500 586 0 5 583 1059
+6	142512 9355 552 10441 72000 949500 586 0 5 582 1064
+7	151867 33571 562 10448 72413.965575318716 949953.559812250371 1164 0 8 2634 8074

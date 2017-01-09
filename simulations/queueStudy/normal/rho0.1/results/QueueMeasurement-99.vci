@@ -1,0 +1,47 @@
+file 39769 1483966831                                           
+version 2
+run QueueMeasurement-99-20170109-14:00:31-5340
+attr configname QueueMeasurement
+attr datetime 20170109-14:00:31
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=99
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5340
+attr repetition 99
+attr replication #99
+attr resultdir results
+attr runnumber 99
+attr seedset 99
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1462 5234 395 2491 122621.945320670024 1036444.110658633592 123 3454.8833085093 47029.843437769 1330447.7211955 24313933590.469
+1	6696 3635 408 2480 123668.715530509213 1032724.666019583246 121 0 274.12541032424 1809.6736440348 358967.14357556
+2	10331 6935 406 2480 123668.715530509213 1032724.666019583246 242 0 1 121 121
+3	17266 3701 392 2488 122297.854174844164 1036143.096388702303 123 0 529.44608358337 2596.499771393 714156.42724582
+4	20967 7038 390 2488 122297.854174844164 1036143.096388702303 246 0 1 123 123
+5	28005 2391 413 2476 126000 1032000 152 0 4 121 237
+6	30396 2391 413 2476 126000 1032000 152 0 4 122 228
+7	32787 6982 389 2485 122297.854174844164 1036143.096388702303 244 0 3 222 358

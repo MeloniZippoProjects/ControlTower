@@ -1,0 +1,47 @@
+file 98287 1483966481                                           
+version 2
+run QueueMeasurement-83-20170109-13:54:41-3784
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:41
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=83
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3784
+attr repetition 83
+attr replication #83
+attr resultdir results
+attr runnumber 83
+attr seedset 83
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1460 13381 666 5943 122757.052018612043 1032877.798871314513 313 3084.1812415077 24042.430087315 1962955.6408832 15112058253.315
+1	14841 9788 644 5931 121708.730543249091 1029564.21808668252 312 0 373.99712590481 8461.6087524402 1767780.6325568
+2	24629 17994 642 5931 121708.730543249091 1029564.21808668252 624 0 2 314 316
+3	42623 9819 660 5940 122503.399563111515 1032649.813338592074 313 0 548.48923157423 11493.346727802 3323764.5553942
+4	52442 18073 658 5940 122503.399563111515 1032649.813338592074 626 0 2 319 325
+5	70515 4871 670 5945 123000 1035000 305 0 4 312 606
+6	75386 4871 670 5945 123000 1035000 305 0 4 313 609
+7	80257 18030 650 5937 121992.676011925672 1032649.813338592074 625 0 5 900 2004

@@ -1,0 +1,47 @@
+file 142614 1483966559                                          
+version 2
+run QueueMeasurement-124-20170109-13:55:59-4171
+attr configname QueueMeasurement
+attr datetime 20170109-13:55:59
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=124
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4171
+attr repetition 124
+attr replication #124
+attr resultdir results
+attr runnumber 124
+attr seedset 124
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1474 18949 634 8165 86456.653275329124 950226.309103273985 444 2793.9074784983 25240.662592162 2405467.2773949 14734894306.687
+1	20423 14615 639 8167 86537.751311684966 950226.309103273985 445 0 755.50572642915 25821.173601075 7721319.8624922
+2	35038 25660 637 8167 86537.751311684966 950226.309103273985 890 0 3 487 545
+3	60698 14691 664 8158 89840.692139064597 949950.945459236358 443 0 1498.330187124 34940.28835779 19610721.102384
+4	75389 25521 662 8158 89840.692139064597 949950.945459236358 886 0 3 471 511
+5	100910 8073 652 8160 87999.12 949990.5 432 0 7 444 884
+6	108983 8073 652 8160 87999.12 949990.5 432 0 5 443 887
+7	117056 25558 645 8155 86852.907463793115 949950.945459236358 887 0 8 1696 4768

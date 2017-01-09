@@ -1,0 +1,47 @@
+file 93979 1483966470                                           
+version 2
+run QueueMeasurement-54-20170109-13:54:30-3725
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:30
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=54
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3725
+attr repetition 54
+attr replication #54
+attr resultdir results
+attr runnumber 54
+attr seedset 54
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1460 12625 720 5715 124315.789386710515 1036556.458998887122 295 3156.5495888875 25011.965899357 1918671.9623177 15548538846.069
+1	14085 9506 684 5684 121157.462427987649 1033208.863506358126 296 0 443.88225219661 11366.168495136 2545335.1978184
+2	23591 17107 682 5684 121157.462427987649 1033208.863506358126 592 0 2 302 308
+3	40698 9349 717 5717 124057.575598152363 1036556.458998887122 296 0 699.12486474204 12540.976345624 4025197.4802874
+4	50047 17094 715 5717 124057.575598152363 1036556.458998887122 592 0 2 306 316
+5	67141 4871 697 5702 123000 1035000 305 0 4 296 580
+6	72012 4871 697 5702 123000 1035000 305 0 4 293 571
+7	76883 17096 687 5711 121444.510172022504 1036277.723069117743 592 0 5 798 1708

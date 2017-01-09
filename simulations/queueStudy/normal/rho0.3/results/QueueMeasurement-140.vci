@@ -1,0 +1,47 @@
+file 130239 1483966566                                          
+version 2
+run QueueMeasurement-140-20170109-13:56:05-4203
+attr configname QueueMeasurement
+attr datetime 20170109-13:56:05
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=140
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4203
+attr repetition 140
+attr replication #140
+attr resultdir results
+attr runnumber 140
+attr seedset 140
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1474 17185 799 7622 90833.937737170735 943510.207919630107 402 2863.0730244992 20093.925786546 2219158.2992477 13945083624.544
+1	18659 12767 767 7630 87604.923475338144 948099.245678010247 403 0 561.83386486035 14843.70076022 3738099.4385788
+2	31426 23233 765 7630 87604.923475338144 948099.245678010247 806 0 2 417 431
+3	54659 13002 793 7619 90590.97109702975 943172.609680492246 402 0 913.86173438064 18503.285092649 5151595.5933355
+4	67661 23188 791 7619 90590.97109702975 943172.609680492246 804 0 2 412 422
+5	90849 8084 772 7635 87999.12 949990.5 432 0 4 403 727
+6	98933 8084 772 7635 87999.12 949990.5 432 0 4 402 714
+7	107017 23222 770 7633 87880.663005132108 948446.088521033142 805 0 5 1337 3159

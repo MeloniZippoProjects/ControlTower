@@ -1,0 +1,47 @@
+file 193451 1483966780                                          
+version 2
+run QueueMeasurement-108-20170109-13:59:40-5055
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:40
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=108
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5055
+attr repetition 108
+attr replication #108
+attr resultdir results
+attr runnumber 108
+attr seedset 108
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 25876 879 11122 72377.02941576951 949334.231726544841 604 2824.9052664483 12468.442037835 3012435.2584104 16100930749.313
+1	27342 21260 884 11147 72652.757419976431 950298.61117531417 607 0 972.39044454336 49929.868335256 14368440.452724
+2	48602 35179 882 11147 72652.757419976431 950298.61117531417 1215 0 4 682 780
+3	83781 20740 876 11116 72151.732858029915 949062.677074968511 604 0 2832.0241786928 92162.499010457 94860590.791333
+4	104521 35016 874 11142 72151.732858029915 950231.045501103621 1209 0 7 771 1245
+5	139537 9422 872 11126 72000 949500 586 0 6 604 1162
+6	148959 9422 872 11126 72000 949500 586 0 4 604 1146
+7	158381 35070 873 11145 72151.732858029915 950298.61117531417 1211 0 9 2885 9465

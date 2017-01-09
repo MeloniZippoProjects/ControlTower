@@ -1,0 +1,47 @@
+file 141700 1483966551                                          
+version 2
+run QueueMeasurement-104-20170109-13:55:51-4132
+attr configname QueueMeasurement
+attr datetime 20170109-13:55:51
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=104
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4132
+attr repetition 104
+attr replication #104
+attr resultdir results
+attr runnumber 104
+attr seedset 104
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 33.333min
+param SimNetwork.wg.interArrivalTime exponential(33.333min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1474 18773 962 8400 87513.349257220005 947979.551714343395 439 3011.0157939392 17504.901642323 2371773.0656939 14472376024.777
+1	20247 14725 977 8389 91142.353623500904 947242.196049106915 438 0 850.63738505564 27357.97099423 7419999.9821702
+2	34972 25304 975 8389 91142.353623500904 947242.196049106915 876 0 3 468 502
+3	60276 14582 959 8397 87207.709023674863 947705.023656443361 439 0 1258.1640274753 36093.354038642 16244821.870926
+4	74858 25339 957 8397 87207.709023674863 947705.023656443361 878 0 3 461 487
+5	100197 8092 969 8403 87999.12 949990.5 432 0 5 438 870
+6	108289 8092 969 8403 87999.12 949990.5 432 0 5 439 887
+7	116381 25319 956 8394 87207.709023674863 947705.023656443361 877 0 6 1641 4399

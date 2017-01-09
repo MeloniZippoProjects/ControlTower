@@ -1,0 +1,47 @@
+file 301960 1483966614                                          
+version 2
+run QueueMeasurement-78-20170109-13:56:54-4382
+attr configname QueueMeasurement
+attr datetime 20170109-13:56:54
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=78
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4382
+attr repetition 78
+attr replication #78
+attr resultdir results
+attr runnumber 78
+attr seedset 78
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 16.667min
+param SimNetwork.wg.interArrivalTime exponential(16.667min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1468 38955 906 16259 51668.471599615079 950263.26264943258 903 2788.0355491701 11622.692310398 4351334.3265918 21911553372.43
+1	40423 34168 911 16232 51838.2936264052 948327.68304166746 904 0 908.31749821584 124093.17023494 41991582.478409
+2	74591 52885 909 16264 51838.2936264052 950303.840921787295 1809 0 3 1175 1513
+3	127476 34212 903 16261 51417.56889666454 950263.26264943258 904 0 3614.1548921365 353717.88022654 440954712.23832
+4	161688 52921 901 16267 51417.56889666454 950335.785609911489 1810 0 8 1799 4329
+5	214609 17199 899 16251 51001.02 950019 900 0 4 905 1697
+6	231808 17199 899 16251 51001.02 950019 900 0 4 903 1663
+7	249007 52953 897 16266 50616.734526194098 950335.785609911489 1811 0 9 5867 24485

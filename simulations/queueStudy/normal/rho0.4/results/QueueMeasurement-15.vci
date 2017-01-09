@@ -1,0 +1,47 @@
+file 180219 1483966747                                          
+version 2
+run QueueMeasurement-15-20170109-13:59:07-4868
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:07
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=15
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4868
+attr repetition 15
+attr replication #15
+attr resultdir results
+attr runnumber 15
+attr seedset 15
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1460 24041 783 10338 72463.961918270154 949149.616211719618 562 2905.7887355677 12136.245892782 2839832.8121442 15686410125.114
+1	25501 19364 806 10340 75264.491394236797 949149.616211719618 561 0 561.50851458567 41155.606873771 10428897.921341
+2	44865 32360 804 10340 75264.491394236797 949149.616211719618 1122 0 2 603 645
+3	77225 19319 780 10349 72191.809337424004 950279.902200593495 563 0 1280.0712030303 58143.61302702 26243020.610742
+4	96544 32506 778 10349 72191.809337424004 950279.902200593495 1126 0 3 641 731
+5	129050 9364 776 10345 72000 949500 586 0 5 563 1043
+6	138414 9364 776 10345 72000 949500 586 0 4 563 1073
+7	147778 32441 777 10346 72191.809337424004 950279.902200593495 1124 0 8 2516 7758

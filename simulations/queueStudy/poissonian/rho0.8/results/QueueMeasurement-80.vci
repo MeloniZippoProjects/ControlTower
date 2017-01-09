@@ -1,0 +1,47 @@
+file 398257 1483967557                                          
+version 2
+run QueueMeasurement-80-20170109-14:12:36-5903
+attr configname QueueMeasurement
+attr datetime 20170109-14:12:36
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5903
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1435 51302 1393 21522 61345.273973068662 949990.865719940256 1185 593.29922774641 26943.961543039 8765586.5622612 88290480107.738
+1	52737 48109 1395 21524 61345.273973068662 949990.865719940256 1185 0 3930.7507768107 451099.03303518 412794908.14986
+2	100846 69638 1390 21524 61268.924541681927 949990.865719940256 2368 0 6 2288 4320
+3	170484 48568 1422 21532 61878.004887157889 950085.056563337947 1185 0 14880.031648647 3441418.9683786 23256453385.466
+4	219052 70220 1398 21532 61353.082162547973 950085.056563337947 2372 0 24 11004 112202
+5	289272 19601 1403 21534 61500 950250 1186 0 5 1185 2469
+6	308873 19601 1403 21534 61500 950250 1186 0 7 1185 2665
+7	328474 69783 1397 21530 61353.082162547973 950085.056563337947 2372 0 10 9828 49786

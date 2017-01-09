@@ -1,0 +1,47 @@
+file 185945 1483968218                                          
+version 2
+run QueueMeasurement-19-20170109-14:23:38-6755
+attr configname QueueMeasurement
+attr datetime 20170109-14:23:38
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=19
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6755
+attr repetition 19
+attr replication #19
+attr resultdir results
+attr runnumber 19
+attr seedset 19
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 24881 847 10712 79807.3998722412 950268.737423030022 581 571.64908487458 22048.197102019 3034278.5520809 21403982557.074
+1	26312 19710 832 10704 79472.020148387952 950168.273838872002 582 0 1681.7592308451 71724.344259142 46107579.260699
+2	46022 33659 827 10704 79467.30269039639 950168.273838872002 1164 0 3 664 758
+3	79681 20362 841 10709 79521.283005053275 950182.361469058551 581 0 4485.9711201991 179704.27682982 297031718.494
+4	100043 33599 839 10709 79521.283005053275 950182.361469058551 1162 0 6 877 1565
+5	133642 9322 837 10678 79500 949500 581 0 4 580 1134
+6	142964 9322 837 10678 79500 949500 581 0 6 580 1250
+7	152286 33659 830 10707 79472.020148387952 950182.361469058551 1164 0 8 2696 8314

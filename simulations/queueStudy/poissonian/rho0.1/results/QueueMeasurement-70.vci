@@ -1,0 +1,47 @@
+file 56915 1483968334                                           
+version 2
+run QueueMeasurement-70-20170109-14:25:34-6957
+attr configname QueueMeasurement
+attr datetime 20170109-14:25:34
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=70
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6957
+attr repetition 70
+attr replication #70
+attr resultdir results
+attr runnumber 70
+attr seedset 70
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1433 7801 499 3560 121394.641461951354 1019619.519350106953 183 729.35539591893 38667.844067725 1554121.2768711 19196683049.821
+1	9234 5580 505 3568 129116.689694892084 1036552.369402784503 183 0 1753.2500863519 10655.636829804 10289116.229378
+2	14814 10545 503 3568 129116.689694892084 1036552.369402784503 366 0 2 187 191
+3	25359 5666 496 3557 121165.125726689148 1019545.692248713794 183 0 1394.3612301953 12857.570881187 10152202.012776
+4	31025 10536 494 3557 121165.125726689148 1019545.692248713794 366 0 3 191 203
+5	41561 2412 501 3564 126000 1032000 152 0 4 183 393
+6	43973 2412 501 3564 126000 1032000 152 0 6 183 421
+7	46385 10530 493 3571 121165.125726689148 1036686.010116082112 366 0 4 391 715

@@ -1,0 +1,47 @@
+file 192817 1483966784                                          
+version 2
+run QueueMeasurement-118-20170109-13:59:44-5074
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:44
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=118
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5074
+attr repetition 118
+attr replication #118
+attr resultdir results
+attr runnumber 118
+attr seedset 118
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1466 25904 771 11006 74360.605801515639 947924.053508134586 605 2864.7197912064 12469.962625528 2996048.7029903 16084450372.314
+1	27370 20963 756 10995 72044.446356850317 947301.988015032925 604 0 1207.8998896886 51023.985728167 16574904.680168
+2	48333 34922 754 10995 72044.446356850317 947301.988015032925 1208 0 5 694 832
+3	83255 20770 765 11003 74057.247824058728 947604.640137727299 605 0 1810.3377318601 74067.90850928 44957565.178691
+4	104025 35010 763 11003 74057.247824058728 947604.640137727299 1210 0 4 679 777
+5	139035 9400 752 11009 72000 949500 586 0 5 606 1180
+6	148435 9400 752 11009 72000 949500 586 0 4 605 1171
+7	157835 34982 759 11001 72353.464349733813 947604.640137727299 1209 0 7 2811 8877

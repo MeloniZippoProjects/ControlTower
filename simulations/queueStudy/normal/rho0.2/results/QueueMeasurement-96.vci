@@ -1,0 +1,47 @@
+file 92379 1483966485                                           
+version 2
+run QueueMeasurement-96-20170109-13:54:45-3810
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:45
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=96
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3810
+attr repetition 96
+attr replication #96
+attr resultdir results
+attr runnumber 96
+attr seedset 96
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1460 12413 679 5630 121890.278834026476 1036782.392721111228 290 3059.7212883865 23019.782372282 1891406.8729149 15221004577.542
+1	13873 9109 684 5632 122675.732771094165 1036782.392721111228 292 0 540.7719234585 8765.9923203761 2227120.1724575
+2	22982 16887 682 5632 122675.732771094165 1036782.392721111228 584 0 2 300 308
+3	39869 9166 676 5621 121609.399149986399 1036477.926103662515 290 0 472.90950747531 9445.4195653408 2272558.6557428
+4	49035 16786 674 5624 121609.399149986399 1036519.007153357418 581 0 2 293 295
+5	65821 4869 689 5601 123000 1035000 305 0 6 290 590
+6	70690 4869 689 5601 123000 1035000 305 0 6 288 600
+7	75559 16820 673 5623 121609.399149986399 1036519.007153357418 582 0 6 795 1755

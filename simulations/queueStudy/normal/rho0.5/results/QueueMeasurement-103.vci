@@ -1,0 +1,47 @@
+file 241927 1483966886                                          
+version 2
+run QueueMeasurement-103-20170109-14:01:26-5696
+attr configname QueueMeasurement
+attr datetime 20170109-14:01:26
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=103
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5696
+attr repetition 103
+attr replication #103
+attr resultdir results
+attr runnumber 103
+attr seedset 103
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 32267 813 13477 61330.714092139545 948768.271592404388 750 2982.7028953355 11830.885976607 3577198.0921971 18048721167.983
+1	33733 26832 823 13483 61862.237561854382 950254.298245896512 743 0 784.5485765172 75384.570485427 21710509.928241
+2	60565 43265 821 13483 61862.237561854382 950254.298245896512 1486 0 3 849 971
+3	103830 27029 815 13474 61330.714092139545 948475.536583281593 749 0 2440.5801443402 142530.74003524 113465930.17119
+4	130859 43583 810 13474 61277.111967984884 948475.536583281593 1498 0 4 965 1261
+5	174442 12044 808 13485 61200 950400 742 0 4 746 1406
+6	186486 12044 808 13485 61200 950400 742 0 4 750 1414
+7	198530 43397 809 13471 61277.111967984884 948475.536583281593 1491 0 8 4047 14385

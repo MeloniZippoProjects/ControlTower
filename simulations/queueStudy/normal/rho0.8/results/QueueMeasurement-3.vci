@@ -1,0 +1,47 @@
+file 402647 1483966250                                          
+version 2
+run QueueMeasurement-3-20170109-13:50:49-2983
+attr configname QueueMeasurement
+attr datetime 20170109-13:50:49
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 2983
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 12.5min
+param SimNetwork.wg.interArrivalTime exponential(12.5min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1458 52367 1133 21568 50923.876127276134 950349.071802565774 1210 2898.2335478892 11698.680183903 6242326.7817917 34413012351.665
+1	53825 48235 1135 21541 50923.876127276134 949316.979831524441 1198 0 1396.6208018508 237776.2861822 93852655.001162
+2	102060 70420 1127 21541 50647.209078616523 949316.979831524441 2396 0 5 1818 2762
+3	172480 48830 1124 21570 50601.287816554029 950349.071802565774 1211 0 7566.9530184103 1101429.4970706 2869062541.3319
+4	221310 71043 1119 21570 50482.628172316746 950349.071802565774 2416 0 18 4328 21408
+5	292353 19812 1137 21566 51000 950250 1200 0 3 1199 2085
+6	312165 19812 1137 21566 51000 950250 1200 0 3 1210 2108
+7	331977 70670 1118 21563 50482.628172316746 950146.691603257118 2404 0 11 9644 46838

@@ -1,0 +1,47 @@
+file 185779 1483966775                                          
+version 2
+run QueueMeasurement-93-20170109-13:59:35-5025
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:35
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=93
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5025
+attr repetition 93
+attr replication #93
+attr resultdir results
+attr runnumber 93
+attr seedset 93
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1460 24827 776 10631 74896.645687215381 949347.220409166826 581 2521.7544973332 15817.966209685 2919187.668213 16095061347.819
+1	26287 20094 765 10637 73861.256888166244 950275.652314073582 581 0 796.24423121074 47534.766190992 14650710.304009
+2	46381 33588 763 10637 73861.256888166244 950275.652314073582 1162 0 3 659 757
+3	79969 19870 773 10628 74619.089483795145 949082.533980553327 581 0 1462.2999495328 67464.85616009 35502480.054579
+4	99839 33586 771 10628 74619.089483795145 949082.533980553327 1162 0 4 653 745
+5	133425 9385 757 10633 72000 949500 586 0 4 581 1133
+6	142810 9385 757 10633 72000 949500 586 0 5 581 1095
+7	152195 33584 759 10625 72019.271154520577 949082.533980553327 1162 0 7 2691 8697

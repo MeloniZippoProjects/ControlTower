@@ -1,0 +1,47 @@
+file 88675 1483967815                                           
+version 2
+run QueueMeasurement-95-20170109-14:16:55-6222
+attr configname QueueMeasurement
+attr datetime 20170109-14:16:55
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=95
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6222
+attr repetition 95
+attr replication #95
+attr resultdir results
+attr runnumber 95
+attr seedset 95
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 12023 446 5203 75591.219643448512 949539.754849475442 282 1080.2723651837 27304.832652335 1817425.5374584 16067309854.353
+1	13454 8687 420 5183 74213.349796044477 947799.153595187705 280 0 1223.2700822499 16204.351583507 10303595.219557
+2	22141 16122 418 5183 74213.349796044477 947799.153595187705 560 0 2 286 292
+3	38263 8794 436 5200 74897.701003241727 949351.490090068587 282 0 1128.4573235875 16303.169101394 8042541.2820749
+4	47057 16199 431 5200 74769.184856113864 949351.490090068587 564 0 2 294 306
+5	63256 4640 416 5185 72000 948000 293 0 4 283 537
+6	67896 4640 416 5185 72000 948000 293 0 4 281 519
+7	72536 16139 426 5194 74542.681149829165 949323.524491103804 562 0 6 779 1845

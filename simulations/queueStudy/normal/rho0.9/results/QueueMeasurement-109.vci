@@ -1,0 +1,47 @@
+file 458681 1483966706                                          
+version 2
+run QueueMeasurement-109-20170109-13:58:25-4751
+attr configname QueueMeasurement
+attr datetime 20170109-13:58:25
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=109
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4751
+attr repetition 109
+attr replication #109
+attr resultdir results
+attr runnumber 109
+attr seedset 109
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 11.111min
+param SimNetwork.wg.interArrivalTime exponential(11.111min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1474 57811 850 23542 50400.247202789881 950334.033689359491 1334 2976.7730637731 22597.488494932 9971824.4194348 98612947746.478
+1	59285 55664 856 23522 50702.596511177532 949466.576793925413 1334 0 1526.0025084309 305558.38584034 129993104.64944
+2	114949 78498 854 23547 50702.596511177532 950373.591298205122 2669 0 5 2185 3495
+3	193447 55588 872 23544 51283.751809846615 950334.033689359491 1334 0 18676.451321032 4360047.6800352 38091715967.709
+4	249035 79068 867 23544 51236.002901433964 950334.033689359491 2669 0 36 15281 234415
+5	328103 26033 852 23532 50666.16 949990.5 1350 0 3 1334 2238
+6	354136 26033 852 23532 50666.16 949990.5 1350 0 3 1332 2202
+7	380169 78512 862 23538 51040.665076132931 950130.933409229825 2669 0 10 11762 60038

@@ -1,0 +1,47 @@
+file 187009 1483966785                                          
+version 2
+run QueueMeasurement-123-20170109-13:59:45-5084
+attr configname QueueMeasurement
+attr datetime 20170109-13:59:45
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=123
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5084
+attr repetition 123
+attr replication #123
+attr resultdir results
+attr runnumber 123
+attr seedset 123
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 25min
+param SimNetwork.wg.interArrivalTime exponential(25min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1466 25041 890 10775 72519.525042268575 948088.39195998867 585 2948.5651442151 11542.266752055 2932003.3839181 16029289109.68
+1	26507 20118 892 10813 72519.525042268575 949524.60866199205 584 0 632.56055046912 45767.78477608 12151626.11567
+2	46625 33797 887 10813 72327.79417996795 949524.60866199205 1168 0 3 642 704
+3	80422 20156 884 10771 72256.481498210589 947802.065370198422 585 0 1717.3662088447 80757.866987881 53432043.322713
+4	100578 33789 884 10771 72256.481498210589 947802.065370198422 1169 0 4 710 912
+5	134367 9417 880 10806 72000 949500 586 0 5 586 1190
+6	143784 9417 880 10806 72000 949500 586 0 5 586 1142
+7	153201 33808 882 10816 72256.481498210589 949891.929878464079 1169 0 8 2755 9101

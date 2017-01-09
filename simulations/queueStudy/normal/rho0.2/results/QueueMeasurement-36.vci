@@ -1,0 +1,47 @@
+file 98256 1483966463                                           
+version 2
+run QueueMeasurement-36-20170109-13:54:23-3687
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:23
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=36
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3687
+attr repetition 36
+attr replication #36
+attr resultdir results
+attr runnumber 36
+attr seedset 36
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1460 13269 743 6008 121381.718966818209 1036126.605563191274 311 2967.9600320617 21181.015873197 1951198.6686189 15286798333.229
+1	14729 9980 748 5997 121426.703714259067 1035497.912590755279 310 0 560.32273169056 13363.633855131 3340276.3546166
+2	24709 17907 746 5997 121426.703714259067 1035497.912590755279 620 0 2 324 338
+3	42616 9956 740 6005 121096.10104703775 1035858.090218908926 311 0 788.43892354334 13847.324924611 4323298.4783848
+4	52572 17975 738 6005 121096.10104703775 1035858.090218908926 622 0 2 319 327
+5	70547 4882 769 5993 123000 1035000 305 0 5 309 639
+6	75429 4882 769 5993 123000 1035000 305 0 4 310 644
+7	80311 17945 737 6002 121096.10104703775 1035858.090218908926 621 0 5 894 2010

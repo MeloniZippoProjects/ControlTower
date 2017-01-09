@@ -1,0 +1,47 @@
+file 46686 1483968364                                           
+version 2
+run QueueMeasurement-142-20170109-14:26:04-7029
+attr configname QueueMeasurement
+attr datetime 20170109-14:26:04
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=142
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7029
+attr repetition 142
+attr replication #142
+attr resultdir results
+attr runnumber 142
+attr seedset 142
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1439 6302 371 2873 121249.631209800136 1023684.450571272884 148 430.09192641264 35401.858905678 1431145.8187744 20252815198.274
+1	7741 4350 378 2861 137739.055664245066 1015364.214226700841 147 0 963.27904312562 3185.3383311629 2096556.5658275
+2	12091 8423 376 2861 137739.055664245066 1015364.214226700841 294 0 1 147 147
+3	20514 4425 368 2870 121240.680301319588 1023254.018480395324 148 0 995.8915110982 4908.788636891 2700231.8573161
+4	24939 8491 366 2870 121240.680301319588 1023254.018480395324 296 0 1 148 148
+5	33430 2394 373 2876 126000 1032000 152 0 4 147 295
+6	35824 2394 373 2876 126000 1032000 152 0 4 148 290
+7	38218 8468 365 2867 121240.680301319588 1023254.018480395324 295 0 3 287 471

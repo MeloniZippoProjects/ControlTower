@@ -1,0 +1,47 @@
+file 95461 1483966453                                           
+version 2
+run QueueMeasurement-10-20170109-13:54:13-3636
+attr configname QueueMeasurement
+attr datetime 20170109-13:54:13
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=10
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3636
+attr repetition 10
+attr replication #10
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(45min, 5 min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1460 12977 759 5895 121100.989291095621 1034626.650289243341 303 2804.2398122988 25245.871420327 1932068.8182531 15334222993.598
+1	14437 9474 764 5867 122651.922144455721 1031088.451541977964 302 0 318.64498394671 7701.7982681574 1530314.9605484
+2	23911 17450 762 5867 122651.922144455721 1031088.451541977964 604 0 1 302 302
+3	41361 9468 781 5892 125555.381280749844 1034319.122963932499 302 0 749.1632392055 10393.591851512 2923134.8441283
+4	50829 17441 779 5892 125555.381280749844 1034319.122963932499 604 0 2 306 310
+5	68270 4879 769 5897 123000 1035000 305 0 5 302 608
+6	73149 4879 769 5897 123000 1035000 305 0 6 304 610
+7	78028 17433 767 5889 122937.536744590929 1034319.122963932499 604 0 6 838 1826

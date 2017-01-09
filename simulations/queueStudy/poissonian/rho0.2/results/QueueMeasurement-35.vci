@@ -1,0 +1,47 @@
+file 75821 1483967792                                           
+version 2
+run QueueMeasurement-35-20170109-14:16:31-6161
+attr configname QueueMeasurement
+attr datetime 20170109-14:16:31
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=35
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6161
+attr repetition 35
+attr replication #35
+attr resultdir results
+attr runnumber 35
+attr seedset 35
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 10001 312 4346 76813.560076133615 946888.149240371515 235 1038.8154729221 42661.325906434 1643161.8720919 18098131436.887
+1	11432 7274 300 4351 74666.799986373792 947568.442790655816 236 0 950.92062413775 9108.7537792183 3935206.6680395
+2	18706 13553 298 4351 74666.799986373792 947568.442790655816 472 0 2 242 248
+3	32259 7303 309 4343 75659.373663649579 946836.897670315122 235 0 1425.3338276281 10197.826074528 6126571.7365809
+4	39562 13502 307 4343 75659.373663649579 946836.897670315122 470 0 2 237 239
+5	53064 4622 296 4353 72000 948000 293 0 5 235 449
+6	57686 4622 296 4353 72000 948000 293 0 4 237 447
+7	62308 13513 304 4355 75202.163432568663 948498.541592938706 471 0 5 588 1164

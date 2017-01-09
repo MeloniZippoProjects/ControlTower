@@ -1,0 +1,47 @@
+file 229258 1483968419                                          
+version 2
+run QueueMeasurement-90-20170109-14:26:59-7128
+attr configname QueueMeasurement
+attr datetime 20170109-14:26:59
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=90
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7128
+attr repetition 90
+attr replication #90
+attr resultdir results
+attr runnumber 90
+attr seedset 90
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 20min
+param SimNetwork.wg.interArrivalTime exponential(20min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 30284 871 12878 64748.807956164742 949850.403943250319 705 486.18375280065 22184.164011365 3436973.1070911 22563825244.711
+1	31715 25260 839 12867 61240.998788299702 949609.875656896923 708 0 1384.4487589513 109201.34061622 62970348.205944
+2	56975 41169 837 12867 61240.998788299702 949609.875656896923 1416 0 4 864 1064
+3	98144 25043 865 12875 64591.222985503449 949770.651673162239 705 0 3894.8460513537 210722.88137705 291235943.50435
+4	123187 40966 863 12875 64591.222985503449 949770.651673162239 1410 0 6 1085 1905
+5	164153 12017 835 12880 61200 950400 742 0 5 709 1393
+6	176170 12017 835 12880 61200 950400 742 0 7 705 1423
+7	188187 41071 842 12872 61955.046479155883 949770.651673162239 1413 0 7 3495 11339

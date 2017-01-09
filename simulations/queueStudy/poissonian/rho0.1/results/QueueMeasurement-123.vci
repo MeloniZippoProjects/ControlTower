@@ -1,0 +1,47 @@
+file 53023 1483968356                                           
+version 2
+run QueueMeasurement-123-20170109-14:25:56-7010
+attr configname QueueMeasurement
+attr datetime 20170109-14:25:56
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=123
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 7010
+attr repetition 123
+attr replication #123
+attr resultdir results
+attr runnumber 123
+attr seedset 123
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1439 7233 291 3144 124964.261055720506 1017358.142359691103 170 930.0267691079 42241.838193153 1432287.2822125 18553168567.253
+1	8672 5183 280 3133 124141.833559025284 1016668.528352374669 170 0 1176.7264576493 6178.334196231 3515069.9738954
+2	13855 9748 278 3133 124141.833559025284 1016668.528352374669 340 0 2 172 174
+3	23603 5126 288 3141 124797.811974982223 1017278.684458353819 170 0 1164.1649281865 5655.6346361797 3811666.7695668
+4	28729 9749 286 3141 124797.811974982223 1017278.684458353819 340 0 1 170 170
+5	38478 2401 306 3148 126000 1032000 152 0 4 170 330
+6	40879 2401 306 3148 126000 1032000 152 0 4 170 362
+7	43280 9743 283 3138 124346.012499706539 1017278.684458353819 340 0 3 318 502

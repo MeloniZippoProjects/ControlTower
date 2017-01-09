@@ -1,0 +1,47 @@
+file 323955 1483967724                                          
+version 2
+run QueueMeasurement-125-20170109-14:15:24-6099
+attr configname QueueMeasurement
+attr datetime 20170109-14:15:24
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=125
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6099
+attr repetition 125
+attr replication #125
+attr resultdir results
+attr runnumber 125
+attr seedset 125
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1445 41418 1266 17584 80483.303773540912 949055.104702927573 958 255.46911181587 18856.792588712 5181185.7783811 37341876017.336
+1	42863 36577 1255 17613 79719.764266658018 949717.119433288091 961 0 3146.3677323534 272588.22759914 261175783.60099
+2	79440 56371 1255 17613 79719.764266658018 949717.119433288091 1921 0 7 1666 3420
+3	135811 36558 1260 17619 80261.189420017281 949802.99104609202 959 0 6300.8458114365 783501.31118585 2143269161.0059
+4	172369 56296 1260 17622 80261.189420017281 949871.218109169876 1918 0 13 2943 12591
+5	228665 19460 1251 17615 79715.88 949733.28 1016 0 6 961 1971
+6	248125 19460 1251 17615 79715.88 949733.28 1016 0 5 958 1908
+7	267585 56370 1253 17621 79719.764266658018 949871.218109169876 1921 0 13 6970 31896

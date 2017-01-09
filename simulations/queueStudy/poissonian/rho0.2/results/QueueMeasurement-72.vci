@@ -1,0 +1,47 @@
+file 90283 1483967805                                           
+version 2
+run QueueMeasurement-72-20170109-14:16:45-6198
+attr configname QueueMeasurement
+attr datetime 20170109-14:16:45
+attr experiment QueueMeasurement
+attr inifile queueStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=72
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6198
+attr repetition 72
+attr replication #72
+attr resultdir results
+attr runnumber 72
+attr seedset 72
+param SimNetwork.a.parkingLot.parkingDelay exponential(45min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1431 12154 400 5243 76547.696302178581 949573.481538829664 285 504.59706680445 27679.222218663 1844893.0771478 16861433862.306
+1	13585 9018 380 5231 74666.927941623515 947864.385937769737 287 0 2633.8692483077 26470.463047705 24867862.368957
+2	22603 16518 378 5251 74666.927941623515 950149.209491568566 575 0 3 310 336
+3	39121 8993 397 5248 76192.808495375696 950103.143682111388 286 0 1047.1367648111 18618.09129553 9436938.9816685
+4	48114 16428 395 5248 76192.808495375696 950103.143682111388 572 0 2 300 314
+5	64542 4637 376 5233 72000 948000 293 0 4 287 547
+6	69179 4637 376 5233 72000 948000 293 0 4 285 537
+7	73816 16467 387 5245 75142.090133751109 950103.143682111388 573 0 5 745 1495
