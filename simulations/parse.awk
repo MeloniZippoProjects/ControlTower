@@ -7,13 +7,17 @@ BEGIN {
 	size = 0
 	vector_name_count = 0
 	
-	print "run number; stat name; time->values" >output_csv
+	print "run number; stat name; time->values" > output_csv
+
+	print "Gawk:\tInitialization complete"
 }
 
 /attr runnumber/ {
 	run_number = $3
 	if(run_number > size)
 		size = run_number
+
+	print "Gawk:\tProcessing vec # " run_number
 }
 
 /vector [0-7]/ {
@@ -39,13 +43,17 @@ $1 ~ /[0-7]/ {
 }
 
 END {
+	print "Gawk:\tProcessing ended, starting print to file"
+
 	for(j in vectors)
 	{	
 		vectors[j] = vectors[j] "]"
 		print vectors[j] ";" > output_matlab
 	}
-	
+
 	print "vectors.size = " size+1 ";" > output_matlab
+
+	print "Gawk:\tMatlab file completed"
 	
 	for(j in vectors_time_csv)
 	{
@@ -55,4 +63,6 @@ END {
 		print vectors_data_csv[j] > output_csv
 		print "\n" > output_csv
 	}
+
+	print "Gawk:\tcsv file completed"
 }
