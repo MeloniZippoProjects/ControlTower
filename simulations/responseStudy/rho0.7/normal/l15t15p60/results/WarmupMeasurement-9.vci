@@ -1,0 +1,47 @@
+file 54775 1483972160                                           
+version 2
+run WarmupMeasurement-9-20170109-15:29:20-1507
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:20
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=9
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1507
+attr repetition 9
+attr replication #9
+attr resultdir results
+attr runnumber 9
+attr seedset 9
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1469 6825 94 2791 9517.208182973281 431612.613195882555 162 6133.7340984828 24949.724772063 2028191.2702611 29419670356.053
+1	8294 6352 4 2793 26.815654437989 431612.613195882555 166 0 3597.4099738555 110942.82626559 158353125.54722
+2	14646 9371 2 2793 26.815654437989 431612.613195882555 333 0 4 281 467
+3	24017 6142 91 2782 8607.713960722745 430827.358886562847 162 0 14568.144839184 622411.29896244 6176362137.5194
+4	30159 9248 57 2796 4841.376465781415 431722.045076959422 326 0 14 873 6627
+5	39407 3043 28 2798 2571.42 431998.56 168 0 3 165 301
+6	42450 3043 28 2798 2571.42 431998.56 168 0 3 162 302
+7	45493 9282 7 2795 820.563603672427 431722.045076959422 329 0 5 661 1909

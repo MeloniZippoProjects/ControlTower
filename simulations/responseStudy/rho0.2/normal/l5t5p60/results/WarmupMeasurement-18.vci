@@ -1,0 +1,47 @@
+file 43927 1483972256                                           
+version 2
+run WarmupMeasurement-18-20170109-15:30:56-1881
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:56
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=18
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1881
+attr repetition 18
+attr replication #18
+attr resultdir results
+attr runnumber 18
+attr seedset 18
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 5809 28 2352 7429.888158746229 428929.864701127121 138 3479.8796372711 17584.693529185 1007707.5530568 8432451842.732
+1	7274 4426 5 2371 3152.675891159952 431615.898395542579 141 0 373.96000355506 5813.7247290517 1298588.1826733
+2	11700 7938 3 2371 3152.675891159952 431615.898395542579 282 0 2 145 149
+3	19638 4290 22 2346 7132.184291721612 428602.176372576761 138 0 1048.5482699651 7346.0304851869 3209190.001809
+4	23928 7754 20 2346 7132.184291721612 428602.176372576761 276 0 2 142 146
+5	31682 2202 1 2376 3000 432000 144 0 4 141 277
+6	33884 2202 1 2376 3000 432000 144 0 3 138 252
+7	36086 7841 11 2374 3420.217818337913 431931.121699510672 279 0 5 438 1032

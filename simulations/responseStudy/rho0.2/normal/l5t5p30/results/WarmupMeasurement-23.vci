@@ -1,0 +1,47 @@
+file 51555 1483972261                                           
+version 2
+run WarmupMeasurement-23-20170109-15:31:01-1916
+attr configname WarmupMeasurement
+attr datetime 20170109-15:31:01
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=23
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1916
+attr repetition 23
+attr replication #23
+attr resultdir results
+attr runnumber 23
+attr seedset 23
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 6957 16 2782 4652.709468505187 429947.204010874296 165 2560.8148172922 18586.516905384 847733.71666312 5613466553.1641
+1	8422 5424 4 2787 2185.066653507981 430971.378349269681 166 0 692.47790380004 10350.776945836 3086014.3457083
+2	13846 9389 2 2787 2185.066653507981 430971.378349269681 332 0 3 180 202
+3	23235 5239 13 2779 4374.561135334524 429641.178724337176 165 0 966.08014713213 10862.696384511 5124462.7494124
+4	28474 9317 11 2779 4374.561135334524 429641.178724337176 330 0 2 173 181
+5	37791 2209 9 2792 3000 432000 144 0 7 166 408
+6	40000 2209 9 2792 3000 432000 144 0 7 165 411
+7	42209 9346 7 2790 2513.946520840133 431310.714185115358 331 0 6 444 1034

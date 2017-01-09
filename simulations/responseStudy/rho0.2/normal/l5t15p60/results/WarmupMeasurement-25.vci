@@ -1,0 +1,47 @@
+file 24425 1483972230                                           
+version 2
+run WarmupMeasurement-25-20170109-15:30:30-1737
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:30
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=25
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1737
+attr repetition 25
+attr replication #25
+attr resultdir results
+attr runnumber 25
+attr seedset 25
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 3172 17 1294 17271.910390759891 430415.973575079227 76 5243.0293468967 43047.01011234 799075.7951771 10947467149.889
+1	4640 2401 6 1299 12247.056894620148 430632.042068868782 78 0 705.73188239506 6297.6590574938 2847178.5734554
+2	7041 4332 4 1299 12247.056894620148 430632.042068868782 156 0 2 80 82
+3	11373 2308 14 1307 16347.60344511032 431547.559018710537 77 0 956.14314465965 4877.3032732001 2691021.3661281
+4	13681 4285 12 1307 16347.60344511032 431547.559018710537 154 0 2 79 81
+5	17966 1070 1 1309 6000 432000 72 0 4 78 168
+6	19036 1070 1 1309 6000 432000 72 0 4 76 152
+7	20106 4319 9 1304 12510.853002078856 431547.559018710537 155 0 4 186 358

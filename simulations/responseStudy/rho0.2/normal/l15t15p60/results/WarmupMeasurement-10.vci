@@ -1,0 +1,47 @@
+file 18256 1483972233                                           
+version 2
+run WarmupMeasurement-10-20170109-15:30:33-1752
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:33
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=10
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1752
+attr repetition 10
+attr replication #10
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1469 2356 25 957 18189.182749835289 420594.941386104513 57 6328.5626591295 29834.29778677 735451.76934762 11259561496.346
+1	3825 1691 5 963 13278.910004780882 427315.999401489544 58 0 854.02277368467 3462.2183521346 2155027.8936151
+2	5516 3186 3 963 13278.910004780882 427315.999401489544 116 0 1 58 58
+3	8702 1754 21 971 17282.667990769136 431413.553047784769 58 0 2457.4547589676 7740.3808616962 10486360.276412
+4	10456 3201 19 971 17282.667990769136 431413.553047784769 116 0 1 58 58
+5	13657 702 1 973 9000 432000 48 0 4 58 106
+6	14359 702 1 973 9000 432000 48 0 4 57 113
+7	15061 3195 8 968 14160.489191079185 431413.553047784769 116 0 3 104 162

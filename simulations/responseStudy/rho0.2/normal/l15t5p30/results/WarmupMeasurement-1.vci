@@ -1,0 +1,47 @@
+file 21306 1483972237                                           
+version 2
+run WarmupMeasurement-1-20170109-15:30:37-1773
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:37
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=1
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1773
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1462 2744 16 1126 6395.93961519141 430391.135683386968 66 3685.3370938522 38408.357220236 639222.20946066 9569046291.1043
+1	4206 2046 4 1115 3237.634959071179 427857.975201951448 66 0 922.06679930996 5837.4018503185 3881119.1757781
+2	6252 3653 2 1115 3237.634959071179 427857.975201951448 132 0 2 68 70
+3	9905 1958 13 1123 6070.483782961538 430121.603971593281 66 0 1321.2856692313 6033.6957189424 5156628.0976698
+4	11863 3663 11 1123 6070.483782961538 430121.603971593281 132 0 2 70 74
+5	15526 1060 9 1128 6000 432000 72 0 5 66 136
+6	16586 1060 9 1128 6000 432000 72 0 4 66 124
+7	17646 3660 7 1120 4268.596806133378 430121.603971593281 132 0 2 102 138

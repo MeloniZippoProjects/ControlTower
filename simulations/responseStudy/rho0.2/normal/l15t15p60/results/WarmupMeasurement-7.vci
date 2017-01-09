@@ -1,0 +1,47 @@
+file 14303 1483972232                                           
+version 2
+run WarmupMeasurement-7-20170109-15:30:32-1749
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:32
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=7
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1749
+attr repetition 7
+attr replication #7
+attr resultdir results
+attr runnumber 7
+attr seedset 7
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1463 1775 23 733 6361.293824022444 417086.938607362219 43 6361.2938240224 33614.195460596 646635.04828548 12074726268.406
+1	3238 1287 4 739 714.392203218181 429405.445252437825 44 0 630.36960248254 2416.8378819131 1222346.5134672
+2	4525 2405 2 739 714.392203218181 429405.445252437825 88 0 1 44 44
+3	6930 1210 20 730 5531.73968242788 416206.31344611153 43 0 1031.0852754379 1069.3934866311 1064604.3642697
+4	8140 2365 18 730 5531.73968242788 416206.31344611153 86 0 1 43 43
+5	10505 703 33 744 9000 432000 48 0 2 44 66
+6	11208 703 33 744 9000 432000 48 0 3 43 75
+7	11911 2392 7 742 1548.632474826523 430279.087810257849 87 0 2 68 92

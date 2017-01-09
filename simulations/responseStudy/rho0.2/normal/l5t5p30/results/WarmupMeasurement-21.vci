@@ -1,0 +1,47 @@
+file 39056 1483972260                                           
+version 2
+run WarmupMeasurement-21-20170109-15:31:00-1914
+attr configname WarmupMeasurement
+attr datetime 20170109-15:31:00
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=21
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1914
+attr repetition 21
+attr replication #21
+attr resultdir results
+attr runnumber 21
+attr seedset 21
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1465 5118 15 2094 2825.476667059804 431731.576232478834 122 2202.7826104036 28651.382874227 731006.21011111 5864392744.528
+1	6583 3805 4 2099 149.855878768469 431861.176040178354 123 0 440.93205988377 4370.3754731742 1040612.1680358
+2	10388 6916 2 2099 149.855878768469 431861.176040178354 246 0 2 127 131
+3	17304 3638 12 2091 2519.492625135537 431466.766533099866 122 0 528.53047584361 2587.6904120162 676675.08953432
+4	20942 6864 10 2091 2519.492625135537 431466.766533099866 244 0 1 122 122
+5	27806 2197 17 2101 3000 432000 144 0 4 122 226
+6	30003 2197 17 2101 3000 432000 144 0 4 122 196
+7	32200 6856 7 2088 439.281303323719 431466.766533099866 244 0 3 236 378

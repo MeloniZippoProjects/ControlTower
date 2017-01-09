@@ -1,0 +1,47 @@
+file 16185 1483972232                                           
+version 2
+run WarmupMeasurement-5-20170109-15:30:32-1747
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:32
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=5
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1747
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1463 2062 34 845 8122.15559544662 422702.129304993222 50 6187.9745920877 43032.812838855 701517.12005704 14505884118.394
+1	3525 1501 4 826 2259.179799228153 417896.227879366919 50 0 718.702231348 3396.8320276747 1598837.2329485
+2	5026 2728 2 826 2259.179799228153 417896.227879366919 100 0 1 50 50
+3	7754 1558 28 842 7146.754638648538 421860.695721906219 50 0 1163.1869142298 6740.6720743765 4672931.1597771
+4	9312 2731 26 842 7146.754638648538 421860.695721906219 100 0 2 52 54
+5	12043 705 41 848 9000 432000 48 0 4 50 120
+6	12748 705 41 848 9000 432000 48 0 4 50 102
+7	13453 2732 10 839 3248.212164863111 421860.695721906219 100 0 3 90 142

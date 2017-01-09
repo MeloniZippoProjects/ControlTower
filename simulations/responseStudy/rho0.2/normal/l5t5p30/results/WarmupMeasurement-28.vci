@@ -1,0 +1,47 @@
+file 44484 1483972261                                           
+version 2
+run WarmupMeasurement-28-20170109-15:31:01-1921
+attr configname WarmupMeasurement
+attr datetime 20170109-15:31:01
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=28
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1921
+attr repetition 28
+attr replication #28
+attr resultdir results
+attr runnumber 28
+attr seedset 28
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 5927 44 2398 6998.223666398746 429842.245651659719 141 2142.5625129822 19974.315887416 779969.24965809 5423873696.3692
+1	7392 4423 5 2378 3917.061495314065 427636.364956346529 141 0 519.19760439145 4438.5680903386 1002128.0180803
+2	11815 7956 3 2378 3917.061495314065 427636.364956346529 282 0 2 143 145
+3	19771 4417 41 2395 6636.185902514029 429521.523029514129 141 0 580.51796372175 6422.9122198962 1997434.5358041
+4	24188 7946 25 2395 6055.667938792274 429521.523029514129 282 0 2 145 149
+5	32134 2202 1 2400 3000 432000 144 0 4 141 255
+6	34336 2202 1 2400 3000 432000 144 0 4 141 271
+7	36538 7946 8 2392 4207.945173842358 429521.523029514129 282 0 4 299 545

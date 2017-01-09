@@ -1,0 +1,47 @@
+file 14234 1483972236                                           
+version 2
+run WarmupMeasurement-29-20170109-15:30:36-1771
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:36
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=29
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1771
+attr repetition 29
+attr replication #29
+attr resultdir results
+attr runnumber 29
+attr seedset 29
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1469 1781 17 733 23283.498643309729 421118.26519979483 43 5817.0238268227 38827.536532121 648505.61693557 12011425810.975
+1	3250 1279 5 722 17940.034159398546 416182.993328768405 43 0 891.19748442452 3214.1981667031 2416670.0199614
+2	4529 2362 3 722 17940.034159398546 416182.993328768405 86 0 2 45 47
+3	6891 1201 14 730 22535.985973407978 420195.454817664118 43 0 314.02072515456 314.02072515456 98609.015826593
+4	8092 2374 12 730 22535.985973407978 420195.454817664118 86 0 1 43 43
+5	10466 699 1 736 9000 432000 48 0 3 43 71
+6	11165 699 1 736 9000 432000 48 0 3 43 65
+7	11864 2370 9 727 18798.033076651376 420195.454817664118 86 0 3 63 87

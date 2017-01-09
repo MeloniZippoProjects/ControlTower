@@ -1,0 +1,47 @@
+file 22367 1483972230                                           
+version 2
+run WarmupMeasurement-21-20170109-15:30:30-1733
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:30
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=21
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1733
+attr repetition 21
+attr replication #21
+attr resultdir results
+attr runnumber 21
+attr seedset 21
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1468 2877 15 1174 5667.511951488622 428749.32425422993 69 5139.6265489095 26893.167816196 764687.0930336 10673090391.051
+1	4345 2182 4 1187 299.711757536937 431850.029989791131 71 0 972.46995956758 6086.5558726893 3411178.503221
+2	6527 3943 2 1187 299.711757536937 431850.029989791131 142 0 2 75 79
+3	10470 2070 12 1171 4749.559825715822 427847.826879214642 69 0 873.70264809009 3558.4181663972 1821877.0420857
+4	12540 3837 10 1171 4749.559825715822 427847.826879214642 138 0 1 69 69
+5	16377 1065 17 1189 6000 432000 72 0 4 70 130
+6	17442 1065 17 1189 6000 432000 72 0 3 69 121
+7	18507 3860 7 1182 589.137182092187 429111.787840077172 139 0 3 148 250

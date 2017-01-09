@@ -1,0 +1,47 @@
+file 76731 1483972169                                           
+version 2
+run WarmupMeasurement-4-20170109-15:29:29-1532
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:29
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=4
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1532
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 9724 20 3941 9162.937232010688 431803.593183750092 230 3669.5050453578 17961.815439922 1551897.117322 11943651294.108
+1	11192 8581 7 3943 5849.316234685092 431803.593183750092 232 0 4211.0070365577 127563.07891111 216543702.19133
+2	19773 13143 5 3943 5849.316234685092 431803.593183750092 464 0 5 374 660
+3	32916 8523 17 3935 8899.736252185071 431512.196908083382 230 0 8906.2576817794 306155.17681275 1151136908.6899
+4	41439 13035 15 3935 8899.736252185071 431512.196908083382 460 0 9 666 2314
+5	54474 4596 1 3945 1714.26 431993.52 252 0 3 231 363
+6	59070 4596 1 3945 1714.26 431993.52 252 0 5 230 572
+7	63666 13065 10 3932 6802.208933987437 431512.196908083382 461 0 3 583 1039

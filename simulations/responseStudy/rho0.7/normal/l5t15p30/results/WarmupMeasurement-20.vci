@@ -1,0 +1,47 @@
+file 77516 1483972222                                           
+version 2
+run WarmupMeasurement-20-20170109-15:30:22-1698
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:22
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=20
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1698
+attr repetition 20
+attr replication #20
+attr resultdir results
+attr runnumber 20
+attr seedset 20
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1474 9765 17 3968 4824.930284644003 431857.313463966766 231 2912.5084741637 15652.630219873 1369760.9531017 8771381870.9682
+1	11239 8789 4 3970 1520.633379914886 431857.313463966766 234 0 972.20569841265 65115.171413945 38142137.905603
+2	20028 13278 2 3970 1520.633379914886 431857.313463966766 468 0 3 290 354
+3	33306 8684 14 3959 4044.551206981415 430951.949450903365 231 0 4369.4420433369 183700.76607563 356725631.18686
+4	41990 13157 12 3962 4044.551206981415 431266.590882250501 463 0 5 422 760
+5	55147 4588 6 3972 1714.26 431993.52 252 0 4 233 443
+6	59735 4588 6 3972 1714.26 431993.52 252 0 2 231 347
+7	64323 13193 8 3961 1882.085472213441 431266.590882250501 465 0 5 683 1541

@@ -1,0 +1,47 @@
+file 161749 1483972201                                          
+version 2
+run WarmupMeasurement-14-20170109-15:30:01-1632
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:01
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=14
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1632
+attr repetition 14
+attr replication #14
+attr resultdir results
+attr runnumber 14
+attr seedset 14
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 20746 43 8352 4284.428273433186 430707.896017785726 489 3724.7784352048 10083.839315897 2803619.8528199 16699221197.722
+1	22219 18544 4 8354 618.381004299556 430707.896017785726 493 0 887.3464658918 76840.844182357 26636179.940973
+2	40763 28067 2 8354 618.381004299556 430707.896017785726 986 0 3 659 861
+3	68830 18574 40 8346 4004.761659754205 430381.334667927754 489 0 4779.2783743516 251326.34329982 453371376.97549
+4	87404 27921 38 8346 4004.761659754205 430381.334667927754 978 0 8 1125 3325
+5	115325 9215 6 8359 857.16 431151.48 503 0 3 493 895
+6	124540 9215 6 8359 857.16 431151.48 503 0 3 489 877
+7	133755 27994 8 8357 890.441468680772 430990.022041071151 982 0 10 4429 23447

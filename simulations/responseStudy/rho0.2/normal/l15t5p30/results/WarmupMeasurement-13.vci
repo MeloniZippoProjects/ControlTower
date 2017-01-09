@@ -1,0 +1,47 @@
+file 24297 1483972238                                           
+version 2
+run WarmupMeasurement-13-20170109-15:30:38-1785
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:38
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=13
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1785
+attr repetition 13
+attr replication #13
+attr resultdir results
+attr runnumber 13
+attr seedset 13
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 3167 17 1286 12360.661347726162 430827.10426379015 76 3533.9058133783 31866.810716277 676713.85623487 8747567744.4639
+1	4635 2403 5 1291 9022.429802128398 430948.189012990751 77 0 979.29584477376 6043.5258477436 3133598.1847539
+2	7038 4275 3 1291 9022.429802128398 430948.189012990751 154 0 1 77 77
+3	11313 2364 14 1283 12027.105245619922 430552.769279033862 76 0 2127.0850304052 12242.031242283 13233036.252886
+4	13677 4225 12 1283 12027.105245619922 430552.769279033862 152 0 2 78 80
+5	17902 1071 1 1296 6000 432000 72 0 4 77 161
+6	18973 1071 1 1296 6000 432000 72 0 5 76 174
+7	20044 4253 8 1294 9964.498835509312 431707.822473744772 153 0 2 127 177

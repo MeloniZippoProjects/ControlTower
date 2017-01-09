@@ -1,0 +1,47 @@
+file 15134 1483972247                                           
+version 2
+run WarmupMeasurement-8-20170109-15:30:47-1840
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:47
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=8
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1840
+attr repetition 8
+attr replication #8
+attr resultdir results
+attr runnumber 8
+attr seedset 8
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1463 1901 25 780 21934.092480628836 413412.034994926168 46 4322.5323025762 56178.642880011 580548.46921874 12173648406.082
+1	3364 1416 6 769 18602.595455858276 409988.977946020421 46 0 861.79873064697 5555.7263803162 3401354.3814587
+2	4780 2525 4 769 18602.595455858276 409988.977946020421 92 0 1 46 46
+3	7305 1365 22 777 21146.309859032621 412599.260984120395 46 0 1134.8794416295 2477.8678401677 1954308.3868461
+4	8670 2532 20 777 21146.309859032621 412599.260984120395 92 0 1 46 46
+5	11202 701 1 784 9000 432000 48 0 4 46 104
+6	11903 701 1 784 9000 432000 48 0 4 46 100
+7	12604 2530 12 774 19518.291102240281 412599.260984120395 92 0 2 66 86

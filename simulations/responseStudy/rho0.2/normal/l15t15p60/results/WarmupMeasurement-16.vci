@@ -1,0 +1,47 @@
+file 19349 1483972233                                           
+version 2
+run WarmupMeasurement-16-20170109-15:30:33-1758
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:33
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=16
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1758
+attr repetition 16
+attr replication #16
+attr resultdir results
+attr runnumber 16
+attr seedset 16
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1469 2525 31 1030 8443.225163303796 431766.245914202633 61 6250.9629367645 36263.792546262 774808.99762565 12487786492.767
+1	3994 1967 4 1019 2274.206558503265 429298.563454759583 62 0 1855.2143233491 8845.0412814132 8698739.941651
+2	5961 3406 2 1019 2274.206558503265 429298.563454759583 124 0 2 66 70
+3	9367 1845 28 1027 7523.989091323635 430842.935211638138 61 0 1502.1142151133 6450.3377881402 5061725.8831479
+4	11212 3351 23 1027 6713.149547461095 430842.935211638138 122 0 1 61 61
+5	14563 707 33 1032 9000 432000 48 0 4 62 144
+6	15270 707 33 1032 9000 432000 48 0 5 61 141
+7	15977 3372 7 1024 3277.102652864054 430842.935211638138 123 0 4 130 242

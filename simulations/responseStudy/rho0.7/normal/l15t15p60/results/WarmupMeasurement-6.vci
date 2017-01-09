@@ -1,0 +1,47 @@
+file 48785 1483972159                                           
+version 2
+run WarmupMeasurement-6-20170109-15:29:19-1504
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:19
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1504
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1469 6055 19 2481 11760.29328513263 431270.235345265275 144 5490.9784085869 17851.221691022 1424607.7210938 15265793437.932
+1	7524 5406 6 2483 5743.575803348108 431270.235345265275 146 0 1803.2762177676 58590.95077613 50136823.65381
+2	12930 8240 4 2483 5743.575803348108 431270.235345265275 292 0 3 182 222
+3	21170 5254 16 2475 10878.287662709038 430403.124418030802 144 0 8878.0698055646 165701.85055099 755654526.23244
+4	26424 8136 14 2475 10878.287662709038 430403.124418030802 288 0 7 280 780
+5	34560 3034 1 2485 2571.42 431998.56 168 0 3 145 249
+6	37594 3034 1 2485 2571.42 431998.56 168 0 3 144 244
+7	40628 8157 9 2472 6663.972698785521 430403.124418030802 289 0 5 483 1149

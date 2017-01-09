@@ -1,0 +1,47 @@
+file 43165 1483972261                                           
+version 2
+run WarmupMeasurement-27-20170109-15:31:01-1920
+attr configname WarmupMeasurement
+attr datetime 20170109-15:31:01
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=27
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1920
+attr repetition 27
+attr replication #27
+attr resultdir results
+attr runnumber 27
+attr seedset 27
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 5728 19 2318 3778.539869173287 430193.836083118326 136 2454.0953235199 17150.205010532 762187.61844739 5469711912.6603
+1	7193 4363 4 2323 1663.921963028707 431420.772560227821 137 0 562.16906953874 6088.0490262722 1426947.2764465
+2	11556 7727 2 2323 1663.921963028707 431420.772560227821 274 0 2 139 141
+3	19283 4118 13 2315 3523.723196764666 429911.860290348325 136 0 768.33731356218 4038.6361978667 1686275.2291499
+4	23401 7680 11 2315 3523.723196764666 429911.860290348325 272 0 2 138 140
+5	31081 2191 9 2328 3000 432000 144 0 4 137 249
+6	33272 2191 9 2328 3000 432000 144 0 4 136 246
+7	35463 7702 7 2326 2011.313451558781 431721.739562235976 273 0 4 285 517

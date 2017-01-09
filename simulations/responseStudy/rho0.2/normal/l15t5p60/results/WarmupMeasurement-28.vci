@@ -1,0 +1,47 @@
+file 23629 1483972245                                           
+version 2
+run WarmupMeasurement-28-20170109-15:30:45-1830
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:45
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=28
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1830
+attr repetition 28
+attr replication #28
+attr resultdir results
+attr runnumber 28
+attr seedset 28
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 3094 44 1254 14271.105929085454 428658.338010361005 74 5248.7974768534 39995.344940195 797483.36939859 10889831133.993
+1	4562 2281 5 1234 7834.12299062813 424378.433483330316 74 0 908.17830275931 5788.6313664346 3330388.5675025
+2	6843 4115 3 1234 7834.12299062813 424378.433483330316 148 0 1 74 74
+3	10958 2275 41 1251 13909.068165200737 428358.720768685154 74 0 1911.7603068319 10159.756726421 12986216.071315
+4	13233 4132 28 1251 12402.219556112841 428358.720768685154 148 0 2 76 78
+5	17365 1068 1 1256 6000 432000 72 0 4 74 134
+6	18433 1068 1 1256 6000 432000 72 0 3 74 142
+7	19501 4128 8 1248 8706.774026213008 428358.720768685154 148 0 3 150 246

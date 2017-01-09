@@ -1,0 +1,47 @@
+file 79789 1483972154                                           
+version 2
+run WarmupMeasurement-22-20170109-15:29:14-1490
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:14
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=22
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1490
+attr repetition 22
+attr replication #22
+attr resultdir results
+attr runnumber 22
+attr seedset 22
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1474 10063 25 4082 4927.774252710355 430719.969132227473 238 4468.0576195749 20348.780610475 1999748.8905097 18085919016.892
+1	11537 9271 4 4073 400.752061366909 429354.406097419748 241 0 1185.8551738261 81483.14459274 52574535.248147
+2	20808 13637 2 4073 400.752061366909 429354.406097419748 482 0 4 367 577
+3	34445 9070 22 4078 4052.270212680671 429711.412288578659 238 0 7120.8181843223 352894.11119688 1232026127.785
+4	43515 13503 20 4078 4052.270212680671 429711.412288578659 476 0 7 698 2018
+5	57018 4603 9 4084 1714.26 431993.52 252 0 5 241 485
+6	61621 4603 9 4084 1714.26 431993.52 252 0 2 238 356
+7	66224 13565 7 4076 696.550086894798 429711.412288578659 479 0 7 1236 4208

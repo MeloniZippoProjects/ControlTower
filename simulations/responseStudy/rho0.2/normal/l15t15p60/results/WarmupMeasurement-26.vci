@@ -1,0 +1,47 @@
+file 15142 1483972236                                           
+version 2
+run WarmupMeasurement-26-20170109-15:30:35-1768
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:35
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=26
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1768
+attr repetition 26
+attr replication #26
+attr resultdir results
+attr runnumber 26
+attr seedset 26
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1469 1905 15 782 8237.85293297692 425791.13132446086 46 6286.915259937 43479.877731591 674764.95299269 13111232465.131
+1	3374 1378 4 754 3312.677952657816 419785.633547596633 46 0 817.13997743386 3999.1299117755 2485767.9448907
+2	4752 2536 2 754 3312.677952657816 419785.633547596633 92 0 1 46 46
+3	7288 1381 12 779 7208.982291401415 424826.518541807551 46 0 809.43804489326 3182.5866970634 1778645.1705521
+4	8669 2540 10 779 7208.982291401415 424826.518541807551 92 0 1 46 46
+5	11209 700 17 784 9000 432000 48 0 3 46 84
+6	11909 700 17 784 9000 432000 48 0 4 46 84
+7	12609 2533 7 776 4182.337188914613 424826.518541807551 92 0 3 82 126

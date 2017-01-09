@@ -1,0 +1,47 @@
+file 21257 1483972237                                           
+version 2
+run WarmupMeasurement-7-20170109-15:30:37-1779
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:37
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=7
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1779
+attr repetition 7
+attr replication #7
+attr resultdir results
+attr runnumber 7
+attr seedset 7
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1462 2735 23 1126 3578.573391419329 426806.272181103957 66 3578.5733914193 24919.642181531 628572.9404831 7777979830.6393
+1	4197 1910 4 1131 476.261468812121 430962.957535669231 67 0 905.65242576075 2512.5311698744 1989531.4581745
+2	6107 3708 2 1131 476.261468812121 430962.957535669231 134 0 1 67 67
+3	9815 1989 20 1123 3302.055344221141 426504.016530408582 66 0 1237.4352169577 5233.3217961219 3426162.3511596
+4	11804 3649 18 1123 3302.055344221141 426504.016530408582 132 0 2 68 70
+5	15453 1065 33 1136 6000 432000 72 0 3 67 105
+6	16518 1065 33 1136 6000 432000 72 0 4 66 114
+7	17583 3674 7 1134 1310.501740420463 431887.979887382726 133 0 2 91 115

@@ -1,0 +1,47 @@
+file 161193 1483972208                                          
+version 2
+run WarmupMeasurement-6-20170109-15:30:08-1654
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:08
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1654
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 20601 26 8292 4622.528261436619 431856.980966178428 485 2126.2728788242 9488.0689574628 2042139.0267332 9460394232.8515
+1	22068 18692 6 8294 1914.569940187859 431856.980966178428 489 0 1127.420525446 79825.093291869 28281774.8554
+2	40760 27924 4 8297 1914.569940187859 431979.644323003824 979 0 5 670 930
+3	68684 18533 17 8283 4328.526387295422 431559.344123472485 485 0 6247.8961120077 361685.66869625 970441410.83832
+4	87217 27763 15 8286 4328.526387295422 431598.123695219431 971 0 12 1516 7314
+5	114980 9208 1 8271 857.16 431151.48 503 0 4 488 864
+6	124188 9208 1 8271 857.16 431151.48 503 0 3 482 836
+7	133396 27797 9 8285 2221.368905333663 431598.123695219431 974 0 7 2473 8335

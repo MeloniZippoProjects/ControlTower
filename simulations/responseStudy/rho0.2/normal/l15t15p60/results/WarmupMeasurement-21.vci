@@ -1,0 +1,47 @@
+file 15705 1483972234                                           
+version 2
+run WarmupMeasurement-21-20170109-15:30:34-1763
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:34
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=21
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1763
+attr repetition 21
+attr replication #21
+attr resultdir results
+attr runnumber 21
+attr seedset 21
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1469 1991 15 814 6396.218679367592 423157.86872118458 48 6396.2186793676 39051.592649066 686062.91654294 12539966132.933
+1	3460 1449 4 786 449.567636305406 417929.231591043299 48 0 1524.1568921897 4532.2691491209 4092764.5249021
+2	4909 2650 2 786 449.567636305406 417929.231591043299 96 0 2 50 52
+3	7559 1449 12 810 5478.266553594792 422338.196952744209 48 0 1349.8875051048 4835.7101602095 3783525.4741951
+4	9008 2648 10 810 5478.266553594792 422338.196952744209 96 0 1 48 48
+5	11656 702 17 816 9000 432000 48 0 3 48 92
+6	12358 702 17 816 9000 432000 48 0 3 48 90
+7	13060 2645 7 807 1317.843909971157 422338.196952744209 96 0 2 74 100

@@ -1,0 +1,47 @@
+file 21113 1483972263                                           
+version 2
+run WarmupMeasurement-8-20170109-15:31:03-1931
+attr configname WarmupMeasurement
+attr datetime 20170109-15:31:03
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=8
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1931
+attr repetition 8
+attr replication #8
+attr resultdir results
+attr runnumber 8
+attr seedset 8
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1462 2696 28 1107 15122.763564421406 409679.064111669957 65 3403.5771385754 33668.344619989 609903.10608869 8137267820.6141
+1	4158 2047 6 1095 12401.730303905516 406942.759063586205 65 0 770.6974919176 4519.5305297258 1902389.1208588
+2	6205 3593 4 1095 12401.730303905516 406942.759063586205 130 0 1 65 65
+3	9798 1994 22 1104 14334.980942825191 408784.484124551495 65 0 996.67510477061 6946.4159068086 5129581.9770563
+4	11792 3598 20 1104 14334.980942825191 408784.484124551495 130 0 2 67 69
+5	15390 1067 1 1112 6000 432000 72 0 4 65 125
+6	16457 1067 1 1112 6000 432000 72 0 4 65 131
+7	17524 3589 12 1101 12706.962186032851 408784.484124551495 130 0 3 93 125

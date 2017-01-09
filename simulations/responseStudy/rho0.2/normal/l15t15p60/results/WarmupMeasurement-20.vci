@@ -1,0 +1,47 @@
+file 15716 1483972234                                           
+version 2
+run WarmupMeasurement-20-20170109-15:30:34-1762
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:34
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=20
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1762
+attr repetition 20
+attr replication #20
+attr resultdir results
+attr runnumber 20
+attr seedset 20
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1469 1995 16 814 14173.111820322297 430206.363986825353 48 6306.1247149449 44467.063671102 691432.79473128 13180462449.828
+1	3464 1478 4 795 7983.444996228098 424836.812906207356 48 0 827.14995891889 5401.3191461618 3182929.4454391
+2	4942 2651 2 795 7983.444996228098 424836.812906207356 96 0 1 48 48
+3	7593 1414 13 811 13392.732742659709 429169.880064924151 48 0 832.07999083201 3661.5268236951 2663640.5097539
+4	9007 2659 11 811 13392.732742659709 429169.880064924151 96 0 1 48 48
+5	11666 699 6 816 9000 432000 48 0 3 48 92
+6	12365 699 6 816 9000 432000 48 0 3 48 90
+7	13064 2652 8 808 9067.801273123762 429169.880064924151 96 0 2 74 100

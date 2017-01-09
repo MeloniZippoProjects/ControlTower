@@ -1,0 +1,47 @@
+file 14776 1483972254                                           
+version 2
+run WarmupMeasurement-29-20170109-15:30:54-1861
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:54
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=29
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1861
+attr repetition 29
+attr replication #29
+attr resultdir results
+attr runnumber 29
+attr seedset 29
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1469 1867 17 766 21414.522194931428 428940.844378829042 45 4622.9995833308 37013.766813499 590297.02354303 10025495512.698
+1	3336 1295 5 755 17940.034159398546 425445.191622762193 45 0 854.57459556246 2325.2284334503 1569169.3732196
+2	4631 2475 3 755 17940.034159398546 425445.191622762193 90 0 1 45 45
+3	7106 1310 14 763 20667.009525029677 428046.813949958788 45 0 804.46118982743 1872.7032915165 1108102.0180754
+4	8416 2482 12 763 20667.009525029677 428046.813949958788 90 0 1 45 45
+5	10898 699 1 768 9000 432000 48 0 3 45 73
+6	11597 699 1 768 9000 432000 48 0 3 45 79
+7	12296 2480 9 760 18798.033076651376 428046.813949958788 90 0 2 57 69

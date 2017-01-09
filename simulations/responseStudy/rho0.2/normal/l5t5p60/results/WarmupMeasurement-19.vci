@@ -1,0 +1,47 @@
+file 45124 1483972256                                           
+version 2
+run WarmupMeasurement-19-20170109-15:30:56-1882
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:56
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=19
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1882
+attr repetition 19
+attr replication #19
+attr resultdir results
+attr runnumber 19
+attr seedset 19
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 6055 40 2443 4350.317285437698 422788.465291482004 144 3549.3619065787 20317.374817495 1031221.2445265 8547631317
+1	7520 4389 4 2451 307.871475754591 430015.831853634507 145 0 318.33414778427 3124.4664943349 710564.3944122
+2	11909 8166 2 2451 307.871475754591 430015.831853634507 290 0 1 145 145
+3	20075 4385 37 2440 4105.906778955083 422477.06904783022 144 0 522.701943572 4114.5320616358 932355.9124891
+4	24460 8108 35 2440 4105.906778955083 422477.06904783022 288 0 1 144 144
+5	32568 2210 30 2456 3000 432000 144 0 5 145 293
+6	34778 2210 30 2456 3000 432000 144 0 5 144 298
+7	36988 8136 7 2454 564.537333988578 430275.335836426768 289 0 6 509 1345

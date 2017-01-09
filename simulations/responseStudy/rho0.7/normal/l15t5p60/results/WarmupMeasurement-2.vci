@@ -1,0 +1,47 @@
+file 89351 1483972178                                           
+version 2
+run WarmupMeasurement-2-20170109-15:29:38-1560
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:38
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=2
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1560
+attr repetition 2
+attr replication #2
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 11138 41 4573 4942.616809575521 431890.362293217174 263 4942.6168095755 26406.153448275 3128608.3724089 46955738065.988
+1	12606 10727 4 4551 981.742970138305 429855.111532653112 274 0 4272.5571216116 206320.54825584 369600662.93132
+2	23333 15570 2 4551 981.742970138305 429855.111532653112 548 0 5 536 1070
+3	38903 10370 38 4575 4697.089191491135 431890.362293217174 264 0 18989.108664947 1271276.207709 15085549667.269
+4	49273 15364 36 4575 4697.089191491135 431890.362293217174 536 0 17 2422 24836
+5	64637 4596 9 4577 1714.26 431993.52 252 0 2 274 458
+6	69233 4596 9 4577 1714.26 431993.52 252 0 6 263 823
+7	73829 15522 11 4564 1900.492583273451 431527.859639780721 546 0 6 1495 4937

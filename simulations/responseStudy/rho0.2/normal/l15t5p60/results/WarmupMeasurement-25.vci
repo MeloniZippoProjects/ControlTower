@@ -1,0 +1,47 @@
+file 21882 1483972245                                           
+version 2
+run WarmupMeasurement-25-20170109-15:30:45-1827
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:45
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=25
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1827
+attr repetition 25
+attr replication #25
+attr resultdir results
+attr runnumber 25
+attr seedset 25
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1468 2797 17 1142 17183.297975244261 427994.116483963116 67 5194.7459999536 42972.975891464 757083.39573046 12354797264.809
+1	4265 2109 6 1155 12247.056894620148 431614.768870870535 69 0 1294.2672236771 5526.7408058574 3662618.4227556
+2	6374 3824 4 1155 12247.056894620148 431614.768870870535 138 0 2 71 73
+3	10198 2083 14 1139 16875.195660027737 427696.129755025436 67 0 2194.520273581 10962.285854103 11671322.777784
+4	12281 3725 12 1139 16875.195660027737 427696.129755025436 134 0 2 71 75
+5	16006 1062 1 1157 6000 432000 72 0 4 68 128
+6	17068 1062 1 1157 6000 432000 72 0 4 67 147
+7	18130 3752 9 1150 13038.445216996273 430420.617822164457 135 0 4 158 292

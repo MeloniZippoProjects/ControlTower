@@ -1,0 +1,47 @@
+file 17917 1483972246                                           
+version 2
+run WarmupMeasurement-3-20170109-15:30:46-1835
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:46
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1835
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1463 2316 24 940 10799.183753999223 405595.78949864199 56 4563.2062209676 27167.947762789 625047.38204438 8863945678.7583
+1	3779 1756 4 920 7202.541518033614 402182.814460932859 56 0 970.34046396064 9156.2541154176 6115760.7564441
+2	5535 3073 2 920 7202.541518033614 402182.814460932859 112 0 2 60 64
+3	8608 1744 21 936 9886.84791616538 404856.55220812591 56 0 3348.5782006607 15958.056411193 25467329.89556
+4	10352 3075 19 936 9886.84791616538 404856.55220812591 112 0 3 66 80
+5	13427 706 14 944 9000 432000 48 0 5 56 130
+6	14133 706 14 944 9000 432000 48 0 5 56 120
+7	14839 3078 10 933 8178.186711748955 404856.55220812591 112 0 2 76 96

@@ -1,0 +1,47 @@
+file 64696 1483972162                                           
+version 2
+run WarmupMeasurement-15-20170109-15:29:22-1513
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:22
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=15
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1513
+attr repetition 15
+attr replication #15
+attr resultdir results
+attr runnumber 15
+attr seedset 15
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1475 7806 30 3307 10944.068615054122 431629.353069830705 185 6036.3643694651 41779.362907926 3061238.1782502 67091981212.551
+1	9281 8083 5 3309 4858.103679883558 431629.353069830705 203 0 2869.3870512943 129128.68860824 152418709.31797
+2	17364 11489 3 3309 4858.103679883558 431629.353069830705 406 0 4 317 475
+3	28853 7453 23 3298 10051.032045532387 430729.770123723539 185 0 33419.178116368 1553771.5057028 30133108813.237
+4	36306 10948 18 3304 9402.920055776902 431131.885186344494 384 0 21 2106 25192
+5	47254 3047 1 3311 2571.42 431998.56 168 0 3 202 396
+6	50301 3047 1 3311 2571.42 431998.56 168 0 3 185 343
+7	53348 11348 9 3303 5710.652250489682 431131.885186344494 401 0 5 883 2593

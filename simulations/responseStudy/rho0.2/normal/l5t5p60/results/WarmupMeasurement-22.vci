@@ -1,0 +1,47 @@
+file 38450 1483972257                                           
+version 2
+run WarmupMeasurement-22-20170109-15:30:57-1885
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:57
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=22
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1885
+attr repetition 22
+attr replication #22
+attr resultdir results
+attr runnumber 22
+attr seedset 22
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 5001 24 2046 4949.59099786903 429975.434036131484 119 3999.2360130085 29830.106409814 933302.12369207 9323034333.7527
+1	6466 3695 4 2059 701.3266272915 431368.984808105222 121 0 296.59338159281 2518.0440485566 468766.63444965
+2	10161 6812 2 2059 701.3266272915 431368.984808105222 242 0 1 121 121
+3	16973 3654 21 2043 4657.756317859135 429698.654897054945 119 0 490.00077033387 4133.407244457 1092824.1159707
+4	20627 6697 16 2043 4352.844778605262 429698.654897054945 238 0 2 121 123
+5	27324 2187 9 2064 3000 432000 144 0 4 121 221
+6	29511 2187 9 2064 3000 432000 144 0 4 119 219
+7	31698 6752 7 2062 997.124652819389 431716.20290477076 240 0 4 356 760

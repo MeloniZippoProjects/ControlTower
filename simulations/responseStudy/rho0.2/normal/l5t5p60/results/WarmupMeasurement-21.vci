@@ -1,0 +1,47 @@
+file 40817 1483972257                                           
+version 2
+run WarmupMeasurement-21-20170109-15:30:57-1884
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:57
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=21
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1884
+attr repetition 21
+attr replication #21
+attr resultdir results
+attr runnumber 21
+attr seedset 21
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1465 5419 16 2206 4905.687988871621 429611.151127439459 129 3495.0654448947 20138.045195983 975787.63387755 8569876343.9674
+1	6884 3944 4 2177 149.855878768469 425616.111892848277 129 0 649.15654497135 4597.7102492265 1589124.9672974
+2	10828 7255 2 2177 149.855878768469 425616.111892848277 258 0 3 139 153
+3	18083 3812 13 2203 4599.703946947354 429333.208497569575 129 0 838.44793448481 3797.9656749611 1783687.7015584
+4	21895 7261 11 2203 4599.703946947354 429333.208497569575 258 0 3 135 145
+5	29156 2198 9 2208 3000 432000 144 0 4 129 229
+6	31354 2198 9 2208 3000 432000 144 0 4 129 243
+7	33552 7265 7 2200 439.281303323719 429333.208497569575 258 0 5 381 849

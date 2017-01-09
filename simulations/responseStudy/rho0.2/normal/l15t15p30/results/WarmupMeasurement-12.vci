@@ -1,0 +1,47 @@
+file 18201 1483972248                                           
+version 2
+run WarmupMeasurement-12-20170109-15:30:48-1844
+attr configname WarmupMeasurement
+attr datetime 20170109-15:30:48
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=12
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1844
+attr repetition 12
+attr replication #12
+attr resultdir results
+attr runnumber 12
+attr seedset 12
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1469 2358 15 958 5312.374637304095 431359.896881040167 57 4530.6128844385 35177.255650275 651013.43700784 10756955109.299
+1	3827 1799 4 963 1506.855798749472 431636.639310289308 58 0 1465.8147488274 9612.1684385506 7796868.3823754
+2	5626 3181 2 963 1506.855798749472 431636.639310289308 116 0 2 60 62
+3	8807 1730 12 955 4430.730878158793 430454.148796426238 57 0 1131.2760949701 7047.2795179135 5698937.3653867
+4	10537 3127 10 955 4430.730878158793 430454.148796426238 114 0 2 59 61
+5	13664 705 38 965 9000 432000 48 0 4 57 123
+6	14369 705 38 965 9000 432000 48 0 4 57 135
+7	15074 3127 7 952 2510.256393336312 430454.148796426238 114 0 3 89 125

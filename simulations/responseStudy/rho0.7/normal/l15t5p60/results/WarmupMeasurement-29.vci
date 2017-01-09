@@ -1,0 +1,47 @@
+file 93262 1483972187                                           
+version 2
+run WarmupMeasurement-29-20170109-15:29:47-1587
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:47
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=29
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1587
+attr repetition 29
+attr replication #29
+attr resultdir results
+attr runnumber 29
+attr seedset 29
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1474 11765 27 4728 8309.115583054869 428388.574903961908 278 5166.0029719944 25085.944895027 3268653.3534878 46686407146.987
+1	13239 11409 5 4771 3417.098106454506 431286.310792489983 286 0 3979.5411136707 203493.84592938 348370816.46427
+2	24648 16323 3 4777 3417.098106454506 431708.990597097172 574 0 5 563 1103
+3	40971 10917 24 4725 8013.049920463938 428058.540902033652 278 0 17766.847531508 1310066.1499599 13835849271.069
+4	51888 16047 22 4774 8013.049920463938 431417.773898580281 560 0 18 2376 21908
+5	67935 4595 1 4779 1714.26 431993.52 252 0 3 285 465
+6	72530 4595 1 4779 1714.26 431993.52 252 0 6 278 764
+7	77125 16137 9 4773 4275.097023707336 431417.773898580281 567 0 6 1570 5232

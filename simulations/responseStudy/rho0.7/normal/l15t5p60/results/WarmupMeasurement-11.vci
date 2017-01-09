@@ -1,0 +1,47 @@
+file 79605 1483972181                                           
+version 2
+run WarmupMeasurement-11-20170109-15:29:41-1569
+attr configname WarmupMeasurement
+attr datetime 20170109-15:29:41
+attr experiment WarmupMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=11
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 1569
+attr repetition 11
+attr replication #11
+attr resultdir results
+attr runnumber 11
+attr seedset 11
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1474 10115 49 4082 5044.120485711976 430748.79904627695 239 4950.1611134599 17342.326375904 1947540.8134459 17089954289.824
+1	11589 8972 4 4087 340.760411100715 431068.066441369451 241 0 3405.7957817539 96106.497183371 119007207.68403
+2	20561 13659 2 4087 340.760411100715 431068.066441369451 482 0 4 337 489
+3	34220 8996 46 4079 4794.551148102723 430471.640097567751 239 0 8879.3816980205 279695.34317883 977872506.61971
+4	43216 13577 44 4079 4794.551148102723 430471.640097567751 478 0 9 585 1899
+5	56793 4596 17 4092 1714.26 431993.52 252 0 3 241 379
+6	61389 4596 17 4092 1714.26 431993.52 252 0 5 239 527
+7	65985 13620 10 4090 1231.647192548914 431846.810067149717 480 0 6 1138 3336
