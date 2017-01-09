@@ -1,0 +1,47 @@
+file 46702 1483893129                                           
+version 2
+run ParkingMeasurement-75-20170108-17:32:09-6084
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:09
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=75
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6084
+attr repetition 75
+attr replication #75
+attr resultdir results
+attr runnumber 75
+attr seedset 75
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1442 6249 345 2827 157535.014545905568 1032963.003962443284 147 1375.6789759967 31871.336945498 1375393.2260734 18301409788.43
+1	7691 4552 333 2815 154243.276267342678 1030816.627716747525 147 0 3676.294826401 17986.048653558 30405094.140973
+2	12243 8411 331 2815 154243.276267342678 1030816.627716747525 294 0 2 151 155
+3	20654 4547 342 2824 157527.33718737026 1032914.134505082528 147 0 6450.0522994323 35611.81453728 135506619.15311
+4	25201 8429 340 2824 157527.33718737026 1032914.134505082528 294 0 2 157 167
+5	33630 2324 338 2820 156000 1032000 147 0 5 147 303
+6	35954 2324 338 2820 156000 1032000 147 0 4 146 294
+7	38278 8424 336 2821 155416.400610295357 1032914.134505082528 294 0 3 233 331

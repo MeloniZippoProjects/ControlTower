@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 file 89633 1483715156                                           
 version 2
 run ParkingMeasurement-50-20170106-02:04:03-11301
@@ -44,3 +45,52 @@ attr source landedThroughputSignal
 vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
 attr source tookoffThroughputSignal
 6	68460 4977 626 5401 102000 1035000 312 0 4 283 547
+=======
+file 89644 1483893043                                           
+version 2
+run ParkingMeasurement-50-20170108-17:30:43-5477
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:43
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=50
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5477
+attr repetition 50
+attr replication #50
+attr resultdir results
+attr runnumber 50
+attr seedset 50
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1467 12034 600 5399 100701.087362100208 1034521.072363674758 282 2446.7180896513 26278.89563243 1636003.6343767 12585690928.046
+1	13501 8831 613 5388 101091.999171797136 1032242.854051330939 280 0 445.34665006394 9489.849702958 2185201.2160397
+2	22332 16149 608 5388 100853.707052881657 1032242.854051330939 560 0 2 286 292
+3	38481 8770 597 5396 100389.047270388592 1034271.243718890051 282 0 540.07974065209 8367.0361797226 2219714.1764586
+4	47251 16243 595 5396 100389.047270388592 1034271.243718890051 564 0 2 284 286
+5	63494 4977 626 5401 102000 1035000 312 0 4 280 526
+6	68471 4977 626 5401 102000 1035000 312 0 4 283 547
+7	73448 16196 594 5393 100389.047270388592 1034271.243718890051 562 0 4 597 1065
+>>>>>>> branch 'develop' of git@github.com:enricomeloni/PESC_Control_Tower.git

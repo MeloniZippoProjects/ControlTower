@@ -1,0 +1,47 @@
+file 51209 1483893110                                           
+version 2
+run ParkingMeasurement-138-20170108-17:31:50-5946
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:50
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=138
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5946
+attr repetition 138
+attr replication #138
+attr resultdir results
+attr runnumber 138
+attr seedset 138
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 6840 598 3287 238214.327621573874 1108269.796288805274 160 4968.3831437193 50360.452460729 1718458.9624716 24499223792.411
+1	8316 5174 586 3294 233528.267436813401 1119587.44262863087 161 0 1036.6237503648 15960.404079836 10410295.093302
+2	13490 9295 584 3294 233528.267436813401 1119587.44262863087 322 0 2 163 165
+3	22785 5033 595 3284 237921.33726688427 1107979.141342743325 160 0 2151.2362749297 16228.578626668 15743831.518692
+4	27818 9229 593 3284 237921.33726688427 1107979.141342743325 320 0 2 162 164
+5	37047 2449 578 3299 204000 1122000 154 0 5 161 343
+6	39496 2449 578 3299 204000 1122000 154 0 4 160 340
+7	41945 9264 590 3297 234426.168956240447 1120548.560590793492 321 0 4 369 709

@@ -1,0 +1,47 @@
+file 94996 1483893054                                           
+version 2
+run ParkingMeasurement-93-20170108-17:30:54-5565
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:54
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=93
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5565
+attr repetition 93
+attr replication #93
+attr resultdir results
+attr runnumber 93
+attr seedset 93
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 12823 553 5639 102758.202621683717 1034586.082867282826 300 2234.062470229 21110.665399098 1683139.0216717 11932118661.963
+1	14290 9331 542 5645 102166.706173791609 1035653.458880952005 300 0 332.72277234757 7406.007774062 1538029.3947911
+2	23621 17321 540 5645 102166.706173791609 1035653.458880952005 600 0 2 302 304
+3	40942 9417 550 5636 102520.21644316702 1034236.640438234014 300 0 716.80119035309 14300.984705326 5211399.5041605
+4	50359 17317 545 5636 102464.847533495135 1034236.640438234014 600 0 3 320 348
+5	67676 4984 538 5641 102000 1035000 312 0 8 300 590
+6	72660 4984 538 5641 102000 1035000 312 0 8 300 596
+7	77644 17352 536 5648 100529.862274442292 1035908.58688639539 601 0 6 617 1189

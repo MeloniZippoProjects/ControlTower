@@ -1,0 +1,47 @@
+file 52091 1483893136                                           
+version 2
+run ParkingMeasurement-75-20170108-17:32:16-6136
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:16
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=75
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6136
+attr repetition 75
+attr replication #75
+attr resultdir results
+attr runnumber 75
+attr seedset 75
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1470 7012 512 3273 200728.983803303138 1119023.372008963317 164 3375.5122323039 30283.083316003 1461495.4250589 17627868814.858
+1	8482 5182 517 3262 203977.849654007381 1116032.224049410625 163 0 1485.6357560846 14382.781288238 10540808.095205
+2	13664 9426 515 3262 203977.849654007381 1116032.224049410625 326 0 2 167 171
+3	23090 5176 509 3270 200495.027688590235 1118696.225815267067 164 0 2369.146630465 18850.148507004 20093493.100257
+4	28266 9471 507 3270 200495.027688590235 1118696.225815267067 328 0 3 172 184
+5	37737 2456 519 3275 204000 1122000 154 0 5 164 336
+6	40193 2456 519 3275 204000 1122000 154 0 5 164 352
+7	42649 9442 506 3267 200495.027688590235 1118696.225815267067 327 0 3 261 375

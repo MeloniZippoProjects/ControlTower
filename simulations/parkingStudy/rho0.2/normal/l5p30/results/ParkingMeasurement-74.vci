@@ -1,0 +1,47 @@
+file 90935 1483893049                                           
+version 2
+run ParkingMeasurement-74-20170108-17:30:49-5527
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:49
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=74
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5527
+attr repetition 74
+attr replication #74
+attr resultdir results
+attr runnumber 74
+attr seedset 74
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 12198 476 5335 102974.757587298446 1033550.134092334674 286 2317.5420029112 17157.966433579 1642107.9939634 12114797792.121
+1	13665 9029 453 5307 100505.677022612674 1031236.671733184838 286 0 424.81366115144 8490.3413545955 1733442.1612753
+2	22694 16473 451 5307 100505.677022612674 1031236.671733184838 572 0 2 288 290
+3	39167 8845 470 5332 102693.54410919286 1033243.006123342445 286 0 569.66961573375 5941.5923174219 1349507.5031485
+4	48012 16497 468 5332 102693.54410919286 1033243.006123342445 572 0 2 288 290
+5	64509 4966 466 5337 102000 1035000 312 0 4 286 552
+6	69475 4966 466 5337 102000 1035000 312 0 4 286 496
+7	74441 16494 459 5329 100810.907438610668 1033243.006123342445 572 0 4 588 1018

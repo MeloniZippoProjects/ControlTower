@@ -1,0 +1,47 @@
+file 163859 1483892949                                          
+version 2
+run ParkingMeasurement-148-20170108-17:29:08-4944
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:08
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=148
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4944
+attr repetition 148
+attr replication #148
+attr resultdir results
+attr runnumber 148
+attr seedset 148
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 20743 2306 10492 205605.726372564951 1119876.177196886955 483 3463.5163982578 22313.534396915 3423907.4784981 28677556258.784
+1	22225 18444 2249 10522 200910.297725735844 1122781.626903913947 485 0 3684.797029014 211362.34117241 278181059.03045
+2	40669 28179 2247 10522 200910.297725735844 1122781.626903913947 970 0 4 693 1033
+3	68848 18360 2303 10489 205362.75358706616 1119628.267020671109 483 0 13079.767763507 837028.37739624 4830742287.4169
+4	87208 28080 2252 10489 201021.685282101969 1119628.267020671109 966 0 13 1759 9511
+5	115288 10221 2242 10524 200568.42 1122840.3 539 0 3 486 746
+6	125509 10221 2242 10524 200568.42 1122840.3 539 0 6 485 1153
+7	135730 28129 2244 10517 200677.221868953204 1122704.763199494042 968 0 3 1290 2384

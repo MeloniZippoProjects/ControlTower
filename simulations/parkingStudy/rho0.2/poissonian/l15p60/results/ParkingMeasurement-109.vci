@@ -1,0 +1,47 @@
+file 47825 1483893096                                           
+version 2
+run ParkingMeasurement-109-20170108-17:31:36-5849
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:36
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=109
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5849
+attr repetition 109
+attr replication #109
+attr resultdir results
+attr runnumber 109
+attr seedset 109
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1448 6320 441 2936 206564.515592779076 1115852.106267324901 148 1351.3361223482 45155.925427132 1756309.0991455 29250949377.299
+1	7768 4713 421 2942 201520.199608537159 1117298.164529201148 149 0 5245.6356105108 35861.005815977 79971214.01045
+2	12481 8559 419 2942 201520.199608537159 1117298.164529201148 298 0 4 173 221
+3	21040 4732 438 2951 206178.399898179851 1123163.774610314194 149 0 4329.132545608 36378.00632812 86715335.982662
+4	25772 8576 436 2951 206178.399898179851 1123163.774610314194 298 0 4 169 205
+5	34348 2453 426 2947 204000 1122000 154 0 4 149 281
+6	36801 2453 426 2947 204000 1122000 154 0 6 148 312
+7	39254 8571 428 2948 204168.682407688665 1123163.774610314194 298 0 4 331 601

@@ -1,0 +1,47 @@
+file 376177 1483892876                                          
+version 2
+run ParkingMeasurement-138-20170108-17:27:56-4124
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:56
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=138
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4124
+attr repetition 138
+attr replication #138
+attr resultdir results
+attr runnumber 138
+attr seedset 138
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1453 48175 1746 20590 100765.776367193366 1036618.996062213301 1110 482.87051545241 18763.649468423 5447495.7645279 37023177544.91
+1	49628 43721 1748 20592 100765.776367193366 1036618.996062213301 1111 0 4306.7613091895 362544.34549562 349538965.13131
+2	93349 65558 1739 20592 100239.390088913777 1036618.996062213301 2222 0 7 1935 3599
+3	158907 44007 1754 20581 101465.685934982811 1036366.183906455845 1109 0 14021.643376126 1535586.4722196 7650857260.6524
+4	202914 65523 1743 20584 100390.658743239748 1036466.336633213745 2219 0 23 5282 37678
+5	268437 21132 1741 20577 100287.72 1036306.44 1093 0 7 1111 2315
+6	289569 21132 1741 20577 100287.72 1036306.44 1093 0 7 1111 2527
+7	310701 65476 1742 20583 100390.658743239748 1036466.336633213745 2220 0 9 5764 20202

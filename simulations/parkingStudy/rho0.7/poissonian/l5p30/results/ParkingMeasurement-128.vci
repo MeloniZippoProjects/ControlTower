@@ -1,0 +1,47 @@
+file 376184 1483892874                                          
+version 2
+run ParkingMeasurement-128-20170108-17:27:54-4082
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:54
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=128
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4082
+attr repetition 128
+attr replication #128
+attr resultdir results
+attr runnumber 128
+attr seedset 128
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1453 48150 1700 20543 100523.999134473101 1035777.531349086239 1110 349.71848247635 16386.443010719 5480267.4829848 35510671816.018
+1	49603 43751 1713 20549 100802.622428602103 1036460.495743195804 1111 0 4432.049836261 397404.64088581 396975127.05598
+2	93354 65532 1711 20549 100802.622428602103 1036460.495743195804 2222 0 6 2039 3835
+3	158886 44001 1697 20540 100522.633085272013 1035628.590600206381 1110 0 10354.706025957 1502292.8192881 5928023162.8707
+4	202887 65523 1695 20540 100522.633085272013 1035628.590600206381 2220 0 16 4992 28006
+5	268410 21146 1693 20545 100287.72 1036306.44 1093 0 6 1110 2308
+6	289556 21146 1693 20545 100287.72 1036306.44 1093 0 6 1111 2403
+7	310702 65482 1694 20552 100522.633085272013 1036579.006188048325 2221 0 8 5780 20258

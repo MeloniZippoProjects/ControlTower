@@ -1,0 +1,47 @@
+file 358367 1483892868                                          
+version 2
+run ParkingMeasurement-97-20170108-17:27:48-3929
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:48
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=97
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3929
+attr repetition 97
+attr replication #97
+attr resultdir results
+attr runnumber 97
+attr seedset 97
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1447 45681 2199 20110 100327.589680398314 1034806.089697678156 1053 490.6268920674 16663.167378472 4907753.0509185 28629851209.419
+1	47128 41028 2219 20124 102243.122019146257 1036198.879355016141 1053 0 3363.0646692881 319484.4380342 272946541.02594
+2	88156 62119 2217 20124 102243.122019146257 1036198.879355016141 2106 0 6 1739 3025
+3	150275 41681 2201 20107 100327.589680398314 1034773.018759059859 1052 0 7205.928892305 1109330.3895086 3080477338.1743
+4	191956 62064 2195 20107 100256.153362139527 1034773.018759059859 2104 0 11 3830 15472
+5	254020 21131 2197 20126 100287.72 1036306.44 1093 0 5 1052 2110
+6	275151 21131 2197 20126 100287.72 1036306.44 1093 0 8 1053 2259
+7	296282 62085 2194 20128 100256.153362139527 1036429.065818268569 2105 0 8 5211 17481

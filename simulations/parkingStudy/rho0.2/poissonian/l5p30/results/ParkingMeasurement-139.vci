@@ -1,0 +1,47 @@
+file 98028 1483893061                                           
+version 2
+run ParkingMeasurement-139-20170108-17:31:01-5606
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:01
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=139
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5606
+attr repetition 139
+attr replication #139
+attr resultdir results
+attr runnumber 139
+attr seedset 139
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1445 13292 700 5959 102566.434562708317 1033735.666316342126 311 586.4910110315 19505.051319642 1820831.4607217 14313345726.375
+1	14737 9812 711 5948 105928.666087560777 1033356.085027139136 309 0 1857.5902372261 24686.096610555 20646796.521093
+2	24549 17821 709 5948 105928.666087560777 1033356.085027139136 618 0 3 323 345
+3	42370 9848 693 5956 101654.175940774755 1033472.831901013152 311 0 1856.1545129858 32723.040591865 31592135.459195
+4	52218 17948 691 5956 101654.175940774755 1033472.831901013152 622 0 3 335 367
+5	70166 4986 698 5961 102000 1035000 312 0 4 309 587
+6	75152 4986 698 5961 102000 1035000 312 0 5 311 625
+7	80138 17890 690 5953 101654.175940774755 1033472.831901013152 620 0 4 718 1338

@@ -1,0 +1,47 @@
+file 180890 1483892888                                          
+version 2
+run ParkingMeasurement-86-20170108-17:28:08-4423
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:08
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=86
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4423
+attr repetition 86
+attr replication #86
+attr resultdir results
+attr runnumber 86
+attr seedset 86
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 23140 1924 11044 201040.809812692983 1120251.689004694919 538 5120.895516524 23546.523686659 4743179.4505027 45954859044.846
+1	24616 20817 1929 11051 201066.034695136192 1123158.11385261444 537 0 4774.0109744953 272377.18628757 370012226.08236
+2	45433 31296 1927 11051 201066.034695136192 1123158.11385261444 1074 0 6 831 1325
+3	76729 20995 1921 11041 200762.001300102687 1119926.115759311493 538 0 11499.8080411 969169.86047132 4620624706.7493
+4	97724 31352 1915 11041 200538.812744447207 1119926.115759311493 1076 0 12 1978 9138
+5	129076 10251 1917 11047 200568.42 1122840.3 539 0 3 538 858
+6	139327 10251 1917 11047 200568.42 1122840.3 539 0 6 539 1431
+7	149578 31312 1914 11039 200538.812744447207 1119926.115759311493 1075 0 6 2688 8450

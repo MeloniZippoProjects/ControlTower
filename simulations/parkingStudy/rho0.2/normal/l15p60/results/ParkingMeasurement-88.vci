@@ -1,0 +1,47 @@
+file 65402 1483893097                                           
+version 2
+run ParkingMeasurement-88-20170108-17:31:37-5856
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:37
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=88
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5856
+attr repetition 88
+attr replication #88
+attr resultdir results
+attr runnumber 88
+attr seedset 88
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1470 8997 592 4090 201249.561229632092 1122808.086591535074 210 5184.107738506 30967.535949594 1994613.3786001 22710004786.899
+1	10467 6943 597 4078 202352.122603662797 1118126.129733308485 209 0 1311.9205496665 28724.317090949 19442033.805757
+2	17410 12086 595 4078 202352.122603662797 1118126.129733308485 418 0 2 221 233
+3	29496 6704 589 4087 200976.914234004156 1122545.02688214074 210 0 1842.5351316235 27404.928590768 26834404.772482
+4	36200 12159 587 4087 200976.914234004156 1122545.02688214074 420 0 2 220 230
+5	48359 2463 610 4083 204000 1122000 154 0 5 209 457
+6	50822 2463 610 4083 204000 1122000 154 0 6 210 472
+7	53285 12117 586 4084 200976.914234004156 1122545.02688214074 419 0 5 529 1077

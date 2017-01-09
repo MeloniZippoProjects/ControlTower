@@ -1,0 +1,47 @@
+file 186543 1483892903                                          
+version 2
+run ParkingMeasurement-124-20170108-17:28:23-4693
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:23
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=124
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4693
+attr repetition 124
+attr replication #124
+attr resultdir results
+attr runnumber 124
+attr seedset 124
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1454 23809 2197 11572 202403.062752441324 1120267.856465524499 553 1780.7982205297 40989.20953657 5960323.5102324 86989446196.45
+1	25263 21491 2185 11598 200967.794845772476 1123196.11373764119 557 0 8031.1704128198 514547.02760177 1500122725.9344
+2	46754 32496 2183 11598 200967.794845772476 1123196.11373764119 1114 0 9 1137 2621
+3	79250 21968 2193 11569 201843.378283616009 1120194.813460563961 553 0 23046.863537207 1712083.9732025 15601195731.59
+4	101218 32353 2188 11580 201399.64266774791 1120654.776445918315 1107 0 16 2892 19722
+5	133571 10286 2181 11594 200568.42 1122840.3 539 0 5 557 1107
+6	143857 10286 2181 11594 200568.42 1122840.3 539 0 9 555 1749
+7	154143 32400 2179 11596 200529.229410681207 1123196.11373764119 1111 0 10 3131 11483

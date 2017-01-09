@@ -4,9 +4,9 @@ $iniName = "parkingStudy.ini"
 $configuration = "ParkingMeasurement"
 $repetitions = 1
 
-$awkScriptPath = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\simulations\parse.awk" 
-$relativeBinLocation = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\src\PESC_Control_Tower"
-$relativePathToSrc = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\src"
+$awkScriptPath = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/simulations/parse.awk" 
+$relativeBinLocation = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/src/PESC_Control_Tower"
+$relativePathToSrc = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/src"
 
 # Script body
 
@@ -27,7 +27,7 @@ $runSimulation =
 	Write-Host "inizio parsing con gawk"
 	
     cd results
-    	gawk -f $awkScriptPath -v out=$configuration ( "./" + $configuration + "-*.vec" )
+    	gawk -f $awkScriptPath -v out=$configuration ( Get-ChildItem -Filter ($configuration + "-*.vec") | % name )
     cd ..
 	
 	Write-Host "fine parsing con gawk"

@@ -1,0 +1,47 @@
+file 99626 1483893056                                           
+version 2
+run ParkingMeasurement-123-20170108-17:30:56-5574
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:56
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=123
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5574
+attr repetition 123
+attr replication #123
+attr resultdir results
+attr runnumber 123
+attr seedset 123
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1445 13550 568 5926 100328.897699564029 1030270.27163509168 317 885.20797478624 22817.476387502 1751391.4371911 13394838883.331
+1	14995 9978 582 5907 103931.758107369686 1029106.020084457118 315 0 1163.8307588016 24148.039064117 15099584.133988
+2	24973 18173 580 5907 103931.758107369686 1029106.020084457118 630 0 3 341 375
+3	43146 10025 565 5923 100269.239362326835 1029986.500637149884 317 0 1642.5011707983 20297.715676554 11308326.673695
+4	53171 18263 565 5923 100269.239362326835 1029986.500637149884 633 0 3 336 364
+5	71434 4981 578 5929 102000 1035000 312 0 5 317 619
+6	76415 4981 578 5929 102000 1035000 312 0 5 318 622
+7	81396 18230 563 5917 100269.239362326835 1029953.323515090683 632 0 6 700 1344

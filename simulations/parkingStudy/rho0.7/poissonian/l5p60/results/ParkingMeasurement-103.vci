@@ -1,0 +1,47 @@
+file 346335 1483893017                                          
+version 2
+run ParkingMeasurement-103-20170108-17:30:17-5285
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:17
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=103
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5285
+attr repetition 103
+attr replication #103
+attr resultdir results
+attr runnumber 103
+attr seedset 103
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1453 44252 2811 20170 152090.776770632549 1036527.335833629281 1019 540.11158523167 31500.385269978 6484599.5532535 57694675071.646
+1	45705 39671 2796 20107 150928.265378796786 1034010.401026387399 1022 0 2462.98306365 300935.20478927 245195365.77683
+2	85376 60314 2794 20107 150928.265378796786 1034010.401026387399 2044 0 6 1632 2846
+3	145690 39794 2804 20172 151471.621853537579 1036527.335833629281 1020 0 10582.914242509 1094023.147265 4293257462.7079
+4	185484 60425 2799 20172 151294.811262850631 1036527.335833629281 2045 0 20 3819 22623
+5	245909 19988 2792 20168 150860.16 1036306.44 1034 0 7 1022 2044
+6	265897 19988 2792 20168 150860.16 1036306.44 1034 0 7 1018 2168
+7	285885 60450 2798 20165 151294.811262850631 1036176.279538438556 2047 0 11 9189 49559

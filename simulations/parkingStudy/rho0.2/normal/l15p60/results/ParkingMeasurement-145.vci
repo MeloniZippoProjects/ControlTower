@@ -1,0 +1,47 @@
+file 53456 1483893111                                           
+version 2
+run ParkingMeasurement-145-20170108-17:31:51-5960
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:51
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=145
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5960
+attr repetition 145
+attr replication #145
+attr resultdir results
+attr runnumber 145
+attr seedset 145
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 7192 712 3537 200489.554755430475 1120960.322255083982 168 5205.0133699914 34275.45327273 1756693.6683791 23216157105.19
+1	8668 5343 726 3551 206126.719795585392 1122383.739170107882 169 0 1728.9204314826 12924.129000367 9791245.7349576
+2	14011 9767 724 3551 206126.719795585392 1122383.739170107882 338 0 2 173 177
+3	23778 5276 717 3559 202224.472352530245 1123159.767123551982 168 0 2208.747112641 19905.421611389 19908022.817789
+4	29054 9720 715 3559 202224.472352530245 1123159.767123551982 336 0 3 178 192
+5	38774 2471 722 3547 204000 1122000 154 0 5 169 349
+6	41245 2471 722 3547 204000 1122000 154 0 5 169 367
+7	43716 9740 714 3557 202224.472352530245 1123159.767123551982 337 0 4 398 752

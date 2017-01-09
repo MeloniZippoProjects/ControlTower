@@ -1,0 +1,47 @@
+file 190086 1483892948                                          
+version 2
+run ParkingMeasurement-147-20170108-17:29:08-4942
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:08
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=147
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4942
+attr repetition 147
+attr replication #147
+attr resultdir results
+attr runnumber 147
+attr seedset 147
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 24295 2048 11573 203820.711967194584 1122694.403667147556 564 3636.7498790039 37248.597631933 5075855.5871569 64571186361.724
+1	25777 22327 2017 11553 200672.014508146472 1120839.716450804906 564 0 7008.27086431 357137.58996323 692617985.88833
+2	48104 32908 2015 11553 200672.014508146472 1120839.716450804906 1128 0 8 990 2084
+3	81012 22561 2045 11570 203531.037050374588 1122389.755143587451 564 0 27548.140572566 2113552.0361611 24045062606.294
+4	103573 33045 2023 11570 201262.815199615613 1122389.755143587451 1128 0 25 3984 41560
+5	136618 10286 2013 11575 200568.42 1122840.3 539 0 3 565 921
+6	146904 10286 2013 11575 200568.42 1122840.3 539 0 6 565 1613
+7	157190 32896 2022 11567 201262.815199615613 1122389.755143587451 1128 0 3 1578 2936

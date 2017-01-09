@@ -1,0 +1,47 @@
+file 102297 1483893044                                          
+version 2
+run ParkingMeasurement-81-20170108-17:30:44-5488
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:44
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=81
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5488
+attr repetition 81
+attr replication #81
+attr resultdir results
+attr runnumber 81
+attr seedset 81
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1439 13890 660 6150 111583.264116132402 1030761.448607759729 325 453.73755547438 21991.760237822 1752331.3550759 13043386213.536
+1	15329 10240 648 6139 110834.355568655429 1029599.201248764458 325 0 1631.6910272165 20741.054087458 13806002.8953
+2	25569 18748 646 6139 110834.355568655429 1029599.201248764458 650 0 4 341 373
+3	44317 10478 657 6147 111570.754995960543 1030554.793245562027 325 0 2276.6621570791 30525.096657144 27810417.566422
+4	54795 18768 655 6147 111570.754995960543 1030554.793245562027 650 0 3 345 369
+5	73563 4982 642 6153 102000 1035000 312 0 5 325 667
+6	78545 4982 642 6153 102000 1035000 312 0 5 325 681
+7	83527 18770 651 6144 110989.739329041229 1030554.793245562027 650 0 4 735 1373

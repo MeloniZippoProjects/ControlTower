@@ -1,0 +1,47 @@
+file 108155 1483893044                                          
+version 2
+run ParkingMeasurement-79-20170108-17:30:44-5484
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:44
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=79
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5484
+attr repetition 79
+attr replication #79
+attr resultdir results
+attr runnumber 79
+attr seedset 79
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1439 14750 433 6248 102337.718326525411 1036607.882068131844 345 644.89122354526 21193.664054144 1896922.0479734 14248354277.918
+1	16189 11048 413 6237 100687.831739974542 1035330.483501174491 346 0 1920.7795843701 24995.98813309 15772380.243433
+2	27237 19961 411 6237 100687.831739974542 1035330.483501174491 692 0 2 352 358
+3	47198 11205 430 6245 102184.447597520411 1036177.498057666081 345 0 2953.2647147488 50352.851701871 55364043.028694
+4	58403 19882 428 6245 102184.447597520411 1036177.498057666081 690 0 3 385 441
+5	78285 4977 426 6233 102000 1035000 312 0 5 344 716
+6	83262 4977 426 6233 102000 1035000 312 0 5 344 718
+7	88239 19916 419 6242 100788.080430506303 1036177.498057666081 691 0 5 859 1761

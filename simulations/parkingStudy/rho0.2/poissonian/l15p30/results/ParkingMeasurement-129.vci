@@ -1,0 +1,47 @@
+file 50284 1483893143                                           
+version 2
+run ParkingMeasurement-129-20170108-17:32:23-6190
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:23
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=129
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6190
+attr repetition 129
+attr replication #129
+attr resultdir results
+attr runnumber 129
+attr seedset 129
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1448 6657 522 3147 166407.429817840349 1034439.692626901404 156 1963.2023408425 38344.463268407 1443352.7998988 19188127376.134
+1	8105 5130 510 3152 161233.762258763691 1034722.629683216726 157 0 4801.9596300463 43059.208394128 94399005.884964
+2	13235 9042 508 3152 161233.762258763691 1034722.629683216726 314 0 2 167 177
+3	22277 5239 519 3160 166389.990802855012 1036313.128142702752 157 0 5036.6758427414 62726.024962253 164081022.1043
+4	27516 9060 517 3160 166389.990802855012 1036313.128142702752 314 0 3 195 257
+5	36576 2328 506 3132 156000 1032000 147 0 4 155 335
+6	38904 2328 506 3132 156000 1032000 147 0 6 155 359
+7	41232 9052 514 3157 163354.937503773268 1036313.128142702752 314 0 3 247 353

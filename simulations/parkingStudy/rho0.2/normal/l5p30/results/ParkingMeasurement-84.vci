@@ -1,0 +1,47 @@
+file 100189 1483893052                                          
+version 2
+run ParkingMeasurement-84-20170108-17:30:52-5547
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:52
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=84
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5547
+attr repetition 84
+attr replication #84
+attr resultdir results
+attr runnumber 84
+attr seedset 84
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1467 13602 512 5895 100659.756629390266 1033536.163332908057 318 2302.496565965 20995.853082203 1713669.1439594 12048810953.526
+1	15069 10083 519 5909 105341.613856427681 1036533.047492173602 319 0 497.75794332215 10300.508818393 2356011.4488076
+2	25152 18456 517 5912 105341.613856427681 1036742.716913770114 639 0 2 324 328
+3	43608 9940 509 5892 100340.896499962548 1033256.181329198605 318 0 471.66427055026 7550.4231237824 1675470.0153109
+4	53548 18352 507 5892 100340.896499962548 1033256.181329198605 636 0 2 320 322
+5	71900 4970 514 5897 102000 1035000 312 0 4 317 635
+6	76870 4970 514 5897 102000 1035000 312 0 4 318 622
+7	81840 18349 506 5904 100340.896499962548 1035908.462625277414 636 0 4 684 1234

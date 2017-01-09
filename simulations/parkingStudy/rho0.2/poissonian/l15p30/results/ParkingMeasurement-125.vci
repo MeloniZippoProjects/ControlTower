@@ -1,0 +1,47 @@
+file 42435 1483893142                                           
+version 2
+run ParkingMeasurement-125-20170108-17:32:22-6182
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:22
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=125
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6182
+attr repetition 125
+attr replication #125
+attr resultdir results
+attr runnumber 125
+attr seedset 125
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1448 5667 433 2651 151492.695730971895 1035674.717475373579 133 1381.1754158693 50460.273197269 1336677.8688687 19575703848.748
+1	7115 4021 419 2640 150600.325252604181 1032192.147103945765 129 0 5358.2350714128 30539.978143436 88494241.980415
+2	11136 7354 419 2640 150600.325252604181 1032192.147103945765 257 0 3 136 148
+3	18490 4206 424 2648 150693.134270617074 1035207.372381932518 133 0 2926.7177127303 19421.068934521 28675290.186693
+4	22696 7602 414 2648 150370.790909900507 1035207.372381932518 265 0 3 140 152
+5	30298 2312 474 2636 156000 1032000 147 0 7 131 279
+6	32610 2312 474 2636 156000 1032000 147 0 6 132 282
+7	34922 7513 413 2645 150370.790909900507 1035207.372381932518 262 0 4 209 315

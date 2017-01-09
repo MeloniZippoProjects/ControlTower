@@ -1,0 +1,47 @@
+file 50548 1483893091                                           
+version 2
+run ParkingMeasurement-87-20170108-17:31:31-5805
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:31
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=87
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5805
+attr repetition 87
+attr replication #87
+attr resultdir results
+attr runnumber 87
+attr seedset 87
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1442 6759 522 3185 214001.291931971558 1116855.954588148022 158 1160.2750364003 31625.458598284 1697801.9148531 24090982457.501
+1	8201 5017 502 3173 206099.595399464645 1115058.477528770211 159 0 2742.7884226963 25283.247221989 41528811.991585
+2	13218 9174 500 3173 206099.595399464645 1115058.477528770211 318 0 2 165 171
+3	22392 4957 519 3182 213866.607839688283 1116707.137712590764 158 0 2931.6000720089 23219.399985079 35881643.289713
+4	27349 9133 517 3182 213866.607839688283 1116707.137712590764 316 0 2 164 170
+5	36482 2451 498 3187 204000 1122000 154 0 4 159 297
+6	38933 2451 498 3187 204000 1122000 154 0 5 160 336
+7	41384 9164 505 3179 206329.528568897563 1116707.137712590764 317 0 5 345 659

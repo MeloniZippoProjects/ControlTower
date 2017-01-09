@@ -1,0 +1,47 @@
+file 363140 1483892855                                          
+version 2
+run ParkingMeasurement-73-20170108-17:27:35-3559
+attr configname ParkingMeasurement
+attr datetime 20170108-17:27:35
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=73
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 3559
+attr repetition 73
+attr replication #73
+attr resultdir results
+attr runnumber 73
+attr seedset 73
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1475 46458 2227 20414 100786.643547469025 1036708.994986855574 1071 2382.1065078767 10132.967542146 4305351.8765714 18506895590.804
+1	47933 41808 2229 20402 100786.643547469025 1036160.105458029532 1068 0 1144.3722263431 167464.10741427 56770278.667735
+2	89741 62993 2224 20402 100686.844075617401 1036160.105458029532 2136 0 4 1412 1876
+3	152734 41845 2218 20416 100499.010019310977 1036708.994986855574 1072 0 4999.8235035822 618625.80402582 1077621382.4082
+4	194579 63205 2218 20416 100499.010019310977 1036708.994986855574 2141 0 10 2695 8439
+5	257784 21128 2214 20404 100287.72 1036306.44 1093 0 3 1071 1905
+6	278912 21128 2214 20404 100287.72 1036306.44 1093 0 3 1070 1918
+7	300040 63100 2216 20410 100499.010019310977 1036523.913248277421 2138 0 7 5419 17909

@@ -1,0 +1,47 @@
+file 177666 1483892941                                          
+version 2
+run ParkingMeasurement-126-20170108-17:29:01-4899
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:01
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=126
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4899
+attr repetition 126
+attr replication #126
+attr resultdir results
+attr runnumber 126
+attr seedset 126
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 22551 2033 10924 204302.269992883484 1120540.104619377337 524 3340.2062394393 31749.053794573 4307296.1981458 49554824985.523
+1	24033 20494 2001 10952 201389.950918161852 1122604.222675349733 528 0 3889.8382445537 322342.37270879 510148196.68126
+2	44527 30756 1996 10952 200652.245351565348 1122604.222675349733 1056 0 5 940 1692
+3	75283 20488 2030 10921 204057.430741200815 1120206.436813762964 524 0 24433.157971017 1500165.568443 16510126938.598
+4	95771 30677 2021 10956 203293.984707580092 1123034.507682421876 1051 0 28 3014 33514
+5	126448 10245 1994 10954 200568.42 1122840.3 539 0 3 528 840
+6	136693 10245 1994 10954 200568.42 1122840.3 539 0 7 524 1426
+7	146938 30728 1999 10955 201389.950918161852 1123034.507682421876 1055 0 3 1504 2924

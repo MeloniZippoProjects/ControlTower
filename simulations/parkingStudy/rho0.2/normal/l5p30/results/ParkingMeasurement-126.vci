@@ -1,0 +1,47 @@
+file 98817 1483893064                                           
+version 2
+run ParkingMeasurement-126-20170108-17:31:04-5630
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:04
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=126
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5630
+attr repetition 126
+attr replication #126
+attr resultdir results
+attr runnumber 126
+attr seedset 126
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 13341 642 5931 105494.823841858667 1035483.962285988937 312 2334.0965973875 18167.831568785 1710808.2069497 11966186527.246
+1	14814 9992 630 5933 102825.709210301488 1035483.962285988937 313 0 487.52085821991 12277.760401269 2769588.2581221
+2	24806 18080 628 5933 102825.709210301488 1035483.962285988937 626 0 2 319 325
+3	42886 9904 639 5925 105217.208532196523 1035163.498389203014 312 0 947.74977299005 14796.420654207 5418074.1378068
+4	52790 18017 637 5925 105217.208532196523 1035163.498389203014 624 0 2 322 332
+5	70807 4984 626 5921 102000 1035000 312 0 4 312 632
+6	75791 4984 626 5921 102000 1035000 312 0 4 311 613
+7	80775 18042 633 5936 103112.175182964041 1035792.999158273386 625 0 4 689 1277

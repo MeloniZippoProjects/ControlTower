@@ -1,0 +1,47 @@
+file 92826 1483893179                                           
+version 2
+run ParkingMeasurement-74-20170108-17:32:59-6435
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:59
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=74
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6435
+attr repetition 74
+attr replication #74
+attr resultdir results
+attr runnumber 74
+attr seedset 74
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 12446 775 5696 126730.03546350113 1036288.717990899272 291 3471.2295371098 30723.691971299 2174441.422374 19785830166.637
+1	13913 9312 732 5701 121593.772943895043 1036358.077965395217 293 0 364.29195692866 9124.5490114964 1878145.4550597
+2	23225 16954 730 5701 121593.772943895043 1036358.077965395217 586 0 2 295 297
+3	40179 9247 769 5693 126393.984065635808 1036005.732263308276 291 0 543.25423202012 11494.007682029 3251617.494924
+4	49426 16799 761 5693 126179.779615180817 1036005.732263308276 582 0 2 301 311
+5	66225 4869 750 5686 123000 1035000 305 0 5 292 592
+6	71094 4869 750 5686 123000 1035000 305 0 6 289 589
+7	75963 16863 735 5704 121887.433732139595 1036641.876616264106 584 0 7 1006 2664

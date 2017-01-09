@@ -1,15 +1,15 @@
-file 46467 1483715070                                           
+file 46478 1483893129                                           
 version 2
-run ParkingMeasurement-50-20170106-02:04:33-12067
+run ParkingMeasurement-50-20170108-17:32:09-6085
 attr configname ParkingMeasurement
-attr datetime 20170106-02:04:33
+attr datetime 20170108-17:32:09
 attr experiment ParkingMeasurement
 attr inifile parkingStudy.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=50
 attr measurement ""
-attr network SimNetwork
-attr processid 12067
+attr network controltower.SimNetwork
+attr processid 6085
 attr repetition 50
 attr replication #50
 attr resultdir results
@@ -20,27 +20,28 @@ param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
 param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
 param SimNetwork.a.runway.throughputCheckInterval 100min
 param SimNetwork.wg.interArrivalTime exponential(100min)
+
 vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
-attr source parkingOccupancy
-7	38167 8300 682 3123 201564.346692900174 1121697.866571749284 287 0 3 221 307
+attr source  parkingOccupancy
 vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
-attr source queueLengthSignal
-4	24909 8334 683 3126 201564.346692900174 1121697.866571749284 288 0 3 150 160
+attr source  queueLengthSignal
 vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
-attr source queueTimeSignal
-3	20406 4503 685 3126 201564.346692900174 1121697.866571749284 144 0 2260.5216009539 19057.490707115 23438531.260563
+attr source  queueTimeSignal
 vector 0  SimNetwork.wg  responseTime:vector  ETV
-attr source responseTimeSignal
-0	1459 6167 688 3130 201885.124435808952 1122010.840499538413 144 3568.5146189949 31271.672569877 1389263.0994649 18686770598.681
+attr source  responseTimeSignal
 vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
-attr source landedThroughputSignal
-5	33243 2462 690 3128 204000 1122000 154 0 5 144 288
+attr source  landedThroughputSignal
 vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
-attr source tookoffThroughputSignal
-6	35705 2462 690 3128 204000 1122000 154 0 5 143 303
+attr source  tookoffThroughputSignal
 vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
-attr source queueLengthSignal
-2	12136 8270 693 3102 210572.799870329354 1119281.676473592453 286 0 2 147 151
+attr source  queueLengthSignal
 vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
-attr source queueTimeSignal
-1	7626 4510 695 3102 210572.799870329354 1119281.676473592453 143 0 1027.8556572016 10907.740242408 7380239.2173653
+attr source  queueTimeSignal
+0	1470 6167 688 3130 201885.124435808952 1122010.840499538413 144 3568.5146189949 31271.672569877 1389263.0994649 18686770598.681
+1	7637 4510 695 3102 210572.799870329354 1119281.676473592453 143 0 1027.8556572016 10907.740242408 7380239.2173652
+2	12147 8270 693 3102 210572.799870329354 1119281.676473592453 286 0 2 147 151
+3	20417 4503 685 3126 201564.346692900174 1121697.866571749284 144 0 2260.5216009539 19057.490707115 23438531.260562
+4	24920 8334 683 3126 201564.346692900174 1121697.866571749284 288 0 3 150 160
+5	33254 2462 690 3128 204000 1122000 154 0 5 144 288
+6	35716 2462 690 3128 204000 1122000 154 0 5 143 303
+7	38178 8300 682 3123 201564.346692900174 1121697.866571749284 287 0 3 221 307

@@ -1,0 +1,47 @@
+file 102283 1483893172                                          
+version 2
+run ParkingMeasurement-75-20170108-17:32:52-6390
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:52
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=75
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6390
+attr repetition 75
+attr replication #75
+attr resultdir results
+attr runnumber 75
+attr seedset 75
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1439 13994 761 6247 150586.593676975812 1034753.159154163412 327 590.53620227026 30331.049636901 2363056.2131751 24873779089.449
+1	15433 10428 793 6212 159148.85233121579 1032212.715198530769 323 0 1271.651903358 23921.522550153 14495373.974481
+2	25861 18679 791 6212 159148.85233121579 1032212.715198530769 646 0 3 351 391
+3	44540 10702 766 6244 152384.256100241905 1034587.109534554235 326 0 1764.7930279075 35825.471742109 26885702.18263
+4	55242 18842 764 6244 152384.256100241905 1034587.109534554235 652 0 2 344 362
+5	74084 4721 779 6249 153000 1035000 295 0 4 323 707
+6	78805 4721 779 6249 153000 1035000 295 0 4 327 711
+7	83526 18757 763 6238 152384.256100241905 1034275.55147842285 649 0 6 1204 3268

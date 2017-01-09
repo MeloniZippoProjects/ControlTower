@@ -1,0 +1,47 @@
+file 101595 1483893172                                          
+version 2
+run ParkingMeasurement-77-20170108-17:32:52-6394
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:52
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=77
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6394
+attr repetition 77
+attr replication #77
+attr resultdir results
+attr runnumber 77
+attr seedset 77
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1439 13856 969 6432 150690.229401908865 1036519.808208047381 324 420.90838724785 32076.101835006 2258818.6845315 22321162719.814
+1	15295 10401 984 6420 157534.604378784218 1034870.506589159245 323 0 1554.8247863846 27084.764494312 17715151.408555
+2	25696 18694 982 6420 157534.604378784218 1034870.506589159245 646 0 2 333 343
+3	44390 10367 966 6429 150643.037226203572 1036226.92502731612 324 0 3102.9959466503 35488.535269517 36829365.199846
+4	54757 18696 964 6429 150643.037226203572 1036226.92502731612 648 0 3 356 396
+5	73453 4728 979 6422 153000 1035000 295 0 5 322 662
+6	78181 4728 979 6422 153000 1035000 295 0 5 323 691
+7	82909 18686 963 6426 150643.037226203572 1036226.92502731612 647 0 10 1184 3596

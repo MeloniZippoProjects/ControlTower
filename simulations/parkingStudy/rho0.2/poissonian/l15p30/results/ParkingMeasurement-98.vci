@@ -1,0 +1,47 @@
+file 44695 1483893135                                           
+version 2
+run ParkingMeasurement-98-20170108-17:32:15-6130
+attr configname ParkingMeasurement
+attr datetime 20170108-17:32:15
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=98
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6130
+attr repetition 98
+attr replication #98
+attr resultdir results
+attr runnumber 98
+attr seedset 98
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1442 5956 347 2713 153242.785803784195 1025615.073801448829 140 1887.6739702597 49456.410442823 1352283.5984888 20559562925.871
+1	7398 4319 349 2702 153242.785803784195 1022792.500815746268 139 0 2369.4340556965 19196.34798035 25263983.200107
+2	11717 7972 344 2702 152098.075082476995 1022792.500815746268 278 0 2 143 147
+3	19689 4340 341 2710 151988.372077558923 1025108.356493437253 140 0 2713.853820111 12918.823753596 15435785.957811
+4	24029 8016 339 2710 151988.372077558923 1025108.356493437253 280 0 2 144 148
+5	32045 2315 378 2716 156000 1032000 147 0 4 140 280
+6	34360 2315 378 2716 156000 1032000 147 0 4 140 280
+7	36675 8020 336 2707 150856.749091220332 1025108.356493437253 280 0 3 234 348

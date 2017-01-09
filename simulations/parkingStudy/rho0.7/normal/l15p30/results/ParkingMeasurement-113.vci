@@ -1,0 +1,47 @@
+file 179802 1483892936                                          
+version 2
+run ParkingMeasurement-113-20170108-17:28:56-4873
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:56
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=113
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4873
+attr repetition 113
+attr replication #113
+attr resultdir results
+attr runnumber 113
+attr seedset 113
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 22926 1987 10901 211658.598118261362 1122807.584618545577 533 3575.4279509177 25067.975836431 4488816.4875059 47580008819.618
+1	24408 20669 1848 10876 200509.786547235687 1120594.961177316327 532 0 4150.4868628776 293765.68112487 434187242.11724
+2	45077 30989 1846 10876 200509.786547235687 1120594.961177316327 1064 0 5 866 1440
+3	76066 21137 1984 10898 211321.125584529418 1122427.542177074225 533 0 17692.62906874 1669291.4901722 13838952376.716
+4	97203 31125 1852 10898 200845.403210357505 1122427.542177074225 1066 0 18 3223 24193
+5	128328 10236 1850 10903 200568.42 1122840.3 539 0 3 534 844
+6	138564 10236 1850 10903 200568.42 1122840.3 539 0 6 533 1491
+7	148800 31002 1851 10895 200845.403210357505 1122427.542177074225 1065 0 3 1467 2753

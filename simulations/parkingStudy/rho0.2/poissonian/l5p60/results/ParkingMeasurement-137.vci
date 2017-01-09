@@ -1,0 +1,47 @@
+file 84682 1483893190                                           
+version 2
+run ParkingMeasurement-137-20170108-17:33:10-6514
+attr configname ParkingMeasurement
+attr datetime 20170108-17:33:10
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=137
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6514
+attr repetition 137
+attr replication #137
+attr resultdir results
+attr runnumber 137
+attr seedset 137
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1445 11363 673 5198 151126.364720509547 1031333.958560634967 266 674.23861878513 24316.99096292 1997754.9836236 20572433673.532
+1	12808 8131 662 5204 150396.940923058972 1034341.837443316808 266 0 1193.2196855446 9038.2502569995 4842513.0536809
+2	20939 15347 660 5204 150396.940923058972 1034341.837443316808 532 0 2 268 270
+3	36286 8306 670 5195 151016.066449909564 1031092.110069821868 266 0 2854.1702998237 20083.194131403 18439571.462753
+4	44592 15330 665 5195 150997.884356683331 1031092.110069821868 532 0 2 274 282
+5	59922 4709 691 5209 153000 1035000 295 0 4 267 459
+6	64631 4709 691 5209 153000 1035000 295 0 4 266 468
+7	69340 15342 664 5207 150997.884356683331 1034372.273039262675 532 0 5 770 1690

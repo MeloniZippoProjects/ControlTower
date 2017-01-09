@@ -1,0 +1,47 @@
+file 185506 1483892888                                          
+version 2
+run ParkingMeasurement-83-20170108-17:28:08-4415
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:08
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=83
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4415
+attr repetition 83
+attr replication #83
+attr resultdir results
+attr runnumber 83
+attr seedset 83
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 23771 1799 11165 201876.513832711952 1122795.661671470831 553 5149.8349583887 23820.320951258 5225365.0404727 57583059022.885
+1	25247 21442 1810 11152 202718.250212392605 1119314.918913509057 552 0 3977.1771392717 289639.54811963 404099076.22124
+2	46689 32170 1808 11152 202718.250212392605 1119314.918913509057 1104 0 5 878 1424
+3	78859 21602 1793 11171 201551.71968778784 1122925.932499420256 554 0 17234.355984525 1361031.0643539 10677560192.548
+4	100461 32296 1791 11171 201551.71968778784 1122925.932499420256 1108 0 18 2624 19198
+5	132757 10260 1786 11167 200568.42 1122840.3 539 0 3 553 875
+6	143017 10260 1786 11167 200568.42 1122840.3 539 0 6 553 1385
+7	153277 32229 1788 11168 201093.075212473451 1122925.932499420256 1107 0 5 2744 8350

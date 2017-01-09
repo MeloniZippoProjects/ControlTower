@@ -1,0 +1,47 @@
+file 97097 1483893182                                           
+version 2
+run ParkingMeasurement-85-20170108-17:33:02-6457
+attr configname ParkingMeasurement
+attr datetime 20170108-17:33:02
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=85
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 6457
+attr repetition 85
+attr replication #85
+attr resultdir results
+attr runnumber 85
+attr seedset 85
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 13142 849 6048 126050.899869109051 1035397.2389616521 307 3878.8118800191 25575.990453172 2223356.5144578 18841728242.563
+1	14609 9742 828 6053 121367.433311149984 1035433.41069333486 309 0 425.29587784153 9469.7479579533 2107070.3284217
+2	24351 17854 826 6053 121367.433311149984 1035433.41069333486 618 0 2 315 321
+3	42205 9565 845 6045 125770.900739530741 1035102.106943211847 307 0 692.98392331264 9680.5143922948 2866809.4606726
+4	51770 17769 843 6045 125770.900739530741 1035102.106943211847 614 0 3 315 327
+5	69539 4879 833 6041 123000 1035000 305 0 5 308 618
+6	74418 4879 833 6041 123000 1035000 305 0 5 306 612
+7	79297 17800 831 6056 121783.621572556689 1035668.645492240954 616 0 5 1020 2508

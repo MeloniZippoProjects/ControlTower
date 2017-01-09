@@ -1,0 +1,47 @@
+file 173650 1483892894                                          
+version 2
+run ParkingMeasurement-131-20170108-17:28:14-4558
+attr configname ParkingMeasurement
+attr datetime 20170108-17:28:14
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=131
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4558
+attr repetition 131
+attr replication #131
+attr resultdir results
+attr runnumber 131
+attr seedset 131
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 22141 2220 10982 201413.303219475191 1122887.967216873671 515 4712.4351667959 31815.033859922 4891928.2263143 56096885401.79
+1	23623 19870 2234 10970 203848.148068517898 1121573.512252655709 514 0 4843.8322418504 289923.78778442 491574002.57766
+2	43493 29896 2232 10970 203848.148068517898 1121573.512252655709 1028 0 6 834 1498
+3	73389 19772 2217 10978 201123.427884978757 1122561.285358807947 515 0 21722.197694087 1200898.0324805 10444494021.099
+4	93161 30015 2217 10978 201123.427884978757 1122561.285358807947 1029 0 21 2428 19834
+5	123176 10256 2213 10980 200568.42 1122840.3 539 0 2 517 833
+6	133432 10256 2213 10980 200568.42 1122840.3 539 0 6 514 1308
+7	143688 29962 2215 10976 201123.427884978757 1122561.285358807947 1029 0 5 2569 8011

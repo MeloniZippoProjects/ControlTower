@@ -1,0 +1,47 @@
+file 54106 1483893105                                           
+version 2
+run ParkingMeasurement-119-20170108-17:31:44-5917
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:44
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=119
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5917
+attr repetition 119
+attr replication #119
+attr resultdir results
+attr runnumber 119
+attr seedset 119
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 7321 522 3385 213336.168569467872 1117715.739815611846 171 5218.9832904144 36794.721619054 1769904.1173156 23122587922.939
+1	8797 5354 502 3365 208407.059329082147 1112206.012028110191 171 0 1399.7195997674 12092.155301969 7641531.3025947
+2	14151 9878 500 3365 208407.059329082147 1112206.012028110191 342 0 2 173 175
+3	24029 5391 519 3382 213047.434781869004 1117385.221473518264 171 0 1859.4473076258 18797.38789942 17209836.53687
+4	29420 9889 517 3382 213047.434781869004 1117385.221473518264 342 0 2 173 175
+5	39309 2460 498 3387 204000 1122000 154 0 5 171 341
+6	41769 2460 498 3387 204000 1122000 154 0 4 171 331
+7	44229 9877 505 3379 209258.720484573802 1117385.221473518264 342 0 4 377 671

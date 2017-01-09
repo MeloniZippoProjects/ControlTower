@@ -1,0 +1,47 @@
+file 45272 1483893105                                           
+version 2
+run ParkingMeasurement-120-20170108-17:31:45-5919
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:45
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=120
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5919
+attr repetition 120
+attr replication #120
+attr resultdir results
+attr runnumber 120
+attr seedset 120
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 5972 489 2857 204491.640878903305 1117734.187432454872 140 5264.36283168 39864.213069077 1600956.4534829 24212542961.45
+1	7448 4404 477 2863 201512.780087809985 1122968.066988921633 140 0 1142.0352716015 9996.0673930694 6851463.0402395
+2	11852 8059 475 2863 201512.780087809985 1122968.066988921633 280 0 2 146 152
+3	19911 4350 486 2854 204176.676549910831 1117440.932639116533 140 0 1336.7713043171 9620.5167864465 6715962.6413296
+4	24261 8057 484 2854 204176.676549910831 1117440.932639116533 280 0 1 140 140
+5	32318 2453 482 2859 204000 1122000 154 0 4 140 252
+6	34771 2453 482 2859 204000 1122000 154 0 4 141 273
+7	37224 8048 472 2851 201157.546010521826 1117440.932639116533 280 0 4 274 456

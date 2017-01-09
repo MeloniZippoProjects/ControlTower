@@ -1,0 +1,47 @@
+file 48604 1483893110                                           
+version 2
+run ParkingMeasurement-141-20170108-17:31:50-5952
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:50
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=141
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5952
+attr repetition 141
+attr replication #141
+attr resultdir results
+attr runnumber 141
+attr seedset 141
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 6563 584 3162 200527.452488963751 1122455.53597760226 154 5414.71687788 40643.08027743 1706521.0433343 24530392449.255
+1	8039 4749 614 3142 205909.799887179559 1117663.859076214595 150 0 1834.5922312775 13751.569240097 11311784.299075
+2	12788 8634 612 3142 205909.799887179559 1117663.859076214595 300 0 3 160 174
+3	21422 4743 589 3159 201418.80009971831 1122208.367358796509 153 0 2795.3535540789 16262.505927481 25470897.025391
+4	26165 8788 587 3159 201418.80009971831 1122208.367358796509 306 0 2 157 161
+5	34953 2467 610 3155 204000 1122000 154 0 4 152 304
+6	37420 2467 610 3155 204000 1122000 154 0 5 154 324
+7	39887 8717 586 3156 201418.80009971831 1122208.367358796509 303 0 4 337 607

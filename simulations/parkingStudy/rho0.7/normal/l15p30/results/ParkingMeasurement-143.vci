@@ -1,0 +1,47 @@
+file 183027 1483892947                                          
+version 2
+run ParkingMeasurement-143-20170108-17:29:07-4934
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:07
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=143
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4934
+attr repetition 143
+attr replication #143
+attr resultdir results
+attr runnumber 143
+attr seedset 143
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 23329 1884 11072 201800.215526881742 1121786.668818168993 542 3416.7267671511 25663.774129662 4592270.3935382 52102980116.629
+1	24811 21282 1872 11085 200526.884708450473 1122814.089312451238 543 0 4115.910576643 282024.85745399 384639497.74306
+2	46093 31708 1870 11085 200526.884708450473 1122814.089312451238 1087 0 5 874 1428
+3	77801 21405 1881 11066 201490.215920420414 1121464.987910595305 542 0 20537.633788658 1756110.0407509 18386211343.6
+4	99206 31728 1876 11066 201054.736877865981 1121464.987910595305 1084 0 22 3378 31050
+5	130934 10240 1874 11087 200568.42 1122840.3 539 0 3 543 869
+6	141174 10240 1874 11087 200568.42 1122840.3 539 0 6 542 1398
+7	151414 31613 1875 11083 201054.736877865981 1122814.089312451238 1084 0 3 1542 3006

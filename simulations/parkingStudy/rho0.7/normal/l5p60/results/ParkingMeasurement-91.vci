@@ -1,0 +1,47 @@
+file 347091 1483892995                                          
+version 2
+run ParkingMeasurement-91-20170108-17:29:55-5161
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:55
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=91
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5161
+attr repetition 91
+attr replication #91
+attr resultdir results
+attr runnumber 91
+attr seedset 91
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1475 44222 2208 19560 121958.325590393373 1034452.364342271353 1019 3615.9917036577 12591.028563209 5797632.3428219 34038554307.941
+1	45697 39775 2193 19633 121413.201288792442 1036694.131994158073 1027 0 1325.5852492924 155236.88295763 54248013.319676
+2	85472 60576 2191 19633 121413.201288792442 1036694.131994158073 2054 0 5 1367 1839
+3	146048 39115 2201 19554 121675.804127732372 1034143.318909421711 1019 0 3887.4127513077 449921.90459096 614522220.76522
+4	185163 60236 2196 19616 121647.311398411745 1036250.709024107541 2042 0 7 2087 4913
+5	245399 20609 2203 19621 121716.72 1036306.44 1068 0 4 1025 1829
+6	266008 20609 2203 19621 121716.72 1036306.44 1068 0 4 1019 1747
+7	286617 60474 2188 19631 121186.15799270509 1036694.131994158073 2050 0 13 9223 49869

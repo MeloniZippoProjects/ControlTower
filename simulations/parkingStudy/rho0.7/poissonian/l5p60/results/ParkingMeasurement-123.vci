@@ -1,0 +1,47 @@
+file 337880 1483893024                                          
+version 2
+run ParkingMeasurement-123-20170108-17:30:24-5310
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:24
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=123
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5310
+attr repetition 123
+attr replication #123
+attr resultdir results
+attr runnumber 123
+attr seedset 123
+param SimNetwork.a.parkingLot.parkingDelay exponential(60min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1453 42938 2881 19701 150654.575063100705 1032747.250555094264 989 329.60236259875 29687.001311054 6815031.8555131 67719052483.179
+1	44391 38683 2933 19771 152181.704633999069 1036021.117390274954 993 0 2818.2016548598 352803.63579641 381439416.14854
+2	83074 58610 2931 19771 152181.704633999069 1036021.117390274954 1986 0 8 1845 3873
+3	141684 38934 2878 19777 150525.894760527391 1036425.070074324089 990 0 13978.252479861 1459272.8874984 9151964281.8465
+4	180618 58616 2878 19777 150525.894760527391 1036425.070074324089 1982 0 25 4939 48635
+5	239234 19996 2896 19773 150860.16 1036306.44 1034 0 5 993 2031
+6	259230 19996 2896 19773 150860.16 1036306.44 1034 0 6 989 2181
+7	279226 58654 2876 19775 150525.894760527391 1036425.070074324089 1986 0 12 9123 49953

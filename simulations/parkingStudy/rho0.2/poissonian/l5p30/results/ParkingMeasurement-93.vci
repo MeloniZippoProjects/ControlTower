@@ -1,0 +1,47 @@
+file 103980 1483893047                                          
+version 2
+run ParkingMeasurement-93-20170108-17:30:47-5514
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:47
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=93
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5514
+attr repetition 93
+attr replication #93
+attr resultdir results
+attr runnumber 93
+attr seedset 93
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(5min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1439 14178 592 6181 101642.434938519222 1027835.95721925721 332 598.3228433167 35485.386268365 1757044.3335534 13701618937.052
+1	15617 10424 581 6188 100529.033113136456 1034923.139379935355 331 0 1309.6037373003 21783.629218822 12650815.815894
+2	26041 19102 579 6188 100529.033113136456 1034923.139379935355 662 0 3 343 359
+3	45143 10612 589 6178 101224.185455052061 1027567.668672543153 332 0 2280.0212585536 31563.923465843 30665763.94851
+4	55755 19140 587 6178 101224.185455052061 1027567.668672543153 664 0 5 366 440
+5	74895 4983 594 6193 102000 1035000 312 0 5 333 687
+6	79878 4983 594 6193 102000 1035000 312 0 6 334 668
+7	84861 19119 584 6191 100580.131412739466 1034964.157037533788 663 0 4 734 1332

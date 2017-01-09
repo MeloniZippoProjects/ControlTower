@@ -1,0 +1,47 @@
+file 176439 1483892956                                          
+version 2
+run ParkingMeasurement-108-20170108-17:29:16-4972
+attr configname ParkingMeasurement
+attr datetime 20170108-17:29:16
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=108
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 4972
+attr repetition 108
+attr replication #108
+attr resultdir results
+attr runnumber 108
+attr seedset 108
+param SimNetwork.a.parkingLot.parkingDelay exponential(30min)
+param SimNetwork.a.runway.landingTime exponential(15min)
+param SimNetwork.a.runway.takeoffTime exponential(5min)
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1454 22588 1376 10323 153098.905643344783 1036506.621138389877 527 1011.7117602626 32066.787121572 4565749.4071813 57528986045.723
+1	24042 20391 1391 10311 157400.609711807811 1035222.369148666877 528 0 8925.0633237865 560638.8875198 1927187221.7062
+2	44433 30577 1389 10311 157400.609711807811 1035222.369148666877 1056 0 11 1206 3428
+3	75010 20658 1373 10328 152976.759556971687 1036783.460231274343 528 0 27752.534889374 1618243.6642033 16035187023.499
+4	95668 30692 1366 10328 150426.390828991111 1036783.460231274343 1056 0 19 2950 23288
+5	126360 9734 1368 10313 150854.88 1035413.04 517 0 6 529 1089
+6	136094 9734 1368 10313 150854.88 1035413.04 517 0 9 526 1726
+7	145828 30611 1365 10325 150426.390828991111 1036783.460231274343 1057 0 6 1598 3772

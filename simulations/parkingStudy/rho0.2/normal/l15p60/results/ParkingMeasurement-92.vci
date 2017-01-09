@@ -1,0 +1,47 @@
+file 42985 1483893098                                           
+version 2
+run ParkingMeasurement-92-20170108-17:31:38-5864
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:38
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=92
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5864
+attr repetition 92
+attr replication #92
+attr resultdir results
+attr runnumber 92
+attr seedset 92
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1470 5679 568 2825 201049.562150106921 1120575.936774763311 133 4929.3083830934 39955.851587859 1588999.5762146 24551744187.91
+1	7149 4044 573 2805 201171.080669324786 1115393.525423801377 131 0 986.53340207694 8554.8326629934 4865816.9723178
+2	11193 7559 571 2805 201171.080669324786 1115393.525423801377 262 0 1 131 131
+3	18752 4018 565 2822 200697.936544328591 1120320.739303447554 133 0 842.13732834203 4208.1231423922 2188668.3950072
+4	22770 7678 563 2822 200697.936544328591 1120320.739303447554 266 0 1 133 133
+5	30448 2462 594 2827 204000 1122000 154 0 4 132 244
+6	32910 2462 594 2827 204000 1122000 154 0 4 133 243
+7	35372 7613 562 2819 200697.936544328591 1120320.739303447554 264 0 4 272 480

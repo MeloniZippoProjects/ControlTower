@@ -1,0 +1,47 @@
+file 44796 1483893101                                           
+version 2
+run ParkingMeasurement-106-20170108-17:31:41-5892
+attr configname ParkingMeasurement
+attr datetime 20170108-17:31:41
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=106
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5892
+attr repetition 106
+attr replication #106
+attr resultdir results
+attr runnumber 106
+attr seedset 106
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 5887 561 2897 205417.414280222474 1119945.799904125149 138 4345.7299892159 42845.384751476 1604102.9925696 24786238329.373
+1	7363 4315 541 2886 203294.214127495366 1118669.664162154168 138 0 1065.4887171265 11104.894684295 6703038.6306193
+2	11678 7935 539 2886 203294.214127495366 1118669.664162154168 276 0 2 140 142
+3	19613 4361 558 2894 205124.42296772947 1119656.416780949116 138 0 1433.7409504314 13498.30654874 10366612.624079
+4	23974 7942 556 2894 205124.42296772947 1119656.416780949116 276 0 2 144 150
+5	31916 2459 546 2899 204000 1122000 154 0 3 139 269
+6	34375 2459 546 2899 204000 1122000 154 0 5 139 271
+7	36834 7962 536 2892 200801.478111444025 1119656.416780949116 277 0 4 299 531

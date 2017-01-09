@@ -1,0 +1,47 @@
+file 97140 1483893051                                           
+version 2
+run ParkingMeasurement-82-20170108-17:30:51-5543
+attr configname ParkingMeasurement
+attr datetime 20170108-17:30:51
+attr experiment ParkingMeasurement
+attr inifile parkingStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=82
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 5543
+attr repetition 82
+attr replication #82
+attr resultdir results
+attr runnumber 82
+attr seedset 82
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1467 13155 457 5670 102516.646717419901 1031887.628249966189 308 2442.1494880534 17287.573463326 1686793.3144984 11758875089.844
+1	14622 9724 445 5676 101352.309946827214 1034957.592778620298 308 0 587.45448822153 10910.210052537 2709910.9148406
+2	24346 17750 443 5676 101352.309946827214 1034957.592778620298 616 0 3 316 328
+3	42096 9566 454 5667 102162.631165916697 1031561.059140602216 308 0 596.4519523635 9053.5110248272 2652431.940696
+4	51662 17775 452 5667 102162.631165916697 1031561.059140602216 616 0 2 312 316
+5	69437 4966 450 5678 102000 1035000 312 0 5 308 588
+6	74403 4966 450 5678 102000 1035000 312 0 5 308 592
+7	79369 17771 448 5680 101667.919173390777 1035261.369837880446 616 0 4 650 1168
