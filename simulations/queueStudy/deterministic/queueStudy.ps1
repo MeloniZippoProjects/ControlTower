@@ -24,7 +24,8 @@ $runSimulation =
         Invoke-Expression ($absoluteBinPath + " -r " + $i + " -u Cmdenv -c " + $configuration + " -n " + $absoluteSrcPath + " --debug-on-errors=false " + $iniName)
     }
 
-	gawk -f $awkScriptPath -v out=$configuration ( Get-ChildItem -Filter ($configuration + "-*.vec") | % name )
+    cd results
+		gawk -f $awkScriptPath -v out=$configuration ( Get-ChildItem -Filter ($configuration + "-*.vec") | % name )
 }
 
 foreach( $ini in $inis )
