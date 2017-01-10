@@ -24,7 +24,7 @@ $runSimulation =
         Invoke-Expression ($relativeBinLocation + " -r " + $i + " -u Cmdenv -c " + $configuration + " -n " + $relativePathToSrc + " --debug-on-errors=false " + $iniName)
     }
 
-	Write-Host "inizio parsing con gawk"
+	Write-Host "inizio parsing con gawk in " ( pwd | % path)
 	
     cd results
     	gawk -f $awkScriptPath -v out=$configuration ( Get-ChildItem -Filter ($configuration + "-*.vec") | % name )

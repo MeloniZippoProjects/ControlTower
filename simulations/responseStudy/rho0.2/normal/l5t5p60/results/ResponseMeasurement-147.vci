@@ -1,0 +1,47 @@
+file 98941 1484074101                                           
+version 2
+run ResponseMeasurement-147-20170110-19:48:21-23028
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:21
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=147
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23028
+attr repetition 147
+attr replication #147
+attr resultdir results
+attr runnumber 147
+attr seedset 147
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1479 13537 717 6044 140662.87251136928 999364.466009175552 317 3908.8740437333 28839.150612373 2209695.8328746 17864223535.025
+1	15016 9966 739 6065 143453.649049415254 1001578.426609599388 317 0 452.8865182177 9592.0348564303 2008014.3919628
+2	24982 18262 737 6065 143453.649049415254 1001578.426609599388 634 0 2 321 325
+3	43244 9942 714 6041 140375.762048692772 999056.643641983734 317 0 1104.1756936181 12315.581098535 4205940.2275536
+4	53186 18278 712 6041 140375.762048692772 999056.643641983734 634 0 1 317 317
+5	71464 4597 719 6070 141000 1002000 288 0 6 319 695
+6	76061 4597 719 6070 141000 1002000 288 0 5 317 653
+7	80658 18283 711 6068 140375.762048692772 1001871.227223878975 634 0 7 1143 3029

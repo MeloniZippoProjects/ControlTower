@@ -1,0 +1,47 @@
+file 84752 1484074074                                           
+version 2
+run ResponseMeasurement-70-20170110-19:47:54-22951
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:54
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=70
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22951
+attr repetition 70
+attr replication #70
+attr resultdir results
+attr runnumber 70
+attr seedset 70
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 11348 575 5100 144689.667926265863 1000143.287252753637 266 3844.7057941892 24244.834803288 1995859.3801317 17915898592.046
+1	12821 8481 562 5106 140424.174918167401 1003910.638358835953 267 0 569.00819275602 8592.9395278242 2013942.4992903
+2	21302 15375 560 5106 140424.174918167401 1003910.638358835953 534 0 2 271 275
+3	36677 8279 572 5097 144387.094901460148 999884.741164998442 266 0 780.18633715596 10984.457359837 3956898.4101328
+4	44956 15306 570 5097 144387.094901460148 999884.741164998442 532 0 2 272 278
+5	60262 4589 567 5102 141000 1002000 288 0 4 266 544
+6	64851 4589 567 5102 141000 1002000 288 0 4 266 514
+7	69440 15312 565 5094 140707.195394644449 999884.741164998442 532 0 5 836 1942

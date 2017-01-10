@@ -1,0 +1,47 @@
+file 114703 1484073141                                          
+version 2
+run ResponseMeasurement-2-20170110-19:32:21-20220
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:21
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=2
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20220
+attr repetition 2
+attr replication #2
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1477 14640 849 6640 141860.073651000424 1001221.769031479042 342 5022.9022037277 24569.919818729 3720047.1292396 46573501833.704
+1	16117 13277 867 6656 143706.674678702355 1002995.758280932985 343 0 2831.6987273395 168154.22124841 174757187.52821
+2	29394 19811 862 6656 143099.857274165241 1002995.758280932985 686 0 3 475 655
+3	49205 13245 842 6631 140819.139459144146 1000497.569735941309 342 0 17229.122879555 850244.55388541 7607600051.621
+4	62450 19828 837 6631 140193.478129249406 1000497.569735941309 686 0 14 1219 6791
+5	82278 6299 847 6652 141428.1 1002853.8 336 0 3 343 635
+6	88577 6299 847 6652 141428.1 1002853.8 336 0 3 343 643
+7	94876 19827 836 6654 140193.478129249406 1002995.758280932985 687 0 5 1323 3579

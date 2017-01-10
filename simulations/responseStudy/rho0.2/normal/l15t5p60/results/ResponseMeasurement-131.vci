@@ -1,0 +1,47 @@
+file 43589 1484073972                                           
+version 2
+run ResponseMeasurement-131-20170110-19:46:12-22708
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:12
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=131
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22708
+attr repetition 131
+attr replication #131
+attr resultdir results
+attr runnumber 131
+attr seedset 131
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 5747 476 2754 209252.487824942011 1061353.151551545564 135 4952.8826484068 39464.318265633 1546485.4239435 22653954423.744
+1	7229 4252 454 2756 204204.923450968239 1061353.151551545564 136 0 917.72911347141 8522.6252672818 4921418.9017531
+2	11481 7806 452 2756 204204.923450968239 1061353.151551545564 272 0 2 138 140
+3	19287 4210 470 2748 208915.445840981028 1061037.726762257713 135 0 1803.2919945126 13454.110450207 12769084.667606
+4	23497 7751 468 2748 208915.445840981028 1061037.726762257713 270 0 1 135 135
+5	31248 2282 450 2758 204000 1062000 144 0 3 135 249
+6	33530 2282 450 2758 204000 1062000 144 0 5 135 237
+7	35812 7777 460 2760 205150.941078872242 1062230.216613202752 271 0 4 258 428

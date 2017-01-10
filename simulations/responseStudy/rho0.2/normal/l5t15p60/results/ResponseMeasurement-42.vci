@@ -1,0 +1,47 @@
+file 52902 1484073757                                           
+version 2
+run ResponseMeasurement-42-20170110-19:42:37-22161
+attr configname ResponseMeasurement
+attr datetime 20170110-19:42:37
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=42
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22161
+attr repetition 42
+attr replication #42
+attr resultdir results
+attr runnumber 42
+attr seedset 42
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 7094 665 3439 206939.228194308303 1058231.138886478804 166 4669.6335033076 31128.022276163 1692395.8268401 21571723233.615
+1	8570 5368 645 3452 202009.488349676455 1060085.319481436426 168 0 1000.4869924139 13841.926823406 7808898.7651777
+2	13938 9678 643 3452 202009.488349676455 1060085.319481436426 336 0 3 178 192
+3	23616 5377 662 3461 206006.776622050257 1063332.040814193916 167 0 2193.8929788804 21767.82629125 21676769.858903
+4	28993 9647 660 3461 206006.776622050257 1063332.040814193916 334 0 3 177 191
+5	38640 2294 658 3457 204000 1062000 144 0 5 168 374
+6	40934 2294 658 3457 204000 1062000 144 0 4 166 346
+7	43228 9674 648 3458 202344.746310681276 1063332.040814193916 335 0 5 416 864

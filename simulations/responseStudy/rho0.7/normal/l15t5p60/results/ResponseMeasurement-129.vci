@@ -1,0 +1,47 @@
+file 171830 1484073292                                          
+version 2
+run ResponseMeasurement-129-20170110-19:34:52-21198
+attr configname ResponseMeasurement
+attr datetime 20170110-19:34:52
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=129
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21198
+attr repetition 129
+attr replication #129
+attr resultdir results
+attr runnumber 129
+attr seedset 129
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1488 21891 1034 9723 102478.702123641289 962200.708584004772 512 5041.9700361616 36732.687138731 5659620.0910124 76383122204.914
+1	23379 20247 1040 9733 103562.360424573449 963116.700980721478 514 0 3918.5454354169 346361.756397 560470773.535
+2	43626 29704 1038 9733 103562.360424573449 963116.700980721478 1028 0 5 966 1794
+3	73330 20149 1031 9742 102197.521274627475 964201.854752335327 513 0 22122.584415328 1991859.8334642 19989003302.441
+4	93479 29760 1029 9742 102197.521274627475 964201.854752335327 1026 0 23 3735 35609
+5	123239 9455 1027 9735 101141.34 963414.12 504 0 3 513 849
+6	132694 9455 1027 9735 101141.34 963414.12 504 0 6 512 1436
+7	142149 29681 1028 9739 102197.521274627475 964201.854752335327 1027 0 6 2695 8769

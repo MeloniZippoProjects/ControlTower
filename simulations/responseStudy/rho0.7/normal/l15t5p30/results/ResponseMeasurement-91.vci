@@ -1,0 +1,47 @@
+file 164925 1484073230                                          
+version 2
+run ResponseMeasurement-91-20170110-19:33:50-20764
+attr configname ResponseMeasurement
+attr datetime 20170110-19:33:50
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=91
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20764
+attr repetition 91
+attr replication #91
+attr resultdir results
+attr runnumber 91
+attr seedset 91
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1482 20860 908 9294 100960.909647300486 964194.334797216169 488 3577.7167688861 40539.357555041 4142073.950109 53314002036.287
+1	22342 19070 910 9277 100960.909647300486 962470.098369146623 496 0 4662.899995196 320087.60591437 585617413.69347
+2	41412 28662 905 9277 100851.395765817945 962470.098369146623 992 0 6 898 1784
+3	70074 18814 902 9296 100627.340132657552 964194.334797216169 489 0 30986.894147498 1514865.5098871 20551925558.637
+4	88888 28511 900 9296 100627.340132657552 964194.334797216169 984 0 34 3018 40100
+5	117399 9446 912 9282 101141.34 963414.12 504 0 3 495 795
+6	126845 9446 912 9282 101141.34 963414.12 504 0 6 489 1367
+7	136291 28634 899 9284 100627.340132657552 963534.974110494102 991 0 3 1415 2723

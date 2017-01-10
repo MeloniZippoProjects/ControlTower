@@ -1,0 +1,47 @@
+file 113756 1484073314                                          
+version 2
+run ResponseMeasurement-59-20170110-19:35:14-21378
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:14
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=59
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21378
+attr repetition 59
+attr replication #59
+attr resultdir results
+attr runnumber 59
+attr seedset 59
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 14536 780 6516 141760.964400557235 1002148.580346925524 340 4163.0045702894 19434.662294391 2777425.7591271 24733884874.527
+1	16019 13119 762 6522 140141.259831876453 1003259.371204737913 339 0 2025.1492063454 158762.974542 153162422.08455
+2	29138 19565 760 6522 140141.259831876453 1003259.371204737913 678 0 3 445 559
+3	48703 13302 770 6513 140942.952738393276 1001162.685335689516 340 0 9771.1741451916 528513.89968667 1928697681.5692
+4	62005 19609 765 6513 140154.35151287473 1001162.685335689516 680 0 6 816 2056
+5	81614 6292 775 6518 141428.1 1002853.8 336 0 3 339 575
+6	87906 6292 775 6518 141428.1 1002853.8 336 0 3 340 608
+7	94198 19558 764 6501 140154.35151287473 999740.611123436765 678 0 3 733 1215

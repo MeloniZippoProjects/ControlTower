@@ -1,0 +1,47 @@
+file 31497 1484073820                                           
+version 2
+run ResponseMeasurement-37-20170110-19:43:40-22308
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:40
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=37
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22308
+attr repetition 37
+attr replication #37
+attr resultdir results
+attr runnumber 37
+attr seedset 37
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1477 4109 665 2288 384191.338665725119 1241492.36462123897 96 6181.9261493096 69843.486270221 1412477.4378114 30561576554.64
+1	5586 2987 670 2277 385411.318540028644 1238682.913323443109 96 0 842.65098786278 7239.0139251924 4467823.2209731
+2	8573 5585 668 2297 385411.318540028644 1243908.711908065529 193 0 1 97 97
+3	14158 3057 662 2294 383242.342289168214 1243174.786832013297 97 0 1682.2887145238 10320.381250053 9272999.3291779
+4	17215 5612 660 2294 383242.342289168214 1243174.786832013297 194 0 1 97 97
+5	22827 1540 675 2290 387000 1242000 96 0 4 97 189
+6	24367 1540 675 2290 387000 1242000 96 0 4 96 192
+7	25907 5590 659 2291 383242.342289168214 1243174.786832013297 193 0 3 174 264

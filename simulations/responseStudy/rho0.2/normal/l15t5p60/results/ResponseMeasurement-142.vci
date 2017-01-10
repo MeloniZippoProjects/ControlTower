@@ -1,0 +1,47 @@
+file 47991 1484073977                                           
+version 2
+run ResponseMeasurement-142-20170110-19:46:17-22719
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:17
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=142
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22719
+attr repetition 142
+attr replication #142
+attr resultdir results
+attr runnumber 142
+attr seedset 142
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1482 6485 608 3150 200209.493402397811 1055657.357140656633 152 4671.0116642093 34299.569750085 1608744.3992492 21511751542.895
+1	7967 4611 621 3131 201449.827844860271 1050929.8110054528 149 0 1898.3294538718 8714.9610313155 6889662.5772459
+2	12578 8578 619 3131 201449.827844860271 1050929.8110054528 298 0 2 151 153
+3	21156 4771 605 3147 199938.060453562571 1055319.731923464945 152 0 1438.512703082 11631.905095657 7521948.3493012
+4	25927 8764 600 3147 199748.697331670786 1055319.731923464945 304 0 1 152 152
+5	34691 2295 631 3153 204000 1062000 144 0 4 150 294
+6	36986 2295 631 3153 204000 1062000 144 0 4 152 296
+7	39281 8710 599 3144 199748.697331670786 1055319.731923464945 302 0 4 327 591

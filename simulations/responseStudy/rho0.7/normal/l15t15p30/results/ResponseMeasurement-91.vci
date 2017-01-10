@@ -1,0 +1,47 @@
+file 106158 1484073320                                          
+version 2
+run ResponseMeasurement-91-20170110-19:35:20-21447
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:20
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=91
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21447
+attr repetition 91
+attr replication #91
+attr resultdir results
+attr runnumber 91
+attr seedset 91
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 13401 686 6022 143171.263687405866 1000067.066690496882 314 4298.2670334741 24746.165144077 2948753.9345336 33385722137.254
+1	14884 12017 674 6033 141171.206157205873 1002232.983529409487 315 0 2177.7258308633 143258.14661743 136238498.25918
+2	26901 18193 672 6045 141171.206157205873 1003284.616311210808 631 0 3 402 496
+3	45094 12158 683 6042 142113.642661118082 1003269.520015809869 315 0 18858.24086786 803606.12736456 6863982107.0974
+4	57252 18171 678 6042 141449.968062796376 1003269.520015809869 630 0 11 1109 5311
+5	75423 6282 676 6038 141428.1 1002853.8 336 0 3 315 561
+6	81705 6282 676 6038 141428.1 1002853.8 336 0 4 314 560
+7	87987 18171 677 6040 141449.968062796376 1003269.520015809869 630 0 3 703 1215

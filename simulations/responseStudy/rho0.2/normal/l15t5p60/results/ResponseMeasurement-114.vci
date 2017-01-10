@@ -1,0 +1,47 @@
+file 45154 1484073965                                           
+version 2
+run ResponseMeasurement-114-20170110-19:46:05-22691
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:05
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=114
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22691
+attr repetition 114
+attr replication #114
+attr resultdir results
+attr runnumber 114
+attr seedset 114
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1482 6060 616 2991 202266.515324610799 1060348.937666832526 142 5240.4019219678 41605.81904543 1575109.8684162 22375950299.521
+1	7542 4353 605 2963 199923.023668018324 1055548.677204205141 139 0 1067.9295486454 8643.0407308477 5344464.6725156
+2	11895 8007 600 2963 199774.265199359088 1055548.677204205141 278 0 2 145 151
+3	19902 4391 613 2988 201914.226227774012 1060063.223025203317 142 0 1380.8554975605 10647.359584615 7794613.8656337
+4	24293 8164 611 2988 201914.226227774012 1060063.223025203317 284 0 1 142 142
+5	32457 2291 639 2993 204000 1062000 144 0 5 142 278
+6	34748 2291 639 2993 204000 1062000 144 0 4 142 278
+7	37039 8115 603 2985 199923.023668018324 1060063.223025203317 282 0 4 293 505

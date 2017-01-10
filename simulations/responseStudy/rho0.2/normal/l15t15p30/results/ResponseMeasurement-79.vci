@@ -1,0 +1,47 @@
+file 34688 1484074013                                           
+version 2
+run ResponseMeasurement-79-20170110-19:46:53-22808
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:53
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=79
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22808
+attr repetition 79
+attr replication #79
+attr resultdir results
+attr runnumber 79
+attr seedset 79
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 4614 532 2336 307188.519520443095 1161295.894966487934 108 4287.6549648565 47606.455594539 1287311.9606916 21944206994.786
+1	6091 3457 517 2341 303300.602358205574 1162652.555253893741 109 0 1088.9506299815 11326.346593688 7491472.4449824
+2	9548 6281 515 2341 303300.602358205574 1162652.555253893741 218 0 2 111 113
+3	15829 3321 526 2332 306325.414283493717 1160446.69147929003 108 0 1462.491612536 7749.7019162858 6832933.4566121
+4	19150 6228 524 2332 306325.414283493717 1160446.69147929003 216 0 2 110 112
+5	25378 1528 522 2334 306000 1161000 96 0 4 108 210
+6	26906 1528 522 2334 306000 1161000 96 0 4 107 217
+7	28434 6254 520 2344 304265.455036922012 1163562.517647632557 217 0 2 145 181

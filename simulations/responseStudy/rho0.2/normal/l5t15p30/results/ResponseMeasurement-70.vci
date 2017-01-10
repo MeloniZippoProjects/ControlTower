@@ -1,0 +1,47 @@
+file 50733 1484074192                                           
+version 2
+run ResponseMeasurement-70-20170110-19:49:52-23256
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:52
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=70
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23256
+attr repetition 70
+attr replication #70
+attr resultdir results
+attr runnumber 70
+attr seedset 70
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 6819 433 3118 208568.675768719737 1052769.105927988838 160 3326.4428228919 30765.444508197 1393032.5423465 17193044010.639
+1	8295 5124 422 3106 205377.211155176825 1049593.774348120063 160 0 970.48341187331 17705.685648651 11354982.506746
+2	13419 9188 420 3106 205377.211155176825 1049593.774348120063 320 0 2 166 172
+3	22607 5175 430 3115 207435.513712864066 1051945.398939842115 160 0 1572.0637301199 22345.262698691 16717611.320081
+4	27782 9191 428 3115 207435.513712864066 1051945.398939842115 320 0 2 168 176
+5	36973 2287 418 3121 204000 1062000 144 0 5 160 342
+6	39260 2287 418 3121 204000 1062000 144 0 4 160 330
+7	41547 9186 425 3112 205702.124897438262 1051945.398939842115 320 0 3 260 388

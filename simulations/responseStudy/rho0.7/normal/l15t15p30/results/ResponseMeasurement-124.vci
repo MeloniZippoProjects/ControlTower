@@ -1,0 +1,47 @@
+file 114765 1484073327                                          
+version 2
+run ResponseMeasurement-124-20170110-19:35:27-21530
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:27
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=124
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21530
+attr repetition 124
+attr replication #124
+attr resultdir results
+attr runnumber 124
+attr seedset 124
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1489 14579 984 6782 141239.16756730049 1003925.329644705179 341 4256.6487960737 24869.549908866 3271293.4066522 37729825921.99
+1	16068 13252 1003 6762 143577.828657916826 1001312.116095416895 342 0 2503.6199242517 152545.27203872 145485095.15957
+2	29320 19753 1001 6762 143577.828657916826 1001312.116095416895 684 0 3 440 550
+3	49073 13491 981 6784 140326.723415581716 1003925.329644705179 342 0 16451.556058521 1037590.1223732 9130686918.0813
+4	62564 19782 981 6784 140326.723415581716 1003925.329644705179 684 0 12 1388 7202
+5	82346 6305 988 6772 141428.1 1002853.8 336 0 3 343 579
+6	88651 6305 988 6772 141428.1 1002853.8 336 0 3 340 610
+7	94956 19809 979 6778 140326.723415581716 1003334.247474874855 685 0 3 767 1307

@@ -1,0 +1,47 @@
+file 29316 1484073836                                           
+version 2
+run ResponseMeasurement-86-20170110-19:43:56-22358
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:56
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=86
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22358
+attr repetition 86
+attr replication #86
+attr resultdir results
+attr runnumber 86
+attr seedset 86
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 3774 784 2264 417053.088019911887 1234272.070306569365 88 5525.1455614409 49985.315545705 1358984.9996471 29258772729.674
+1	5251 2892 769 2252 412156.93334812184 1228877.436322054174 88 0 1263.1317761206 12361.651590501 8523604.9337322
+2	8143 5093 767 2252 412156.93334812184 1228877.436322054174 176 0 2 92 96
+3	13236 2788 778 2261 416290.940175184129 1233352.440138615352 88 0 1592.5131636034 11151.016309701 10114785.071767
+4	16024 5098 776 2261 416290.940175184129 1233352.440138615352 176 0 2 92 96
+5	21122 1547 763 2266 387000 1242000 96 0 4 88 170
+6	22669 1547 763 2266 387000 1242000 96 0 5 88 170
+7	24216 5100 772 2258 413121.198721934119 1233352.440138615352 176 0 4 180 328

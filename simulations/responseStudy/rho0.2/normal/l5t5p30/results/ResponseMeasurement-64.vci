@@ -1,0 +1,47 @@
+file 96655 1484074137                                           
+version 2
+run ResponseMeasurement-64-20170110-19:48:57-23098
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:57
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=64
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23098
+attr repetition 64
+attr replication #64
+attr resultdir results
+attr runnumber 64
+attr seedset 64
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1473 13098 840 6012 140948.494643446481 1000232.024984939825 307 2310.2387961371 22964.071072829 1622011.521416 11144580666.428
+1	14571 9802 851 6025 142835.514941753082 1001965.4619848287 307 0 526.11455221817 10775.322802179 2695760.792929
+2	24373 17726 849 6025 142835.514941753082 1001965.4619848287 614 0 2 311 315
+3	42099 9866 834 6034 140607.370778535743 1003714.670526266029 308 0 645.2401016028 13086.172130219 3785746.327324
+4	51965 17755 832 6034 140607.370778535743 1003714.670526266029 616 0 2 310 312
+5	69720 4597 844 6027 141000 1002000 288 0 4 308 618
+6	74317 4597 844 6027 141000 1002000 288 0 6 308 646
+7	78914 17741 831 6031 140607.370778535743 1003714.670526266029 615 0 5 692 1300

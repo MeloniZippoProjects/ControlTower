@@ -1,0 +1,47 @@
+file 85620 1484074132                                           
+version 2
+run ResponseMeasurement-48-20170110-19:48:52-23081
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:52
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=48
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23081
+attr repetition 48
+attr replication #48
+attr resultdir results
+attr runnumber 48
+attr seedset 48
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1473 11503 846 5421 142255.66495928695 1003594.569328627551 269 2418.8100059863 27675.429059735 1524032.3318687 11705858650.72
+1	12976 8491 851 5409 142948.176042868751 1001298.701264982023 268 0 478.84426289762 8386.8731263493 1800339.5991866
+2	21467 15484 849 5409 142948.176042868751 1001298.701264982023 536 0 2 272 276
+3	36951 8400 843 5418 141988.335936617107 1003296.064479336954 269 0 457.67566806293 7989.1700885085 1891268.4142459
+4	45351 15541 841 5418 141988.335936617107 1003296.064479336954 538 0 2 271 273
+5	60892 4600 839 5414 141000 1002000 288 0 4 269 519
+6	65492 4600 839 5414 141000 1002000 288 0 5 268 514
+7	70092 15528 837 5415 140085.948092531192 1003296.064479336954 538 0 4 551 949

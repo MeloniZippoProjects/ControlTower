@@ -1,0 +1,47 @@
+file 158237 1484073512                                          
+version 2
+run ResponseMeasurement-139-20170110-19:38:32-22067
+attr configname ResponseMeasurement
+attr datetime 20170110-19:38:32
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=139
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22067
+attr repetition 139
+attr replication #139
+attr resultdir results
+attr runnumber 139
+attr seedset 139
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1488 20239 1000 9040 100377.720705728445 963627.048344594034 473 2776.154588009 16859.057165168 2898645.1245998 19175440841.279
+1	21727 17712 1019 9042 102167.342453792272 963627.048344594034 471 0 1161.6568150622 129146.53667931 80817242.734912
+2	39439 27220 1014 9042 101585.704836637177 963627.048344594034 942 0 3 611 791
+3	66659 18178 1002 9047 100377.720705728445 963939.531617480908 473 0 6283.0419463271 486875.29363075 1226501605.7386
+4	84837 27277 1002 9047 100377.720705728445 963939.531617480908 944 0 6 1032 2276
+5	112114 9455 1004 9035 101141.34 963414.12 504 0 5 471 915
+6	121569 9455 1004 9035 101141.34 963414.12 504 0 3 472 720
+7	131024 27213 1010 9045 101329.486950578453 963939.531617480908 942 0 6 1361 3103

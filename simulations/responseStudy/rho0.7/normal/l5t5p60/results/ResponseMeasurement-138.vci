@@ -1,0 +1,47 @@
+file 344634 1484073388                                          
+version 2
+run ResponseMeasurement-138-20170110-19:36:28-21761
+attr configname ResponseMeasurement
+attr datetime 20170110-19:36:28
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=138
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21761
+attr repetition 138
+attr replication #138
+attr resultdir results
+attr runnumber 138
+attr seedset 138
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1487 44446 2008 19331 101021.055123153553 964172.197023537353 1026 3217.9826516924 12334.754012239 6096168.7732213 38211123744.075
+1	45933 39740 2000 19304 100330.360374379899 961444.8359490542 1017 0 821.38292355316 160910.84258959 53640644.831727
+2	85673 59824 2000 19304 100330.360374379899 961444.8359490542 2033 0 3 1386 1824
+3	145497 39999 2005 19328 100702.149501091388 963829.523027750139 1026 0 7243.215970934 759510.18419702 2088138769.877
+4	185496 60286 2005 19328 100702.149501091388 963829.523027750139 2047 0 16 3063 14923
+5	245782 19411 1996 19324 100287.72 963447.84 1008 0 4 1019 1843
+6	265193 19411 1996 19324 100287.72 963447.84 1008 0 4 1026 1804
+7	284604 60030 1998 19325 100330.360374379899 963829.523027750139 2039 0 12 9621 53103

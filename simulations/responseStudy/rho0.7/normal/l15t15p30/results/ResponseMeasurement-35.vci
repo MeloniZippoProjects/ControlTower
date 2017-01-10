@@ -1,0 +1,47 @@
+file 109992 1484073309                                          
+version 2
+run ResponseMeasurement-35-20170110-19:35:09-21338
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:09
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=35
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21338
+attr repetition 35
+attr replication #35
+attr resultdir results
+attr runnumber 35
+attr seedset 35
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1483 13943 973 6498 140509.296092038012 997094.531458755155 326 4242.7250660513 18518.185099051 2721405.1655931 25552130487.456
+1	15426 12496 987 6555 143627.154330814014 1003411.454116854117 330 0 2870.1483275037 152947.29259119 166655097.67249
+2	27922 19085 985 6555 143627.154330814014 1003411.454116854117 661 0 4 443 607
+3	47007 12521 978 6495 140825.104528419541 996234.323729121743 325 0 11473.13518593 543353.50660013 2843941178.421
+4	59528 18866 976 6558 140825.104528419541 1003512.24837618377 653 0 8 857 2927
+5	78394 6304 980 6551 141428.1 1002853.8 336 0 3 329 555
+6	84698 6304 980 6551 141428.1 1002853.8 336 0 3 326 574
+7	91002 18990 975 6557 140825.104528419541 1003512.24837618377 657 0 3 696 1148

@@ -1,0 +1,47 @@
+file 86847 1484074082                                           
+version 2
+run ResponseMeasurement-94-20170110-19:48:02-22975
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:02
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=94
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22975
+attr repetition 94
+attr replication #94
+attr resultdir results
+attr runnumber 94
+attr seedset 94
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 11669 934 5563 143239.785693131929 997391.739883491898 273 3732.731701035 22915.701053665 2025601.7113805 17600414097.511
+1	13142 8639 923 5543 142477.73773483016 993028.105003862295 272 0 596.9520933275 11499.995278198 3651399.0141696
+2	21781 15697 921 5543 142477.73773483016 993028.105003862295 544 0 3 294 320
+3	37478 8653 931 5560 142940.19394743818 997050.862097466179 273 0 990.49902675693 13699.236865058 5751427.1211505
+4	46131 15775 929 5560 142940.19394743818 997050.862097466179 546 0 2 277 281
+5	61906 4604 919 5566 141000 1002000 288 0 5 273 507
+6	66510 4604 919 5566 141000 1002000 288 0 4 276 530
+7	71114 15733 926 5557 142801.852716991986 997050.862097466179 545 0 5 882 2112

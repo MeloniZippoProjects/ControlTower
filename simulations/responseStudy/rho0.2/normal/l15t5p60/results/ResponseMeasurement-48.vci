@@ -1,0 +1,47 @@
+file 46780 1484073940                                           
+version 2
+run ResponseMeasurement-48-20170110-19:45:40-22625
+attr configname ResponseMeasurement
+attr datetime 20170110-19:45:40
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=48
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22625
+attr repetition 48
+attr replication #48
+attr resultdir results
+attr runnumber 48
+attr seedset 48
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 6239 712 3176 200239.189594125028 1062428.113251588562 146 5261.8244593058 33119.531423064 1598929.6671294 22388796143.961
+1	7715 4594 717 3164 201892.176716624022 1059029.673899906632 145 0 1419.3081028138 11760.183823339 7599090.79169
+2	12309 8362 715 3164 201892.176716624022 1059029.673899906632 290 0 2 147 149
+3	20671 4615 709 3181 199920.409978335575 1063408.710293415312 147 0 2596.1291930769 22556.750215385 31078394.537372
+4	25286 8473 707 3181 199920.409978335575 1063408.710293415312 294 0 2 149 151
+5	33759 2301 730 3169 204000 1062000 144 0 4 145 285
+6	36060 2301 730 3169 204000 1062000 144 0 6 145 315
+7	38361 8419 706 3178 199920.409978335575 1063408.710293415312 292 0 4 302 522

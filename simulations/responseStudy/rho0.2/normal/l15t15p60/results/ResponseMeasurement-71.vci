@@ -1,0 +1,47 @@
+file 26940 1484073831                                           
+version 2
+run ResponseMeasurement-71-20170110-19:43:51-22342
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:51
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=71
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22342
+attr repetition 71
+attr replication #71
+attr resultdir results
+attr runnumber 71
+attr seedset 71
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1477 3464 636 2006 382926.805174578726 1216163.052293481384 81 6327.753121993 74573.271233323 1295517.931837 29917071258.851
+1	4941 2480 638 1994 382926.805174578726 1210236.578861874613 80 0 1109.6659159236 5974.2380330128 4045326.236731
+2	7421 4623 633 1994 382504.14935696585 1210236.578861874613 160 0 2 82 84
+3	12044 2504 630 2003 382038.531424874215 1215126.59380923454 81 0 1320.0437086732 7670.2076809167 6402169.7173019
+4	14548 4671 628 2003 382038.531424874215 1215126.59380923454 162 0 2 83 85
+5	19219 1542 643 2010 387000 1242000 96 0 4 81 151
+6	20761 1542 643 2010 387000 1242000 96 0 4 81 149
+7	22303 4637 627 2000 382038.531424874215 1215126.59380923454 161 0 3 130 196

@@ -1,0 +1,47 @@
+file 118567 1484073326                                          
+version 2
+run ResponseMeasurement-118-20170110-19:35:26-21517
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:26
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=118
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21517
+attr repetition 118
+attr replication #118
+attr resultdir results
+attr runnumber 118
+attr seedset 118
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1489 15269 1057 7041 141661.556077883428 1003443.089373599711 357 4244.8508772563 23421.756112399 3481980.2166909 39609781059.121
+1	16758 13676 1081 7026 144247.043460547991 1001535.235700691359 352 0 4130.2072213635 181025.64937385 227281219.135
+2	30434 20364 1075 7049 143988.718855603546 1003737.850604605153 705 0 5 499 785
+3	50798 14156 1047 7043 140546.228735503853 1003443.089373599711 358 0 14466.508712396 1141848.2462805 8763638745.0468
+4	64954 20576 1047 7046 140546.228735503853 1003482.064715477188 712 0 10 1514 7020
+5	85530 6306 1052 7039 141428.1 1002853.8 336 0 3 355 661
+6	91836 6306 1052 7039 141428.1 1002853.8 336 0 3 356 674
+7	98142 20425 1045 7045 140546.228735503853 1003482.064715477188 707 0 3 798 1358

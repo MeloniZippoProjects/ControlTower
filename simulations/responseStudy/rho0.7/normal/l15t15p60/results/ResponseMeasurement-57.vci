@@ -1,0 +1,47 @@
+file 107727 1484073159                                          
+version 2
+run ResponseMeasurement-57-20170110-19:32:39-20336
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:39
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=57
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20336
+attr repetition 57
+attr replication #57
+attr resultdir results
+attr runnumber 57
+attr seedset 57
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 13666 865 6285 143529.799594229906 1002869.674619060322 320 6182.6460189907 20403.159489853 3328160.1765249 37383744261.656
+1	15149 12137 850 6262 141400.928043008859 999129.428618995578 318 0 2635.0068250418 139097.9627428 143080220.53923
+2	27286 18386 848 6262 141400.928043008859 999129.428618995578 636 0 3 424 554
+3	45672 12457 859 6290 142543.379022288751 1003293.802337382367 321 0 12982.250316238 603615.75917458 3068782286.218
+4	58129 18530 857 6290 142543.379022288751 1003293.802337382367 642 0 7 895 2953
+5	76659 6294 852 6283 141428.1 1002853.8 336 0 3 320 582
+6	82953 6294 852 6283 141428.1 1002853.8 336 0 3 319 567
+7	89247 18480 845 6287 140401.224199248391 1003293.802337382367 640 0 5 1154 2984

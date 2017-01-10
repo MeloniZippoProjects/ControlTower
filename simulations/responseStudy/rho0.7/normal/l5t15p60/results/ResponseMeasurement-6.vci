@@ -1,0 +1,47 @@
+file 149596 1484073074                                          
+version 2
+run ResponseMeasurement-6-20170110-19:31:14-19853
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:14
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 19853
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 19026 781 8361 102695.673296441074 963983.921625023413 445 4438.6130256195 25018.945260777 3499045.2643146 29391836080.792
+1	20502 16691 758 8349 100904.62387273914 962743.957186150155 443 0 1256.5703390807 134650.99546551 87587530.658612
+2	37193 25555 756 8349 100904.62387273914 962743.957186150155 886 0 4 607 831
+3	62748 16660 775 8357 101763.922388173062 963041.594028856098 445 0 7266.7812630133 353115.92740027 1032873017.6417
+4	79408 25681 773 8357 101763.922388173062 963041.594028856098 890 0 8 835 2001
+5	105089 9442 760 8359 101141.34 963414.12 504 0 5 445 835
+6	114531 9442 760 8359 101141.34 963414.12 504 0 2 444 648
+7	123973 25623 762 8355 101209.08084263439 963041.594028856098 888 0 7 2118 6916

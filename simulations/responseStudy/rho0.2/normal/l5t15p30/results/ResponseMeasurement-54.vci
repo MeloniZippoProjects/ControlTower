@@ -1,0 +1,47 @@
+file 45301 1484074189                                           
+version 2
+run ResponseMeasurement-54-20170110-19:49:49-23240
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:49
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=54
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23240
+attr repetition 54
+attr replication #54
+attr resultdir results
+attr runnumber 54
+attr seedset 54
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 6017 595 2976 202721.409547696863 1062507.652769516526 141 3065.769477153 28286.264773862 1316220.2874203 16035269601.436
+1	7493 4496 581 2956 200113.952613641654 1059328.421008041625 141 0 1004.38087608 13142.322469001 7559815.5515641
+2	11989 8114 579 2956 200113.952613641654 1059328.421008041625 282 0 1 141 141
+3	20103 4380 589 2972 201840.667348790558 1061616.397782084287 141 0 1137.4910287665 9524.2573103026 7131352.6090727
+4	24483 8117 587 2972 201840.667348790558 1061616.397782084287 282 0 2 143 145
+5	32600 2292 602 2974 204000 1062000 144 0 4 141 255
+6	34892 2292 602 2974 204000 1062000 144 0 4 140 250
+7	37184 8117 584 2969 200442.76525433262 1061616.397782084287 282 0 3 191 253

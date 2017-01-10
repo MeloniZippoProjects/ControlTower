@@ -1,0 +1,47 @@
+file 174765 1484073103                                          
+version 2
+run ResponseMeasurement-88-20170110-19:31:43-20037
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:43
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=88
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20037
+attr repetition 88
+attr replication #88
+attr resultdir results
+attr runnumber 88
+attr seedset 88
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 22399 857 9760 100660.20275567409 963358.749838152965 524 4702.8905245125 15765.615745774 4326932.1409296 38181332091.717
+1	23881 20407 863 9766 101172.241811662506 963567.405402326025 528 0 1190.7292064507 165239.86605486 102452415.99968
+2	44288 30495 861 9766 101172.241811662506 963567.405402326025 1056 0 4 712 944
+3	74783 20363 913 9774 105135.468017951393 963808.851569983184 524 0 9300.8798234346 781802.89343405 3244595045.7032
+4	95146 30304 911 9777 105135.468017951393 964181.309114446475 1049 0 10 1577 5665
+5	125450 9448 859 9762 101141.34 963414.12 504 0 6 527 1079
+6	134898 9448 859 9762 101141.34 963414.12 504 0 2 525 797
+7	144346 30419 869 9776 101440.32753464894 964181.309114446475 1053 0 8 2839 10103

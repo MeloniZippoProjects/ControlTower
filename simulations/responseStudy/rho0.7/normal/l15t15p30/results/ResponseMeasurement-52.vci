@@ -1,0 +1,47 @@
+file 114983 1484073312                                          
+version 2
+run ResponseMeasurement-52-20170110-19:35:12-21371
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:12
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=52
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21371
+attr repetition 52
+attr replication #52
+attr resultdir results
+attr runnumber 52
+attr seedset 52
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 14715 895 6712 145769.707774203586 1003514.558738525169 344 4237.542267091 18803.44180245 3106844.5998592 32356220007.833
+1	16198 13214 875 6714 142056.471394245201 1003514.558738525169 345 0 1912.7235574116 150687.78022806 142590927.42392
+2	29412 19935 873 6714 142056.471394245201 1003514.558738525169 690 0 3 435 529
+3	49347 13285 892 6705 144875.572623498357 1002616.65256889115 344 0 13505.467600839 853157.89208285 5867530176.104
+4	62632 19874 887 6705 144771.474246380005 1002616.65256889115 688 0 10 1212 5420
+5	82506 6300 871 6707 141428.1 1002853.8 336 0 3 344 640
+6	88806 6300 871 6707 141428.1 1002853.8 336 0 3 343 627
+7	95106 19877 878 6702 142735.676806449061 1002616.65256889115 688 0 3 790 1384

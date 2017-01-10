@@ -1,0 +1,47 @@
+file 27285 1484073989                                           
+version 2
+run ResponseMeasurement-11-20170110-19:46:29-22740
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:29
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=11
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22740
+attr repetition 11
+attr replication #11
+attr resultdir results
+attr runnumber 11
+attr seedset 11
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 3501 657 2045 308388.710203819291 1141145.20158507409 82 4439.6606544081 48953.724954426 1155222.9254781 24616946808.597
+1	4978 2520 645 2034 305027.905037623718 1137629.83811457817 82 0 685.78525512567 5911.1580012451 3244872.7561389
+2	7498 4705 643 2034 305027.905037623718 1137629.83811457817 164 0 1 82 82
+3	12203 2558 654 2042 307665.915867609261 1140382.036655635258 82 0 1406.8113631121 5494.6764414532 3938319.8380121
+4	14761 4725 652 2042 307665.915867609261 1140382.036655635258 164 0 1 82 82
+5	19486 1537 650 2049 306000 1161000 96 0 4 82 152
+6	21023 1537 650 2049 306000 1161000 96 0 4 82 150
+7	22560 4725 648 2039 305866.402958663664 1140382.036655635258 164 0 2 108 134

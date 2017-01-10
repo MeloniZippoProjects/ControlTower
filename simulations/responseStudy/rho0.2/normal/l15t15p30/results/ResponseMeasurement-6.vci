@@ -1,0 +1,47 @@
+file 34491 1484073987                                           
+version 2
+run ResponseMeasurement-6-20170110-19:46:27-22735
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:27
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22735
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1471 4516 435 2200 305867.721307108638 1162227.170073098718 106 4438.9012417423 60496.324973375 1279508.1143335 23522640939.593
+1	5987 3475 405 2188 301731.855770882948 1160486.667546129458 107 0 1311.4787692394 17195.830574719 13051436.623862
+2	9462 6141 403 2188 301731.855770882948 1160486.667546129458 214 0 2 111 115
+3	15603 3555 429 2205 305026.85601834176 1163102.478005453448 107 0 1696.1674156281 16612.00460361 13616349.054223
+4	19158 6137 424 2205 304516.915449534582 1163102.478005453448 214 0 1 107 107
+5	25295 1527 439 2190 306000 1161000 96 0 5 106 246
+6	26822 1527 439 2190 306000 1161000 96 0 4 106 232
+7	28349 6142 411 2202 302783.114052156621 1163102.478005453448 214 0 3 171 243

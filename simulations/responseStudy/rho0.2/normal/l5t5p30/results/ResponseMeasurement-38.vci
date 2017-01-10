@@ -1,0 +1,47 @@
+file 85907 1484074127                                           
+version 2
+run ResponseMeasurement-38-20170110-19:48:47-23071
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:47
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=38
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23071
+attr repetition 38
+attr replication #38
+attr resultdir results
+attr runnumber 38
+attr seedset 38
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1473 11572 704 5308 140826.488709162003 1001922.194318829918 271 2240.3434094091 25758.102038585 1528808.2737728 11801579386.846
+1	13045 8419 706 5289 140826.488709162003 999715.19070665223 270 0 395.17925375377 8426.0672393335 2029302.2588439
+2	21464 15558 701 5289 140640.538123364873 999715.19070665223 540 0 2 274 278
+3	37022 8489 698 5305 140529.27218935533 1001635.110200128678 271 0 571.56919852637 8856.3297776321 2480359.4164855
+4	45511 15619 696 5305 140529.27218935533 1001635.110200128678 542 0 2 273 275
+5	61130 4594 708 5310 141000 1002000 288 0 4 271 523
+6	65724 4594 708 5310 141000 1002000 288 0 4 272 544
+7	70318 15589 695 5302 140529.27218935533 1001635.110200128678 541 0 4 580 1066

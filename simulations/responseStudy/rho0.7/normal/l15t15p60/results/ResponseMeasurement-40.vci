@@ -1,0 +1,47 @@
+file 107259 1484073153                                          
+version 2
+run ResponseMeasurement-40-20170110-19:32:33-20299
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:33
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=40
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20299
+attr repetition 40
+attr replication #40
+attr resultdir results
+attr runnumber 40
+attr seedset 40
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 13724 777 6196 142043.921305011438 1001497.757738463413 321 5842.3884101636 31400.525727215 3272126.6324383 36861049311.135
+1	15207 11918 762 6170 140002.611957950146 996196.000903857737 317 0 2969.5522449186 142328.42950432 160896512.5527
+2	27125 18300 760 6170 140002.611957950146 996196.000903857737 634 0 4 429 581
+3	45425 12333 770 6193 141033.721384370646 1000586.310268576782 321 0 10493.458040838 520611.52419467 2567742526.8493
+4	57758 18519 765 6193 140229.48405708836 1000586.310268576782 642 0 9 859 3053
+5	76277 6289 775 6198 141428.1 1002853.8 336 0 3 318 566
+6	82566 6289 775 6198 141428.1 1002853.8 336 0 3 321 591
+7	88855 18404 764 6187 140229.48405708836 1000508.185979249678 638 0 5 1181 3087

@@ -1,0 +1,47 @@
+file 326599 1484073350                                          
+version 2
+run ResponseMeasurement-72-20170110-19:35:50-21694
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:50
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=72
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21694
+attr repetition 72
+attr replication #72
+attr resultdir results
+attr runnumber 72
+attr seedset 72
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1481 41694 1988 18369 100980.641996705698 962404.071732558272 963 3700.1612636092 12382.29645634 5490069.8020927 32236608838.659
+1	43175 37015 1977 18392 100412.141068271876 963797.052911793089 964 0 911.41929373073 140836.58637297 48945994.736792
+2	80190 56708 1975 18392 100412.141068271876 963797.052911793089 1928 0 4 1274 1676
+3	136898 37513 1985 18400 100705.654640164688 964204.833096297609 964 0 2876.3955745419 443269.33664627 510408021.49012
+4	174411 56705 1980 18400 100559.080935773021 964204.833096297609 1928 0 7 2074 4680
+5	231116 19380 1973 18388 100287.72 963447.84 1008 0 3 965 1733
+6	250496 19380 1973 18388 100287.72 963447.84 1008 0 4 963 1707
+7	269876 56723 1979 18397 100559.080935773021 964204.833096297609 1928 0 11 8644 46920

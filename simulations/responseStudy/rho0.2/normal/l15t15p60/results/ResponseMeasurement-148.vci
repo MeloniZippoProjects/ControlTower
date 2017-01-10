@@ -1,0 +1,47 @@
+file 31750 1484073856                                           
+version 2
+run ResponseMeasurement-148-20170110-19:44:16-22421
+attr configname ResponseMeasurement
+attr datetime 20170110-19:44:16
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=148
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22421
+attr repetition 148
+attr replication #148
+attr resultdir results
+attr runnumber 148
+attr seedset 148
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 4165 786 2408 395497.002266104363 1241094.832004354378 97 5919.4005746831 43397.547656089 1411602.773299 27776558046.011
+1	5648 3065 767 2397 389464.403895468374 1235382.852074021372 97 0 1050.4402115395 11220.457613187 7807307.3095365
+2	8713 5630 765 2397 389464.403895468374 1235382.852074021372 194 0 2 99 101
+3	14343 3049 783 2405 394523.86309889056 1240044.529526898856 97 0 805.95203670272 6963.4032573508 3915677.6948812
+4	17392 5628 778 2405 394432.288993913054 1240044.529526898856 194 0 1 97 97
+5	23020 1551 763 2410 387000 1242000 96 0 4 97 193
+6	24571 1551 763 2410 387000 1242000 96 0 3 97 181
+7	26122 5628 770 2402 390398.792756378467 1240044.529526898856 194 0 3 165 261

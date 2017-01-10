@@ -1,0 +1,47 @@
+file 87930 1484074077                                           
+version 2
+run ResponseMeasurement-80-20170110-19:47:57-22961
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:57
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=80
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22961
+attr repetition 80
+attr replication #80
+attr resultdir results
+attr runnumber 80
+attr seedset 80
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 11836 848 5531 148029.864878008995 998381.598699074368 277 3963.9630797164 22564.878226068 2047224.7726064 17851164181.434
+1	13309 8832 820 5537 144090.809168337321 1001637.602347804325 278 0 427.9059477046 9754.3758775824 2194926.402702
+2	22141 16049 818 5537 144090.809168337321 1001637.602347804325 556 0 2 280 282
+3	38190 8547 845 5528 147768.673994763379 998083.213739385378 277 0 506.27638689695 7476.7131756962 1952215.164351
+4	46737 15981 843 5528 147768.673994763379 998083.213739385378 554 0 2 279 281
+5	62718 4597 815 5542 141000 1002000 288 0 5 278 538
+6	67315 4597 815 5542 141000 1002000 288 0 4 277 537
+7	71912 16018 823 5540 144380.475036447619 1001917.781364903162 555 0 6 892 2130

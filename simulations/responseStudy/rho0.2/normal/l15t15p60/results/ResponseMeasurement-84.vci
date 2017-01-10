@@ -1,0 +1,47 @@
+file 33730 1484073835                                           
+version 2
+run ResponseMeasurement-84-20170110-19:43:55-22356
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:55
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=84
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22356
+attr repetition 84
+attr replication #84
+attr resultdir results
+attr runnumber 84
+attr seedset 84
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1477 4449 665 2408 386898.893157014805 1241507.244663063634 104 5970.1617903806 46022.625268677 1439399.3319653 26372818827.615
+1	5926 3348 654 2389 381864.765569563047 1235882.654887953873 104 0 1037.960820181 11475.612002903 7172372.3314258
+2	9274 6033 652 2389 381864.765569563047 1235882.654887953873 208 0 1 104 104
+3	15307 3293 662 2405 386051.166430068442 1240594.178070458753 104 0 1434.9687822446 11501.619149675 9401013.8249375
+4	18600 6032 660 2405 386051.166430068442 1240594.178070458753 208 0 2 106 108
+5	24632 1535 667 2410 387000 1242000 96 0 4 104 204
+6	26167 1535 667 2410 387000 1242000 96 0 4 104 202
+7	27702 6028 657 2402 382564.424477640498 1240594.178070458753 208 0 4 182 300

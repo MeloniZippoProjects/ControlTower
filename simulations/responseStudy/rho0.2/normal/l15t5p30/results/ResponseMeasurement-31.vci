@@ -1,0 +1,47 @@
+file 46999 1484073873                                           
+version 2
+run ResponseMeasurement-31-20170110-19:44:33-22456
+attr configname ResponseMeasurement
+attr datetime 20170110-19:44:33
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=31
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22456
+attr repetition 31
+attr replication #31
+attr resultdir results
+attr runnumber 31
+attr seedset 31
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 6319 632 3120 199649.620050328187 1062441.909867042385 148 3500.6538820491 23955.431337244 1349725.424393 16261218540.269
+1	7795 4696 645 3108 201973.110986756452 1059536.162638656835 146 0 1426.279591044 17811.060558611 13265911.939424
+2	12491 8415 643 3108 201973.110986756452 1059536.162638656835 292 0 2 156 166
+3	20906 4606 637 3117 201298.144652657066 1062182.517117955676 147 0 4240.6658965624 22366.40246266 41405257.10055
+4	25512 8466 635 3117 201298.144652657066 1062182.517117955676 294 0 4 173 231
+5	33978 2293 650 3113 204000 1062000 144 0 6 147 309
+6	36271 2293 650 3113 204000 1062000 144 0 7 148 338
+7	38564 8435 634 3114 201298.144652657066 1062182.517117955676 293 0 3 244 374

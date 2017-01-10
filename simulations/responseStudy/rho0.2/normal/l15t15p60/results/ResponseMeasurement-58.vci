@@ -1,0 +1,47 @@
+file 34339 1484073827                                           
+version 2
+run ResponseMeasurement-58-20170110-19:43:47-22329
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:47
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=58
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22329
+attr repetition 58
+attr replication #58
+attr resultdir results
+attr runnumber 58
+attr seedset 58
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1477 4536 721 2488 380603.473009761315 1235841.758109525587 106 5793.8264126812 71293.056784996 1459439.5452023 29660381367.654
+1	6013 3462 734 2493 386450.751003928895 1239011.022694464083 105 0 1186.045757767 15615.408716645 11250621.108456
+2	9475 6067 732 2493 386450.751003928895 1239011.022694464083 210 0 2 113 121
+3	15542 3459 726 2502 384140.462592379113 1243404.754358574482 106 0 2194.1366683218 13755.891038546 13747626.212249
+4	19001 6139 724 2502 384140.462592379113 1243404.754358574482 212 0 2 110 114
+5	25140 1545 736 2498 387000 1242000 96 0 5 106 220
+6	26685 1545 736 2498 387000 1242000 96 0 4 106 224
+7	28230 6109 723 2499 384140.462592379113 1243404.754358574482 211 0 4 191 305

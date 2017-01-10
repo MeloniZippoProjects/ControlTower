@@ -1,0 +1,47 @@
+file 331326 1484073455                                          
+version 2
+run ResponseMeasurement-93-20170110-19:37:34-21869
+attr configname ResponseMeasurement
+attr datetime 20170110-19:37:34
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=93
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21869
+attr repetition 93
+attr replication #93
+attr resultdir results
+attr runnumber 93
+attr seedset 93
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1481 42301 2107 18734 101243.27099415978 964024.956358994436 977 2311.7320188732 8899.7622411834 3796113.3147431 15499923670.378
+1	43782 38291 2081 18720 100336.001602256679 963259.840269124702 979 0 1204.981033663 153206.98810388 54457613.810838
+2	82073 57581 2081 18720 100336.001602256679 963259.840269124702 1957 0 4 1298 1722
+3	139654 37669 2100 18736 100928.163863084433 964024.956358994436 978 0 2912.6096532093 433867.07604885 507439397.2365
+4	177323 57564 2087 18739 100440.118963754341 964177.267546560002 1957 0 6 2027 4583
+5	234887 19406 2077 18722 100287.72 963447.84 1008 0 3 979 1731
+6	254293 19406 2077 18722 100287.72 963447.84 1008 0 4 977 1713
+7	273699 57627 2079 18738 100336.001602256679 964177.267546560002 1959 0 7 4882 15900

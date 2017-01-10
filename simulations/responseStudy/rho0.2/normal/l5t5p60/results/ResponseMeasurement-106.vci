@@ -1,0 +1,47 @@
+file 93789 1484074086                                           
+version 2
+run ResponseMeasurement-106-20170110-19:48:06-22987
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:06
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=106
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22987
+attr repetition 106
+attr replication #106
+attr resultdir results
+attr runnumber 106
+attr seedset 106
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1479 12742 736 5781 140076.245648401345 1002877.655690191937 298 3519.8269226389 21009.129946986 2158911.3028334 18159736287.649
+1	14221 9536 738 5770 140076.245648401345 1002251.400977185994 298 0 347.66737448577 10499.542486731 2289389.3194915
+2	23757 17147 738 5770 140076.245648401345 1002251.400977185994 595 0 2 307 317
+3	40904 9376 779 5778 143872.322457737859 1002503.395285148145 297 0 763.7101155388 10477.116988666 2977124.3811731
+4	50280 17146 766 5778 143439.694039116217 1002503.395285148145 594 0 2 305 313
+5	67426 4595 759 5766 141000 1002000 288 0 4 297 589
+6	72021 4595 759 5766 141000 1002000 288 0 5 297 621
+7	76616 17173 747 5776 140362.942351722756 1002503.395285148145 595 0 6 1048 2746

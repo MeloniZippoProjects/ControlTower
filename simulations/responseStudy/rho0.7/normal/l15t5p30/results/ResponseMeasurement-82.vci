@@ -1,0 +1,47 @@
+file 176800 1484073226                                          
+version 2
+run ResponseMeasurement-82-20170110-19:33:46-20743
+attr configname ResponseMeasurement
+attr datetime 20170110-19:33:46
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=82
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20743
+attr repetition 82
+attr replication #82
+attr resultdir results
+attr runnumber 82
+attr seedset 82
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 22564 978 9924 101922.937196359627 964063.473612808449 528 3650.1281733215 33699.740186598 5889144.6062001 91537179733.894
+1	24046 20838 983 9904 102184.057539096884 962476.727461635702 528 0 5434.704109469 422343.11789459 908806543.37151
+2	44884 30492 981 9904 102184.057539096884 962476.727461635702 1056 0 6 1144 2644
+3	75376 21210 975 9926 101585.534309766654 964063.473612808449 529 0 29523.618641635 3009424.2454959 40746222824.314
+4	96586 30760 973 9926 101585.534309766654 964063.473612808449 1058 0 34 5603 74449
+5	127346 9453 971 9909 101141.34 963414.12 504 0 3 529 873
+6	136799 9453 971 9909 101141.34 963414.12 504 0 6 526 1558
+7	146252 30548 969 9920 100486.860724874036 963914.117385499284 1058 0 3 1553 3045

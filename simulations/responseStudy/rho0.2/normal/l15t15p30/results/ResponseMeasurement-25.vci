@@ -1,0 +1,47 @@
+file 28944 1484073995                                           
+version 2
+run ResponseMeasurement-25-20170110-19:46:35-22754
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:35
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=25
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22754
+attr repetition 25
+attr replication #25
+attr resultdir results
+attr runnumber 25
+attr seedset 25
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 3750 546 2031 315488.812761225787 1154244.827425369282 88 4405.2013003099 60850.387782055 1181907.7443064 23108068174.271
+1	5227 2743 534 2037 312122.272118942994 1163695.725661363119 89 0 920.50031390636 5734.6312776941 3467746.7821996
+2	7970 5122 532 2037 312122.272118942994 1163695.725661363119 178 0 2 91 93
+3	13092 2685 542 2028 314744.944096799708 1153349.633562201592 88 0 1246.8488660027 5281.5716048733 3569880.0677734
+4	15777 5063 540 2028 314744.944096799708 1153349.633562201592 176 0 1 88 88
+5	20840 1519 530 2033 306000 1161000 96 0 3 88 148
+6	22359 1519 530 2033 306000 1161000 96 0 3 90 160
+7	23878 5066 537 2022 312893.594430846065 1153067.95996357561 176 0 2 110 132

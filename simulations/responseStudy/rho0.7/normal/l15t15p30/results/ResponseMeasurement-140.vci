@@ -1,0 +1,47 @@
+file 120483 1484073330                                          
+version 2
+run ResponseMeasurement-140-20170110-19:35:30-21571
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:30
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=140
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21571
+attr repetition 140
+attr replication #140
+attr resultdir results
+attr runnumber 140
+attr seedset 140
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1489 15465 984 7095 141168.726094086379 1002077.376546982662 362 4298.4943662647 19641.194854116 3149070.4742544 30738445638.035
+1	16954 13993 986 7097 141168.726094086379 1002077.376546982662 362 0 2358.8342626105 166583.38795714 157460159.51392
+2	30947 20903 981 7097 140611.73834161339 1002077.376546982662 724 0 3 464 586
+3	51850 14201 978 7089 140350.238913540189 1001236.356369868613 362 0 13894.882412124 816733.56322225 4862599320.7617
+4	66051 20905 976 7089 140350.238913540189 1001236.356369868613 724 0 9 1196 4590
+5	86956 6304 988 7099 141428.1 1002853.8 336 0 3 361 653
+6	93260 6304 988 7099 141428.1 1002853.8 336 0 3 362 694
+7	99564 20919 975 7101 140350.238913540189 1002882.175320039312 724 0 3 794 1334

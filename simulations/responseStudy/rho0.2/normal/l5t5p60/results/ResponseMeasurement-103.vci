@@ -1,0 +1,47 @@
+file 82139 1484074085                                           
+version 2
+run ResponseMeasurement-103-20170110-19:48:05-22984
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:05
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=103
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22984
+attr repetition 103
+attr replication #103
+attr resultdir results
+attr runnumber 103
+attr seedset 103
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 10947 710 5093 142450.702338426829 1003615.156927983136 256 3560.3532885114 22399.630374786 1950808.194129 17513899831.544
+1	12426 8116 698 5082 140317.291787216864 1002372.979911697541 258 0 300.01225468858 8142.5615692069 1762338.5339824
+2	20542 14865 696 5082 140317.291787216864 1002372.979911697541 516 0 2 262 266
+3	35407 7953 707 5090 142097.824161569427 1003360.641632618565 256 0 493.17428263925 6225.8169145279 1324502.8220756
+4	43360 14765 705 5090 142097.824161569427 1003360.641632618565 512 0 2 258 260
+5	58125 4592 703 5075 141000 1002000 288 0 5 257 467
+6	62717 4592 703 5075 141000 1002000 288 0 4 255 479
+7	67309 14830 701 5087 140588.511825312613 1003360.641632618565 514 0 6 803 1969

@@ -1,0 +1,47 @@
+file 350986 1484073340                                          
+version 2
+run ResponseMeasurement-24-20170110-19:35:40-21646
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:40
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=24
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21646
+attr repetition 24
+attr replication #24
+attr resultdir results
+attr runnumber 24
+attr seedset 24
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1481 45216 1580 19201 101189.431953541939 962583.045233139064 1044 3502.9353006101 10464.405710083 6096785.3461479 37106288952.44
+1	46697 40860 1556 19207 100246.311500963147 962918.068629198888 1039 0 1022.1896666138 171791.25014505 62083689.434984
+2	87557 61103 1556 19207 100246.311500963147 962918.068629198888 2077 0 4 1416 1954
+3	148660 41062 1573 19198 100864.938578625544 962339.103086454931 1044 0 4966.8475919598 678129.65739178 1425192002.6169
+4	189722 61288 1568 19198 100718.550899086635 962339.103086454931 2084 0 12 2826 11094
+5	251010 19387 1561 19212 100287.72 963447.84 1008 0 4 1042 1882
+6	270397 19387 1561 19212 100287.72 963447.84 1008 0 3 1044 1842
+7	289784 61202 1554 19210 100246.311500963147 963230.070586091935 2080 0 12 9888 54792

@@ -1,0 +1,47 @@
+file 158104 1484073274                                          
+version 2
+run ResponseMeasurement-43-20170110-19:34:34-21029
+attr configname ResponseMeasurement
+attr datetime 20170110-19:34:34
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=43
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21029
+attr repetition 43
+attr replication #43
+attr resultdir results
+attr runnumber 43
+attr seedset 43
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 20109 996 9017 100657.93996103919 964121.581742266491 470 5062.9135878903 21110.397387187 4000394.2071124 36908271844.845
+1	21591 17836 1007 9000 101895.045339770752 962721.603652892433 471 0 3797.2303575386 222574.19823775 325875542.14818
+2	39427 27210 1005 9000 101895.045339770752 962721.603652892433 942 0 5 703 1107
+3	66637 18186 990 9014 100371.158674767273 963881.820735495381 470 0 13157.803815357 654900.09768331 2698817979.3685
+4	84823 27172 988 9014 100371.158674767273 963881.820735495381 940 0 12 1348 5150
+5	111995 9455 1003 9005 101141.34 963414.12 504 0 2 470 724
+6	121450 9455 1003 9005 101141.34 963414.12 504 0 6 468 1104
+7	130905 27199 987 9007 100371.158674767273 963606.877599237706 941 0 5 2225 6719

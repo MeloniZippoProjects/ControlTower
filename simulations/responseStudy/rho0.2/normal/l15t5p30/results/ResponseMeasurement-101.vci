@@ -1,0 +1,47 @@
+file 46701 1484073901                                           
+version 2
+run ResponseMeasurement-101-20170110-19:45:01-22526
+attr configname ResponseMeasurement
+attr datetime 20170110-19:45:01
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=101
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22526
+attr repetition 101
+attr replication #101
+attr resultdir results
+attr runnumber 101
+attr seedset 101
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 6180 554 2989 215929.929323762975 1046925.300206071977 145 3582.8839846675 32384.930947295 1347167.6835901 17629852808.16
+1	7662 4709 535 2996 211998.570964250372 1061016.792021497889 146 0 2854.3578540439 26255.469725351 33462985.257778
+2	12371 8398 533 2996 211998.570964250372 1061016.792021497889 292 0 4 174 218
+3	20769 4626 551 2986 215563.762740433744 1046630.522704319875 145 0 3691.6917499608 34126.349753751 67462003.935218
+4	25395 8356 546 2986 214836.547635122096 1046630.522704319875 290 0 5 183 269
+5	33751 2285 530 3001 204000 1062000 144 0 6 146 318
+6	36036 2285 530 3001 204000 1062000 144 0 6 145 315
+7	38321 8380 538 2999 212887.26361114467 1061840.078518798757 291 0 3 244 358

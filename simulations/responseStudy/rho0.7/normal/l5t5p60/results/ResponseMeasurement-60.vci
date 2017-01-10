@@ -1,0 +1,47 @@
+file 322943 1484073348                                          
+version 2
+run ResponseMeasurement-60-20170110-19:35:48-21682
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:48
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=60
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21682
+attr repetition 60
+attr replication #60
+attr resultdir results
+attr runnumber 60
+attr seedset 60
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1481 41287 2224 18451 101305.827954020128 963997.146745964797 953 3785.636084367 12447.270380059 5432115.9743365 32042621748.563
+1	42768 36611 2207 18439 100402.488902723976 962655.426778474889 953 0 1286.5457173577 141233.57174091 53528546.326733
+2	79379 55989 2207 18439 100402.488902723976 962655.426778474889 1904 0 5 1242 1740
+3	135368 36721 2217 18448 101041.156742645028 963707.054059536409 953 0 3538.4497362981 416026.20283168 548505297.42095
+4	172089 56032 2217 18448 101041.156742645028 963707.054059536409 1905 0 7 1914 4372
+5	228121 19381 2203 18444 100287.72 963447.84 1008 0 3 955 1681
+6	247502 19381 2203 18444 100287.72 963447.84 1008 0 3 953 1631
+7	266883 56060 2205 18445 100402.488902723976 963707.054059536409 1906 0 10 8471 44489

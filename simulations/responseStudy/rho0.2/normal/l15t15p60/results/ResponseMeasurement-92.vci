@@ -1,0 +1,47 @@
+file 27184 1484073837                                           
+version 2
+run ResponseMeasurement-92-20170110-19:43:57-22364
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:57
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=92
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22364
+attr repetition 92
+attr replication #92
+attr resultdir results
+attr runnumber 92
+attr seedset 92
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1477 3441 905 2264 384886.297988279829 1237289.209489233858 80 5929.9373639776 44231.861805958 1315909.9847375 27777249291.231
+1	4918 2548 911 2269 387341.429776246736 1239612.438567159355 80 0 872.7761109585 7607.7964434071 4663012.1306925
+2	7466 4651 909 2269 387341.429776246736 1239612.438567159355 160 0 1 80 80
+3	12117 2536 902 2278 384018.893962217892 1243455.780345796741 81 0 1210.4797894974 5999.3161138919 4796124.6474721
+4	14653 4708 900 2278 384018.893962217892 1243455.780345796741 162 0 1 81 81
+5	19361 1559 907 2274 387000 1242000 96 0 3 81 145
+6	20920 1559 907 2274 387000 1242000 96 0 4 80 140
+7	22479 4705 897 2275 380692.298723014135 1243455.780345796741 162 0 3 135 201

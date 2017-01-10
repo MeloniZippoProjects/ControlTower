@@ -1,0 +1,47 @@
+file 41140 1484073781                                           
+version 2
+run ResponseMeasurement-99-20170110-19:43:01-22218
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:01
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=99
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22218
+attr repetition 99
+attr replication #99
+attr resultdir results
+attr runnumber 99
+attr seedset 99
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 5378 608 2750 200804.758733355429 1052490.253262758024 126 4858.6866842299 47203.631023242 1486936.7670747 25748919964.522
+1	6854 4033 614 2738 205231.553054718892 1047218.260206476796 125 0 1122.1389781517 10278.825133944 5649371.8788777
+2	10887 7207 612 2738 205231.553054718892 1047218.260206476796 250 0 2 129 133
+3	18094 4003 605 2747 199971.759128959596 1051673.221854047882 126 0 1367.0597503254 14965.44545263 11817988.988397
+4	22097 7252 603 2747 199971.759128959596 1051673.221854047882 252 0 2 128 130
+5	29349 2285 610 2753 204000 1062000 144 0 4 125 263
+6	31634 2285 610 2753 204000 1062000 144 0 4 126 260
+7	33919 7221 602 2744 199971.759128959596 1051673.221854047882 251 0 4 293 561

@@ -1,0 +1,47 @@
+file 346785 1484073387                                          
+version 2
+run ResponseMeasurement-136-20170110-19:36:27-21759
+attr configname ResponseMeasurement
+attr datetime 20170110-19:36:27
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=136
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21759
+attr repetition 136
+attr replication #136
+attr resultdir results
+attr runnumber 136
+attr seedset 136
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1487 44417 2036 19410 100747.135039421057 962695.339636930018 1025 3556.0497962975 15559.925745212 6118456.0695399 38522704226.618
+1	45904 40362 2042 19440 101522.150339993264 963822.237101668954 1026 0 1069.5890064226 175842.91506928 64268649.026458
+2	86266 60366 2040 19440 101522.150339993264 963822.237101668954 2052 0 4 1450 2026
+3	146632 40548 2033 19406 100455.424577941279 962377.837728470716 1025 0 7732.1181345507 778560.32302954 1929142690.5133
+4	187180 60366 2031 19406 100455.424577941279 962377.837728470716 2050 0 17 3173 15017
+5	247546 19417 2029 19428 100287.72 963447.84 1008 0 4 1024 1876
+6	266963 19417 2029 19428 100287.72 963447.84 1008 0 3 1028 1860
+7	286380 60405 2030 19443 100455.424577941279 964117.008977337531 2051 0 14 9845 56853

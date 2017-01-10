@@ -1,0 +1,47 @@
+file 162807 1484073206                                          
+version 2
+run ResponseMeasurement-24-20170110-19:33:25-20611
+attr configname ResponseMeasurement
+attr datetime 20170110-19:33:25
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=24
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20611
+attr repetition 24
+attr replication #24
+attr resultdir results
+attr runnumber 24
+attr seedset 24
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 20749 670 8939 108202.470897547334 963250.353235999327 486 3667.298234639 20390.822352115 3605582.0217719 31152157683.504
+1	22231 18538 657 8941 105376.188694182045 963250.353235999327 488 0 4703.8174298376 236135.48664676 371508811.52352
+2	40769 28155 655 8941 105376.188694182045 963250.353235999327 976 0 5 748 1252
+3	68924 18807 666 8950 107883.404489661106 964203.279647783515 487 0 12635.439360547 1047920.6596655 5774265363.1985
+4	87731 28106 664 8950 107883.404489661106 964203.279647783515 974 0 15 2177 12019
+5	115837 9431 651 8943 101141.34 963414.12 504 0 3 487 761
+6	125268 9431 651 8943 101141.34 963414.12 504 0 6 486 1274
+7	134699 28108 660 8948 106175.647968295784 964203.279647783515 975 0 3 1334 2484

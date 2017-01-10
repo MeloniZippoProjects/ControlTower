@@ -1,0 +1,47 @@
+file 93508 1484074149                                           
+version 2
+run ResponseMeasurement-97-20170110-19:49:09-23131
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:09
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=97
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23131
+attr repetition 97
+attr replication #97
+attr resultdir results
+attr runnumber 97
+attr seedset 97
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 12737 754 5772 144833.926569601411 1001373.138487907807 298 2492.3077785457 16714.205497978 1593082.9964386 10527937327.319
+1	14210 9343 723 5760 142229.516227368775 998929.397702375338 298 0 323.53120982291 7145.5278272928 1312913.9963856
+2	23553 17179 721 5760 142229.516227368775 998929.397702375338 596 0 2 300 302
+3	40732 9216 748 5769 144580.232696622722 1001050.337243421592 298 0 584.57409485878 7253.0256760102 1871154.4165102
+4	49948 17189 743 5769 144313.96373330982 1001050.337243421592 596 0 2 302 306
+5	67137 4594 719 5774 141000 1002000 288 0 5 298 556
+6	71731 4594 719 5774 141000 1002000 288 0 6 298 624
+7	76325 17183 726 5766 142556.630133938181 1001050.337243421592 596 0 5 634 1166

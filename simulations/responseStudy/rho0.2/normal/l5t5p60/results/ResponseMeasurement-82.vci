@@ -1,0 +1,47 @@
+file 94702 1484074077                                           
+version 2
+run ResponseMeasurement-82-20170110-19:47:57-22963
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:57
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=82
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22963
+attr repetition 82
+attr replication #82
+attr resultdir results
+attr runnumber 82
+attr seedset 82
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 12820 735 5821 145919.741994982866 1003506.681269775869 300 3472.4924811596 18188.001189897 2142162.4622396 17440694978.326
+1	14293 9584 723 5801 142201.468418357192 1001276.814662859659 302 0 587.45448822153 11377.742076712 2899322.0845309
+2	23877 17425 721 5801 142201.468418357192 1001276.814662859659 604 0 3 316 334
+3	41302 9456 732 5826 145628.558469463419 1003690.989930161756 301 0 1023.1275362729 11949.065663992 4845986.6522688
+4	50758 17362 730 5826 145628.558469463419 1003690.989930161756 602 0 3 311 325
+5	68120 4592 719 5806 141000 1002000 288 0 4 302 592
+6	72712 4592 719 5806 141000 1002000 288 0 4 298 578
+7	77304 17398 726 5823 142496.410196911045 1003690.989930161756 603 0 5 986 2358

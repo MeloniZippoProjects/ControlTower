@@ -1,0 +1,47 @@
+file 48696 1484074213                                           
+version 2
+run ResponseMeasurement-149-20170110-19:50:13-23335
+attr configname ResponseMeasurement
+attr datetime 20170110-19:50:13
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=149
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23335
+attr repetition 149
+attr replication #149
+attr resultdir results
+attr runnumber 149
+attr seedset 149
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1482 6530 675 3247 201877.102901767702 1060663.519265255753 153 3104.777068976 35846.808329653 1353278.148022 16983597384.722
+1	8012 4903 677 3236 201877.102901767702 1057644.837095636718 152 0 1056.9456584107 17250.581007 11609615.49799
+2	12915 8758 672 3236 201081.180804123573 1057644.837095636718 304 0 2 156 160
+3	21673 4830 669 3244 201073.250224619341 1059703.919025237565 153 0 1624.1287403863 14661.293979158 12973886.048955
+4	26503 8823 667 3244 201073.250224619341 1059703.919025237565 306 0 2 161 169
+5	35326 2290 682 3249 204000 1062000 144 0 5 153 319
+6	37616 2290 682 3249 204000 1062000 144 0 4 154 302
+7	39906 8790 666 3241 201073.250224619341 1059703.919025237565 305 0 4 236 340

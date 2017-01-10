@@ -1,0 +1,47 @@
+file 113809 1484073321                                          
+version 2
+run ResponseMeasurement-97-20170110-19:35:21-21461
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:21
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=97
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21461
+attr repetition 97
+attr replication #97
+attr resultdir results
+attr runnumber 97
+attr seedset 97
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 14327 1008 6686 146960.101492239819 998835.961095659225 335 4424.5348177677 22207.633745754 3088703.673368 32771793599.112
+1	15810 13250 987 6739 142892.481383295773 1003552.85186292198 342 0 4426.5273170774 199437.94151122 287122282.18631
+2	29060 19756 985 6739 142892.481383295773 1003552.85186292198 684 0 5 536 902
+3	48816 13235 1004 6680 145975.002413222586 997931.445286722619 335 0 14032.584230313 828408.11605261 5390074037.2312
+4	62051 19494 999 6742 145951.746603632969 1003661.342609724489 674 0 11 1181 4993
+5	81545 6304 983 6729 141428.1 1002853.8 336 0 3 340 620
+6	87849 6304 983 6729 141428.1 1002853.8 336 0 4 335 617
+7	94153 19656 990 6741 143856.818255146207 1003661.342609724489 680 0 3 754 1300

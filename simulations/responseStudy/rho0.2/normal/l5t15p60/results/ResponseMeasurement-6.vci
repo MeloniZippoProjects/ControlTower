@@ -1,0 +1,47 @@
+file 48388 1484073743                                           
+version 2
+run ResponseMeasurement-6-20170110-19:42:22-22125
+attr configname ResponseMeasurement
+attr datetime 20170110-19:42:22
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22125
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1470 6481 488 3039 200765.11549416797 1058740.022539882096 152 4571.8098345192 42803.166849625 1622133.4221074 22673705062.7
+1	7951 4730 502 3044 205137.50819482826 1058924.356982634393 151 0 883.37561552597 7695.5764775682 3492433.3088772
+2	12681 8686 500 3044 205137.50819482826 1058924.356982634393 302 0 1 151 151
+3	21367 4916 485 3053 199915.297105448866 1062958.529831373013 153 0 1251.5240507424 16917.832837827 11655451.31844
+4	26283 8784 483 3053 199915.297105448866 1062958.529831373013 306 0 2 157 161
+5	35067 2290 498 3049 204000 1062000 144 0 5 152 324
+6	37357 2290 498 3049 204000 1062000 144 0 4 152 316
+7	39647 8741 482 3050 199915.297105448866 1062958.529831373013 304 0 5 368 752

@@ -1,0 +1,47 @@
+file 165779 1484073513                                          
+version 2
+run ResponseMeasurement-148-20170110-19:38:33-22076
+attr configname ResponseMeasurement
+attr datetime 20170110-19:38:33
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=148
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22076
+attr repetition 148
+attr replication #148
+attr resultdir results
+attr runnumber 148
+attr seedset 148
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1488 21193 977 9399 100339.704635139692 964191.72889476005 495 3035.9044696053 14006.352137586 3188211.2908523 22518081831.417
+1	22681 18964 991 9375 101662.33290660167 961611.092245994601 495 0 1309.1556435815 150001.2830492 96112015.936799
+2	41645 28604 986 9375 101625.512336668996 961611.092245994601 990 0 4 665 891
+3	70249 19331 982 9401 100665.540991626291 964191.72889476005 495 0 7638.7766359348 680229.1117555 2363113266.1079
+4	89580 28644 980 9401 100665.540991626291 964191.72889476005 991 0 8 1362 4096
+5	118224 9454 984 9394 101141.34 963414.12 504 0 5 495 983
+6	127678 9454 984 9394 101141.34 963414.12 504 0 2 494 754
+7	137132 28647 979 9395 100665.540991626291 963616.621375752085 991 0 6 1525 3575

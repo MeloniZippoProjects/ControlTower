@@ -1,0 +1,47 @@
+file 45780 1484073764                                           
+version 2
+run ResponseMeasurement-58-20170110-19:42:44-22177
+attr configname ResponseMeasurement
+attr datetime 20170110-19:42:44
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=58
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22177
+attr repetition 58
+attr replication #58
+attr resultdir results
+attr runnumber 58
+attr seedset 58
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 6068 682 3071 213829.703172837328 1059530.765784837091 142 4281.6973048704 48040.982527453 1567149.5105017 23580695693.143
+1	7544 4554 662 3076 209141.500320107888 1060963.033037509532 143 0 890.12185672574 10942.356130381 5901045.4435048
+2	12098 8248 660 3076 209141.500320107888 1060963.033037509532 286 0 2 147 151
+3	20346 4460 679 3068 213006.817277941603 1058685.066226670601 142 0 2353.1463708513 17281.493387529 18841360.583945
+4	24806 8180 677 3068 213006.817277941603 1058685.066226670601 284 0 2 146 150
+5	32986 2292 658 3081 204000 1062000 144 0 3 143 279
+6	35278 2292 658 3081 204000 1062000 144 0 4 142 264
+7	37570 8210 665 3079 209468.205099163988 1061290.241182106359 285 0 4 309 555

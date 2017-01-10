@@ -1,0 +1,47 @@
+file 85033 1484074136                                           
+version 2
+run ResponseMeasurement-62-20170110-19:48:56-23095
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:56
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=62
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23095
+attr repetition 62
+attr replication #62
+attr resultdir results
+attr runnumber 62
+attr seedset 62
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1473 11422 933 5468 140629.37396949136 1001208.02278449165 267 2503.2436554459 21054.585648732 1517530.7808322 11197164554.42
+1	12895 8426 948 5490 146138.643088782632 1003891.972406506698 268 0 372.68975192621 7113.8716097296 1405410.6626005
+2	21321 15485 946 5490 146138.643088782632 1003891.972406506698 536 0 2 270 272
+3	36806 8209 930 5465 140264.63617888955 1000939.846354822687 267 0 857.96022236294 6890.4846465948 2351805.5392065
+4	45015 15402 928 5465 140264.63617888955 1000939.846354822687 534 0 2 271 275
+5	60417 4603 935 5475 141000 1002000 288 0 4 267 469
+6	65020 4603 935 5475 141000 1002000 288 0 4 268 466
+7	69623 15410 927 5488 140264.63617888955 1003891.972406506698 534 0 4 515 855

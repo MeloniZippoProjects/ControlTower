@@ -1,0 +1,47 @@
+file 91964 1484074087                                           
+version 2
+run ResponseMeasurement-109-20170110-19:48:07-22990
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:07
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=109
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22990
+attr repetition 109
+attr replication #109
+attr resultdir results
+attr runnumber 109
+attr seedset 109
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1479 12459 558 5484 141121.619351372421 1000730.707920315019 292 3894.3327860566 18636.820853652 2104492.6588022 17334488702.026
+1	13938 9255 581 5497 147620.002448951356 1001254.134450538387 291 0 439.2097707854 10527.393401765 2443795.4856621
+2	23193 16774 579 5497 147620.002448951356 1001254.134450538387 582 0 2 295 299
+3	39967 9220 554 5481 140842.581142775802 1000491.748206303455 292 0 885.08473926332 11015.349053347 3523846.6499594
+4	49187 16813 552 5481 140842.581142775802 1000491.748206303455 584 0 2 294 296
+5	66000 4587 556 5502 141000 1002000 288 0 4 293 563
+6	70587 4587 556 5502 141000 1002000 288 0 4 294 574
+7	75174 16790 551 5500 140842.581142775802 1001512.296078678305 583 0 5 973 2411

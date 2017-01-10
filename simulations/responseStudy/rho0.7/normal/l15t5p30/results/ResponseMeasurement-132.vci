@@ -1,0 +1,47 @@
+file 159329 1484073245                                          
+version 2
+run ResponseMeasurement-132-20170110-19:34:05-20850
+attr configname ResponseMeasurement
+attr datetime 20170110-19:34:05
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=132
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20850
+attr repetition 132
+attr replication #132
+attr resultdir results
+attr runnumber 132
+attr seedset 132
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1488 20267 974 9040 104393.887108994142 962005.458449056612 474 3458.0758915099 19599.087640554 3536852.1824869 30948926408.66
+1	21755 18191 959 9054 101154.615282742568 963682.862982293833 476 0 3650.2997821979 248681.90826921 364709414.62141
+2	39946 27500 957 9054 101154.615282742568 963682.862982293833 952 0 5 768 1288
+3	67446 18178 968 9037 104051.726555919171 961701.583623896035 474 0 12077.386587395 1003599.4535063 5741568305.3194
+4	85624 27403 966 9037 104051.726555919171 961701.583623896035 948 0 13 2068 11598
+5	113027 9450 955 9047 101141.34 963414.12 504 0 3 474 752
+6	122477 9450 955 9047 101141.34 963414.12 504 0 6 475 1271
+7	131927 27402 962 9052 102008.092850869514 963682.862982293833 949 0 3 1287 2407

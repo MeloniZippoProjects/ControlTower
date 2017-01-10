@@ -1,0 +1,47 @@
+file 85609 1484074092                                           
+version 2
+run ResponseMeasurement-122-20170110-19:48:12-23003
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:12
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=122
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23003
+attr repetition 122
+attr replication #122
+attr resultdir results
+attr runnumber 122
+attr seedset 122
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1479 11551 709 5303 140966.047414582946 1001907.441039751253 270 3823.7955095261 24187.112725088 2003310.2215898 17604187635.563
+1	13030 8375 715 5305 141373.158925495345 1001907.441039751253 270 0 341.30253701233 6076.5616860545 1255612.9133303
+2	21405 15552 713 5305 141373.158925495345 1001907.441039751253 540 0 1 270 270
+3	36957 8347 706 5297 140689.928546132435 1001620.963512332522 270 0 925.33928165458 7799.6194964325 2651627.2314885
+4	45304 15556 704 5297 140689.928546132435 1001620.963512332522 540 0 2 274 278
+5	60860 4593 711 5307 141000 1002000 288 0 4 269 487
+6	65453 4593 711 5307 141000 1002000 288 0 5 271 523
+7	70046 15563 703 5309 140689.928546132435 1002189.531603632709 540 0 6 864 2022

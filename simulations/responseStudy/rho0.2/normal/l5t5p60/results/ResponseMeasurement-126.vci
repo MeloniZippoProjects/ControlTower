@@ -1,0 +1,47 @@
+file 91213 1484074093                                           
+version 2
+run ResponseMeasurement-126-20170110-19:48:13-23007
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:13
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=126
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23007
+attr repetition 126
+attr replication #126
+attr resultdir results
+attr runnumber 126
+attr seedset 126
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 12394 753 5644 141298.681566421257 1001515.375427758572 290 3847.9998826211 23766.46154051 2106756.7336912 17752426777.456
+1	13873 9100 738 5600 140205.450991674224 997026.817471583968 288 0 342.49570133725 9755.6829342348 2034452.4453856
+2	22973 16600 736 5600 140205.450991674224 997026.817471583968 576 0 2 292 296
+3	39573 9058 746 5641 140947.908568643345 1001248.349404469239 290 0 614.80880973746 10806.168950535 3390023.543386
+4	48631 16720 744 5641 140947.908568643345 1001248.349404469239 580 0 2 300 310
+5	65351 4597 748 5646 141000 1002000 288 0 5 289 587
+6	69948 4597 748 5646 141000 1002000 288 0 5 290 592
+7	74545 16668 741 5638 140518.782843803095 1001248.349404469239 578 0 7 949 2385

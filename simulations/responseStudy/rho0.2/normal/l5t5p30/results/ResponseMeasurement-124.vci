@@ -1,0 +1,47 @@
+file 95991 1484074162                                           
+version 2
+run ResponseMeasurement-124-20170110-19:49:21-23158
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:21
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=124
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23158
+attr repetition 124
+attr replication #124
+attr resultdir results
+attr runnumber 124
+attr seedset 124
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 13040 798 5949 142441.621723757985 1002437.027950387247 305 2385.5339478306 21623.791617991 1624911.0934283 10610870614.449
+1	14519 9792 786 5954 140138.106018776145 1002756.524969945511 306 0 781.67471030857 14441.875038746 4322532.9233532
+2	24311 17675 784 5954 140138.106018776145 1002756.524969945511 612 0 3 330 362
+3	41986 9581 795 5946 142179.127741536175 1002158.097475096598 305 0 552.84732668229 10596.920093267 3170373.3121225
+4	51567 17607 793 5946 142179.127741536175 1002158.097475096598 610 0 2 311 317
+5	69174 4595 791 5942 141000 1002000 288 0 5 305 627
+6	73769 4595 791 5942 141000 1002000 288 0 5 305 609
+7	78364 17627 789 5957 140400.957391209858 1003068.812053348524 611 0 5 672 1310

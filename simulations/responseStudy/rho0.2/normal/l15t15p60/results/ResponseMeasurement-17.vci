@@ -1,0 +1,47 @@
+file 31338 1484073812                                           
+version 2
+run ResponseMeasurement-17-20170110-19:43:32-22288
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:32
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=17
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22288
+attr repetition 17
+attr replication #17
+attr resultdir results
+attr runnumber 17
+attr seedset 17
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 4064 651 2248 404094.074130537797 1238642.071251587628 95 5878.9135437266 41911.9950049 1390201.7550461 25876577672.884
+1	5541 3041 640 2262 398717.610314798852 1243350.929633394621 97 0 1060.1227405409 7205.2819860907 4965820.6081125
+2	8582 5611 638 2262 398717.610314798852 1243350.929633394621 194 0 1 97 97
+3	14193 3022 648 2245 403240.243160776626 1237831.075248470079 95 0 1469.7149657157 12336.652401866 10750150.722116
+4	17215 5489 646 2245 403240.243160776626 1237831.075248470079 190 0 2 97 99
+5	22704 1540 635 2258 387000 1242000 96 0 3 96 170
+6	24244 1540 635 2258 387000 1242000 96 0 4 96 168
+7	25784 5554 643 2265 399599.175790525247 1244093.877794694452 192 0 3 150 212

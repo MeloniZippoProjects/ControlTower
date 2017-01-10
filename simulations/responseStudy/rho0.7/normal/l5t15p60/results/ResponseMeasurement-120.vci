@@ -1,0 +1,47 @@
+file 171973 1484073116                                          
+version 2
+run ResponseMeasurement-120-20170110-19:31:55-20104
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:55
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=120
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20104
+attr repetition 120
+attr replication #120
+attr resultdir results
+attr runnumber 120
+attr seedset 120
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1488 22005 1029 9751 101708.822474547854 963879.567691316251 515 4317.915653575 16106.507181508 4258659.5644801 37337646255.976
+1	23493 20226 1006 9753 100413.014788578597 963879.567691316251 516 0 1251.4460915844 189401.57830272 124780948.40208
+2	43719 29805 1004 9753 100413.014788578597 963879.567691316251 1032 0 4 782 1148
+3	73524 19990 1022 9741 101020.547310743018 962951.265467147035 515 0 7250.1960339136 745595.18293055 2635472313.1963
+4	93514 29758 1009 9747 100539.404336585843 963211.763657575054 1031 0 7 1502 4592
+5	123272 9455 1024 9749 101141.34 963414.12 504 0 6 517 1117
+6	132727 9455 1024 9749 101141.34 963414.12 504 0 3 515 797
+7	142182 29791 1001 9746 100366.785120607731 963211.763657575054 1032 0 8 2776 9984

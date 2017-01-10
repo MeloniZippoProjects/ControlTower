@@ -1,0 +1,47 @@
+file 32704 1484073808                                           
+version 2
+run ResponseMeasurement-6-20170110-19:43:28-22277
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:28
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=6
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22277
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1471 4329 617 2296 384599.457499147324 1235315.453690884134 101 5931.0993143827 62447.303745352 1426200.5940906 28068276419.817
+1	5800 3165 598 2268 381805.615383504962 1229375.126134800861 100 0 1568.9123371275 10527.381702613 8502388.5774525
+2	8965 5802 596 2268 381805.615383504962 1229375.126134800861 200 0 2 104 108
+3	14767 3138 614 2293 383667.667954656792 1234500.546624368184 101 0 780.45814523317 6584.8548366472 3526576.3972491
+4	17905 5858 612 2293 383667.667954656792 1234500.546624368184 202 0 1 101 101
+5	23763 1539 627 2298 387000 1242000 96 0 5 101 217
+6	25302 1539 627 2298 387000 1242000 96 0 4 101 197
+7	26841 5863 593 2287 380166.425096330025 1233926.954535634726 202 0 4 201 353

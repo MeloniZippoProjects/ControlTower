@@ -1,0 +1,47 @@
+file 163592 1484073509                                          
+version 2
+run ResponseMeasurement-124-20170110-19:38:28-22052
+attr configname ResponseMeasurement
+attr datetime 20170110-19:38:28
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=124
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22052
+attr repetition 124
+attr replication #124
+attr resultdir results
+attr runnumber 124
+attr seedset 124
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1488 20871 1045 9340 102795.278272759316 964199.166686677501 488 2778.3424313269 16690.581457974 3040803.1727062 20950208465.393
+1	22359 18797 1030 9323 100303.692506316857 962017.549733575805 488 0 1365.8920871721 156521.58308717 104396890.88097
+2	41156 28206 1028 9323 100303.692506316857 962017.549733575805 976 0 4 658 876
+3	69362 18829 1039 9342 101902.879459244343 964199.166686677501 489 0 9243.7046489131 558148.43504689 2172058476.5885
+4	88191 28263 1037 9342 101902.879459244343 964199.166686677501 978 0 10 1179 3829
+5	116454 9455 1035 9335 101141.34 963414.12 504 0 5 489 931
+6	125909 9455 1035 9335 101141.34 963414.12 504 0 2 488 728
+7	135364 28228 1033 9336 100622.468625450804 964043.856080483566 977 0 6 1424 3196

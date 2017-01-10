@@ -1,0 +1,47 @@
+file 87208 1484074053                                           
+version 2
+run ResponseMeasurement-23-20170110-19:47:33-22904
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:33
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=23
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22904
+attr repetition 23
+attr replication #23
+attr resultdir results
+attr runnumber 23
+attr seedset 23
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 11729 1015 5661 145007.60234599737 1003758.729109926391 274 3861.1624398196 21390.956484371 2029231.4913674 17951834130.875
+1	13202 8611 1003 5633 142713.428580832135 1000330.616646134789 273 0 381.6235960349 8312.1780664396 1892583.5371391
+2	21813 15775 1001 5633 142713.428580832135 1000330.616646134789 546 0 2 275 277
+3	37588 8732 1012 5658 144714.578954826631 1003517.518346519246 274 0 752.25548306598 13104.056738791 4525423.5663548
+4	46320 15837 1010 5658 144714.578954826631 1003517.518346519246 548 0 2 284 294
+5	62157 4608 999 5638 141000 1002000 288 0 5 274 558
+6	66765 4608 999 5638 141000 1002000 288 0 5 272 560
+7	71373 15835 997 5655 140245.474963937944 1003517.518346519246 548 0 6 912 2298

@@ -1,0 +1,47 @@
+file 172653 1484073286                                          
+version 2
+run ResponseMeasurement-100-20170110-19:34:46-21140
+attr configname ResponseMeasurement
+attr datetime 20170110-19:34:46
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=100
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21140
+attr repetition 100
+attr replication #100
+attr resultdir results
+attr runnumber 100
+attr seedset 100
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1488 22176 860 9625 105929.198620928425 964108.576779705091 519 5014.1346064165 25894.644853466 4781680.013721 51523702883.857
+1	23664 20164 823 9612 101862.524667880966 961457.836461047928 519 0 4338.6070437043 302301.58152688 478052570.25792
+2	43828 29962 821 9612 101862.524667880966 961457.836461047928 1038 0 5 869 1507
+3	73790 20005 857 9622 105605.225967199634 963813.383512193669 519 0 18611.818274732 1118208.6916842 8396241060.236
+4	93795 30008 838 9622 103382.111954969769 963813.383512193669 1038 0 19 2219 16275
+5	123803 9443 819 9618 101141.34 963414.12 504 0 3 520 840
+6	133246 9443 819 9618 101141.34 963414.12 504 0 6 518 1340
+7	142689 29964 827 9619 102864.097439105743 963813.383512193669 1038 0 6 2621 8207

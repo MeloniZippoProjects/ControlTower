@@ -1,0 +1,47 @@
+file 169451 1484073117                                          
+version 2
+run ResponseMeasurement-122-20170110-19:31:56-20109
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:56
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=122
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20109
+attr repetition 122
+attr replication #122
+attr resultdir results
+attr runnumber 122
+attr seedset 122
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1488 21854 973 9571 101037.364460890201 963208.91160409988 511 4420.5592853208 20737.110293948 4392018.0533049 41687661255.068
+1	23342 19528 975 9573 101037.364460890201 963208.91160409988 504 0 1189.3286963678 169045.27373137 108826770.28573
+2	42870 29113 970 9573 100461.287169858809 963208.91160409988 1008 0 4 696 940
+3	71983 19897 981 9565 101292.059564788573 962300.81130558161 510 0 13556.177582275 910713.70258209 5343493878.5591
+4	91880 29439 967 9565 100375.750937402195 962300.81130558161 1018 0 13 1795 8953
+5	121319 9454 977 9575 101141.34 963414.12 504 0 6 505 1009
+6	130773 9454 977 9575 101141.34 963414.12 504 0 2 512 780
+7	140227 29224 966 9577 100375.750937402195 963531.826048690207 1012 0 7 2656 9370

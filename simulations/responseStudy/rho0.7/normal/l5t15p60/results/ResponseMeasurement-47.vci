@@ -1,0 +1,47 @@
+file 158777 1484073091                                          
+version 2
+run ResponseMeasurement-47-20170110-19:31:31-19948
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:31
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=47
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 19948
+attr repetition 47
+attr replication #47
+attr resultdir results
+attr runnumber 47
+attr seedset 47
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 20240 1034 9111 101969.948448003069 963601.275062335769 473 4792.860857409 14773.319342065 3627153.1998826 29128415469.006
+1	21722 17933 1022 9096 100727.930853165586 962190.217801067805 475 0 1265.9986305517 142123.4076384 91163569.333812
+2	39655 27453 1020 9116 100727.930853165586 963763.231152039312 951 0 4 618 796
+3	67108 17882 1031 9113 101207.374830280139 963601.275062335769 474 0 5967.88574602 349344.27731432 781202990.11198
+4	84990 27429 1029 9113 101207.374830280139 963601.275062335769 949 0 7 855 1779
+5	112419 9455 1027 9103 101141.34 963414.12 504 0 5 475 935
+6	121874 9455 1027 9103 101141.34 963414.12 504 0 3 473 711
+7	131329 27448 1025 9107 101015.620098144288 963591.33518327117 950 0 8 2343 7847

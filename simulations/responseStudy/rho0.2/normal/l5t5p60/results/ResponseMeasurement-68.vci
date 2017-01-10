@@ -1,0 +1,47 @@
+file 94767 1484074074                                           
+version 2
+run ResponseMeasurement-68-20170110-19:47:54-22949
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:54
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=68
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22949
+attr repetition 68
+attr replication #68
+attr resultdir results
+attr runnumber 68
+attr seedset 68
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 12871 1023 6108 146660.245815112468 1001913.864766903307 301 3892.3351542543 22319.28948831 2147641.9389554 17642128629.751
+1	14344 9554 1011 6088 142209.352803852511 997597.586996871447 301 0 546.24014395724 11512.486048009 3220793.9679617
+2	23898 17393 1009 6088 142209.352803852511 997597.586996871447 602 0 2 311 321
+3	41291 9520 1020 6105 146322.098671001884 1001629.28277471959 301 0 732.61384892857 10743.086391661 3118419.1976569
+4	50811 17373 1018 6105 146322.098671001884 1001629.28277471959 602 0 2 305 309
+5	68184 4609 1007 6110 141000 1002000 288 0 5 301 625
+6	72793 4609 1007 6110 141000 1002000 288 0 5 302 624
+7	77402 17365 1014 6102 142497.467909001331 1001629.28277471959 602 0 6 1061 2845

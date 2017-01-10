@@ -1,0 +1,47 @@
+file 34850 1484074039                                           
+version 2
+run ResponseMeasurement-144-20170110-19:47:19-22873
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:19
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=144
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22873
+attr repetition 144
+attr replication #144
+attr resultdir results
+attr runnumber 144
+attr seedset 144
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1483 4623 752 2559 300625.857367101354 1159885.357932002722 108 4489.1124323821 50457.878282256 1294407.2752605 22784943413.458
+1	6106 3465 762 2564 343870.633527966235 1160481.226494375295 108 0 1852.2247057107 13912.306107045 12568632.803164
+2	9571 6240 760 2564 343870.633527966235 1160481.226494375295 216 0 2 112 116
+3	15811 3484 770 2573 346652.11917934721 1163169.731769709374 108 0 1873.7819234132 12141.822546807 12110444.360907
+4	19295 6242 768 2573 346652.11917934721 1163169.731769709374 216 0 1 108 108
+5	25537 1538 754 2566 306000 1161000 96 0 4 108 222
+6	27075 1538 754 2566 306000 1161000 96 0 5 108 234
+7	28613 6237 765 2570 344685.3302497329 1163169.731769709374 216 0 3 168 232

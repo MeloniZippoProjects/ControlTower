@@ -1,0 +1,47 @@
+file 90075 1484074162                                           
+version 2
+run ResponseMeasurement-125-20170110-19:49:22-23159
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:22
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=125
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23159
+attr repetition 125
+attr replication #125
+attr resultdir results
+attr runnumber 125
+attr seedset 125
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 12141 824 5637 147817.352393186376 1002236.314854942375 284 2337.9275466544 21744.30620886 1567194.4718739 11253900799.216
+1	13620 8994 804 5642 145376.040948351379 1003699.975326193515 286 0 537.22099310298 10486.879442812 2655900.8347926
+2	22614 16496 802 5642 145376.040948351379 1003699.975326193515 572 0 2 294 302
+3	39110 8894 821 5633 147505.348013954656 1001954.796789305805 284 0 484.5645560043 8625.8941350037 1895050.4634384
+4	48004 16430 819 5645 147505.348013954656 1003811.479796976258 569 0 1 285 285
+5	64434 4594 799 5635 141000 1002000 288 0 4 285 529
+6	69028 4594 799 5635 141000 1002000 288 0 4 285 537
+7	73622 16453 807 5644 145662.177706182432 1003811.479796976258 570 0 5 627 1193

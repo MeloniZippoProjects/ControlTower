@@ -1,0 +1,47 @@
+file 47272 1484073793                                           
+version 2
+run ResponseMeasurement-129-20170110-19:43:13-22248
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:13
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=129
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22248
+attr repetition 129
+attr replication #129
+attr resultdir results
+attr runnumber 129
+attr seedset 129
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 6281 689 3165 207756.927222586163 1046206.325534169018 147 4560.4402579824 33266.11666679 1596480.7687196 22140373311.422
+1	7763 4750 677 3180 202517.321436310722 1061536.403950581219 149 0 984.61239183338 13035.695832524 7422677.5127311
+2	12513 8581 675 3180 202517.321436310722 1061536.403950581219 298 0 2 151 153
+3	21094 4605 686 3162 207147.992384630585 1045218.534479357014 147 0 1134.0024631457 15530.615713656 11942562.794205
+4	25699 8461 684 3162 207147.992384630585 1045218.534479357014 294 0 2 149 151
+5	34160 2297 682 3185 204000 1062000 144 0 4 149 295
+6	36457 2297 682 3185 204000 1062000 144 0 4 147 291
+7	38754 8518 680 3183 202737.857327110676 1061808.175869457557 296 0 4 338 640

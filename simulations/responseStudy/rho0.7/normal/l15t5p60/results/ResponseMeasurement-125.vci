@@ -1,0 +1,47 @@
+file 158769 1484073291                                          
+version 2
+run ResponseMeasurement-125-20170110-19:34:51-21190
+attr configname ResponseMeasurement
+attr datetime 20170110-19:34:51
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=125
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21190
+attr repetition 125
+attr replication #125
+attr resultdir results
+attr runnumber 125
+attr seedset 125
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1488 20196 1041 9097 100835.292550498742 963529.60120271807 472 5181.0863250032 21054.292170723 4363425.897108 44717375496.344
+1	21684 18228 1046 9102 101040.195306883758 963643.267565821114 474 0 4129.7185675346 255638.98767102 389487358.25467
+2	39912 27394 1044 9105 101040.195306883758 964132.245030201517 949 0 5 775 1335
+3	67306 17991 1038 9093 100508.741871309612 963143.917158641544 472 0 14530.176879529 978549.71674537 5597805889.8513
+4	85297 27270 1038 9093 100508.741871309612 963143.917158641544 943 0 14 1997 11151
+5	112567 9455 1048 9095 101141.34 963414.12 504 0 3 474 758
+6	122022 9455 1048 9095 101141.34 963414.12 504 0 6 471 1143
+7	131477 27292 1036 9091 100508.741871309612 963143.917158641544 945 0 5 2295 7005

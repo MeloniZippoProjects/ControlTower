@@ -1,0 +1,47 @@
+file 159296 1484073270                                          
+version 2
+run ResponseMeasurement-27-20170110-19:34:30-20992
+attr configname ResponseMeasurement
+attr datetime 20170110-19:34:30
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=27
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20992
+attr repetition 27
+attr replication #27
+attr resultdir results
+attr runnumber 27
+attr seedset 27
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 20460 1025 9139 100425.367541468408 961909.405506048447 478 4946.3708392001 18716.059814958 4086678.8545971 38163203906.984
+1	21942 17942 1039 9141 102259.398560225004 961909.405506048447 475 0 2852.79897472 201785.53701608 237364444.11279
+2	39884 27439 1037 9141 102259.398560225004 961909.405506048447 950 0 4 675 959
+3	67323 17981 1031 9132 101623.272959824822 961591.730852687591 477 0 11038.666166886 721129.08018945 3356091217.4694
+4	85304 27573 1029 9132 101623.272959824822 961591.730852687591 954 0 11 1487 6261
+5	112877 9455 1027 9146 101141.34 963414.12 504 0 2 476 730
+6	122332 9455 1027 9146 101141.34 963414.12 504 0 6 478 1108
+7	131787 27509 1028 9144 101623.272959824822 962723.812990850903 952 0 5 2304 6964

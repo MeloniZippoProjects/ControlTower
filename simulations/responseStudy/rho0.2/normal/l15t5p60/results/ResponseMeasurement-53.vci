@@ -1,0 +1,47 @@
+file 52625 1484073942                                           
+version 2
+run ResponseMeasurement-53-20170110-19:45:42-22630
+attr configname ResponseMeasurement
+attr datetime 20170110-19:45:42
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=53
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22630
+attr repetition 53
+attr replication #53
+attr resultdir results
+attr runnumber 53
+attr seedset 53
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 7170 552 3360 199788.486386155135 1062754.963372787544 168 4707.3671012229 38103.806441401 1704851.2259362 21107218046.187
+1	8646 5305 557 3340 200017.610206426519 1057768.155004864403 166 0 1050.1165495392 16700.920680468 10787104.888445
+2	13951 9565 555 3340 200017.610206426519 1057768.155004864403 332 0 2 170 174
+3	23516 5303 565 3357 201594.474017878971 1062440.564948955148 167 0 3337.1362967353 23537.359713677 32673545.266817
+4	28819 9631 563 3357 201594.474017878971 1062440.564948955148 334 0 1 167 167
+5	38450 2291 570 3353 204000 1062000 144 0 4 167 349
+6	40741 2291 570 3353 204000 1062000 144 0 5 167 369
+7	43032 9593 560 3354 200864.567727225806 1062440.564948955148 333 0 4 384 738

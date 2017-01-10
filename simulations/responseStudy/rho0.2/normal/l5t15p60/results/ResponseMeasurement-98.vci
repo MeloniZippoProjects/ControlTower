@@ -1,0 +1,47 @@
+file 40524 1484073780                                           
+version 2
+run ResponseMeasurement-98-20170110-19:43:00-22217
+attr configname ResponseMeasurement
+attr datetime 20170110-19:43:00
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=98
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22217
+attr repetition 98
+attr replication #98
+attr resultdir results
+attr runnumber 98
+attr seedset 98
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 5290 640 2751 203435.223324128395 1060185.031324180025 124 4864.4317358607 69396.418128375 1485616.7995658 27913469684.687
+1	6766 3871 647 2739 215341.254602853142 1054904.857951930262 123 0 1073.6918211768 8517.1721704577 5127822.1595424
+2	10637 7075 645 2739 215341.254602853142 1054904.857951930262 246 0 2 125 127
+3	17712 3997 637 2748 202544.34968428651 1059389.906946427057 124 0 1654.6469480221 16718.850052141 14794669.263476
+4	21709 7128 635 2748 202544.34968428651 1059389.906946427057 248 0 2 132 140
+5	28837 2292 642 2753 204000 1062000 144 0 4 124 234
+6	31129 2292 642 2753 204000 1062000 144 0 4 124 248
+7	33421 7103 634 2745 202544.34968428651 1059389.906946427057 247 0 4 283 527

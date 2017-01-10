@@ -1,0 +1,47 @@
+file 163186 1484073506                                          
+version 2
+run ResponseMeasurement-114-20170110-19:38:26-22042
+attr configname ResponseMeasurement
+attr datetime 20170110-19:38:26
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=114
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22042
+attr repetition 114
+attr replication #114
+attr resultdir results
+attr runnumber 114
+attr seedset 114
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1488 20815 969 9271 101141.319167510304 963609.984444062218 487 2804.0169792666 13924.126589938 2871518.074786 18324897544.923
+1	22303 18664 977 9239 104700.294162888435 960817.897716810946 488 0 1192.4831883438 146060.90207607 88414586.935717
+2	40967 28261 975 9279 104700.294162888435 963781.388042316254 978 0 4 633 813
+3	69228 18616 966 9273 100284.235698275939 963609.984444062218 488 0 7035.085029181 402600.72311945 983468303.55232
+4	87844 28213 964 9273 100284.235698275939 963609.984444062218 977 0 7 915 1917
+5	116057 9451 971 9269 101141.34 963414.12 504 0 5 488 898
+6	125508 9451 971 9269 101141.34 963414.12 504 0 3 486 746
+7	134959 28227 963 9266 100284.235698275939 962988.270895640212 977 0 5 1408 3052

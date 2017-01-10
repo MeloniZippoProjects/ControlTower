@@ -1,0 +1,47 @@
+file 27560 1484073988                                           
+version 2
+run ResponseMeasurement-8-20170110-19:46:28-22737
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:28
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=8
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22737
+attr repetition 8
+attr replication #8
+attr resultdir results
+attr runnumber 8
+attr seedset 8
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1471 3536 528 1936 304258.322317971685 1162386.494347188284 83 4322.5323025762 56178.642880011 1216866.3955206 27391950748.599
+1	5007 2597 517 1924 300725.196733985527 1158918.717704282406 83 0 864.25405926729 6952.3865399466 4207625.422202
+2	7604 4776 515 1924 300725.196733985527 1158918.717704282406 166 0 1 83 83
+3	12380 2584 525 1933 303441.715980770614 1161483.313326430751 83 0 1235.2726952123 5691.5734368093 4064778.3448043
+4	14964 4778 523 1933 303441.715980770614 1161483.313326430751 166 0 1 83 83
+5	19742 1520 530 1929 306000 1161000 96 0 4 83 161
+6	21262 1520 530 1929 306000 1161000 96 0 4 82 154
+7	22782 4778 520 1930 301596.309607632772 1161483.313326430751 166 0 2 115 147

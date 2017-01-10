@@ -1,0 +1,47 @@
+file 127312 1484073312                                          
+version 2
+run ResponseMeasurement-49-20170110-19:35:12-21366
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:12
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=49
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21366
+attr repetition 49
+attr replication #49
+attr resultdir results
+attr runnumber 49
+attr seedset 49
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1483 16319 985 7396 143049.467818614775 1001567.335464993482 381 3929.7932895877 30997.2201421 4251215.2032455 59414837531.748
+1	17802 15283 987 7402 143049.467818614775 1002907.045805056925 381 0 3338.878619461 250634.0838732 326517623.94572
+2	33085 22025 982 7402 142286.302911500052 1002907.045805056925 762 0 4 625 1005
+3	55110 15460 979 7393 142057.065244762086 1000736.261402767361 381 0 23838.857640727 1765826.6637859 19652478697.612
+4	70570 22082 977 7393 142057.065244762086 1000736.261402767361 762 0 15 2253 15393
+5	92652 6304 975 7398 141428.1 1002853.8 336 0 4 381 775
+6	98956 6304 975 7398 141428.1 1002853.8 336 0 3 382 770
+7	105260 22052 973 7405 140677.183068541139 1003775.84725881897 763 0 3 976 1846

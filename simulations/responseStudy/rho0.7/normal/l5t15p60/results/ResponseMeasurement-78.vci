@@ -1,0 +1,47 @@
+file 174269 1484073100                                          
+version 2
+run ResponseMeasurement-78-20170110-19:31:40-20019
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:40
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=78
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20019
+attr repetition 78
+attr replication #78
+attr resultdir results
+attr runnumber 78
+attr seedset 78
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 22259 1033 9843 108211.230488802502 962893.932720002913 520 4249.2991910501 16476.655075443 4312548.2429101 38243340725.086
+1	23741 20483 992 9856 102895.624503195799 963197.717836700468 526 0 1319.9556235817 174463.30060721 113072787.21293
+2	44224 30428 990 9865 102895.624503195799 963542.917719957215 1053 0 4 709 991
+3	74652 20301 1026 9862 107138.794442167883 963510.860247535036 521 0 9259.5419003959 788219.95232474 3178150139.0321
+4	94953 30132 1024 9868 107138.794442167883 963848.787367077 1043 0 9 1554 5274
+5	125085 9453 987 9858 101141.34 963414.12 504 0 5 525 1027
+6	134538 9453 987 9858 101141.34 963414.12 504 0 3 521 799
+7	143991 30278 995 9867 103161.801819411493 963848.787367077 1048 0 8 2752 9512

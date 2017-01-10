@@ -1,0 +1,47 @@
+file 38218 1484074200                                           
+version 2
+run ResponseMeasurement-105-20170110-19:50:00-23291
+attr configname ResponseMeasurement
+attr datetime 20170110-19:50:00
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=105
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23291
+attr repetition 105
+attr replication #105
+attr resultdir results
+attr runnumber 105
+attr seedset 105
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 4950 704 2682 201969.381765415725 1029676.658736972675 116 3041.2723782172 37815.828843652 1197113.2635145 17647135244.025
+1	6432 3572 710 2671 204004.90799629753 1026831.591304309762 115 0 695.19520970123 6666.6979350268 3061620.2482431
+2	10004 6612 708 2671 204004.90799629753 1026831.591304309762 230 0 1 115 115
+3	16616 3654 701 2679 201065.365198211744 1028815.18562838557 116 0 1341.0450281179 7617.9086054496 4991737.4003554
+4	20270 6669 699 2679 201065.365198211744 1028815.18562838557 232 0 1 116 116
+5	26939 2304 706 2689 204000 1062000 144 0 5 116 222
+6	29243 2304 706 2689 204000 1062000 144 0 3 116 200
+7	31547 6671 696 2676 199592.973753855831 1028815.18562838557 232 0 3 182 260

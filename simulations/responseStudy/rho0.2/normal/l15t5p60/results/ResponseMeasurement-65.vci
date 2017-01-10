@@ -1,0 +1,47 @@
+file 44283 1484073946                                           
+version 2
+run ResponseMeasurement-65-20170110-19:45:46-22642
+attr configname ResponseMeasurement
+attr datetime 20170110-19:45:46
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=65
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22642
+attr repetition 65
+attr replication #65
+attr resultdir results
+attr runnumber 65
+attr seedset 65
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 5936 608 2942 200537.935365125774 1053557.999344832037 139 5213.1305915195 42070.600474519 1552611.977483 22138149355.84
+1	7412 4219 621 2930 201003.992921134931 1048559.958146345298 136 0 1578.5900900038 9226.4996754215 6780937.6174233
+2	11631 7827 616 2930 200764.461612688203 1048559.958146345298 272 0 2 138 140
+3	19458 4323 605 2939 200228.372171767468 1053275.571093034052 139 0 2683.830296078 13618.773603954 17613131.924321
+4	23781 8010 603 2939 200228.372171767468 1053275.571093034052 278 0 2 141 143
+5	31791 2289 634 2945 204000 1062000 144 0 3 136 258
+6	34080 2289 634 2945 204000 1062000 144 0 5 139 275
+7	36369 7914 602 2936 200228.372171767468 1053275.571093034052 275 0 3 283 493

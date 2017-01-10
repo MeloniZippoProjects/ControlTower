@@ -1,0 +1,47 @@
+file 103219 1484073141                                          
+version 2
+run ResponseMeasurement-4-20170110-19:32:21-20225
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:21
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=4
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20225
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1477 13161 1019 6252 140860.859664602942 1001361.03461244802 308 5842.2305991881 18743.674527534 2990077.6068125 31464556180.523
+1	14638 11446 1021 6240 140860.859664602942 999569.874643644152 306 0 3225.1575542824 138611.9198392 162988367.35599
+2	26084 17674 1013 6240 140446.419310582805 999569.874643644152 612 0 4 414 570
+3	43758 11411 1030 6249 141682.445665574605 1000559.027964606244 307 0 7446.4564433197 322963.08868949 1105143558.9583
+4	55169 17732 1016 6249 140693.881816538504 1000559.027964606244 614 0 6 583 1315
+5	72901 6306 1023 6254 141428.1 1002853.8 336 0 4 306 544
+6	79207 6306 1023 6254 141428.1 1002853.8 336 0 3 310 540
+7	85513 17706 1015 6247 140693.881816538504 1000559.027964606244 613 0 5 1065 2615

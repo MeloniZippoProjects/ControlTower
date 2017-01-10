@@ -1,0 +1,47 @@
+file 32556 1484073992                                           
+version 2
+run ResponseMeasurement-19-20170110-19:46:32-22748
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:32
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=19
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22748
+attr repetition 19
+attr replication #19
+attr resultdir results
+attr runnumber 19
+attr seedset 19
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 4281 572 2237 306253.910905564368 1137099.625496376442 100 4321.7517773311 40355.429312153 1219385.7535507 20305115714.78
+1	5758 3191 549 2245 302558.35789561296 1162343.013268621054 101 0 1220.731153395 8556.5935132419 6505215.0499746
+2	8949 5829 547 2245 302558.35789561296 1162343.013268621054 202 0 2 105 109
+3	14778 3154 565 2234 305398.175689129114 1136217.156424941279 100 0 1366.723546271 7170.4268603342 5114319.7658489
+4	17932 5764 560 2234 305173.742123527515 1136217.156424941279 200 0 1 100 100
+5	23696 1534 570 2241 306000 1161000 96 0 3 100 180
+6	25230 1534 570 2241 306000 1161000 96 0 4 101 207
+7	26764 5792 552 2248 303500.58333237999 1163324.198305003495 201 0 2 135 169

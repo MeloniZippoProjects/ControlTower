@@ -1,0 +1,47 @@
+file 108063 1484073144                                          
+version 2
+run ResponseMeasurement-14-20170110-19:32:24-20247
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:24
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=14
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20247
+attr repetition 14
+attr replication #14
+attr resultdir results
+attr runnumber 14
+attr seedset 14
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 13784 1086 6540 141901.401352055411 1002005.270850269477 322 5938.5540195764 21446.536044148 3268275.3298478 36496967125.357
+1	15267 12100 1077 6512 140210.305938904698 998425.555837857553 320 0 2388.8688937615 133282.47704348 128969712.01898
+2	27367 18466 1077 6512 140210.305938904698 998425.555837857553 639 0 3 409 515
+3	45833 12401 1082 6546 140979.38588579643 1003039.436266934675 323 0 13643.801071357 532020.79796878 3012830591.1981
+4	58234 18637 1082 6546 140979.38588579643 1003039.436266934675 645 0 9 830 2866
+5	76871 6306 1084 6542 141428.1 1002853.8 336 0 4 322 596
+6	83177 6306 1084 6542 141428.1 1002853.8 336 0 3 322 594
+7	89483 18580 1075 6543 140210.305938904698 1003039.436266934675 643 0 5 1189 3013

@@ -1,0 +1,47 @@
+file 166965 1484073485                                          
+version 2
+run ResponseMeasurement-13-20170110-19:38:05-21940
+attr configname ResponseMeasurement
+attr datetime 20170110-19:38:05
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=13
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21940
+attr repetition 13
+attr replication #13
+attr resultdir results
+attr runnumber 13
+attr seedset 13
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1482 21414 1072 9551 102029.813700867608 960869.099838246558 501 3023.7041866015 17253.849655248 2907568.293926 18123302862.907
+1	22896 19096 1054 9557 100575.094138525281 961969.426430280962 500 0 1249.8485836782 151264.72075857 92004183.669197
+2	41992 28885 1052 9557 100575.094138525281 961969.426430280962 1000 0 4 672 920
+3	70877 19241 1062 9566 101063.287458566282 964192.446996359556 502 0 4770.9260431546 395656.21880707 715403389.37149
+4	90118 28996 1060 9566 101063.287458566282 964192.446996359556 1004 0 5 900 1550
+5	119114 9455 1067 9562 101141.34 963414.12 504 0 5 501 963
+6	128569 9455 1067 9562 101141.34 963414.12 504 0 3 501 769
+7	138024 28941 1057 9563 100874.318283833543 964192.446996359556 1002 0 5 1509 3433

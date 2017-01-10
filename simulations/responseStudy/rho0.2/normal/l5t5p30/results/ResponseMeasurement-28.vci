@@ -1,0 +1,47 @@
+file 85673 1484074123                                           
+version 2
+run ResponseMeasurement-28-20170110-19:48:43-23061
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:43
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=28
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23061
+attr repetition 28
+attr replication #28
+attr resultdir results
+attr runnumber 28
+attr seedset 28
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 11488 751 5333 144080.742023387028 1003744.704593832108 269 2142.5625129822 18435.684423711 1534251.416133 11117046286.634
+1	12961 8426 739 5322 141526.875760225133 1003048.964677966432 270 0 300.92801228155 6523.7781753562 1304248.771415
+2	21387 15572 737 5322 141526.875760225133 1003048.964677966432 540 0 1 270 270
+3	36959 8475 747 5330 143756.014322896036 1003451.196916471377 269 0 641.6701209587 10610.829264453 3070081.1299844
+4	45434 15506 745 5330 143756.014322896036 1003451.196916471377 538 0 2 277 285
+5	60940 4596 735 5310 141000 1002000 288 0 4 269 487
+6	65536 4596 735 5310 141000 1002000 288 0 4 267 489
+7	70132 15541 742 5327 141846.410768815288 1003451.196916471377 539 0 4 584 1102

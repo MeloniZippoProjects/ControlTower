@@ -1,0 +1,47 @@
+file 48416 1484074200                                           
+version 2
+run ResponseMeasurement-108-20170110-19:50:00-23294
+attr configname ResponseMeasurement
+attr datetime 20170110-19:50:00
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=108
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23294
+attr repetition 108
+attr replication #108
+attr resultdir results
+attr runnumber 108
+attr seedset 108
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1482 6483 544 3104 201870.525478364663 1062616.735788784999 152 2886.8914128344 29583.596612197 1349786.8757337 16114810222.027
+1	7965 4871 549 3092 202521.093746615025 1059570.323435234721 151 0 1130.8710537478 16169.549093141 10142662.097559
+2	12836 8712 547 3092 202521.093746615025 1059570.323435234721 302 0 2 155 159
+3	21548 4819 541 3100 200980.58272025382 1061758.036076377482 152 0 1845.0342348565 17021.671101036 14900884.107612
+4	26367 8741 539 3100 200980.58272025382 1061758.036076377482 304 0 3 162 176
+5	35108 2294 562 3102 204000 1062000 144 0 5 152 320
+6	37402 2294 562 3102 204000 1062000 144 0 5 153 297
+7	39696 8720 538 3097 200980.58272025382 1061758.036076377482 303 0 4 251 395

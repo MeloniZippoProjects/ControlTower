@@ -1,0 +1,47 @@
+file 172155 1484073094                                          
+version 2
+run ResponseMeasurement-57-20170110-19:31:34-19970
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:34
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=57
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 19970
+attr repetition 57
+attr replication #57
+attr resultdir results
+attr runnumber 57
+attr seedset 57
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1482 22060 809 9546 100225.548365636425 960070.36241361589 516 4515.923740813 17193.140599973 4107863.5507833 34734702274.976
+1	23542 20064 823 9581 101449.384119379488 961819.028054324681 519 0 1373.0579995425 164559.84888915 102387398.38312
+2	43606 29943 818 9581 101289.972918081164 961819.028054324681 1038 0 3 701 931
+3	73549 19969 814 9589 100606.694459807275 963385.664473573372 516 0 10650.845102948 600657.30975366 2170535160.8341
+4	93518 29832 812 9593 100606.694459807275 963968.908513425123 1033 0 11 1265 4213
+5	123350 9447 816 9591 101141.34 963414.12 504 0 6 519 1045
+6	132797 9447 816 9591 101141.34 963414.12 504 0 3 516 786
+7	142244 29911 811 9592 100606.694459807275 963968.908513425123 1036 0 11 2740 10050

@@ -1,0 +1,47 @@
+file 89023 1484074093                                           
+version 2
+run ResponseMeasurement-125-20170110-19:48:13-23006
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:13
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=125
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23006
+attr repetition 125
+attr replication #125
+attr resultdir results
+attr runnumber 125
+attr seedset 125
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1479 12003 821 5589 140408.29077970927 1003809.957426674512 281 3793.0876629612 27571.366276755 2069046.3153182 18104780545.627
+1	13482 8879 826 5577 140780.30806556682 1000547.200115995852 280 0 335.14403263123 10814.355036588 2342083.5352376
+2	22361 16150 824 5577 140780.30806556682 1000547.200115995852 560 0 2 282 284
+3	38511 8962 818 5586 140096.28640047755 1003542.726843461363 281 0 1003.8976952317 12959.771118382 4911022.2928241
+4	47473 16171 818 5586 140096.28640047755 1003542.726843461363 561 0 2 286 292
+5	63644 4597 828 5582 141000 1002000 288 0 5 281 561
+6	68241 4597 828 5582 141000 1002000 288 0 5 282 576
+7	72838 16185 816 5583 140096.28640047755 1003542.726843461363 561 0 5 935 2321

@@ -1,0 +1,47 @@
+file 100867 1484074159                                          
+version 2
+run ResponseMeasurement-117-20170110-19:49:19-23151
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:19
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=117
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23151
+attr repetition 117
+attr replication #117
+attr resultdir results
+attr runnumber 117
+attr seedset 117
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1479 13759 861 6283 140983.005725902896 998872.423363449555 322 2409.4722569122 16976.712137798 1659496.8093962 10570865956.931
+1	15238 10474 867 6298 143753.296026608026 1003113.117896728005 323 0 468.24166073199 14936.397434315 3501147.0376882
+2	25712 18643 865 6298 143753.296026608026 1003113.117896728005 646 0 2 331 339
+3	44355 10095 858 6280 140755.337934162347 998578.74422457547 322 0 660.38541115339 11679.232841836 3259418.9785504
+4	54450 18588 856 6280 140755.337934162347 998578.74422457547 644 0 2 328 334
+5	73038 4601 863 6286 141000 1002000 288 0 5 322 650
+6	77639 4601 863 6286 141000 1002000 288 0 4 322 662
+7	82240 18627 855 6301 140755.337934162347 1003424.187433178425 645 0 5 734 1374

@@ -1,0 +1,47 @@
+file 28781 1484074012                                           
+version 2
+run ResponseMeasurement-71-20170110-19:46:51-22800
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:51
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=71
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22800
+attr repetition 71
+attr replication #71
+attr resultdir results
+attr runnumber 71
+attr seedset 71
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 3757 528 1996 318687.888997842364 1133055.689287005984 88 4564.3235418833 38890.152400382 1165265.7548539 20136541280.438
+1	5234 2672 503 1985 315120.065065098895 1129071.394963868874 88 0 1031.6709357652 6619.3566473191 4769455.0776323
+2	7906 5044 501 1985 315120.065065098895 1129071.394963868874 176 0 2 90 92
+3	12950 2644 519 1993 317699.208112923551 1132019.23080275914 88 0 1187.4113344139 4678.7132902625 3482242.8563629
+4	15594 5068 517 1993 317699.208112923551 1132019.23080275914 176 0 1 88 88
+5	20662 1529 498 2001 306000 1161000 96 0 4 88 156
+6	22191 1529 498 2001 306000 1161000 96 0 4 88 142
+7	23720 5061 506 1990 316006.979792853608 1132019.23080275914 176 0 2 106 124

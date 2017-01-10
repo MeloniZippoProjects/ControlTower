@@ -1,0 +1,47 @@
+file 48039 1484073860                                           
+version 2
+run ResponseMeasurement-0-20170110-19:44:20-22424
+attr configname ResponseMeasurement
+attr datetime 20170110-19:44:20
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22424
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1470 6406 593 3119 208886.733107032451 1057062.745801952336 150 3502.7441706941 34303.087506307 1346664.5407263 17794649631.698
+1	7876 4875 582 3099 206163.087135635322 1053832.639878735552 150 0 1697.0942715559 16489.411001349 12233803.065236
+2	12751 8637 580 3099 206163.087135635322 1053832.639878735552 300 0 2 152 154
+3	21388 4769 590 3116 208577.581681655024 1056800.930632869607 150 0 3634.5887822382 23085.967968798 34955596.620645
+4	26157 8649 588 3116 208577.581681655024 1056800.930632869607 300 0 2 158 166
+5	34806 2294 578 3121 204000 1062000 144 0 5 150 326
+6	37100 2294 578 3121 204000 1062000 144 0 4 152 322
+7	39394 8645 585 3113 206985.315644195171 1056800.930632869607 300 0 3 246 358

@@ -1,0 +1,47 @@
+file 103354 1484074165                                          
+version 2
+run ResponseMeasurement-136-20170110-19:49:25-23171
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:25
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=136
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23171
+attr repetition 136
+attr replication #136
+attr resultdir results
+attr runnumber 136
+attr seedset 136
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 14192 534 6109 143711.064959864069 1002954.009234587466 332 2322.8394443477 19270.630124331 1691645.1750772 10851516985.034
+1	15671 10630 515 6097 141195.80581892885 1000790.458102503175 332 0 465.11446661238 11946.35938256 2758202.8524338
+2	26301 19113 513 6097 141195.80581892885 1000790.458102503175 664 0 2 340 348
+3	45414 10495 531 6106 143430.514452391205 1002694.702415879835 332 0 558.11432458937 11786.830418701 3037339.4685253
+4	55909 19130 529 6106 143430.514452391205 1002694.702415879835 664 0 2 342 352
+5	75039 4591 511 6102 141000 1002000 288 0 5 332 692
+6	79630 4591 511 6102 141000 1002000 288 0 4 331 681
+7	84221 19133 518 6103 141513.251290060908 1002694.702415879835 664 0 6 788 1548

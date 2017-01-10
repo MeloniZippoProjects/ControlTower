@@ -1,0 +1,47 @@
+file 88402 1484074050                                           
+version 2
+run ResponseMeasurement-16-20170110-19:47:30-22897
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:30
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=16
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22897
+attr repetition 16
+attr replication #16
+attr resultdir results
+attr runnumber 16
+attr seedset 16
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1473 11962 685 5419 140182.741578160904 998593.709741933999 280 3846.7827773724 21753.958008636 2061749.4422677 18151881754.7
+1	13435 8889 699 5399 141893.581749391114 994656.5539064305 277 0 431.59301876588 9813.7312447179 2102311.2686912
+2	22324 15969 697 5399 141893.581749391114 994656.5539064305 554 0 2 281 285
+3	38293 8827 691 5416 141499.864925996803 998255.800989776868 279 0 969.02766317189 12151.484477651 4630488.9511854
+4	47120 16072 689 5416 141499.864925996803 998255.800989776868 558 0 2 287 295
+5	63192 4595 687 5422 141000 1002000 288 0 5 279 551
+6	67787 4595 687 5422 141000 1002000 288 0 5 280 588
+7	72382 16020 688 5413 141499.864925996803 998255.800989776868 556 0 5 952 2398

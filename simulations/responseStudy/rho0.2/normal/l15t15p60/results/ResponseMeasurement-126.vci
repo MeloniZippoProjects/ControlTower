@@ -1,0 +1,47 @@
+file 31055 1484073849                                           
+version 2
+run ResponseMeasurement-126-20170110-19:44:09-22399
+attr configname ResponseMeasurement
+attr datetime 20170110-19:44:09
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=126
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22399
+attr repetition 126
+attr replication #126
+attr resultdir results
+attr runnumber 126
+attr seedset 126
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1483 3991 833 2400 382350.068856945457 1240052.603431312262 93 6193.2724416807 42824.116001161 1400586.9702558 27130122663.827
+1	5474 3029 846 2425 386313.764081907958 1243077.920179792109 95 0 1136.5985582147 9611.0758834259 6582380.0287791
+2	8503 5527 844 2425 386313.764081907958 1243077.920179792109 190 0 2 97 99
+3	14030 2965 830 2430 381494.20062019371 1243877.455020353771 94 0 1940.6177904161 13283.189932969 13782395.953305
+4	16995 5460 828 2430 381494.20062019371 1243877.455020353771 188 0 1 94 94
+5	22455 1551 848 2416 387000 1242000 96 0 3 94 166
+6	24006 1551 848 2416 387000 1242000 96 0 4 93 185
+7	25557 5498 827 2428 381494.20062019371 1243877.455020353771 189 0 3 163 255

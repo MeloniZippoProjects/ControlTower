@@ -1,0 +1,47 @@
+file 32902 1484074029                                           
+version 2
+run ResponseMeasurement-121-20170110-19:47:09-22850
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:09
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=121
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22850
+attr repetition 121
+attr replication #121
+attr resultdir results
+attr runnumber 121
+attr seedset 121
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 4361 609 2320 310086.088018282909 1163330.76010231771 102 4420.3082529552 41711.750190004 1253991.0176306 21489444696.672
+1	5844 3203 598 2308 306538.87045052537 1159741.88503874185 102 0 985.06164864668 9647.5199420795 6079653.5547165
+2	9047 5873 596 2308 306538.87045052537 1159741.88503874185 204 0 1 102 102
+3	14920 3171 606 2317 309148.372736349712 1162537.869839268132 102 0 1368.8466669004 7968.6159816513 6450697.2886394
+4	18091 5870 604 2317 309148.372736349712 1162537.869839268132 204 0 1 102 102
+5	23961 1530 594 2313 306000 1161000 96 0 4 102 208
+6	25491 1530 594 2313 306000 1161000 96 0 5 101 199
+7	27021 5881 601 2314 307375.165668263347 1162537.869839268132 204 0 2 132 162

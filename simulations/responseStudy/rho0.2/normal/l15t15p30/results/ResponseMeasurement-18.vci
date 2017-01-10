@@ -1,0 +1,47 @@
+file 26386 1484073992                                           
+version 2
+run ResponseMeasurement-18-20170110-19:46:32-22747
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:32
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=18
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22747
+attr repetition 18
+attr replication #18
+attr resultdir results
+attr runnumber 18
+attr seedset 18
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 3371 481 1821 309143.855560685282 1139761.029131428355 79 4171.0898399632 43602.154111825 1150544.2220522 22625889373.85
+1	4848 2491 469 1810 305437.292896576024 1136234.510312865645 79 0 1058.86663341 6635.6859604556 3993833.5257605
+2	7339 4543 467 1810 305437.292896576024 1136234.510312865645 158 0 2 81 83
+3	11882 2405 478 1818 308239.583872659031 1138950.189660332004 79 0 1843.5887147927 7005.1600291365 7712299.7663919
+4	14287 4533 476 1818 308239.583872659031 1138950.189660332004 158 0 1 79 79
+5	18820 1517 471 1825 306000 1161000 96 0 4 79 141
+6	20337 1517 471 1825 306000 1161000 96 0 3 79 131
+7	21854 4532 473 1815 306390.533847748951 1138950.189660332004 158 0 2 103 127

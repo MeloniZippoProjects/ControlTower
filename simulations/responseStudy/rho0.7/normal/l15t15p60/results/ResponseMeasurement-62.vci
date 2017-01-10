@@ -1,0 +1,47 @@
+file 116316 1484073160                                          
+version 2
+run ResponseMeasurement-62-20170110-19:32:40-20348
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:40
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=62
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20348
+attr repetition 62
+attr replication #62
+attr resultdir results
+attr runnumber 62
+attr seedset 62
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1483 14890 949 6839 140217.589217054176 1001166.756524462641 348 5903.0804791566 23871.889131383 3632963.5752985 41829969675.744
+1	16373 13562 954 6849 140520.54063518854 1002051.000227407622 349 0 4013.0228539807 185790.17195047 222707646.08259
+2	29935 20157 952 6849 140520.54063518854 1002051.000227407622 698 0 5 511 765
+3	50092 13439 996 6832 144859.299422502202 1000199.59492634668 347 0 15625.21748651 707594.86266901 4692389328.3809
+4	63531 20072 991 6832 144478.412061566545 1000199.59492634668 694 0 12 1013 4167
+5	83603 6304 964 6851 141428.1 1002853.8 336 0 3 348 636
+6	89907 6304 964 6851 141428.1 1002853.8 336 0 4 348 620
+7	96211 20105 960 6853 141356.735675116721 1002877.995020480903 696 0 5 1296 3392

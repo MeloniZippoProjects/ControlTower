@@ -1,0 +1,47 @@
+file 93117 1484074114                                           
+version 2
+run ResponseMeasurement-9-20170110-19:48:34-23042
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:34
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=9
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23042
+attr repetition 9
+attr replication #9
+attr resultdir results
+attr runnumber 9
+attr seedset 9
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1467 12606 797 5800 140678.706946106249 1002454.628722766649 295 2565.6172292851 25021.655668767 1589043.3090033 11180893911.097
+1	14073 9261 802 5810 140712.158820045254 1002746.874165160123 297 0 448.62767885289 8045.0085083977 1920003.4477769
+2	23334 17161 800 5810 140712.158820045254 1002746.874165160123 594 0 2 301 305
+3	40495 9193 794 5818 140395.720242653729 1003899.300727535237 296 0 804.60946524562 8724.0429138164 2729892.5885211
+4	49688 17106 792 5818 140395.720242653729 1003899.300727535237 592 0 2 304 312
+5	66794 4599 804 5790 141000 1002000 288 0 6 296 568
+6	71393 4599 804 5790 141000 1002000 288 0 6 294 594
+7	75992 17125 791 5815 140395.720242653729 1003899.300727535237 593 0 5 658 1200

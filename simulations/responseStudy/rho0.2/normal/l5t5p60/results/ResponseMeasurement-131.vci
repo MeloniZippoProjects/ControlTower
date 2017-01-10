@@ -1,0 +1,47 @@
+file 87828 1484074095                                           
+version 2
+run ResponseMeasurement-131-20170110-19:48:15-23012
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:15
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=131
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23012
+attr repetition 131
+attr replication #131
+attr resultdir results
+attr runnumber 131
+attr seedset 131
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1479 11837 814 5516 141895.747400265379 1001450.74355535444 277 3742.9258594066 21631.831603616 2034317.5921496 17273346311.757
+1	13316 8706 819 5480 143093.117711561416 997749.379104280677 276 0 491.49597858016 8854.021269258 2097846.0184103
+2	22022 15931 817 5480 143093.117711561416 997749.379104280677 552 0 2 282 288
+3	37953 8730 811 5513 141633.301684562181 1001190.935928622459 277 0 766.320350955 11688.533300971 4324967.020846
+4	46683 15992 809 5513 141633.301684562181 1001190.935928622459 554 0 2 285 293
+5	62675 4594 807 5518 141000 1002000 288 0 4 276 516
+6	67269 4594 807 5518 141000 1002000 288 0 4 277 511
+7	71863 15965 808 5510 141633.301684562181 1001190.935928622459 553 0 6 876 2068

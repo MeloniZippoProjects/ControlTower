@@ -1,0 +1,47 @@
+file 110859 1484073163                                          
+version 2
+run ResponseMeasurement-69-20170110-19:32:43-20363
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:43
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=69
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20363
+attr repetition 69
+attr replication #69
+attr resultdir results
+attr runnumber 69
+attr seedset 69
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 14040 761 6375 142675.489023278693 1003865.817088504912 328 5633.1349072424 24837.37358224 3298156.9315544 36059565531.913
+1	15523 12738 746 6377 141269.645377058648 1003865.817088504912 333 0 2602.0634312273 150899.7428671 153860563.05884
+2	28261 19230 744 6377 141269.645377058648 1003865.817088504912 666 0 3 439 573
+3	47491 12502 755 6369 141939.662621295141 1002921.822921556951 328 0 11878.650200921 520716.65596217 2727323134.1845
+4	59993 19071 750 6369 141652.14195662329 1002921.822921556951 661 0 10 857 3215
+5	79064 6293 748 6365 141428.1 1002853.8 336 0 3 333 553
+6	85357 6293 748 6365 141428.1 1002853.8 336 0 3 327 561
+7	91650 19209 741 6367 140597.196176895478 1002921.822921556951 666 0 5 1229 3125

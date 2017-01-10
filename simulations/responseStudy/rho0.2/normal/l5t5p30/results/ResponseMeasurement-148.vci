@@ -1,0 +1,47 @@
+file 96640 1484074170                                           
+version 2
+run ResponseMeasurement-148-20170110-19:49:30-23183
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:30
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=148
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23183
+attr repetition 148
+attr replication #148
+attr resultdir results
+attr runnumber 148
+attr seedset 148
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 13170 871 6059 144338.886042891593 998654.938356019568 308 2209.907011823 17436.12459294 1621608.1128931 11016447533.11
+1	14649 9906 851 6048 141666.925881234364 996500.032128683679 308 0 523.5355067346 12318.574896642 2662519.9172692
+2	24555 17785 849 6048 141666.925881234364 996500.032128683679 616 0 2 316 324
+3	42340 9554 868 6056 144061.602221278821 998367.40374166088 308 0 941.29204362719 11228.944604559 4844287.9051745
+4	51894 17770 866 6056 144061.602221278821 998367.40374166088 616 0 2 310 312
+5	69664 4604 847 6062 141000 1002000 288 0 5 308 630
+6	74268 4604 847 6062 141000 1002000 288 0 4 308 646
+7	78872 17768 854 6053 141994.300762804779 998367.40374166088 616 0 4 714 1324

@@ -1,0 +1,47 @@
+file 84011 1484074152                                           
+version 2
+run ResponseMeasurement-103-20170110-19:49:12-23137
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:12
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=103
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23137
+attr repetition 103
+attr replication #103
+attr resultdir results
+attr runnumber 103
+attr seedset 103
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1479 11228 685 5173 140368.061846014656 1003878.514828903364 263 2250.0288728211 21586.328015502 1513589.4774716 11868793524.312
+1	12707 8380 692 5146 144128.668932149928 1002484.30410872402 263 0 562.30472539564 8599.173444023 1882475.0790339
+2	21087 15149 690 5146 144128.668932149928 1002484.30410872402 526 0 2 269 275
+3	36236 8235 682 5170 140073.985306130715 1003583.327868604113 263 0 1213.8258393214 11581.228961062 5623518.4481358
+4	44471 15170 680 5170 140073.985306130715 1003583.327868604113 526 0 2 267 271
+5	59641 4599 687 5139 141000 1002000 288 0 5 263 519
+6	64240 4599 687 5139 141000 1002000 288 0 4 261 491
+7	68839 15172 679 5164 140073.985306130715 1003421.321563124221 526 0 5 585 1107

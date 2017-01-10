@@ -1,0 +1,47 @@
+file 26623 1484073993                                           
+version 2
+run ResponseMeasurement-20-20170110-19:46:33-22749
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:33
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=20
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22749
+attr repetition 20
+attr replication #20
+attr resultdir results
+attr runnumber 20
+attr seedset 20
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1477 3377 656 1999 301252.648875566088 1160715.97852971124 79 4586.8451721453 55196.6594421 1161508.2561134 25268735352.23
+1	4854 2487 661 2004 305022.643306289715 1160853.589247807464 79 0 1051.9819996833 6157.2663911121 3538712.3087259
+2	7341 4562 659 2004 305022.643306289715 1160853.589247807464 158 0 2 81 83
+3	11903 2451 653 2013 300395.748771682416 1163321.831828001587 80 0 950.93972962886 2991.7758106008 1628677.6799662
+4	14354 4626 651 2013 300395.748771682416 1163321.831828001587 160 0 1 80 80
+5	18980 1525 666 2006 306000 1161000 96 0 4 79 149
+6	20505 1525 666 2006 306000 1161000 96 0 3 79 143
+7	22030 4593 650 2010 300395.748771682416 1163321.831828001587 159 0 3 107 139

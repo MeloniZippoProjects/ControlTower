@@ -1,0 +1,47 @@
+file 176737 1484073111                                          
+version 2
+run ResponseMeasurement-110-20170110-19:31:51-20081
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:51
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=110
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20081
+attr repetition 110
+attr replication #110
+attr resultdir results
+attr runnumber 110
+attr seedset 110
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1488 22824 952 9919 100815.505307655127 960929.688421542815 534 4583.7901714697 15878.380320672 4484497.0078755 40080811601.271
+1	24312 20669 954 9924 100815.505307655127 961053.05705278308 528 0 1611.5278508792 189250.87327296 127904688.44387
+2	44981 30444 949 9924 100723.240883011173 961053.05705278308 1054 0 6 795 1279
+3	75425 20938 984 9916 102066.328000686789 960002.541210244168 533 0 7999.9540979886 866558.01111636 3332727434.8741
+4	96363 30807 943 9916 100282.95951418707 960002.541210244168 1066 0 8 1669 5493
+5	127170 9453 967 9930 101141.34 963414.12 504 0 5 530 1114
+6	136623 9453 967 9930 101141.34 963414.12 504 0 3 534 846
+7	146076 30661 942 9927 100282.95951418707 961360.279048810877 1061 0 8 2861 10363

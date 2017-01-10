@@ -1,0 +1,47 @@
+file 161983 1484073088                                          
+version 2
+run ResponseMeasurement-40-20170110-19:31:27-19932
+attr configname ResponseMeasurement
+attr datetime 20170110-19:31:27
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=40
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 19932
+attr repetition 40
+attr replication #40
+attr resultdir results
+attr runnumber 40
+attr seedset 40
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1482 20696 959 9199 101019.926472494105 964083.225338216017 484 4424.5457851769 16920.168557 3821441.4238069 32217851936.527
+1	22178 18493 961 9201 101019.926472494105 964083.225338216017 485 0 1559.6379801284 149801.83889455 95512936.142075
+2	40671 27985 953 9201 100342.033027837317 964083.225338216017 970 0 5 691 1053
+3	68656 18455 950 9189 100301.122037505831 963227.742038323664 484 0 8827.6337973318 486038.82225936 1587102656.4747
+4	87111 27989 948 9196 100301.122037505831 963963.295265035659 969 0 9 1071 3073
+5	115100 9452 963 9194 101141.34 963414.12 504 0 6 484 968
+6	124552 9452 963 9194 101141.34 963414.12 504 0 3 484 722
+7	134004 27979 947 9195 100301.122037505831 963963.295265035659 969 0 8 2512 8824

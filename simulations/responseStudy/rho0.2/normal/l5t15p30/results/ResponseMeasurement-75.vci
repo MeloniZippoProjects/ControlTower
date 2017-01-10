@@ -1,0 +1,47 @@
+file 47557 1484074194                                           
+version 2
+run ResponseMeasurement-75-20170110-19:49:53-23261
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:53
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=75
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23261
+attr repetition 75
+attr replication #75
+attr resultdir results
+attr runnumber 75
+attr seedset 75
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 6361 576 3087 203507.26923568248 1060670.300648541678 149 3578.4058119502 28421.697649283 1339081.2870071 15874767200.578
+1	7837 4704 565 3076 200777.992242295868 1057606.47405797052 149 0 789.69792119587 9335.7794450832 4733865.9480265
+2	12541 8579 563 3076 200777.992242295868 1057606.47405797052 298 0 2 151 153
+3	21120 4696 573 3084 202686.675839890955 1059899.070623325384 149 0 1594.2811340617 13979.752339169 12154307.755986
+4	25816 8582 571 3084 202686.675839890955 1059899.070623325384 298 0 2 157 165
+5	34398 2288 578 3089 204000 1062000 144 0 6 149 279
+6	36686 2288 578 3089 204000 1062000 144 0 5 149 293
+7	38974 8583 568 3081 201065.317591965277 1059899.070623325384 298 0 4 237 365

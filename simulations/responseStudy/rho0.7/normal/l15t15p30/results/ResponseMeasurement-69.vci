@@ -1,0 +1,47 @@
+file 114419 1484073316                                          
+version 2
+run ResponseMeasurement-69-20170110-19:35:16-21394
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:16
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=69
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21394
+attr repetition 69
+attr replication #69
+attr resultdir results
+attr runnumber 69
+attr seedset 69
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1483 14575 853 6637 140152.251972751915 1001494.86417153741 341 4272.6549365274 17345.635473293 2887200.5373921 27143084088.766
+1	16058 13173 872 6656 141348.288261256551 1003199.167127771932 343 0 2977.9800462646 168188.0200154 185882713.32113
+2	29231 19798 861 6656 140717.478789322226 1003199.167127771932 686 0 4 487 691
+3	49029 13328 858 6625 140366.689505352167 1000752.799712560268 340 0 10955.243524373 625422.00901934 2992395933.9602
+4	62357 19701 856 6647 140366.689505352167 1002391.824418230357 682 0 7 913 2721
+5	82058 6300 874 6649 141428.1 1002853.8 336 0 3 342 602
+6	88358 6300 874 6649 141428.1 1002853.8 336 0 4 341 631
+7	94658 19761 855 6654 140366.689505352167 1003199.167127771932 684 0 3 744 1254

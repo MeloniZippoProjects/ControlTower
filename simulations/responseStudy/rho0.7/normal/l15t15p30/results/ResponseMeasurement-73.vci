@@ -1,0 +1,47 @@
+file 109852 1484073317                                          
+version 2
+run ResponseMeasurement-73-20170110-19:35:16-21404
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:16
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=73
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21404
+attr repetition 73
+attr replication #73
+attr resultdir results
+attr runnumber 73
+attr seedset 73
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1483 13863 1057 6546 143035.755293620886 996912.030478277338 324 4461.4306788072 35020.778917949 4258138.2782941 74466688961.664
+1	15346 12794 1042 6554 140524.610481688844 1003849.550267977473 324 0 3156.6443806995 185752.95931006 223296812.36679
+2	28140 18700 1042 6554 140524.610481688844 1003849.550267977473 647 0 4 483 699
+3	46840 12829 1051 6543 142139.577554312884 996019.412281338946 324 0 28699.770333396 2038977.5843121 31879143310.562
+4	59669 18838 1049 6543 142139.577554312884 996019.412281338946 648 0 19 2548 24200
+5	78507 6306 1044 6550 141428.1 1002853.8 336 0 3 324 610
+6	84813 6306 1044 6550 141428.1 1002853.8 336 0 3 324 616
+7	91119 18733 1040 6526 140524.610481688844 993260.012406582609 648 0 3 770 1392

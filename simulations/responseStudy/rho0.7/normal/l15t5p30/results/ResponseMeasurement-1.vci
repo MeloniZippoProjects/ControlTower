@@ -1,0 +1,47 @@
+file 162432 1484073197                                          
+version 2
+run ResponseMeasurement-1-20170110-19:33:17-20561
+attr configname ResponseMeasurement
+attr datetime 20170110-19:33:17
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=1
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20561
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1476 20877 959 9216 100723.950799115875 962441.806345251305 488 3439.8777835974 20804.210627787 3596501.5245644 32488477429.853
+1	22353 18306 992 9222 103573.432724801164 963744.579763337416 484 0 3620.4069804283 246517.14058478 368128717.47294
+2	40659 27995 990 9225 103573.432724801164 963958.617185391739 969 0 5 771 1289
+3	68654 18681 956 9213 100376.101803163395 962140.95054003798 488 0 15241.858427852 1016202.0091589 7165619205.3294
+4	87335 28174 951 9213 100241.556219875484 962140.95054003798 974 0 16 2091 13751
+5	115509 9451 968 9218 101141.34 963414.12 504 0 3 485 767
+6	124960 9451 968 9218 101141.34 963414.12 504 0 6 488 1222
+7	134411 28021 950 9210 100241.556219875484 962140.95054003798 970 0 3 1365 2633

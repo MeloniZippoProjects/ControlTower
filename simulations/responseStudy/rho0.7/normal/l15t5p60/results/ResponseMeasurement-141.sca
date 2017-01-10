@@ -1,0 +1,82 @@
+version 2
+run ResponseMeasurement-141-20170110-19:34:55-21222
+attr configname ResponseMeasurement
+attr datetime 20170110-19:34:55
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=141
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21222
+attr repetition 141
+attr replication #141
+attr resultdir results
+attr runnumber 141
+attr seedset 141
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+statistic SimNetwork.wg 	responseTime:stats
+field count 494
+field mean 9691.3481968241
+field stddev 4278.0363726274
+field sum 4787526.0092311
+field sqrsum 55420267993.133
+field min 5121.0009034374
+field max 29135.206029397
+attr source  responseTimeSignal
+scalar SimNetwork.a.landingQueue 	queueLength:timeavg 	0.31357538774327
+attr source  queueLengthSignal
+statistic SimNetwork.a.landingQueue 	queueLength:stats
+field count 1004
+field mean 0.81274900398406
+field stddev 0.85358712490851
+field sum 816
+field sqrsum 1394
+field min 0
+field max 6
+attr source  queueLengthSignal
+statistic SimNetwork.a.landingQueue 	queueTime:stats
+field count 502
+field mean 538.72720126603
+field stddev 729.33508941978
+field sum 270441.05503555
+field sqrsum 412190718.68887
+field min 0
+field max 4926.4531745848
+attr source  queueTimeSignal
+scalar SimNetwork.a.takeoffQueue 	queueLength:timeavg 	1.5099313561767
+attr source  queueLengthSignal
+statistic SimNetwork.a.takeoffQueue 	queueLength:stats
+field count 994
+field mean 2.4979879275654
+field stddev 3.7972927198011
+field sum 2483
+field sqrsum 20521
+field min 0
+field max 22
+attr source  queueLengthSignal
+statistic SimNetwork.a.takeoffQueue 	queueTime:stats
+field count 494
+field mean 2614.7946593649
+field stddev 4141.9389457166
+field sum 1291708.5617263
+field sqrsum 11835292156.069
+field min 0
+field max 21893.832780497
+attr source  queueTimeSignal
+scalar SimNetwork.a.parkingLot 	parkingOccupancy:timeavg 	2.0916785689949
+attr source  parkingOccupancy
+statistic SimNetwork.a.parkingLot 	parkingOccupancy:stats
+field count 1001
+field mean 2.4745254745255
+field stddev 1.2343420918045
+field sum 2477
+field sqrsum 7653
+field min 0
+field max 6
+attr source  parkingOccupancy

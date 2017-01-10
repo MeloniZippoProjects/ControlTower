@@ -1,0 +1,47 @@
+file 338949 1484073350                                          
+version 2
+run ResponseMeasurement-73-20170110-19:35:50-21695
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:50
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=73
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21695
+attr repetition 73
+attr replication #73
+attr resultdir results
+attr runnumber 73
+attr seedset 73
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 14.286min
+param SimNetwork.wg.interArrivalTime exponential(14.286min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1481 43176 2090 19028 103200.039877707475 961791.125159275952 997 3663.1908324653 11589.028570433 5701610.7344858 33614198496.583
+1	44657 39687 2041 19094 100420.342333650584 964032.092039837051 1009 0 1105.7404129316 160508.9622232 56712573.759496
+2	84344 59379 2039 19097 100420.342333650584 964189.718848011449 2019 0 4 1366 1854
+3	143723 38545 2084 19021 102878.824539611966 961431.754747120256 997 0 4370.8871371453 499916.34952314 734024843.69466
+4	182268 58740 2082 19067 102878.824539611966 962944.493405613453 1996 0 9 2170 5514
+5	241008 19426 2037 19082 100287.72 963447.84 1008 0 3 1007 1817
+6	260434 19426 2037 19082 100287.72 963447.84 1008 0 3 998 1734
+7	279860 59089 2044 19092 100728.721259725733 964032.092039837051 2007 0 12 9222 49896

@@ -1,0 +1,47 @@
+file 110084 1484073171                                          
+version 2
+run ResponseMeasurement-94-20170110-19:32:51-20418
+attr configname ResponseMeasurement
+attr datetime 20170110-19:32:51
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=94
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 20418
+attr repetition 94
+attr replication #94
+attr resultdir results
+attr runnumber 94
+attr seedset 94
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1483 14055 765 6357 140389.00293096979 1003589.743247366396 329 5851.4314246453 22671.79233915 3460617.0729645 40028074026.916
+1	15538 12527 770 6345 140483.711442655927 1001754.878565132162 329 0 2323.2120534491 159658.84384417 166914789.83653
+2	28065 18972 768 6345 140483.711442655927 1001754.878565132162 658 0 3 451 617
+3	47037 12554 779 6353 142074.876814668457 1002572.333343870122 328 0 15279.660334584 670890.31082817 4509190834.6891
+4	59591 18948 777 6353 142074.876814668457 1002572.333343870122 656 0 10 984 3980
+5	78539 6292 772 6355 141428.1 1002853.8 336 0 4 329 575
+6	84831 6292 772 6355 141428.1 1002853.8 336 0 3 328 568
+7	91123 18961 774 6351 141468.260288535746 1002572.333343870122 657 0 5 1184 2988

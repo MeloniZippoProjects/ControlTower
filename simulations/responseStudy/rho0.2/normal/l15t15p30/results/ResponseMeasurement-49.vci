@@ -1,0 +1,47 @@
+file 30800 1484074005                                           
+version 2
+run ResponseMeasurement-49-20170110-19:46:45-22778
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:45
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=49
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22778
+attr repetition 49
+attr replication #49
+attr resultdir results
+attr runnumber 49
+attr seedset 49
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1477 4023 672 2255 301408.313394527471 1159721.951841810089 94 4403.0365581871 41224.02846144 1225311.3656014 22700463908.003
+1	5500 2978 678 2261 307340.090430734485 1163118.50459578256 94 0 773.74071442369 6066.5637316416 3032772.7265482
+2	8478 5450 676 2261 307340.090430734485 1163118.50459578256 188 0 1 94 94
+3	13928 2965 669 2252 300492.477278164999 1158971.131697095056 94 0 1041.3561754501 6812.4285433977 3918867.8857051
+4	16893 5437 667 2252 300492.477278164999 1158971.131697095056 188 0 2 96 98
+5	22330 1529 674 2257 306000 1161000 96 0 5 94 192
+6	23859 1529 674 2257 306000 1161000 96 0 4 94 182
+7	25388 5412 666 2249 300492.477278164999 1158971.131697095056 187 0 2 125 157

@@ -1,0 +1,47 @@
+file 42154 1484074191                                           
+version 2
+run ResponseMeasurement-61-20170110-19:49:51-23247
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:51
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=61
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23247
+attr repetition 61
+attr replication #61
+attr resultdir results
+attr runnumber 61
+attr seedset 61
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 5546 531 2734 219998.124851996852 1053268.672529879058 130 3604.7871054891 37201.251153038 1273753.5705843 17894378500.37
+1	7022 4080 520 2722 217139.40626869026 1049979.346670828629 130 0 849.43780760372 8562.5123898307 4491069.9177321
+2	11102 7468 518 2722 217139.40626869026 1049979.346670828629 260 0 2 132 134
+3	18570 4071 528 2731 219104.428527143944 1052421.485804165202 130 0 1047.2123020118 12280.27004366 8577919.0707741
+4	22641 7477 526 2731 219104.428527143944 1052421.485804165202 260 0 2 134 138
+5	30118 2280 514 2737 204000 1062000 144 0 3 130 230
+6	32398 2280 514 2737 204000 1062000 144 0 4 130 220
+7	34678 7476 523 2728 217420.422509657789 1052421.485804165202 260 0 3 194 274

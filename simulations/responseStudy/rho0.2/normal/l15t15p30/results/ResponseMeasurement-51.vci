@@ -1,0 +1,47 @@
+file 28600 1484074006                                           
+version 2
+run ResponseMeasurement-51-20170110-19:46:46-22780
+attr configname ResponseMeasurement
+attr datetime 20170110-19:46:46
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=51
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22780
+attr repetition 51
+attr replication #51
+attr resultdir results
+attr runnumber 51
+attr seedset 51
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 150min
+param SimNetwork.wg.interArrivalTime exponential(150min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1477 3712 549 2015 342542.092432691459 1154257.997861104958 87 4353.2812894834 57526.828162153 1189388.097512 24615752796.422
+1	5189 2749 537 1995 338941.534657199833 1150392.829564979413 87 0 1056.548030501 8191.6057619922 5509146.8789801
+2	7938 4999 535 1995 338941.534657199833 1150392.829564979413 174 0 2 89 91
+3	12937 2638 545 2012 341644.019103768714 1153125.712078753029 87 0 1473.4673207318 4703.608333947 4989100.3133851
+4	15575 5001 543 2012 341644.019103768714 1153125.712078753029 174 0 1 87 87
+5	20576 1513 530 2017 306000 1161000 96 0 4 87 157
+6	22089 1513 530 2017 306000 1161000 96 0 3 87 157
+7	23602 4998 540 2009 339753.97882532763 1153125.712078753029 174 0 3 113 143

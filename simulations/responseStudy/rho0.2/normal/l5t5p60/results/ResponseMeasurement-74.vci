@@ -1,0 +1,47 @@
+file 86064 1484074075                                           
+version 2
+run ResponseMeasurement-74-20170110-19:47:55-22955
+attr configname ResponseMeasurement
+attr datetime 20170110-19:47:55
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=74
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22955
+attr repetition 74
+attr replication #74
+attr resultdir results
+attr runnumber 74
+attr seedset 74
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1473 11490 825 5405 151427.867029127308 1003572.669527817734 269 3471.2295371098 30723.691971299 2034196.9273993 18784211033.325
+1	12963 8637 805 5410 147193.064275369728 1003847.642589051396 272 0 364.29195692866 8761.5943482021 1825424.7694387
+2	21600 15716 803 5410 147193.064275369728 1003847.642589051396 544 0 2 274 276
+3	37316 8489 822 5402 151067.47117741892 1003276.360215671911 269 0 543.25423202012 9967.5348883169 2814694.8028102
+4	45805 15507 820 5402 151067.47117741892 1003276.360215671911 538 0 2 275 281
+5	61312 4592 799 5390 141000 1002000 288 0 5 270 538
+6	65904 4592 799 5390 141000 1002000 288 0 6 268 540
+7	70496 15568 808 5399 147520.835297967272 1003276.360215671911 540 0 7 912 2398

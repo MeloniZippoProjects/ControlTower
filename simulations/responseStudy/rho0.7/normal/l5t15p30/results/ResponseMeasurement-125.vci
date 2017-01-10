@@ -1,0 +1,47 @@
+file 177818 1484073509                                          
+version 2
+run ResponseMeasurement-125-20170110-19:38:29-22053
+attr configname ResponseMeasurement
+attr datetime 20170110-19:38:29
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=125
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22053
+attr repetition 125
+attr replication #125
+attr resultdir results
+attr runnumber 125
+attr seedset 125
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+0	1488 22845 1028 10051 100239.751753014187 963087.054010263867 534 3167.8658480639 13733.353200192 3542349.2438656 26019582280.26
+1	24333 20905 1040 10062 103123.801010165553 963421.241464319551 534 0 1096.7904357552 185826.43660557 118656453.88171
+2	45238 30873 1038 10062 103123.801010165553 963421.241464319551 1068 0 4 748 1026
+3	76111 21222 1030 10045 100239.751753014187 962200.080207009257 533 0 9093.3727935231 887643.28493553 3471061346.2377
+4	97333 30775 1030 10045 100239.751753014187 962200.080207009257 1065 0 8 1718 5844
+5	128108 9458 1032 10058 101141.34 963414.12 504 0 6 533 1107
+6	137566 9458 1032 10058 101141.34 963414.12 504 0 3 534 852
+7	147024 30794 1046 10065 103475.442766069172 963699.647645434677 1066 0 8 1783 4613

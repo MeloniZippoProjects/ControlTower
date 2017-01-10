@@ -1,0 +1,47 @@
+file 95856 1484074159                                           
+version 2
+run ResponseMeasurement-116-20170110-19:49:18-23150
+attr configname ResponseMeasurement
+attr datetime 20170110-19:49:18
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=116
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23150
+attr repetition 116
+attr replication #116
+attr resultdir results
+attr runnumber 116
+attr seedset 116
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 13069 582 5741 141153.943503764029 1003755.227330729201 306 2368.7320067692 25040.57852299 1625522.8463058 11203813080.422
+1	14548 9655 570 5713 140423.850949331758 1001322.301916928568 305 0 409.40115538197 10510.190682976 2241198.3642742
+2	24203 17570 568 5713 140423.850949331758 1001322.301916928568 610 0 2 307 309
+3	41773 9691 578 5738 140873.072028313099 1003457.092708445958 306 0 819.66024364333 13689.471603338 5227718.3239401
+4	51464 17629 576 5738 140873.072028313099 1003457.092708445958 612 0 2 318 330
+5	69093 4582 580 5718 141000 1002000 288 0 5 306 630
+6	73675 4582 580 5718 141000 1002000 288 0 4 304 608
+7	78257 17599 573 5732 140741.164960781641 1003413.340169849489 611 0 5 691 1321

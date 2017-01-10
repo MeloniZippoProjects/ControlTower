@@ -1,0 +1,47 @@
+file 44777 1484073945                                           
+version 2
+run ResponseMeasurement-62-20170110-19:45:45-22639
+attr configname ResponseMeasurement
+attr datetime 20170110-19:45:45
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=62
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22639
+attr repetition 62
+attr replication #62
+attr resultdir results
+attr runnumber 62
+attr seedset 62
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+0	1476 5921 616 2958 200466.007121554269 1055312.104973213508 139 4988.765428063 42071.876425718 1566526.8928939 22522939763.266
+1	7397 4335 621 2980 201736.483724409156 1061794.201215473812 140 0 1392.1938381832 8423.074398203 5555078.643009
+2	11732 8061 619 2980 201736.483724409156 1061794.201215473812 280 0 2 142 144
+3	19793 4385 613 2955 200179.470708894157 1055015.133064529554 139 0 2375.6646392314 20577.814373307 24565615.851298
+4	24178 7986 611 2955 200179.470708894157 1055015.133064529554 278 0 2 143 147
+5	32164 2292 634 2982 204000 1062000 144 0 4 140 260
+6	34456 2292 634 2982 204000 1062000 144 0 5 139 281
+7	36748 8029 610 2984 200179.470708894157 1062554.837252967211 279 0 4 280 488

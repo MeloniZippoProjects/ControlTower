@@ -1,0 +1,47 @@
+file 107949 1484073307                                          
+version 2
+run ResponseMeasurement-27-20170110-19:35:07-21322
+attr configname ResponseMeasurement
+attr datetime 20170110-19:35:07
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=27
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21322
+attr repetition 27
+attr replication #27
+attr resultdir results
+attr runnumber 27
+attr seedset 27
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 42.857min
+param SimNetwork.wg.interArrivalTime exponential(42.857min)
+
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+0	1483 13765 837 6307 140800.394643341603 999311.347438340892 322 4283.0079277747 19258.384348818 2520615.7352106 21376259087.164
+1	15248 12106 842 6330 141318.687461644528 1003333.086893715576 324 0 2364.1143778107 125650.24758977 121855236.55707
+2	27354 18707 840 6330 141318.687461644528 1003333.086893715576 648 0 3 412 524
+3	46061 12173 860 6304 144417.522015841847 998343.928690978788 321 0 6578.0235010355 377089.84703942 1186267451.7473
+4	58234 18529 858 6304 144417.522015841847 998343.928690978788 642 0 5 641 1365
+5	76763 6295 844 6323 141428.1 1002853.8 336 0 3 322 538
+6	83058 6295 844 6323 141428.1 1002853.8 336 0 3 322 572
+7	89353 18596 849 6328 142396.186068505919 1003333.086893715576 644 0 3 670 1106

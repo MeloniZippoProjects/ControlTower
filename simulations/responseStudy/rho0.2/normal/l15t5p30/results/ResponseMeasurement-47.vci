@@ -1,0 +1,47 @@
+file 43815 1484073879                                           
+version 2
+run ResponseMeasurement-47-20170110-19:44:39-22472
+attr configname ResponseMeasurement
+attr datetime 20170110-19:44:39
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=47
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 22472
+attr repetition 47
+attr replication #47
+attr resultdir results
+attr runnumber 47
+attr seedset 47
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 100min
+param SimNetwork.wg.interArrivalTime exponential(100min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 5798 545 2846 204505.032255254168 1055868.88964715682 136 3619.5469129696 29972.786571578 1293846.1431441 16581084388.566
+1	7274 4267 533 2835 201365.828030185859 1053147.343551164718 136 0 1626.8744176455 13499.345193277 11881809.435258
+2	11541 7814 531 2835 201365.828030185859 1053147.343551164718 272 0 2 146 156
+3	19355 4254 542 2843 204175.349307016763 1055569.942137511319 136 0 2743.2811771474 17234.043049344 20394549.788483
+4	23609 7815 540 2843 204175.349307016763 1055569.942137511319 272 0 3 146 160
+5	31424 2288 538 2849 204000 1062000 144 0 5 136 256
+6	33712 2288 538 2849 204000 1062000 144 0 5 137 263
+7	36000 7815 536 2840 202212.06590355854 1055569.942137511319 272 0 3 210 300

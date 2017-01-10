@@ -1,0 +1,47 @@
+file 92278 1484074100                                           
+version 2
+run ResponseMeasurement-144-20170110-19:48:20-23025
+attr configname ResponseMeasurement
+attr datetime 20170110-19:48:20
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=144
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 23025
+attr repetition 144
+attr replication #144
+attr resultdir results
+attr runnumber 144
+attr seedset 144
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(60min, 6min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 50min
+param SimNetwork.wg.interArrivalTime exponential(50min)
+
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1479 12449 1137 6069 152555.491182540584 1003546.608994175386 291 3361.2723565035 26890.31813492 2115464.059196 17838842289.739
+1	13928 9311 1125 6058 148910.484018178609 1002425.985744364713 292 0 458.23378203422 11664.5842513 2796941.0293956
+2	23239 16867 1123 6058 148910.484018178609 1002425.985744364713 584 0 2 298 304
+3	40106 9299 1134 6066 152278.712556936193 1003295.196702692712 291 0 970.92643490612 16690.654087729 7297527.2216941
+4	49405 16817 1132 6066 152278.712556936193 1003295.196702692712 582 0 3 307 327
+5	66222 4609 1119 6054 141000 1002000 288 0 4 291 583
+6	70831 4609 1119 6054 141000 1002000 288 0 4 291 571
+7	75440 16838 1128 6063 149238.412808435703 1003295.196702692712 583 0 6 990 2520

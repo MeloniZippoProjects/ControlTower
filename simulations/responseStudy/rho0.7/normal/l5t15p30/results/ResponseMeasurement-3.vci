@@ -1,0 +1,47 @@
+file 181453 1484073483                                          
+version 2
+run ResponseMeasurement-3-20170110-19:38:03-21930
+attr configname ResponseMeasurement
+attr datetime 20170110-19:38:03
+attr experiment ResponseMeasurement
+attr inifile responseStudy.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=3
+attr measurement ""
+attr network controltower.SimNetwork
+attr processid 21930
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param SimNetwork.a.parkingLot.parkingDelay "truncnormal(30min, 3min)"
+param SimNetwork.a.runway.landingTime "truncnormal(5min, 0.5min)"
+param SimNetwork.a.runway.takeoffTime "truncnormal(15min, 1.5min)"
+param SimNetwork.a.runway.throughputCheckInterval 28.571min
+param SimNetwork.wg.interArrivalTime exponential(28.571min)
+
+vector 2  SimNetwork.a.landingQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 1  SimNetwork.a.landingQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 5  SimNetwork.a.runway  landedThroughput:vector  ETV
+attr source  landedThroughputSignal
+vector 6  SimNetwork.a.runway  tookoffThroughput:vector  ETV
+attr source  tookoffThroughputSignal
+vector 7  SimNetwork.a.parkingLot  parkingOccupancy:vector  ETV
+attr source  parkingOccupancy
+vector 4  SimNetwork.a.takeoffQueue  queueLength:vector  ETV
+attr source  queueLengthSignal
+vector 3  SimNetwork.a.takeoffQueue  queueTime:vector  ETV
+attr source  queueTimeSignal
+vector 0  SimNetwork.wg  responseTime:vector  ETV
+attr source  responseTimeSignal
+0	1476 23317 959 10136 103960.537516389494 963307.383175315578 545 3127.6455217605 14738.330103767 3913385.960531 31731462524.372
+1	24793 21410 910 10119 100923.758283160749 961379.885618469557 546 0 1105.5936615964 191132.41286531 120389730.97491
+2	46203 31536 908 10119 100923.758283160749 961379.885618469557 1092 0 3 786 1098
+3	77739 21671 944 10142 102977.110436878786 963883.642658976384 546 0 10278.222314334 1232997.9675484 6368792074.8139
+4	99410 31566 938 10142 102845.363772414822 963883.642658976384 1092 0 10 2318 10298
+5	130976 9462 915 10138 101141.34 963414.12 504 0 5 546 1136
+6	140438 9462 915 10138 101141.34 963414.12 504 0 3 545 869
+7	149900 31553 917 10139 101229.716454742952 963883.642658976384 1092 0 6 1784 4378
