@@ -1,4 +1,4 @@
-function [pdffig] = pdffunction(config, width)
+function [pdffig] = lengthPDF(config)
     %rhos = ['0.1'; '0.2'; '0.3'; '0.4'; '0.5'; '0.6'; '0.7'; '0.8'; '0.9'];
     rhos = ['0.1'; '0.3'; '0.5'; '0.7'; '0.9'];
     pdffig = figure('Name',strcat(config, ' pdfs'));
@@ -6,7 +6,7 @@ function [pdffig] = pdffunction(config, width)
     rng(19, 'twister');
 
     for idx = 1 : length(rhos)
-        computePDF(config, rhos(idx, :), width, pdffig);	
+        computeLengthPDF(config, rhos(idx, :), pdffig);	
     end
 
     figure(pdffig);

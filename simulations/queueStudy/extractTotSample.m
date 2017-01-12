@@ -8,8 +8,8 @@ function [ tot_sample ] = extractTotSample(config, rho)
         for idx = 1 : vectors.size
             vector_name = strcat(config, '_', string(idx-1).char);
             x = vectors.(vector_name);
-            x = x(:, 2).';
-            tot_sample = [tot_sample, x];
+            x = x(:, 2);
+            tot_sample = [tot_sample; x];
             
             if length(tot_sample) > 5e4 && idx > 10
                 break;

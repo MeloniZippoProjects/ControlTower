@@ -1,10 +1,9 @@
 cd poissonian
 
 
-timeConfigs = [string('landingQueue_queueTime') 5; string('takeoffQueue_queueTime') 20; ];
-%timeConfigs = [];
-%lengthConfigs = [ string('landingQueue_queueLength'); string('takeoffQueue_queueLength')];
-lengthConfigs = [];
+%timeConfigs = [string('landingQueue_queueTime') 5; string('takeoffQueue_queueTime') 20; ];
+timeConfigs = [];
+lengthConfigs = [ string('landingQueue_queueLength'); string('takeoffQueue_queueLength')];
 
 for idx = 1 : length(lengthConfigs)
    config = lengthConfigs(idx).char;
@@ -20,5 +19,3 @@ for idx = 1 : length(timeConfigs)
    pdffig = timePDF(config, width);
    print(pdffig, config, '-dpng');
 end
-
-cd ..

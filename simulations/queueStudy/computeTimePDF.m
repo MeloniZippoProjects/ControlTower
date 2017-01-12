@@ -1,10 +1,9 @@
-function [subsmpl] = computePDF(config, rho, width, pdffig)
+function [subsmpl] = computeTimePDF(config, rho, width, pdffig)
 	tot_sample = extractTotSample(config, rho);
 	subsmpl = subsample(tot_sample, ceil(log2(length(tot_sample)) - ceil( 12 - str2double(rho)*6)));
     
-    if( ~( isempty( regexp(config, 'Time', 'once')) ) )
-        subsmpl = subsmpl / 60;
-    end
+    %Rescale from seconds to minutes
+    subsmpl = subsmpl / 60;
     
 	figure('Name', strcat('Autocorr for ', config, ' ', string(rho).char));
 	autocorr(subsmpl);
@@ -25,10 +24,12 @@ function [subsmpl] = computePDF(config, rho, width, pdffig)
     figure(pdffig);
 	hold on;
     
-    p = plot(0, p_zero);
+    p_label = strcat(string('p(0) of '), rho);
+    p = plot(0, p_zero, 'DisplayName' , p_label.char );
     p.Marker = '*';
     
-    h = histogram(subsmpl_nozero, 'DisplayName', rho, 'DisplayStyle', 'stairs');
+    hist_label = strcat(string('p(x | x > 0) of '), rho);
+    h = histogram(subsmpl_nozero, 'DisplayName', hist_label.char , 'DisplayStyle', 'stairs');
     h.EdgeColor = p.Color;
     h.BinWidth = width;
     h.BinCounts = ( h.BinCounts / sum(h.BinCounts)) * ( 1 - p_zero);

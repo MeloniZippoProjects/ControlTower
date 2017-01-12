@@ -5,7 +5,7 @@ function [subsmpl] = subsample(sample, k)
     subsmpl = [];
     for idx = 1:length(sample)
         if( rand() <= 1/(2^k))
-            subsmpl = [subsmpl, sample(idx)];
+            subsmpl = [subsmpl; sample(idx, :)];
         end
     end
 end
