@@ -1,0 +1,1 @@
+rhos = [string('rho0.2'), string('rho0.7')];
