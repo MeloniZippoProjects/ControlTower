@@ -11,5 +11,7 @@ $run_gawk =
 
 foreach($filter in $filters)
 {
-	Start-Job -ScriptBlock $run_gawk -ArgumentList($filter);
+	Invoke-Command -ScriptBlock $run_gawk -ArgumentList($filter);
 }
+
+Get-Job | Wait-Job

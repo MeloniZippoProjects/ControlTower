@@ -1,6 +1,6 @@
 # Configuration variables
 
-$patterns = "parkingLot_parkingOccupancy";
+$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime", "wg_responseTime", "parkingLot_parkingOccupancy";
 $iniName = "parkingStudy.ini"
 $configuration = "ParkingMeasurement"
 
@@ -11,9 +11,9 @@ $awkScriptPath = "\\PC-RAFF\simulations\filter_m.awk"
 $root = pwd
 $inis = Get-ChildItem -Recurse -Filter $iniName
 
-$runSimulation =
+$runFilter =
 {
-    param($ini)
+    param($ini, $awkScriptPath, $patterns, $configuration)
 
     cd $ini.DirectoryName
 
@@ -30,7 +30,7 @@ $runSimulation =
 
 foreach( $ini in $inis )
 {
-    Invoke-Command -ScriptBlock $runSimulation -ArgumentList $ini   
+    Start-Job -ScriptBlock $runFilter -ArgumentList $ini, $awkScriptPath, $patterns, $configuration  
 }
 
 cd $root

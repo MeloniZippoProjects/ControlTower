@@ -6,7 +6,7 @@
 
 $rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\"
 $oldLinePattern = "sim-time-limit";
-$newLine = "sim-time-limit = 50d";
+$newLine = "sim-time-limit = 5d";
 
 #Inizio script
 

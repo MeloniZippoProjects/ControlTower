@@ -1,6 +1,7 @@
 # Configuration variables
 
-$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" ), ( "responseStudy.ini", "ResponseMeasurement" );
+#$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" ), ( "responseStudy.ini", "ResponseMeasurement" );
+$configurations = ("queueStudy.ini", "WarmupMeasurement" ),  ( "parkingStudy.ini", "WarmupMeasurement" ), ( "responseStudy.ini", "WarmupMeasurement" );
 $repetitions = 150;
 
 $awkScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parse.awk" 
@@ -10,8 +11,6 @@ $absoluteSrcPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src"
 # Script body
 
 $root = pwd
-
-
 
 $runStudy =
 {
