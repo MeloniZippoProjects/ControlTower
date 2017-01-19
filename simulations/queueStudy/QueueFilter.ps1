@@ -1,6 +1,7 @@
 # Configuration variables
 
-$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime";
+#$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime";
+$patterns = "wg_responseTime";
 $iniName = "queueStudy.ini"
 $configuration = "QueueMeasurement"
 

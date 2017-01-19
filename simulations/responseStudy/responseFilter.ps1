@@ -1,6 +1,6 @@
 # Configuration variables
 
-$patterns = "responseTime";
+$patterns = "wg_responseTime";
 $iniName = "responseStudy.ini"
 $configuration = "ResponseMeasurement"
 

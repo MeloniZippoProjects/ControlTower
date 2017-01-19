@@ -20,7 +20,7 @@ BEGIN {
 	print "Gawk:\tProcessing vec # " run_number
 }
 
-/vector [0-7]/ {
+/vector [0-9]+/ {
 	fields = split($3, splitted, ".")
 	vector_module = splitted[fields]
 	fields = split($4, subs, ":")
@@ -36,7 +36,7 @@ BEGIN {
 	vectors_data_csv[run_number, $2] = ";;values;"
 }
 
-$1 ~ /[0-7]/ {
+$1 ~ /[0-9]+/ {
 	vectors[run_number, $1] = vectors[run_number, $1] $3 " " $4 ";"
 	vectors_time_csv[run_number, $1] = vectors_time_csv[run_number, $1] $3 "; "
 	vectors_data_csv[run_number, $1] = vectors_data_csv[run_number, $1] $4 "; " 
