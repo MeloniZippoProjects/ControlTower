@@ -1,7 +1,7 @@
 function [ samples ] = loadTimeSamples( vector, scenario )
     cd( [ string(scenario).char, '/results' ]);
-        filename = [ vector '.mat'];
-        if exist(fullfile(cd, 'cache', filename), 'file')
+        filename = fullfile(cd, 'cache', [ vector '.mat']);
+        if exist( filename, 'file')
             load(filename);
         else
             run(strcat(vector, '.m'));
@@ -13,7 +13,11 @@ function [ samples ] = loadTimeSamples( vector, scenario )
                 samples.(strcat('v', string(idx).char)) = sample;
             end
             samples.size = vectors.size;
-            save(fullfile('cache', filename), 'samples');
+            
+            warning('off', 'all');
+                mkdir('cache');
+            warning('on', 'all');
+            save(filename, 'samples');
         end
     cd ../..
 end

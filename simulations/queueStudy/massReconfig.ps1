@@ -4,9 +4,9 @@
 
 #Variabili di configurazione:
 
-$rootDir = "/home/davide/Performance_Project/PESC_Control_Tower/simulations/queueStudy"
-$oldLinePattern = "repeat = 150";
-$newLine = "#repeat = 150";
+$rootDir = "\\PC-RAFF\simulations\queueStudy\lognormal"
+$oldLinePattern = "warmup-period";
+$newLine = "warmup-period = 2.4d";
 
 #Inizio script
 

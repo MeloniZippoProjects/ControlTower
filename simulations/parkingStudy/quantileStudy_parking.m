@@ -1,14 +1,16 @@
 rhos = ['rho0.2'; 'rho0.7'];
-distributions = [string('deterministic'); string('exponential'); string('normal')];
+distributions = [string('exponential'); string('lognormal');] ; % string('deterministic'); ] ; %string('normal'); string('lognormal'); string('lognormal'); string('deterministic')];
 scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30');];
 vector = 'parkingLot_parkingOccupancy';
 p = 0.90; %percentuale dei quantili calcolati
 
-quantiles = struct();
+
 
 for rhoIdx = 1 : size(rhos,1)
     rho = rhos(rhoIdx,:);
     cd(rho);
+    clear quantiles;
+    quantiles = struct();
     
     for distIdx = 1 : size(distributions, 1)
        dist = distributions(distIdx).char; 
@@ -33,8 +35,6 @@ for rhoIdx = 1 : size(rhos,1)
        end
        cd ..
     end
-
+    save( ['parking' string(p).char 'Quantiles.mat'], 'quantiles');
     cd ..
 end
-
-save( ['parking' string(p).char 'Quantiles.mat'], 'quantiles');

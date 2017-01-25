@@ -1,74 +1,93 @@
-distributions = [ string('deterministic'); string('exponential'); string('normal') ];
-rhos = ['rho0.1'; 'rho0.2'; 'rho0.3'; 'rho0.4'; 'rho0.5'; 'rho0.6'; 'rho0.7'; 'rho0.8'; 'rho0.9'];
-timeVector = [ 'takeoffQueue_queueTime' ; 'landingQueue_queueTime' ];
-lengthVector = [ 'takeoffQueue_queueLength' ; 'landingQueue_queueLength' ];
+%distributions = [ string('exponential') ];
+distributions = [ string('lognormal'); ]; 
+scenarios = [   string('rho0.1'); string('rho0.15'); string('rho0.2'); string('rho0.25'); string('rho0.3'); string('rho0.35'); string('rho0.4'); string('rho0.45'); string('rho0.5');
+                string('rho0.55'); string('rho0.6'); string('rho0.65'); string('rho0.7'); string('rho0.75'); string('rho0.8'); string('rho0.85'); string('rho0.9')];
+timeVector = [ 'landingQueue_queueTime'; 'takeoffQueue_queueTime' ];
+lengthVector = [ 'landingQueue_queueLength'; 'takeoffQueue_queueLength' ];
 p = 0.90; %percentuale dei quantili calcolati
 alfa = 0.05; %(1-alfa) è il livello di confidenza della media dei quantili
 
-for distIdx = 1:3
+for distIdx = 1 : size(distributions, 1)
     cd( distributions(distIdx,:).char );
 
-    for rhoIdx = 1:size(rhos, 1)
-        rho = rhos(rhoIdx,:);
+    disp 'Computing quantiles'
 
-        %quantili normali per i tempi
-        for vecIdx = 1:2
-            %disp('Sto estraendo sample per il tempo'),
-            samples = loadTimeSamples(timeVector(vecIdx,:), rho);
-            %disp('Sto calcolando tutti i quantili per il tempo');
+    quantileTimeMean = zeros(size(scenarios, 1), 2);
+    quantileTimeMean_gap = zeros(size(scenarios, 1), 2);
+
+    quantileLengthMean = zeros(size(scenarios, 1), 2);
+    quantileLengthMean_gap = zeros(size(scenarios, 1), 2);
+    
+    for scenarioIdx = 1:size(scenarios, 1)
+        rho = scenarios(scenarioIdx,:).char;
+
+        % quantili per i tempi
+        for vectorIdx = 1:2
+            samples = loadTimeSamples(timeVector(vectorIdx,:), rho);
+            q = zeros(samples.size, 1);
             for k = 1 : samples.size
                 q(k) = quantile( samples.(['v',string(k).char]) , p );
             end
-            %disp('Sto calcolando le medie dei quantili con i CI per il tempo');
-            [ quantileTimeMean(rhoIdx, vecIdx), quantileTimeMean_gap(rhoIdx, vecIdx)] = computeMeanWithCI ( q, alfa );
+             [ quantileTimeMean(scenarioIdx, vectorIdx), quantileTimeMean_gap(scenarioIdx, vectorIdx)] = computeMeanWithCI ( q, alfa );
         end
 
         %quantili pesati per le lunghezze
-        for vecIdx = 1:2
-            %disp('Sto estraendo sample per le lunghezze'),
-            samples = loadLengthSamples(lengthVector(vecIdx,:), rho);
-            %disp('Sto calcolando tutti i quantili per le lunghezze');
+        for vectorIdx = 1:2
+            samples = loadLengthSamples(lengthVector(vectorIdx,:), rho);
+            q = zeros(samples.size, 1);
             for k = 1 : samples.size
                 q(k) = computeWeightedQuantile( mergeSortLengthSample( samples.(['v',string(k).char]) ) , p );
             end
-            %disp('Sto calcolando le medie dei quantili con i CI per le lunghezze');
-            [ quantileLengthMean(rhoIdx, vecIdx), quantileLengthMean_gap(rhoIdx, vecIdx) ] = computeMeanWithCI( q, alfa );
+             [ quantileLengthMean(scenarioIdx, vectorIdx), quantileLengthMean_gap(scenarioIdx, vectorIdx)] = computeMeanWithCI ( q, alfa );
         end
-
     end
+    
+    disp 'Processing quantiles plots'
 
-    %stampo i grafici dei quantili
     startcd = cd;
     foldername = fullfile('graphs', 'quantileFigures');
 
+    warning('off', 'all');
     mkdir(foldername);
-    rhoes = [0.1; 0.2; 0.3; 0.4; 0.5; 0.6; 0.7; 0.8; 0.9];
+    warning('on', 'all');
+    rhoes = [0.1; 0.15; 0.2; 0.25; 0.3; 0.35; 0.4; 0.45; 0.5; 0.55; 0.6; 0.65; 0.7; 0.75; 0.8; 0.85; 0.9];
     %Time
-    for vecIdx = 1:2
-        figTitle = ['Quantiles of ', timeVector(vecIdx,:), ' for ', distributions(distIdx,:).char, ' case' ];
+    parfor vectorIdx = 1:2
+        figTitle = ['Quantiles of ', timeVector(vectorIdx,:), ' for ', distributions(distIdx,:).char, ' case' ];
         fig = figure('Name', figTitle);
-        errorbar( rhoes , quantileTimeMean(:, vecIdx) , quantileTimeMean_gap(:, vecIdx), min( quantileTimeMean(:, vecIdx), quantileTimeMean_gap(:, vecIdx)) );
+        errorbar( rhoes , quantileTimeMean(:, vectorIdx) , quantileTimeMean_gap(:, vectorIdx), min( quantileTimeMean(:, vectorIdx), quantileTimeMean_gap(:, vectorIdx)) );
         yl = ylim;
         ylim([0 yl(2)]);
         xlim([0 1]);
+        
         cd(foldername);
             print( fig, [ figTitle, '.png' ], '-dpng' );
             savefig( fig, [ figTitle, '.fig' ] );
         cd(startcd);
-    end
-    %Length
-    for vecIdx = 1:2
-        figTitle = ['Quantiles of ', lengthVector(vecIdx,:), ' for ', distributions(distIdx,:).char, ' case' ];
-        fig = figure('Name', figTitle);
-        errorbar( rhoes , quantileLengthMean(:, vecIdx) , quantileLengthMean_gap(:, vecIdx), min(quantileLengthMean(:, vecIdx), quantileLengthMean_gap(:, vecIdx)) );
-        yl = ylim;
-        ylim([0 yl(2)]);
-        xlim([0 1]);
-        cd(foldername);
-            print( fig, [ figTitle, '.png' ], '-dpng' );
-            savefig( fig, [ figTitle, '.fig' ] );
-        cd(startcd);
+        
     end
 
+    %Length
+    parfor vectorIdx = 1:2
+        figTitle = ['Quantiles of ', lengthVector(vectorIdx,:), ' for ', distributions(distIdx,:).char, ' case' ];
+        fig = figure('Name', figTitle);
+        errorbar( rhoes , quantileLengthMean(:, vectorIdx) , quantileLengthMean_gap(:, vectorIdx), min(quantileLengthMean(:, vectorIdx), quantileLengthMean_gap(:, vectorIdx)) );
+        yl = ylim;
+        ylim([0 yl(2)]);
+        xlim([0 1]);
+        
+        cd(foldername);
+            print( fig, [ figTitle, '.png' ], '-dpng' );
+            savefig( fig, [ figTitle, '.fig' ] );
+        cd(startcd);
+    end
+    
+    disp 'Processing regression studies'
+    disp 'Regression for landingQueue_queueTime'
+        cutIdx = 1;
+        linearRegressionStudy(rhoes(cutIdx:size(rhoes, 1)), quantileTimeMean(cutIdx:size(rhoes, 1), 1), 'landingQueue_queueTime', foldername);
+    disp 'Regression for takeoffQueue_queueLength'
+        cutIdx = 9;
+        exponentialRegressionStudy(rhoes(cutIdx:size(rhoes, 1)), quantileLengthMean(cutIdx:size(rhoes, 1), 2), 'takeoffQueue_queueLength', foldername);
     cd ..
 end

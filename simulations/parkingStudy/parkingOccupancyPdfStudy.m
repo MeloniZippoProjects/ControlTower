@@ -1,5 +1,5 @@
 rhos = ['rho0.2'; 'rho0.7'];
-distributions = [ string('exponential'); string('normal')]; %string('deterministic');
+distributions = [ string('exponential'); string('normal'); string('lognormal'); string('lognormal')]; %string('deterministic');
 vector = 'parkingLot_parkingOccupancy';
 scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30');];
 

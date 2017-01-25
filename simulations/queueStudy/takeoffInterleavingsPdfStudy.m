@@ -1,4 +1,4 @@
-distributions = [ string('exponential'); string('normal')]; %string('deterministic');
+distributions = [ string('exponential'); string('normal'); string('lognormal')]; %string('deterministic');
 responseVector = 'wg_responseTime';
 scenarios = ['rho0.1'; 'rho0.2'; 'rho0.3'; 'rho0.4'; 'rho0.5'; 'rho0.6'; 'rho0.7'; 'rho0.8'; 'rho0.9'];
 min = string('minutes');

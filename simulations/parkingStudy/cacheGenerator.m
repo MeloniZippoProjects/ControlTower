@@ -1,7 +1,8 @@
 rhos = ['rho0.2'; 'rho0.7'];
-distributions = [string('deterministic'); string('exponential'); string('normal')];
+distributions = [string('deterministic'); string('exponential'); string('normal'); string('lognormal')];
 scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30');];
-vector = 'parkingLot_parkingOccupancy';
+timeVectors = [ string('takeoffQueue_queueTime') ; string('landingQueue_queueTime'); string('wg_responseTime') ];
+lengthVectors = [ string('takeoffQueue_queueLength') ; string('landingQueue_queueLength'); string('parkingLot_parkingOccupancy') ];
 
 for rhoIdx = 1 : size(rhos,1)
     rho = rhos(rhoIdx,:);
@@ -11,10 +12,25 @@ for rhoIdx = 1 : size(rhos,1)
     for distIdx = 1 : size(distributions, 1)
         dist = distributions(distIdx).char; 
         cd(dist);
-        parfor scenIdx = 1 : size(scenarios, 1)
-            scenario = scenarios(scenIdx).char;
-            samples = loadLengthSamples(vector, scenario);
+    
+        for vectorIdx = 1 : size(lengthVectors, 1)
+            vector = lengthVectors(vectorIdx).char;
+
+            parfor scenIdx = 1 : length(scenarios)
+                scenario = scenarios(scenIdx, :);
+                samples = loadLengthSamples(vector, scenario);
+            end
         end
+
+        for vectorIdx = 1 : size(timeVectors, 1)
+            vector = timeVectors(vectorIdx).char;
+
+            parfor scenIdx = 1 : length(scenarios)
+                scenario = scenarios(scenIdx, :);
+                samples = loadTimeSamples(vector, scenario);
+            end
+        end
+        
         cd ..
     end
     cd ..

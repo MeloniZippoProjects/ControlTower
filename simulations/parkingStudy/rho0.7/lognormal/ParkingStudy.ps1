@@ -1,7 +1,7 @@
 # Configuration variables
 
 $iniName = "parkingStudy.ini"
-$configuration = "ParkingMeasurement"
+$configuration = "WarmupMeasurement"
 $repetitions = 150
 
 $awkScriptPath = "/home/raff/omnetpp-5.0/controltower/PESC_Control_Tower/simulations/parse.awk" 

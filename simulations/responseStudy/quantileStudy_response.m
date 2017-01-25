@@ -1,5 +1,5 @@
 rhos = ['rho0.2'; 'rho0.7'];
-distributions = [string('normal')];
+distributions = [string('normal'); string('lognormal')];
 scenarios = [ string('l5t5p30'); string('l5t5p60'); string('l5t15p30');
         string('l5t15p60');  string('l15t5p30'); string('l15t5p60');
         string('l15t15p30'); string('l15t15p60'); ];

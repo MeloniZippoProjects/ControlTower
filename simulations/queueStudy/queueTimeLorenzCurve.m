@@ -1,4 +1,4 @@
-distributions = [string('normal');string('exponential')]; 
+distributions = [string('lognormal');string('exponential')]; 
 
 
 scenarios = [string('rho0.1'); string('rho0.2'); string('rho0.3');
@@ -21,7 +21,7 @@ for distIdx = 1 : size(distributions,1)
     
 	for scenIdx = 1 : length(scenarios)
 		scenario = scenarios(scenIdx,:).char;
-        for vecIdx = 1 : length(timeVectors)
+        parfor vecIdx = 1 : length(timeVectors)
             vector = timeVectors(vecIdx).char;
             figname = [ 'Lorenz Curve for ' dist '_' vector '_' scenario ];
 
@@ -29,10 +29,15 @@ for distIdx = 1 : size(distributions,1)
             plotLorenzCurve(scenario, vector, alfa);
             ylim([0 1]);
 
-            cd lorenz_curves
-                print(fig, [figname '.png'], '-dpng');
+            startcd = cd;
+            foldername = fullfile('graphs', 'lorenz_curves');
+            warning('off', 'all');
+                mkdir(foldername);
+            warning('on', 'all');
+            cd(foldername)
+                print(fig, [ figname '.png' ] , '-dpng');
                 savefig(fig, [figname '.fig']);
-            cd ..
+            cd(startcd)
         end
     end
     

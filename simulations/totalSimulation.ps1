@@ -1,12 +1,17 @@
 # Configuration variables
 
-#$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" ), ( "responseStudy.ini", "ResponseMeasurement" );
-$configurations = ("queueStudy.ini", "WarmupMeasurement" ),  ( "parkingStudy.ini", "WarmupMeasurement" ), ( "responseStudy.ini", "WarmupMeasurement" );
-$repetitions = 150;
+$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" ), ( "responseStudy.ini", "ResponseMeasurement" );
+#$configurations = ("queueStudy.ini", "WarmupMeasurement" ),  ( "parkingStudy.ini", "WarmupMeasurement" ), ( "responseStudy.ini", "WarmupMeasurement" );
+$repetitions = 50;
 
-$awkScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parse.awk" 
+$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime", "wg_responseTime", "parkingLot_parkingOccupancy";
+
 $absoluteBinPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src\ControlTower.exe"
 $absoluteSrcPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src"
+
+$awkParseScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parse.awk" 
+$awkFilterScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\filter_m.awk"
+
 
 # Script body
 
@@ -14,34 +19,29 @@ $root = pwd
 
 $runStudy =
 {
-    param($ini, $measurement, $awkScriptPath, $absoluteBinPath, $absoluteSrcPath, $repetitions)
+    param($ini, $measurement, $awkParseScriptPath, $awkFilterScriptPath, $patterns, $absoluteBinPath, $absoluteSrcPath, $repetitions)
 
 	$runSimulation =
 	{
-	    param($ini, $measurement, $awkScriptPath, $absoluteBinPath, $absoluteSrcPath, $i)
-
-		#("In runSimulation " + $ini.FullName + " run " + $i) | Out-File -FilePath ($ini.FullName + $i + ".dbg") -Append
-			cd $ini.DirectoryName
-		#("in directory " + $ini.DirectoryName + " run " + $i) | Out-File -FilePath ($ini.FullName + $i + ".dbg") -Append
-		#("about to run" + $absoluteBinPath + " -r " + $i + " -u Cmdenv -c " + $measurement + " -n " + $absoluteSrcPath + " --debug-on-errors=false " + $ini.Name) | Out-File -FilePath ($ini.FullName + $i + ".dbg")
+        param($ini, $measurement, $awkParseScriptPath, $absoluteBinPath, $absoluteSrcPath, $repetitions)
+		cd $ini.DirectoryName
 	    Invoke-Expression ($absoluteBinPath + " -r " + $i + " -u Cmdenv -c " + $measurement + " -n " + $absoluteSrcPath + " --debug-on-errors=false " + $ini.Name)	
 	}
 	
-	("In runStudy " + $ini.FullName) | Out-File -FilePath ($ini.FullName + ".dbg") -Append
-    	cd $ini.DirectoryName
-	("in directory " + $ini.DirectoryName + " run " + $i) | Out-File -FilePath ($ini.FullName + ".dbg") -Append
+	cd $ini.DirectoryName
 
-	#$internalJobs = @();
     for ($i = 0; $i -lt $repetitions; $i++)
     {
-		#("About to start internal job " + $ini.DirectoryName) | Out-File -FilePath ($ini.FullName + ".dbg") -Append
-    	Invoke-Command -ScriptBlock $runSimulation -ArgumentList ( $ini, $measurement, $awkScriptPath, $absoluteBinPath, $absoluteSrcPath, $i );
-		#("Internal job started " + $ini.DirectoryName) | Out-File -FilePath ($ini.FullName + ".dbg") -Append
+    	Invoke-Command -ScriptBlock $runSimulation -ArgumentList ($ini, $measurement, $awkParseScriptPath, $absoluteBinPath, $absoluteSrcPath, $repetitions);
     }
-    #Wait-Job -Job $internalJobs;
 
 	cd results
-		gawk -f $awkScriptPath -v out=$measurement ( Get-ChildItem -Filter ($measurement + "-*.vec") | % name )
+		gawk -f $awkParseScriptPath -v out=$measurement ( Get-ChildItem -Filter ($measurement + "-*.vec") | % name )
+
+        foreach($pattern in $patterns)
+        {
+            gawk -f $awkFilterScriptPath -v pattern=$pattern ( Get-ChildItem -Filter ($measurement + ".m") | % name )
+        }
 }
 
 $externalJobs = @();
@@ -52,12 +52,21 @@ foreach ( $configuration in $configurations )
 	$iniName = $configuration[0];
 	$measurement = $configuration[1];
 
+    if(!($iniName -match 'queueStudy.ini'))
+    {
+        continue;
+    }
+
 	$inis = Get-ChildItem -Recurse -Filter $iniName;
 
 	foreach( $ini in $inis )
 	{
-		$externalJobs += Start-Job -ScriptBlock $runStudy -ArgumentList ( $ini, $measurement, $awkScriptPath, $absoluteBinPath, $absoluteSrcPath, $repetitions )
+        if(!($ini.fullName -match 'lognormal'))
+        {
+            continue;
+        }
+        
+		$externalJobs += Start-Job -ScriptBlock $runStudy -ArgumentList ($ini, $measurement, $awkParseScriptPath, $awkFilterScriptPath, $patterns, $absoluteBinPath, $absoluteSrcPath, $repetitions)
 	}
 }
-
-Wait-Job -Job $externalJobs;
+Wait-Job -Job $externalJobs

@@ -1,14 +1,15 @@
-distributions = [ string('deterministic'); string('exponential'); string('normal') ];
-scenarios = ['rho0.1'; 'rho0.2'; 'rho0.3'; 'rho0.4'; 'rho0.5'; 'rho0.6'; 'rho0.7'; 'rho0.8'; 'rho0.9'];
-timeVectors = [ 'takeoffQueue_queueTime' ; 'landingQueue_queueTime' ];
-lengthVectors = [ 'takeoffQueue_queueLength' ; 'landingQueue_queueLength' ];
+distributions = [ string('exponential'); ]; %[ string('deterministic'); string('exponential'); string('normal'); string('lognormal') ];
+scenarios = [   string('rho0.1'); string('rho0.15'); string('rho0.2'); string('rho0.25'); string('rho0.3'); string('rho0.35'); string('rho0.4'); string('rho0.45'); string('rho0.5');
+                string('rho0.55'); string('rho0.6'); string('rho0.65'); string('rho0.7'); string('rho0.75'); string('rho0.8'); string('rho0.85'); string('rho0.9')];
+timeVectors = [ string('takeoffQueue_queueTime') ; string('landingQueue_queueTime'); string('wg_responseTime') ];
+lengthVectors = [ string('takeoffQueue_queueLength') ; string('landingQueue_queueLength'); string('parkingLot_parkingOccupancy') ];
 
 for distIdx = 1 : length(distributions)
     distribution = distributions(distIdx, :).char;
     cd(distribution);
 
     for vectorIdx = 1 : size(lengthVectors, 1)
-		vector = lengthVectors(vectorIdx, :);
+		vector = lengthVectors(vectorIdx).char;
 
 		parfor scenIdx = 1 : length(scenarios)
 			scenario = scenarios(scenIdx, :);
@@ -17,7 +18,7 @@ for distIdx = 1 : length(distributions)
 	end
 
 	for vectorIdx = 1 : size(timeVectors, 1)
-		vector = timeVectors(vectorIdx, :);
+		vector = timeVectors(vectorIdx).char;
 
 		parfor scenIdx = 1 : length(scenarios)
 			scenario = scenarios(scenIdx, :);
