@@ -52,7 +52,7 @@ foreach ( $configuration in $configurations )
 	$iniName = $configuration[0];
 	$measurement = $configuration[1];
 
-    if(!($iniName -match 'queueStudy.ini'))
+    if(!($iniName -match 'parkingStudy.ini'))
     {
         continue;
     }
@@ -61,7 +61,7 @@ foreach ( $configuration in $configurations )
 
 	foreach( $ini in $inis )
 	{
-        if(!($ini.fullName -match 'lognormal'))
+        if(!($ini.fullName -match 'parkingStudy'))
         {
             continue;
         }

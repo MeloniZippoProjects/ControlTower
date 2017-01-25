@@ -4,18 +4,17 @@
 
 #Variabili di configurazione:
 
-$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\"
-$oldLinePattern = "warmup-period";
-$newLine = "warmup-period = 3d";
+$rootDir = "C:\Users\enric\Documents\Progetti\workspace_ctrltower\PESC_Control_Tower\simulations\parkingStudy"
+$iniFilename = "parkingStudy.ini";
+$oldLinePattern = "repeat = 70"; #le parentesi richiedono l'escape cioè \( e \)
+$newLine = "repeat = 150";
 
 #Inizio script
 
 $currentDir = pwd
 cd $rootDir
 
-#$inis += Get-ChildItem -Recurse -Filter "queueStudy.ini"
-$inis += Get-ChildItem -Recurse -Filter "parkingStudy.ini"
-#$inis += Get-ChildItem -Recurse -Filter "responseStudy.ini"
+$inis = Get-ChildItem -Recurse -Filter $iniFilename
 
 foreach($ini in $inis)
 {
