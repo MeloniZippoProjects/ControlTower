@@ -15,7 +15,6 @@ cd $rootDir
 
 #$inis += Get-ChildItem -Recurse -Filter "queueStudy.ini"
 $inis += Get-ChildItem -Recurse -Filter "parkingStudy.ini"
-#$inis += Get-ChildItem -Recurse -Filter "responseStudy.ini"
 
 foreach($ini in $inis)
 {

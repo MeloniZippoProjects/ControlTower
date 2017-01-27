@@ -1,12 +1,12 @@
 # Configuration variables
 
-$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" ), ( "responseStudy.ini", "ResponseMeasurement" );
+$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" );
 $repetitions = 150;
 
 $awkParseScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parse.awk" 
 $awkFilterScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\filter_m.awk"
 
-$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime", "wg_responseTime", "parkingLot_parkingOccupancy";
+$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime", "parkingLot_parkingOccupancy";
 $iniName = "queueStudy.ini"
 
 $absoluteBinPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src\ControlTower.exe"

@@ -1,10 +1,10 @@
 # Configuration variables
 
-$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" ), ( "responseStudy.ini", "ResponseMeasurement" );
-#$configurations = ("queueStudy.ini", "WarmupMeasurement" ),  ( "parkingStudy.ini", "WarmupMeasurement" ), ( "responseStudy.ini", "WarmupMeasurement" );
+$configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" );
+#$configurations = ("queueStudy.ini", "WarmupMeasurement" ),  ( "parkingStudy.ini", "WarmupMeasurement" );
 $repetitions = 50;
 
-$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime", "wg_responseTime", "parkingLot_parkingOccupancy";
+$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime", "parkingLot_parkingOccupancy";
 
 $absoluteBinPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src\ControlTower.exe"
 $absoluteSrcPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src"
