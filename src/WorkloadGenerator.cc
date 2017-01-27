@@ -46,7 +46,7 @@ void WorkloadGenerator::generateAndSchedulePlane()
 {
     Plane* newPlane = new Plane("", currentId++);
     newPlane->setSchedulingPriority(0);
-    newPlane->setContextPointer(nullptr);;
+    newPlane->setContextPointer(nullptr);
 
     scheduleAt( simTime() + par("interArrivalTime") , newPlane );
 }
