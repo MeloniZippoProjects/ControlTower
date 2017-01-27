@@ -1,10 +1,11 @@
 distributions = [string('exponential'); string('lognormal');] ;
-scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30')];
-combination_matrix = [1 1; 1 -1; -1 1; -1 -1];
+scenarios = [string('i15p60'); string('i15p30'); string('i30p60'); string('i30p30');];
+combination_matrix = [-1 1; -1 -1; 1 1; 1 -1];
 vector = 'parkingLot_parkingOccupancy';
 alfa = 0.05;
 
 load('parking0.9Quantiles.mat');
+    
     
 for distIdx = 1 : length(distributions)
    dist = distributions(distIdx).char; 

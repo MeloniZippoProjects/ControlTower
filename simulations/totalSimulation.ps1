@@ -61,7 +61,7 @@ foreach ( $configuration in $configurations )
 
 	foreach( $ini in $inis )
 	{
-        if(!($ini.fullName -match 'parkingStudy'))
+        if(!($ini.fullName -match 'parkingStudy_interarrival'))
         {
             continue;
         }

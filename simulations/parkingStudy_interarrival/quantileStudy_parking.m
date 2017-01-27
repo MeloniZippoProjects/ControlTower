@@ -1,5 +1,5 @@
 distributions = [string('exponential'); string('lognormal');] ;
-scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30');];
+scenarios = [string('i15p60'); string('i15p30'); string('i30p60'); string('i30p30');];
 vector = 'parkingLot_parkingOccupancy';
 p = 0.90; %percentuale dei quantili calcolati
 
@@ -23,7 +23,7 @@ for distIdx = 1 : size(distributions, 1)
        end
 
        %da testare
-       field = [ 'quantiles', '_', dist, '_', scenario ];
+       field = [ 'quantiles','_', dist, '_', scenario ];
        quantiles.( field ) = q;
 
    end
