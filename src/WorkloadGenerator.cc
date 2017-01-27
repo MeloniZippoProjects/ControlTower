@@ -20,7 +20,6 @@ Define_Module(WorkloadGenerator);
 void WorkloadGenerator::initialize()
 {
     currentId = 0;
-    responseTimeSignal = registerSignal("responseTimeSignal");
 
     //The first plane is created and scheduled at the start of the simulation
     generateAndSchedulePlane();
@@ -37,12 +36,8 @@ void WorkloadGenerator::handleMessage(cMessage *msg)
         generateAndSchedulePlane();
     }
     else{
-        //emit the signal with the response time of the plane
-        Plane* plane = check_and_cast<Plane*>(msg);
-        simtime_t responseTime = simTime() - plane->getArrivalTimestamp();
-        emit(responseTimeSignal, responseTime.dbl());
-
         //Planes that completed the path through the airport are deleted
+        Plane* plane = check_and_cast<Plane*>(msg);
         delete plane;
     }
 }
@@ -51,8 +46,7 @@ void WorkloadGenerator::generateAndSchedulePlane()
 {
     Plane* newPlane = new Plane("", currentId++);
     newPlane->setSchedulingPriority(0);
-    newPlane->setContextPointer(nullptr);
-    newPlane->setArrivalTimestamp(simTime());
+    newPlane->setContextPointer(nullptr);;
 
     scheduleAt( simTime() + par("interArrivalTime") , newPlane );
 }

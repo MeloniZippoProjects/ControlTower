@@ -33,8 +33,6 @@ class WorkloadGenerator : public cSimpleModule
     void generateAndSchedulePlane();
 
     int currentId;
-
-    simsignal_t responseTimeSignal;
 };
 
 #endif
