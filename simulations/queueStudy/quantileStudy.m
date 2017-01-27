@@ -1,11 +1,10 @@
-%distributions = [ string('exponential') ];
-distributions = [ string('lognormal'); ]; 
+distributions = [ string('exponential'); string('lognormal') ]; 
 scenarios = [   string('rho0.1'); string('rho0.15'); string('rho0.2'); string('rho0.25'); string('rho0.3'); string('rho0.35'); string('rho0.4'); string('rho0.45'); string('rho0.5');
                 string('rho0.55'); string('rho0.6'); string('rho0.65'); string('rho0.7'); string('rho0.75'); string('rho0.8'); string('rho0.85'); string('rho0.9')];
 timeVector = [ 'landingQueue_queueTime'; 'takeoffQueue_queueTime' ];
 lengthVector = [ 'landingQueue_queueLength'; 'takeoffQueue_queueLength' ];
-p = 0.90; %percentuale dei quantili calcolati
-alfa = 0.05; %(1-alfa) è il livello di confidenza della media dei quantili
+p = 0.90;       % valore dei quantili calcolati
+alfa = 0.05;    % (1-alfa) è il livello di confidenza della media dei quantili
 
 for distIdx = 1 : size(distributions, 1)
     cd( distributions(distIdx,:).char );
@@ -42,6 +41,9 @@ for distIdx = 1 : size(distributions, 1)
         end
     end
     
+    save('quantileTimeMean.mat', quantileTimeMean);
+    save('quantileLengthMean.mat', quantileLengthMean);
+
     disp 'Processing quantiles plots'
 
     startcd = cd;
@@ -81,13 +83,4 @@ for distIdx = 1 : size(distributions, 1)
             savefig( fig, [ figTitle, '.fig' ] );
         cd(startcd);
     end
-    
-    disp 'Processing regression studies'
-    disp 'Regression for landingQueue_queueTime'
-        cutIdx = 1;
-        linearRegressionStudy(rhoes(cutIdx:size(rhoes, 1)), quantileTimeMean(cutIdx:size(rhoes, 1), 1), 'landingQueue_queueTime', foldername);
-    disp 'Regression for takeoffQueue_queueLength'
-        cutIdx = 9;
-        exponentialRegressionStudy(rhoes(cutIdx:size(rhoes, 1)), quantileLengthMean(cutIdx:size(rhoes, 1), 2), 'takeoffQueue_queueLength', foldername);
-    cd ..
 end

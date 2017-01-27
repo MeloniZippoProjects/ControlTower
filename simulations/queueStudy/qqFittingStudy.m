@@ -1,7 +1,7 @@
-distributions = [ string('exponential'); string('normal'); string('lognormal'); string('lognormal')]; %string('deterministic');
+distributions = [ string('exponential'); string('lognormal') ];
 timeVectors = [string('landingQueue_queueTime'); string('takeoffQueue_queueTime')];
-lengthVectors = [ string('landingQueue_queueLength'); string('takeoffQueue_queueLength')];
-scenarios = ['rho0.1'; 'rho0.2'; 'rho0.3'; 'rho0.4'; 'rho0.5'; 'rho0.6'; 'rho0.7'; 'rho0.8'; 'rho0.9'];
+scenarios = [   string('rho0.1'); string('rho0.15'); string('rho0.2'); string('rho0.25'); string('rho0.3'); string('rho0.35'); string('rho0.4'); string('rho0.45'); string('rho0.5');
+                string('rho0.55'); string('rho0.6'); string('rho0.65'); string('rho0.7'); string('rho0.75'); string('rho0.8'); string('rho0.85'); string('rho0.9')];
 fittings = [string('exponential'); string('normal'); string('lognormal'); string('weibull'); string('gamma');];
 zeroPolicies = [ 'includeZero'; 'excludeZero' ];
 
@@ -12,37 +12,6 @@ for distIdx = 1 : length(distributions)
     for polIdx = 1 : size(zeroPolicies, 1)
         zeroPolicy = zeroPolicies(polIdx, :);
         
-        %{
-        Ridiscutere fitting pesato
-        for vectorIdx = 1 : length(lengthVectors)
-            vector = lengthVectors(vectorIdx).char;
-
-            for scenIdx = 1 : length(scenarios)
-                scenario = scenarios(scenIdx, :);
-
-                samples = loadLengthSamples(vector, scenario);
-
-                parfor fitIdx = 1 : length(fittings)
-                    fitting = fittings(fitIdx).char;
-
-                    figname = ['fitting to ' fitting ' for ' distribution ', ' vector ', ' scenario];
-                    fig = figure('Name', figname);
-                    linearQQplot(samples, fitting, 1);
-
-                    startcd = cd;
-                    foldername = fullfile('graphs', 'pdf', 'fittings', zeroPolicy, fitting);
-                    warning('off', 'all');
-                        mkdir(foldername);
-                    warning('on', 'all');
-                    cd(foldername)
-                        print(fig, [ figname '.png' ] , '-dpng');
-                        savefig(fig, [figname '.fig']);
-                    cd(startcd)
-                end
-            end
-        end
-        %}
-
         for vectorIdx = 1 : length(timeVectors)
             vector = timeVectors(vectorIdx).char;
 
