@@ -20,6 +20,10 @@ package controltower;
 //
 simple ParkingLot
 {
+    parameters:
+        volatile double parkingDelay @unit(s);
+        @signal[parkingOccupancy](type=long);
+        @statistic[parkingOccupancy](source=parkingOccupancy; record=timeavg,stats,vector);
     gates:
         input planeIn;
         output planeOut;

@@ -17,8 +17,10 @@
 #define __CONTROLTOWER_CONTROLTOWER_H_
 
 #include <omnetpp.h>
+#include <string.h>
 #include "UpdatePlaneEnqueued_m.h"
 #include "UpdateRunwayFreed_m.h"
+#include "OkToProceed_m.h"
 
 using namespace omnetpp;
 
@@ -32,11 +34,11 @@ class ControlTower : public cSimpleModule
     int landingPlanes;
     int takeoffPlanes;
 
-    //OkToProceed* okToProceed;
-
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+
+    void sendOk(std::string gate);
     void handleLandingQueueUpdate(UpdatePlaneEnqueued* msg);
     void handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg);
     void handleRunwayUpdate(UpdateRunwayFreed* msg);

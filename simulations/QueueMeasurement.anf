@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/PESC_Control_Tower/simulations/results/QueueMeasurement-*.vec"/>
+    <inputs name="/PESC_Control_Tower/simulations/results/QueueMeasurement-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="QueueTime stats">
+      <items xsi:type="scave:Add" filterPattern="name(queueTime:vector) " type="VECTOR"/>
+      <items xsi:type="scave:ComputeScalar" scalarName="Landing.QueueTime" valueExpr="mean('queueTime:vector')" moduleExpr="SimNetwork.a.landingQueue" groupByExpr="" averageReplications="true" computeStddev="true" computeConfidenceInterval="true" confidenceLevel="0.95" computeMinMax="true">
+        <filters xsi:type="scave:Select" filterPattern="module(SimNetwork.a.landingQueue) " type="VECTOR"/>
+      </items>
+      <items xsi:type="scave:ComputeScalar" scalarName="TakeOff.QueueTime" valueExpr="mean('queueTime:vector')" moduleExpr="SimNetwork.a.takeoffQueue" groupByExpr="" averageReplications="true" computeStddev="true" computeConfidenceInterval="true" confidenceLevel="0.95" computeMinMax="true">
+        <filters xsi:type="scave:Select" filterPattern="module(SimNetwork.a.takeoffQueue) " type="VECTOR"/>
+      </items>
+      <items xsi:type="scave:BarChart" name="QueueTime stats"/>
+    </datasets>
+    <datasets name="QueueLength stats">
+      <items xsi:type="scave:Add" filterPattern="name(queueLength:vector)" type="VECTOR"/>
+      <items xsi:type="scave:ComputeScalar" scalarName="Landing.QueueLength" valueExpr="mean('queueLength:vector')" moduleExpr="SimNetwork.a.landingQueue" groupByExpr="" averageReplications="true" computeStddev="true" computeConfidenceInterval="true" confidenceLevel="0.95" computeMinMax="true">
+        <filters xsi:type="scave:Select" filterPattern="module(SimNetwork.a.landingQueue) " type="VECTOR"/>
+      </items>
+      <items xsi:type="scave:ComputeScalar" scalarName="TakeOff.QueueLength" valueExpr="mean('queueLength:vector')" moduleExpr="SimNetwork.a.takeoffQueue" groupByExpr="" averageReplications="true" computeStddev="true" computeConfidenceInterval="true" confidenceLevel="0.95" computeMinMax="true">
+        <filters xsi:type="scave:Select" filterPattern="module(SimNetwork.a.takeoffQueue) " type="VECTOR"/>
+      </items>
+      <items xsi:type="scave:BarChart" name="QueueLength stats"/>
+    </datasets>
+    <datasets name="Queue lenghts timeavg">
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.takeoffQueue) AND name(queueLength:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimNetwork.a.landingQueue) AND name(queueLength:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Apply" operation="timeavg">
+        <params name="interpolation-mode" value="sample-hold"/>
+      </items>
+      <items xsi:type="scave:LineChart" name="Queue lenghts timeavg" lineNameFormat=""/>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.2/@items.3 //@datasets/@datasets.0/@items.3 //@datasets/@datasets.1/@items.3"/>
+  </chartSheets>
+</scave:Analysis>

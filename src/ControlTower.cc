@@ -22,65 +22,97 @@ void ControlTower::initialize()
     runwayFree = true;
     landingPlanes = 0;
     takeoffPlanes = 0;
-   // okToProceed = new OkToProceed();
 }
 
 void ControlTower::handleMessage(cMessage *msg)
 {
-    /*switch(msg->getArrivalGate()->getBaseName())
+    std::string gateName = msg->getArrivalGate()->getBaseName();
+
+    if(gateName == "landingQueueStatusIn")
     {
-        case "landingQueueStatusIn":
-            handleLandingQueueUpdate(check_and_cast<UpdatePlaneEnqueued*>(msg));
-            break;
-        case "takeoffQueueStatusIn":
-            handleTakeoffQueueUpdate(check_and_cast<UpdatePlaneEnqueued*>(msg));
-            break;
-        case "runwayStatusIn":
-            handleRunwayUpdate(check_and_cast<UpdateRunwayFreed*>(msg));
-            break;
-    }*/
+        UpdatePlaneEnqueued* landingUpdate = check_and_cast<UpdatePlaneEnqueued*>(msg);
+        handleLandingQueueUpdate(landingUpdate);
+    }
+    else if(gateName == "takeoffQueueStatusIn")
+    {
+        UpdatePlaneEnqueued* takeoffUpdate = check_and_cast<UpdatePlaneEnqueued*>(msg);
+        handleTakeoffQueueUpdate(takeoffUpdate);
+    }
+    else if(gateName == "runwayStatusIn")
+    {
+        UpdateRunwayFreed* runwayUpdate = check_and_cast<UpdateRunwayFreed*>(msg);
+        handleRunwayUpdate(runwayUpdate);
+    }
 }
 
-/*void ControlTower::handleLandingQueueUpdate(UpdatePlaneEnqueued* msg)
+void ControlTower::sendOk(std::string gate)
+{
+    OkToProceed* ok = new OkToProceed();
+    ok->setSchedulingPriority(4);
+    send(ok, gate.c_str());
+}
+
+void ControlTower::handleLandingQueueUpdate(UpdatePlaneEnqueued* landingUpdate)
 {
     if(runwayFree)
     {
-        send(okToProceed, "landingQueueOkOut");
+        //Directly served because the runway is free.
+        // A landing update is always processed before a takeoff update because of  scheduling priority
+        sendOk("landingQueueOkOut");
+        runwayFree = false;
     }
     else
     {
+        //Keep track of the pending requests to process when the runway becomes free
         landingPlanes++;
     }
+
+    //Updates are single-use
+    delete landingUpdate;
 }
 
-void ControlTower::handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg)
+void ControlTower::handleTakeoffQueueUpdate(UpdatePlaneEnqueued* takeoffUpdate)
 {
     if(runwayFree)
     {
-        send(okToProceed, "takeoffQueueOkOut");
+        //Directly served because the runway is free.
+        // A landing update is always processed before a takeoff update because of  scheduling priority
+
+        sendOk("takeoffQueueOkOut");
+        runwayFree = false;
     }
     else
     {
+        //Keep track of the pending requests to process when the runway becomes free
         takeoffPlanes++;
     }
+
+    //Updates are single-use
+    delete takeoffUpdate;
 }
 
-void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* msg)
+void ControlTower::handleRunwayUpdate(UpdateRunwayFreed* runwayUpdate)
 {
-    if(landingPlanes == 0)
+    //If there is a pending request, it's served and the runway is kept busy.
+    //Requests to land have priority.
+    if(landingPlanes != 0)
     {
-        if(takeoffPlanes == 0)
+        sendOk("landingQueueOkOut");
+        landingPlanes--;
+    }
+    else
+    {
+        if(takeoffPlanes != 0)
         {
-            runwayFree = true;
+            sendOk("takeoffQueueOkOut");
+            takeoffPlanes--;
         }
         else
         {
-            send(okToProceed, "takeoffQueueOkOut");
+            runwayFree = true;
         }
     }
-    else
-    {
-        send(okToProceed, "landingQueueOkOut");
-    }
+
+    //Updates are single-use
+    delete runwayUpdate;
 }
-*/

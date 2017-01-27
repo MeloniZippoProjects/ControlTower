@@ -17,17 +17,30 @@
 #define __CONTROLTOWER_PLANEQUEUE_H_
 
 #include <omnetpp.h>
+#include <queue>
+#include <string>
+#include "Plane_m.h"
+#include "UpdatePlaneEnqueued_m.h"
+#include "OkToProceed_m.h"
 
 using namespace omnetpp;
 
-/**
- * TODO - Generated class
- */
 class PlaneQueue : public cSimpleModule
 {
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    virtual void refreshDisplay() const;
+    ~PlaneQueue();
+
+    void handlePlane(Plane* plane);
+    void handleOk(OkToProceed* ok);
+
+    std::queue<Plane*> planes;
+    int updatesPriority;
+
+    simsignal_t queueTimeSignal;
+    simsignal_t queueLengthSignal;
 };
 
 #endif

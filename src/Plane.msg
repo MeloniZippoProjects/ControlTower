@@ -19,4 +19,5 @@
 packet Plane {
     int ID;
     simtime_t enqueueTimestamp;
+    simtime_t arrivalTimestamp;
 }

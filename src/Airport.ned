@@ -22,13 +22,14 @@ network Airport
         input planeIn;
         output planeOut;
 
-
     submodules:
         landingQueue: PlaneQueue {
             @display("p=94,108");
+            updatesPriority = 1;
         }
         takeoffQueue: PlaneQueue {
             @display("p=247,262");
+            updatesPriority = 2;
         }
         runway: Runway {
             @display("p=247,108");
@@ -37,7 +38,6 @@ network Airport
             @display("p=438,108");
         }
         controlTower: ControlTower {
-
             @display("p=94,262");
         }
     connections:

@@ -19,24 +19,24 @@ Define_Module(ParkingLot);
 
 void ParkingLot::initialize()
 {
-
+    parkingOccupancy = registerSignal("parkingOccupancy");
+    planes = 0;
 }
 
 void ParkingLot::handleMessage(cMessage *msg)
 {
+    Plane* plane = check_and_cast<Plane*>(msg);
+
     if(msg->isSelfMessage()) //a plane scheduled for leaving
     {
-        Plane* plane = check_and_cast<Plane*>(msg);
-
-
+        send(plane, "planeOut");
+        --planes;
     }
-
-    string gateName = msg->getArrivalGate()->getBaseName();
-
-    if(gateName == "planeIn") //a new plane has arrived
+    else if(std::string(msg->getArrivalGate()->getBaseName()) == "planeIn") //a new plane has arrived
     {
-        planes.push_back(check_and_cast<Plane*>(msg));
-        simtime_t delay = SimTime(60, SimTimeUnit::SIMTIME_S);
-        scheduleAt(simTime() + delay, msg);
+        ++planes;
+        scheduleAt(simTime() + par("parkingDelay") , msg);
     }
+
+    emit(parkingOccupancy, planes);
 }
