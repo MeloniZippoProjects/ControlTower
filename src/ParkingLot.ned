@@ -24,6 +24,9 @@ simple ParkingLot
         volatile double parkingDelay @unit(s);
         @signal[parkingOccupancy](type=long);
         @statistic[parkingOccupancy](source=parkingOccupancy; record=timeavg,stats,vector);
+        
+        @signal[parkingInterleaving](type=double);
+        @statistic[parkingInterleaving](source=parkingInterleaving; record=vector);
     gates:
         input planeIn;
         output planeOut;

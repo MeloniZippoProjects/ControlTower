@@ -34,6 +34,9 @@ class ParkingLot : public cSimpleModule
 
     int planes;
     simsignal_t parkingOccupancy;
+    simsignal_t parkingInterleaving;
+
+    simtime_t lastLeftTime;
 };
 
 #endif

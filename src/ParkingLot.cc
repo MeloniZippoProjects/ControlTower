@@ -20,7 +20,9 @@ Define_Module(ParkingLot);
 void ParkingLot::initialize()
 {
     parkingOccupancy = registerSignal("parkingOccupancy");
+    parkingInterleaving = registerSignal("parkingInterleaving");
     planes = 0;
+    lastLeftTime = 0;
 }
 
 void ParkingLot::handleMessage(cMessage *msg)
@@ -31,6 +33,9 @@ void ParkingLot::handleMessage(cMessage *msg)
     {
         send(plane, "planeOut");
         --planes;
+
+        emit(parkingInterleaving, simTime() - lastLeftTime);
+        lastLeftTime = simTime();
     }
     else if(std::string(msg->getArrivalGate()->getBaseName()) == "planeIn") //a new plane has arrived
     {
