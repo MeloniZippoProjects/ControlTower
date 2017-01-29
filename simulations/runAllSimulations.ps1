@@ -1,29 +1,33 @@
 # Configuration variables
 
 $configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini", "ParkingMeasurement" );
-#$configurations = ("queueStudy.ini", "WarmupMeasurement" ),  ( "parkingStudy.ini", "WarmupMeasurement" );
 $repetitions = 50;
 
-$patterns = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime", "parkingLot_parkingOccupancy";
+$vectors = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime",
+            "parkingLot_parkingOccupancy", "runway_landingInterleaving", "runway_takeoffInterleaving", "parkingLot_";
 
-$absoluteBinPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src\ControlTower.exe"
-$absoluteSrcPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\src"
+$relativeBinPath = ".\src\ControlTower.exe";
+$relativeSrcPath = ".\src"
 
-$awkParseScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\parseVectors.awk" 
-$awkFilterScriptPath = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\splitVectors.awk"
+$relativeAwkParsePath = ".\simulations\parseVectors.awk" 
+$relatieAwkSplitPath = ".\simulations\splitVectors.awk"
+
+# Absolute paths computation
+$rootDirectory = (Get-Location).Path;
+$absoluteBinPath = Join-Path $rootDirectory $relativeBinPath;
+$absoluteSrcPath = Join-Path $rootDirectory $relativeSrcPath;
+$absoluteAwkParsePath = Join-Path $rootDirectory $relativeAwkParsePath;
+$absoluteAwkSplitPath = Join-Path $rootDirectory $relatieAwkSplitPath;
 
 
 # Script body
-
-$root = pwd
-
-$runStudy =
+$executeIni =
 {
-    param($ini, $measurement, $awkParseScriptPath, $awkFilterScriptPath, $patterns, $absoluteBinPath, $absoluteSrcPath, $repetitions)
+    param($ini, $measurement, $absoluteAwkParsePath, $absoluteAwkSplitPath, $vectors, $absoluteBinPath, $absoluteSrcPath, $repetitions)
 
-	$runSimulation =
+	$executeSingleRepetition =
 	{
-        param($ini, $measurement, $awkParseScriptPath, $absoluteBinPath, $absoluteSrcPath, $repetitions)
+        param($ini, $measurement, $absoluteAwkParsePath, $absoluteBinPath, $absoluteSrcPath, $repetitions)
 		cd $ini.DirectoryName
 	    Invoke-Expression ($absoluteBinPath + " -r " + $i + " -u Cmdenv -c " + $measurement + " -n " + $absoluteSrcPath + " --debug-on-errors=false " + $ini.Name)	
 	}
@@ -32,41 +36,31 @@ $runStudy =
 
     for ($i = 0; $i -lt $repetitions; $i++)
     {
-    	Invoke-Command -ScriptBlock $runSimulation -ArgumentList ($ini, $measurement, $awkParseScriptPath, $absoluteBinPath, $absoluteSrcPath, $repetitions);
+    	Invoke-Command -ScriptBlock $executeSingleRepetition -ArgumentList ($ini, $measurement, $absoluteAwkParsePath, $absoluteBinPath, $absoluteSrcPath, $repetitions);
     }
 
 	cd results
-		gawk -f $awkParseScriptPath -v out=$measurement ( Get-ChildItem -Filter ($measurement + "-*.vec") | % name )
+		gawk -f $absoluteAwkParsePath -v out=$measurement ( Get-ChildItem -Filter ($measurement + "-*.vec") | % name )
 
-        foreach($pattern in $patterns)
+        foreach($vector in $vectors)
         {
-            gawk -f $awkFilterScriptPath -v pattern=$pattern ( Get-ChildItem -Filter ($measurement + ".m") | % name )
+            gawk -f $absoluteAwkSplitPath -v pattern=$vector ($measurement + ".m")
         }
 }
 
-$externalJobs = @();
+$jobs = @();
 foreach ( $configuration in $configurations )
 {
-	cd $root
+	cd $rootDirectory
 
 	$iniName = $configuration[0];
 	$measurement = $configuration[1];
-
-    if(!($iniName -match 'parkingStudy.ini'))
-    {
-        continue;
-    }
 
 	$inis = Get-ChildItem -Recurse -Filter $iniName;
 
 	foreach( $ini in $inis )
 	{
-        if(!($ini.fullName -match 'parkingStudy_interarrival'))
-        {
-            continue;
-        }
-        
-		$externalJobs += Start-Job -ScriptBlock $runStudy -ArgumentList ($ini, $measurement, $awkParseScriptPath, $awkFilterScriptPath, $patterns, $absoluteBinPath, $absoluteSrcPath, $repetitions)
+		$jobs += Start-Job -ScriptBlock $executeIni -ArgumentList ($ini, $measurement, $absoluteAwkParsePath, $absoluteAwkSplitPath, $vectors, $absoluteBinPath, $absoluteSrcPath, $repetitions)
 	}
 }
-Wait-Job -Job $externalJobs
+Wait-Job -Job $jobs
