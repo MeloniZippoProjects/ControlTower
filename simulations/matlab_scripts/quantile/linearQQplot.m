@@ -1,6 +1,5 @@
 function [ ] = linearQQplot( samples, distribution, exclude_zero, weighted )
-%SAMPLE_QQ_PLOT Summary of this function goes here
-%   Detailed explanation goes here
+%SAMPLE_QQ_PLOT Draws qq plots of samples vs a theoretical distribution.
 
     min_n = inf;
     for smplIdx = 1 : samples.size
@@ -33,25 +32,6 @@ function [ ] = linearQQplot( samples, distribution, exclude_zero, weighted )
     theoretical_dist = makedist(distribution);
     theoretical_quantiles = icdf(theoretical_dist, quantiles_x);
     
-    %computation of sample quantiles and theoretical quantiles
-    %{
-    for qIdx = 1 : length(Qs)
-        q = Qs(qIdx);
-        
-        if(weighted)
-           sample = mergeSortLengthSample(sample);
-           sample_quantiles(qIdx) = computeWeightedQuantile(mean_sample, q);
-        else
-           sample_quantiles(qIdx) = quantile(mean_sample, q);
-        end
-               
-       %computation of theorical quantiles
-       p_dist = makedist(distribution);
-       theory_Q(qIdx) = icdf(p_dist,q);
-
-    end
-    %}
-
     hold on;
     errorbar(theoretical_quantiles, sample_quantiles, q_CIgaps);  
     
@@ -64,4 +44,3 @@ function [ ] = linearQQplot( samples, distribution, exclude_zero, weighted )
     ax.YAxisLocation = 'origin';
     hold off;
 end
-

@@ -1,6 +1,5 @@
 function [ samples_no0 ] = removeZeros( samples )
-%REMOVEZEROS Summary of this function goes here
-%   Detailed explanation goes here
+%REMOVEZEROS Removes the data entries that are equal to zero
 
     samples_no0 = struct();
 

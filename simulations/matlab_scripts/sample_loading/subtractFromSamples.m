@@ -1,6 +1,5 @@
 function [ ret_samples ] = subtractFromSamples( samples, value )
-%SUBTRACTFROMSAMPLE Summary of this function goes here
-%   Detailed explanation goes here
+%SUBTRACTFROMSAMPLE Reduces all data in the samples object by a constant value
 
     ret_samples = struct();
     ret_samples.size = samples.size;

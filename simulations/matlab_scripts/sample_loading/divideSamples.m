@@ -1,6 +1,5 @@
 function [ first_samples, last_samples ] = divideSamples( samples, divisor )
-%DIVIDESAMPLES Summary of this function goes here
-%   Detailed explanation goes here
+%DIVIDESAMPLES Splits the samples object. The first returned samples contain only data less than divisor.
 
     first_samples = struct();
     first_samples.size = samples.size;
