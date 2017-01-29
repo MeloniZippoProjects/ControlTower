@@ -48,6 +48,12 @@ class Runway : public cSimpleModule
     unsigned long tookoffThroughputCounter;
     simsignal_t tookoffThroughputSignal;
 
+    simtime_t lastLandingTime;
+    simsignal_t landingInterLeavingSignal;
+    
+    simtime_t lastTakeoffTime;
+    simsignal_t takeoffInterLeavingSignal;
+
     ThroughputTimeout* thTimeout;
 };
 

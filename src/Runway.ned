@@ -27,11 +27,17 @@ simple Runway
         double throughputCheckInterval @unit(s);
       
 		@signal[landedThroughputSignal](type = unsigned long);
-		@signal[tookoffThroughputSignal](type = unsigned long);
-    	
-        @statistic[landedThroughput](source=landedThroughputSignal; record=vector);
+		@statistic[landedThroughput](source=landedThroughputSignal; record=vector);
+
+        @signal[tookoffThroughputSignal](type = unsigned long);
         @statistic[tookoffThroughput](source=tookoffThroughputSignal; record=vector);
    	    
+        @signal[landingInterLeavingSignal](type = double);
+        @statistic[landingInterLeaving](source=landingInterLeavingSignal; record=vector);
+
+        @signal[takeoffInterLeavingSignal](type = double);
+        @statistic[takeoffInterLeaving](source=takeoffInterLeavingSignal; record=vector);
+
     gates:
         input landingPlaneIn;
         output landingPlaneOut;

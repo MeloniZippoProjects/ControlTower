@@ -25,6 +25,8 @@ void Runway::initialize()
     //Throughput computation process initialization
     landedThroughputSignal = registerSignal("landedThroughputSignal");
     tookoffThroughputSignal = registerSignal("tookoffThroughputSignal");
+    landingInterLeavingSignal = registerSignal("landingInterLeavingSignal");
+    takeoffInterLeavingSignal = registerSignal("takeoffInterLeavingSignal");
 
     thTimeout = new ThroughputTimeout();
     thTimeout->setContextPointer(this);
@@ -33,6 +35,9 @@ void Runway::initialize()
     scheduleAt(simTime() + par("throughputCheckInterval"), thTimeout);
     landedThroughputCounter = 0U;
     tookoffThroughputCounter = 0U;
+
+    lastLandingTime = simTime();
+    lastTakeoffTime = simTime();
 }
 
 void Runway::handleMessage(cMessage *msg)
@@ -99,10 +104,17 @@ void Runway::handleOutgoingPlane(Plane* plane)
         case RunwayStatus::plane_landing :
             send(plane,"landingPlaneOut");
             landedThroughputCounter++;
+            simTime_t interLandingTime = simTime() - lastLandingTime;
+            emit(landingInterLeavingSignal, interLandingTime);
+            lastLandingTime = simTime();
+            
             break;
         case RunwayStatus::plane_takeoff:
             send(plane,"takeoffPlaneOut");
             tookoffThroughputCounter++;
+            simTime_t interTakeoffTime = simTime() - lastTakeoffTime;
+            emit(takeoffInterLeavingSignal, interTakeoffTime);
+            lastTakeoffTime = simTime();
             break;
         default:
             throw "Runway inconsistency: plane scheduled for exit while free";
@@ -115,4 +127,3 @@ void Runway::handleOutgoingPlane(Plane* plane)
     update->setSchedulingPriority(3);
     send (update, "statusOut");
 }
-
