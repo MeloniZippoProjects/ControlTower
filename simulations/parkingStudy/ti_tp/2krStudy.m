@@ -31,7 +31,7 @@ for distIdx = 1 : length(distributions)
    graph_name = dist;
 
    f = dist;
-   [ qs.(f), SSx.(f), SSE.(f), fx.(f), CI.(f), std_devs.(f) ] = factorial2kr(combination_matrix, measures, alfa, graph_name);
+   [ qs.(f), SSx.(f), SSE.(f), fx.(f), CI.(f), std_devs.(f) ] = analysis_2kr(combination_matrix, measures, alfa, graph_name);
    save( 'parking2kr.mat', 'qs', 'SSx', 'SSE', 'fx', 'CI', 'std_devs' );
    cd ..
 end

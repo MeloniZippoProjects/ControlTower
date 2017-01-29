@@ -2,7 +2,7 @@ distributions = [ string('exponential'); string('lognormal')];
 timeVectors = [string('landingQueue_queueTime') 5; string('takeoffQueue_queueTime') 20; ];
 lengthVectors = [ string('landingQueue_queueLength'); string('takeoffQueue_queueLength')];
 scenarios = ['rho0.1'; 'rho0.2'; 'rho0.3'; 'rho0.4'; 'rho0.5'; 'rho0.6'; 'rho0.7'; 'rho0.8'; 'rho0.9'];
-%fittings = [string('exponential'); string('normal'); string('lognormal'); string('weibull'); string('gamma'); string('uniform') ];
+%fittings = [string('exponential'); string('normal'); string('lognormal'); string('uniform') ];
 fittings = [string('exponential'); string('uniform') ];
 
 for distIdx = 1 : length(distributions)
@@ -16,12 +16,9 @@ for distIdx = 1 : length(distributions)
 			scenario = scenarios(scenIdx, :);
 
 			samples = loadTimeSamples(vector, scenario);
-            %samples_no0 = removeZeros(samples);
 			
             for fittingIdx = 1 : length(fittings)
                 fitting = fittings(fittingIdx);
-                %disp(strcat(string('Processing: '),fitting,string(' fitting for '), distribution, string(', '), scenario));
-
                 figname = ['pdf for ' distribution ' fitting with ' fitting.char ', ' vector ', ' scenario];
                 fig = figure('Name', figname);
 
