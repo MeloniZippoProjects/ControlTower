@@ -33,8 +33,8 @@ void ParkingLot::handleMessage(cMessage *msg)
     {
         send(plane, "planeOut");
         --planes;
-
-        emit(parkingInterleaving, simTime() - lastLeftTime);
+        simtime_t interleavingTime = simTime() - lastLeftTime;
+        emit(parkingInterleaving, interleavingTime.dbl());
         lastLeftTime = simTime();
     }
     else if(std::string(msg->getArrivalGate()->getBaseName()) == "planeIn") //a new plane has arrived

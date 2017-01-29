@@ -102,20 +102,23 @@ void Runway::handleOutgoingPlane(Plane* plane)
     //Status is used to know the type of plane currently served
     switch (runwayStatus) {
         case RunwayStatus::plane_landing :
+        {
             send(plane,"landingPlaneOut");
             landedThroughputCounter++;
-            simTime_t interLandingTime = simTime() - lastLandingTime;
-            emit(landingInterLeavingSignal, interLandingTime);
+            simtime_t interLandingTime = simTime() - lastLandingTime;
+            emit(landingInterLeavingSignal, interLandingTime.dbl());
             lastLandingTime = simTime();
-            
             break;
+        }
         case RunwayStatus::plane_takeoff:
+        {
             send(plane,"takeoffPlaneOut");
             tookoffThroughputCounter++;
-            simTime_t interTakeoffTime = simTime() - lastTakeoffTime;
-            emit(takeoffInterLeavingSignal, interTakeoffTime);
+            simtime_t interTakeoffTime = simTime() - lastTakeoffTime;
+            emit(takeoffInterLeavingSignal, interTakeoffTime.dbl());
             lastTakeoffTime = simTime();
             break;
+        }
         default:
             throw "Runway inconsistency: plane scheduled for exit while free";
     }
