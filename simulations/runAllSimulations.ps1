@@ -4,20 +4,20 @@ $configurations = ("queueStudy.ini", "QueueMeasurement" ),  ( "parkingStudy.ini"
 $repetitions = 50;
 
 $vectors = "landingQueue_queueLength", "landingQueue_queueTime" ,"takeoffQueue_queueLength", "takeoffQueue_queueTime",
-            "parkingLot_parkingOccupancy", "runway_landingInterleaving", "runway_takeoffInterleaving", "parkingLot_";
+            "parkingLot_parkingOccupancy", "runway_landingInterLeaving", "runway_takeoffInterLeaving", "parkingLot_parkingInterLeaving";
 
 $relativeBinPath = ".\src\ControlTower.exe";
 $relativeSrcPath = ".\src"
 
 $relativeAwkParsePath = ".\simulations\parseVectors.awk" 
-$relatieAwkSplitPath = ".\simulations\splitVectors.awk"
+$relativeAwkSplitPath = ".\simulations\splitVectors.awk"
 
 # Absolute paths computation
 $rootDirectory = (Get-Location).Path;
 $absoluteBinPath = Join-Path $rootDirectory $relativeBinPath;
 $absoluteSrcPath = Join-Path $rootDirectory $relativeSrcPath;
 $absoluteAwkParsePath = Join-Path $rootDirectory $relativeAwkParsePath;
-$absoluteAwkSplitPath = Join-Path $rootDirectory $relatieAwkSplitPath;
+$absoluteAwkSplitPath = Join-Path $rootDirectory $relativeAwkSplitPath;
 
 
 # Script body

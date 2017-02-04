@@ -25,8 +25,8 @@ simple ParkingLot
         @signal[parkingOccupancy](type=long);
         @statistic[parkingOccupancy](source=parkingOccupancy; record=timeavg,stats,vector);
         
-        @signal[parkingInterleaving](type=double);
-        @statistic[parkingInterleaving](source=parkingInterleaving; record=vector);
+        @signal[parkingInterLeaving](type=double);
+        @statistic[parkingInterLeaving](source=parkingInterLeaving; record=vector);
     gates:
         input planeIn;
         output planeOut;

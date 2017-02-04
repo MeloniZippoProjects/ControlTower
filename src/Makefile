@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for PESC_Control_Tower
+# OMNeT++/OMNEST Makefile for ControlTower
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep
 #
 
 # Name of target to be created (-o option)
-TARGET = PESC_Control_Tower$(EXE_SUFFIX)
+TARGET = ControlTower$(EXE_SUFFIX)
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LIBS)
@@ -127,7 +127,7 @@ smheaders: $(SMFILES:.sm=_sm.h)
 clean:
 	$(qecho) Cleaning...
 	$(Q)-rm -rf $O
-	$(Q)-rm -f PESC_Control_Tower PESC_Control_Tower.exe libPESC_Control_Tower.so libPESC_Control_Tower.a libPESC_Control_Tower.dll libPESC_Control_Tower.dylib
+	$(Q)-rm -f ControlTower ControlTower.exe libControlTower.so libControlTower.a libControlTower.dll libControlTower.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h ./*_sm.cc ./*_sm.h
 
 cleanall: clean
