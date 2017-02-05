@@ -1,3 +1,7 @@
+% Fits points [evaluationPoints(i), responses(i)] to a linear model
+% and computes confidence bounds and regression coefficients.
+% Draws graphs for a posteriori hypothesis checking 
+
 function [ mdl ] = linearRegressionStudy(evaluationPoints, responses, subjectName, rootFolderName)
 	mdl = fitlm(evaluationPoints, responses, 'RobustOpts', 'off');
 	residuals = mdl.Residuals.Raw;

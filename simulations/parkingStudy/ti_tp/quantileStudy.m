@@ -1,8 +1,10 @@
+% Computes p-quantile of parking occupancy for every factor set and stores it in a .mat file for future uses
+
 distributions = [string('exponential'); string('lognormal');] ;
 scenarios = [string('i15p60'); string('i15p30'); string('i30p60'); string('i30p30');];
 
 vector = 'parkingLot_parkingOccupancy';
-p = 0.90; %percentuale dei quantili calcolati
+p = 0.90; %p-quantile
 
 clear quantiles;
 quantiles = struct();

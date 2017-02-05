@@ -1,6 +1,6 @@
-function [ ] = linearQQplot( samples, distribution, exclude_zero, weighted )
-%SAMPLE_QQ_PLOT Draws qq plots of samples vs a theoretical distribution.
+%Draws qq plots of samples vs a theoretical distribution.
 
+function [ ] = linearQQplot( samples, distribution, exclude_zero, weighted )
     min_n = inf;
     for smplIdx = 1 : samples.size
         sample = samples.(['v' string(smplIdx).char]);

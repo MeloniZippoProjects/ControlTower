@@ -15,9 +15,6 @@
 
 package controltower;
 
-//
-// TODO auto-generated module
-//
 simple PlaneQueue
 {
     parameters:

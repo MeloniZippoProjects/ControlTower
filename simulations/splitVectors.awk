@@ -1,10 +1,12 @@
+# Script used to split the matlab files obtained by parseVector.awk into smaller files, one for each vector present in the initial file.
+# These new files contain a single vector and have a smaller size than the initial one.
+# This is done because loading all the vectors (even useless ones) in matlab is a waste of time and resources.
+
 BEGIN {
 	SUBSEP = "_"
 	output_matlab = pattern ".m"
-	#output_csv = out ".csv"
 	print "vectors = struct();" > output_matlab
 	size = 0
-	#print "run number; stat name; time->values" >output_csv
 }
 
 $0 ~ pattern {

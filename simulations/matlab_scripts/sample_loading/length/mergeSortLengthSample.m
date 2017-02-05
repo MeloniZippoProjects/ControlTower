@@ -1,3 +1,6 @@
+% Processes a length sample to produce a sorted list of states and their total duration.
+% This function is used to weight each state based on the total time spent on this state.
+
 function [ merged_sample ] = mergeSortLengthSample ( sample )
 	sample = sortrows(sample);
     merged_sample = [];

@@ -20,11 +20,15 @@
 #include <string>
 
 #include "Plane_m.h"
+#include "UpdateRunwayFreed_m.h"
 
 using namespace omnetpp;
 
 /**
- * TODO - Generated class
+ * Implements the Runway node.
+ * Provides two routes of traversal, one for landing planes and one for taking off planes.
+ * At most one plane can be in the Runway at any time.
+ * Each time a plane leaves, an UpdateRunwayFreed is sent to the ControlTower.
  */
 class Runway : public cSimpleModule
 {
@@ -34,12 +38,25 @@ class Runway : public cSimpleModule
 
     class ThroughputTimeout : public cMessage{};
 
+    /**
+     * Handles the throughput sensing task.
+     */
     void handleThroughputTimeout(ThroughputTimeout* timeout);
+    
+    /**
+     * Handles a Plane incoming from one of the two input gates.
+     */
     void handleIncomingPlane(Plane* plane);
+    
+    /**
+     * Handles a Plane leaving through one of the two output gates.
+     */
     void handleOutgoingPlane(Plane* plane);
 
+    /**
+     * Enum used to store the stautus of the Runway, in particular the route that the contained plane is taking
+     */
     enum RunwayStatus{ runway_free, plane_landing, plane_takeoff };
-
     RunwayStatus runwayStatus;
 
     unsigned long landedThroughputCounter;

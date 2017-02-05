@@ -14,7 +14,6 @@
 // 
 
 #include "Runway.h"
-#include "UpdateRunwayFreed_m.h"
 
 Define_Module(Runway);
 
@@ -127,6 +126,6 @@ void Runway::handleOutgoingPlane(Plane* plane)
 
     //A status update is sent to the ControlTower
     UpdateRunwayFreed* update = new UpdateRunwayFreed();
-    update->setSchedulingPriority(3);
+    update->setSchedulingPriority(3);   //Refer to the Implementation section of Documentation
     send (update, "statusOut");
 }

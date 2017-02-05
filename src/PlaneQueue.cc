@@ -58,7 +58,7 @@ void PlaneQueue::handlePlane(Plane* plane)
 
     //An update is sent to the ControlTower
     UpdatePlaneEnqueued* updateStatus = new UpdatePlaneEnqueued();
-    updateStatus->setSchedulingPriority(updatesPriority);
+    updateStatus->setSchedulingPriority(updatesPriority);   //Refer to the Implementation section of Documentation
     send(updateStatus, "statusOut");
 }
 

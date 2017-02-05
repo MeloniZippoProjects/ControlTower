@@ -1,6 +1,6 @@
-function [ samples_no0 ] = removeZeros( samples )
-%REMOVEZEROS Removes the data entries that are equal to zero
+% Removes from the samples object all the data entries that are equal to 0
 
+function [ samples_no0 ] = removeZeros( samples )
     samples_no0 = struct();
 
     for idx = 1 : samples.size 

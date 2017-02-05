@@ -1,3 +1,7 @@
+% Converts the data obtained via simulation to a format easier to work with, that consists in a row for each state change.
+% For each row, the first column is the lenght value and the second column is the duration this status has been kept.
+% Instantaneous changes, that is states that lasted 0 seconds, are filtered out.
+
 function [converted_sample] = convertLengthSample(sample)
     first_parse = [];
     for idx = 1 : ( size(sample, 1) - 1 )

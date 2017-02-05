@@ -23,14 +23,18 @@
 
 using namespace omnetpp;
 using namespace std;
+
 /**
- * TODO - Generated class
+ * Implements the ParkingLot node.
+ * Receives Plane messages from the input gate and sends them to the output gate after a timeout.
+ * The timeout duration is set through a NED parameter.
  */
 class ParkingLot : public cSimpleModule
 {
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    virtual void refreshDisplay() const;    // Used to show the number of enqueued planes in graphical environment.
 
     int planes;
     simsignal_t parkingOccupancy;

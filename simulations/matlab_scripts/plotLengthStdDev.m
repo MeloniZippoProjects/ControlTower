@@ -1,3 +1,6 @@
+% Plots std dev of a length sample as a function of time
+% Used to check finiteness of variance
+
 function [] = plotLengthStdDev( sample )
 	y = [];
 	for idx = 10 : size(sample)

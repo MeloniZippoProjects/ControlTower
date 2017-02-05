@@ -1,7 +1,19 @@
+% Creates the table for 2kr analysis starting from the columns of single factors
+%                      A  B
+% I.E. if combs =   [  1  1 ] 
+%                   |  1 -1 | 
+%                   | -1  1 | 
+%                   [ -1 -1 ]
+%
+%                  I,  A,  B, AB
+% coeff_matrix = [ 1,  1,  1,  1 ]
+%                | 1,  1, -1, -1 |
+%                | 1, -1,  1, -1 |
+%                [ 1, -1, -1,  1 ] 
+%
 function [ coeff_matrix ] = create_factorial_matrix( combs )
-%MAKE_COMB_MATRIX Summary of this function goes here
-%   Detailed explanation goes here
-%k is number of factors
+
+    %k is number of factors
     k = size(combs,2);
     two_k = size(combs,1);
     

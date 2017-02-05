@@ -25,6 +25,13 @@ void ParkingLot::initialize()
     lastLeftTime = 0;
 }
 
+void ParkingLot::refreshDisplay() const
+{
+    char buf[32];
+    sprintf(buf, "Parked planes: %d", planes);
+    getDisplayString().setTagArg("t", 0, buf);
+}
+
 void ParkingLot::handleMessage(cMessage *msg)
 {
     Plane* plane = check_and_cast<Plane*>(msg);

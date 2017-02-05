@@ -1,27 +1,27 @@
-﻿#ATTENTO ALLA DIRECTORY DOVE ESEGUI LO SCRIPT!!
-#Tieni d'occhio i file (sia target che non) per controllare che effetto c'è stato.
-#In caso di singolo errore, c'è il file di backup .old
+﻿# Utility for quick reconfiguration of many .ini files. 
 
-#Variabili di configurazione:
+#PAY ATTENTION TO THE DIRECTORY WHERE YOU EXECUTE THE SCRIPT!!!1
+#In case of an error, the script keeps a .old backup for each file.
 
-$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\"
-$oldLinePattern = "warmup-period";
-$newLine = "warmup-period = 3d";
+#Configuration variables
+$rootDir = "D:\Users\Raff\Documents\GitHub\PESC_Control_Tower\simulations\";
+$filename = "parkingStudy.ini";
+$oldLinePattern = "sim-time-limit";
+$newLine = "sim-time-limit = 25d";
 
-#Inizio script
+#script start
 
 $currentDir = pwd
 cd $rootDir
 
-#$inis += Get-ChildItem -Recurse -Filter "queueStudy.ini"
-$inis += Get-ChildItem -Recurse -Filter "parkingStudy.ini"
+$inis += Get-ChildItem -Recurse -Filter $filename;
 
 foreach($ini in $inis)
 {
     #Backup
     Copy-Item -Path $ini.FullName -Destination ($ini.FullName + ".old") 
     
-    #Ricerca e sostituzione
+    #Find and replace string
     $content = type $ini.FullName;
     $matches = Select-String -Path $ini.FullName -Pattern $oldLinePattern;
     foreach($match in $matches)

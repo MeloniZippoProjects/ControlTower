@@ -1,3 +1,6 @@
+% Plots the epdfs of the samples taken in input. This is used for the waiting times of both queues.
+% Returns the histogram that represents the epdfs.
+
 function [ h ] = plotTimePDF( samples, width )
     if width(2) == string('minutes')
         seconds_width = str2num( width(1).char ) * 60;

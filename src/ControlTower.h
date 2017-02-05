@@ -25,7 +25,10 @@
 using namespace omnetpp;
 
 /**
- * TODO - Generated class
+ * Implements the ControlTower node. 
+ * Receives UpdatePlaneEnqueued messages from the landing and takeoff PlaneQueues, 
+ * and UpdateRunwayFreed messages from the Runway.
+ * Sends OkToProceed messages to the PlaneQueues, according to the priority policy.
  */
 class ControlTower : public cSimpleModule
 {
@@ -38,9 +41,24 @@ class ControlTower : public cSimpleModule
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 
+    /**
+     * Creates and sends an OkToProceed message to the specified gate.
+     */
     void sendOk(std::string gate);
+
+    /**
+     * Handles an UpdatePlaneEnqueued message from the landing PlaneQueue.
+     */
     void handleLandingQueueUpdate(UpdatePlaneEnqueued* msg);
+    
+    /**
+     * Handles an UpdatePlaneEnqueued message from the takeoff PlaneQueue.
+     */
     void handleTakeoffQueueUpdate(UpdatePlaneEnqueued* msg);
+    
+    /**
+     * Handles an UpdateRunwayFreed message from the Runway.
+     */
     void handleRunwayUpdate(UpdateRunwayFreed* msg);
 };
 

@@ -1,6 +1,7 @@
-function [ lrz_fig ] = plotLorenzCurve( scenario, vector, alfa )
-%PLOTCURVE Summary of this function goes here
-%   Detailed explanation goes here
+% Takes the sample specified by vector and scenario and plots the relatives Lorentz Curve.
+% Plots also two curves that represents the confidence bounds of the Lorentz Curve. The confidenze level is (1-alfa).
+
+function plotLorenzCurve( scenario, vector, alfa )
    
     tot_sample = loadTimeSamples(vector, scenario);   
     

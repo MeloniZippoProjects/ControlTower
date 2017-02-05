@@ -22,7 +22,9 @@
 using namespace omnetpp;
 
 /**
- * TODO - Generated class
+ * Implements the external environment.
+ * At intervals set through a NED parameter, creates a new Plane to send to the output gate.
+ * Receives Planes which completed their route through the airport from the input gate, and deletes them.
  */
 class WorkloadGenerator : public cSimpleModule
 {
@@ -30,6 +32,10 @@ class WorkloadGenerator : public cSimpleModule
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 
+    /**
+     * Generates a Plane and sends it to the output gate.
+     * Schedules the next execution of the procedur.
+     */
     void generateAndSchedulePlane();
 
     int currentId;

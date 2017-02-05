@@ -1,6 +1,7 @@
-function [ first_samples, last_samples ] = divideSamples( samples, divisor )
-%DIVIDESAMPLES Splits the samples object. The first returned samples contain only data less than divisor.
+% Splits the samples object according to the divisor.
+% The first returned samples contain only values lower than the divisor.
 
+function [ first_samples, last_samples ] = divideSamples( samples, divisor )
     first_samples = struct();
     first_samples.size = samples.size;
     last_samples = struct();

@@ -1,3 +1,7 @@
+% Preparses every vector and creates a .mat file.
+% Subsequent calls to loadLengthSamples are much faster
+% since they don't have to parse the .m text file.
+
 distributions = [ string('exponential'); string('lognormal') ];
 scenarios = [string('i15p60'); string('i15p30'); string('i30p60'); string('i30p30');];
 

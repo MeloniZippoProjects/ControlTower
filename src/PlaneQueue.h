@@ -25,15 +25,27 @@
 
 using namespace omnetpp;
 
+/**
+ * Implements the PlaneQueue node. Two instances are used: one for landing and one for takeoff.
+ * Receives Plane messages from the input gate and stores them in a FIFO std::queue. Sends UpdatePlaneEnqueued messages to the ControlTower.
+ * When an OkToProceed message is received from the ControlTower, the Plane message at the head of the queue is sent to the output gate.
+ */
 class PlaneQueue : public cSimpleModule
 {
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
-    virtual void refreshDisplay() const;
+    virtual void refreshDisplay() const;    // Used to show the number of enqueued planes in graphical environment.
     ~PlaneQueue();
 
+    /**
+     * Handles an incoming Plane, adding it to the queue. Then sends an UpdatePlaneEnqueued to the ControlTower.
+     */
     void handlePlane(Plane* plane);
+
+    /**
+     * Handles an OkToProcced message from the ControlTower, sending the plane at the head of the queue to the output gate.
+     */
     void handleOk(OkToProceed* ok);
 
     std::queue<Plane*> planes;

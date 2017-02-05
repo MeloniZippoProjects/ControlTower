@@ -1,7 +1,6 @@
-function [ qq_fig ] = draw_qq_plot( err_matrix, graph_name)
-%QQ_PLOT Summary of this function goes here
-%   Detailed explanation goes here
+% Draws qq plot of residuals
 
+function [ qq_fig ] = draw_qq_plot( err_matrix, graph_name)
     err_vector = sort(err_matrix(:));
     N = size(err_vector,1);
     i = 1:1:N;
@@ -23,6 +22,5 @@ function [ qq_fig ] = draw_qq_plot( err_matrix, graph_name)
     ax.XAxisLocation = 'origin';
     ax.YAxisLocation = 'origin';
     hold off;
-    %LinearModel.fit
 end
 

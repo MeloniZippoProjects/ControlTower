@@ -1,6 +1,6 @@
-function [ ret_samples ] = subtractFromSamples( samples, value )
-%SUBTRACTFROMSAMPLE Reduces all data in the samples object by a constant value
+% Subtracts from all the data entries in the samples object the constant value passed as parameter.
 
+function [ ret_samples ] = subtractFromSamples( samples, value )
     ret_samples = struct();
     ret_samples.size = samples.size;
     
@@ -9,6 +9,5 @@ function [ ret_samples ] = subtractFromSamples( samples, value )
         sample = samples.(field) - value;
         ret_samples.(field) = sample;
     end
-
 end
 

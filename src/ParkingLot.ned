@@ -15,15 +15,12 @@
 
 package controltower;
 
-//
-// TODO auto-generated module
-//
 simple ParkingLot
 {
     parameters:
         volatile double parkingDelay @unit(s);
         @signal[parkingOccupancy](type=long);
-        @statistic[parkingOccupancy](source=parkingOccupancy; record=timeavg,stats,vector);
+        @statistic[parkingOccupancy](source=parkingOccupancy; record=vector);
         
         @signal[parkingInterLeaving](type=double);
         @statistic[parkingInterLeaving](source=parkingInterLeaving; record=vector);

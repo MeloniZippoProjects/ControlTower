@@ -48,7 +48,7 @@ void ControlTower::handleMessage(cMessage *msg)
 void ControlTower::sendOk(std::string gate)
 {
     OkToProceed* ok = new OkToProceed();
-    ok->setSchedulingPriority(4);
+    ok->setSchedulingPriority(4);   //Refer to the Implementation section of Documentation
     send(ok, gate.c_str());
 }
 
@@ -57,7 +57,7 @@ void ControlTower::handleLandingQueueUpdate(UpdatePlaneEnqueued* landingUpdate)
     if(runwayFree)
     {
         //Directly served because the runway is free.
-        // A landing update is always processed before a takeoff update because of  scheduling priority
+        //A landing update is always processed before a takeoff update because of scheduling priority
         sendOk("landingQueueOkOut");
         runwayFree = false;
     }
@@ -76,8 +76,7 @@ void ControlTower::handleTakeoffQueueUpdate(UpdatePlaneEnqueued* takeoffUpdate)
     if(runwayFree)
     {
         //Directly served because the runway is free.
-        // A landing update is always processed before a takeoff update because of  scheduling priority
-
+        //A landing update is always processed before a takeoff update because of scheduling priority
         sendOk("takeoffQueueOkOut");
         runwayFree = false;
     }

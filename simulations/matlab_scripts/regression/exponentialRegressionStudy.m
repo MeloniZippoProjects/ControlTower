@@ -1,3 +1,8 @@
+% Fits points [evaluationPoints(i), responses(i)] to a exponential model
+% and computes confidence bounds and regression coefficients.
+% It uses linearRegressionStudy after a logarithmic transformation
+% Draws graphs for a posteriori hypothesis checking 
+
 function [ mdl ] = exponentialRegressionStudy(evaluationPoints, responses, subjectName, rootFolderName)
 	%Filtering null or negative values
 	positiveEvaluationPoints = evaluationPoints(responses > 0);
