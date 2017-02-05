@@ -1,3 +1,5 @@
+% Draws QQ plot of timeVectors for every distribution listed in fittings.
+
 distributions = [ string('exponential'); string('lognormal') ];
 timeVectors = [string('landingQueue_queueTime'); string('takeoffQueue_queueTime')];
 scenarios = [   string('rho0.1'); string('rho0.15'); string('rho0.2'); string('rho0.25'); string('rho0.3'); string('rho0.35'); string('rho0.4'); string('rho0.45'); string('rho0.5');

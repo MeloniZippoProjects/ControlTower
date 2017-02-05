@@ -1,3 +1,6 @@
+% Makes an histogram separating the first 5 minutes and fitting them to a uniform, 
+% from everything else, that is fitted to exponential
+
 distributions = [ string('lognormal')];
 timeVectors = [string('landingQueue_queueTime') 5; string('takeoffQueue_queueTime') 20; ];
 %lengthVectors = [ string('landingQueue_queueLength'); string('takeoffQueue_queueLength')];

@@ -1,3 +1,5 @@
+% Computes p-quantile of parking occupancy for every factor set and stores it in a .mat file for future uses
+
 distributions = [string('exponential'); string('lognormal');] ;
 scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30');];
 

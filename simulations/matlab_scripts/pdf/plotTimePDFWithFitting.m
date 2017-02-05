@@ -1,7 +1,12 @@
+% Plots the epdf of the samples taken in input and fits them to the distribution specified by the parameter "fitting". This is used for the waiting times of both queues.
+% First creates the theoretical distribution based on the MLE. 
+% Plots an histogram of the theoretical distribution as a reference.
+% Plots an histogram of our sample on the same figure with the same bucket's width of the reference histogram.
+% Returns the histogram that represents the epdf.
+
 function [ h ] = plotTimePDFWithFitting( samples, fitting )
     % Generate theoretical distribution
-
-    if(fitting == 'exponential') 
+	if(fitting == 'exponential') 
         lambda_mles = zeros(1,samples.size);
         for smplIdx = 1 : samples.size 
             sample = samples.(['v' string(smplIdx).char]);

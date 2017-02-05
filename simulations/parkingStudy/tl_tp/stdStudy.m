@@ -1,3 +1,5 @@
+% Calls plotLengthStdDev on every factor set, to check for variance finiteness
+
 distributions = [ string('exponential'); string('lognormal') ];
 scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30');];
 

@@ -1,3 +1,13 @@
+% Draws an histogram for each vector and each factor set. The bucket width is estimated making an hypothesis 
+% on the distribution of the sample. It's not a blind hypothesis, as qqFittingStudy can be used 
+% to have an idea on the distribution. 
+% An histogram is made using a sample from a theoretical distribution with parameters
+% equal to MLEs computed from the sample.
+% Its bucket size is then used for the histogram of the sample. The histogram from the
+% theoretical distribution is drawn as a reference. If the sample can be
+% fitted to the theoretical distribution, the histogram bars will be almost equal to the
+% reference bars.
+
 distributions = [ string('exponential'); string('lognormal')];
 timeVectors = [string('landingQueue_queueTime') 5; string('takeoffQueue_queueTime') 20; ];
 lengthVectors = [ string('landingQueue_queueLength'); string('takeoffQueue_queueLength')];

@@ -1,3 +1,5 @@
+% Draws Lorenz Curves for every factor set
+
 distributions = [string('lognormal');string('exponential')]; 
 
 

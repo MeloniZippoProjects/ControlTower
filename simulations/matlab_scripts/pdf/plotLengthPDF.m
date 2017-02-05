@@ -1,5 +1,5 @@
-% Plots the weighted epdfs of the samples taken in input. This is used for the lenght of both queues and for the parking size.
-% Returns the histogram that represents the epdfs.
+% Plots the weighted epdf of the samples taken in input. This is used for the lenght of both queues and for the parking size.
+% Returns the histogram that represents the epdf.
 
 function [ h ] = plotLengthPDF( samples )
     max_value = 0;

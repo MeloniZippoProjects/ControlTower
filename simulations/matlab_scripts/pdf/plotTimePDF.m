@@ -1,5 +1,6 @@
-% Plots the epdfs of the samples taken in input. This is used for the waiting times of both queues.
-% Returns the histogram that represents the epdfs.
+% Plots the epdf of the samples taken in input. This is used for the waiting times of both queues.
+% Width is a vector: the first element contains the width of the buckets, the second one the unit of measure (minutes or seconds). 
+% Returns the histogram that represents the epdf.
 
 function [ h ] = plotTimePDF( samples, width )
     if width(2) == string('minutes')

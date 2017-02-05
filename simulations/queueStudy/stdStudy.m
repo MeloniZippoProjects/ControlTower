@@ -1,3 +1,5 @@
+% Calls plotLengthStdDev or plotTimeStdDev on every factor set, to check for variance finiteness
+
 distributions = [ string('exponential'); string('lognormal')];
 timeVectors = [string('landingQueue_queueTime'); string('takeoffQueue_queueTime'); ];
 lengthVectors = [ string('landingQueue_queueLength'); string('takeoffQueue_queueLength')];

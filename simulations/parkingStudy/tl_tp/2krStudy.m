@@ -1,3 +1,5 @@
+% Prepares the 2kr study and then calls analysis_2kr();
+
 distributions = [string('exponential'); string('lognormal');] ;
 scenarios = [string('l15p60'); string('l15p30'); string('l5p60'); string('l5p30')];
 combination_matrix = [1 1; 1 -1; -1 1; -1 -1];
